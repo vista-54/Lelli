@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lelly</title>
+    <meta name="viewport" content="height=device-width, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Security-Policy" content=""/>
+    <script src="cordova.js"></script>
+    <script src="js/jq/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="container">
+    <h1>Log-in</h1>
+<form onsubmit="return false;" name="login">
+    <label for="input_persPin">Enter your personal PIN-Code</label>
+    <input id="input_persPin" type="password" maxlength="4" pattern="[0-9]*" required>
+    <input id="btn_forgotPin" type="button" value="Forgot PIN">
+    <input type="submit" value="Log in">
+</form>
+    <p>or</p>
+    <button id="btn_goToRegister">Register now</button>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

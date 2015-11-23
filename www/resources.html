@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="registerScreen">
+    <h1>Register a new user</h1>
+    <form onsubmit="return false;" name="register">
+        <label for="input_newPin1">Enter a new 4-length PIN-Code</label>
+        <input id="input_newPin1" type="password" maxlength="4" pattern="[0-9]*" required>
+        <label for="input_newPin2" class="hide">Retry your PIN-Code</label>
+        <input id="input_newPin2" type="password" maxlength="4" pattern="[0-9]*" class="hide" required>
+        <label for="input_regEmail" class="hide">Enter E-mail for recovery your PIN</label>
+        <input id="input_regEmail" type="email" maxlength="20" class="hide" required>
+        <input id="btn_regNextStep" type="button" value="Next" class="">
+        <input id="btn_regNextStep2" type="button" value="Next" class="hide">
+        <input id="btn_regFinish" type="button" value="Finish" class="hide">
+        </form>
+    <button id="btn_backToLogin">Back to login</button>
+    <button id="btn_backToStep1" class="hide">Back</button>
+</div>
+</body>
+</html>
