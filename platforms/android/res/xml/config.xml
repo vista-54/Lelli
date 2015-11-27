@@ -1,16 +1,28 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.cordova.hellocordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
+    <feature name="Contacts">
+        <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
     <allow-intent href="market:*" />
-    <preference name="SplashScreen" value="foo" />
-    <preference name="SplashScreenDelay" value="3000" />
-    <preference name="SplashMaintainAspectRatio" value="true" />
-    <name>HelloCordova</name>
+    <splash density="port-hdpi" src="res/drawable-port-hdpi/screen.png" />
+    <splash density="port-ldpi" src="res/drawable-port-ldpi/screen.png" />
+    <splash density="port-mdpi" src="res/drawable-port-mdpi/screen.png" />
+    <splash density="port-xhdpi" src="res/drawable-port-xhdpi/screen.png" />
+    <name>Lelly</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        [Description]
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="apes@at.work" href="http://www.apes-at-work.com/">
+        Apes At Work
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -20,12 +32,8 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <feature name="Whitelist">
-        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="SplashScreen">
-        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
-        <param name="onload" value="true" />
-    </feature>
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="Orientation" value="portrait" />
 </widget>

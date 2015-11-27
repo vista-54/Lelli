@@ -31,28 +31,4 @@ public class MainActivity extends CordovaActivity
         // Set by <content src="index.html" /> in config.xml
         loadUrl(launchUrl);
     }
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-
-        webView.handleDestroy();
-    }
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        String url = webView.peekAtUrlStack();
-        webView.handlePause(true);
-
-        Bundle out = new Bundle();
-        webView.saveState(out);
-        out.putString("url", url);
-
-        saveToPreferences(out);
-    }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        webView.handleResume(true, false);
-    }
 }
