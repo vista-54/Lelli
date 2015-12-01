@@ -10,7 +10,11 @@ var WINDOW_SWITCH_REGISTER_1_2 = '#div_registerInfo, #div_registerLikes';
 var WINDOW_SWITCH_REGISTER_2_3 = '#div_registerLikes, #div_registerStruggles';
 var WINDOW_SWITCH_REGISTER_3_4 = '#div_registerStruggles, #div_registerContacts';
 var WINDOW_SWITCH_REGISTER_4_5 = '#div_registerContacts, #div_registerComplete';
-
+var contacts = {"person_win_name": 'Vasya',
+                "person_win_phone": '0950017346',
+                "person_support_name": 'Petya',
+                "person_support_phone": '0963820290'
+                };
 // Check the Pin length UNIVERSAL Function
 function checkPin(value) {
     if (value == 0) {
@@ -22,32 +26,70 @@ function checkPin(value) {
         return false;
     }
 }
+function logPinDialog() {
+    window.plugins.pinDialog.prompt(" ", function(results) {
+        if(results.buttonIndex == 1)
+        {
+            // OK clicked, show input value
+            $('#input_personalPin').val(results.input1).blur();
+        }
+        if(results.buttonIndex == 2)
+        {
+            // Cancel clicked
+            $('#input_personalPin').blur();
+            return false;
+        }
+    }, "Enter PIN", ["OK","Cancel"]);
+}
+function regPinDialog() {
+    window.plugins.pinDialog.prompt(" ", function(results) {
+        if(results.buttonIndex == 1)
+        {
+            // OK clicked, show input value
+            $('#input_newPin').val(results.input1).blur();
+        }
+        if(results.buttonIndex == 2)
+        {
+            // Cancel clicked
+            return false;
+        }
+    }, "Enter PIN", ["OK","Cancel"]);
+}
+function regPinConfirmDialog() {
+    window.plugins.pinDialog.prompt(" ", function(results) {
+        if(results.buttonIndex == 1)
+        {
+            $('#input_newPinConfirm').val(results.input1).blur();
+        }
+        if(results.buttonIndex == 2)
+        {
+            return false;
+        }
+    }, "Confirm PIN", ["OK","Cancel"]);
+}
+$.fn.serializeObject = function()
+{
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
 //--------------------------- SCREEN 2 ---------------------------
-$body.on("keyup", "#input_pinMask", function() {
-    var $input_pinMask = $("#input_pinMask");
-    var $input_personalPin = $("#input_personalPin");
-    var inputLength = $input_pinMask.val().length;
-    var pinLength = $input_personalPin.val().length;
-    if (inputLength > pinLength) {
-        var inputLastChar = $input_pinMask.val().charAt(inputLength-1);
-        $input_personalPin.val($input_personalPin.val() + inputLastChar);
-    } else {
-        $input_personalPin.val($input_personalPin.val().substring(0, $input_pinMask.val().length));
-    }
-    var i = 0;
-    var maskPassword = "";
-    while (i < $input_pinMask.val().length) {
-        maskPassword += "•";
-        i++;
-    }
-    $input_pinMask.val(maskPassword);
+$body.on("focus", '#input_personalPin, #input_newPin, #input_newPinConfirm', function(e) {
+    e.preventDefault();
 });
-$("#input_pinMask").blur(function() {
-    var $input_personalPin = $("#input_personalPin");
-    $input_personalPin.focus();
-    $input_personalPin.blur();
+$body.on("click", '#input_personalPin', function() {
+    logPinDialog();
 });
-
 $body.on('submit', 'form[name="login"]', function() {
     var $input_email = $('#input_email');
     var input_email_placeholder = $input_email.attr('placeholder');
@@ -66,25 +108,28 @@ $body.on('submit', 'form[name="login"]', function() {
         $input_email.val(_email);
     }
     // request to server;
-    var form_login = $('form[name="login"]').serialize();
-    var url;
-    var data = ['login', form_login];
-    var request = $.post(url, data, onAjaxSuccess);
-    startLocadingAnimation();
-    function onAjaxSuccess(result) {
-        stopLoadingAnimation();
-        if(result == true) {
+    var data = {'email': _email,
+                'pin': _pin};
+    var url = URL + '/v1/site/login';
+    $.post(url, data, onAjaxSuccess, onAjaxError);
+    //startLoadingAnimation();
+    console.log(data);
+    function onAjaxSuccess(_result) {
+        //stopLoadingAnimation();
+        console.log(_result);
+        if(_result == true) {
             localStorage.setItem('Lelly_login_email', _email);
             alert(data + ' ready to send to server');
         }
         else {
-            console.log('Error: ' + result)
+            console.log('Error: ' + _result)
         }
     }
     // Response true CallBack
-    // Error CallBack
-    //alert("Email doesn't exist or pin was wrong");
-    //$(WINDOW_SWITCH_LOGIN_1_4).toggleClass('hide');
+    function onAjaxError() {
+        alert("Could't connect to server");
+        return false;
+    }
 });
 $body.on("click", "#link_forgotPin", function() {
     $(WINDOW_SWITCH_LOGIN_1_2).toggleClass('hide');
@@ -99,7 +144,6 @@ $body.on("click", "#btn_sendPin", function() {
 
     // request to server;
 
-    var url = 'http://simple.com';
     var data = {};
     data.id = 'forgotPin';
     data.body = _email;
@@ -140,18 +184,32 @@ $body.on("keyup", "#input_name", function() {
 $body.on("keyup", "#input_surname", function() {
     $("#input_surname").val($("#input_surname").val().replace(/[^a-zа-яіїєґ]/i, ''));
 });
+$body.on('focus', '#input_birthdate', function(e) {
+    e.preventDefault();
+});
+$body.on('click', '#input_birthdate', function() {
+    datePicker.show({date: new Date(),mode: 'date'}, function(date){
+        var month = date.getMonth() + 1;
+        var d = date.getFullYear() + '-'+ month +'-'+date.getDate();
+        $('#input_birthdate').val(d).blur();
+    });
+});
+$body.on("click", '#input_newPin', regPinDialog);
+$body.on("click", '#input_newPinConfirm', regPinConfirmDialog);
 $body.on("blur", '#input_regEmail', function() {
     var _input_email = $('#input_regEmail').val();
     $('#form_register').find('p.alert').remove();
     // Request to server to identity email
-    var url = 'http://simple.com';
     var data = {};
-    data.id = 'registerEmail';
-    data.body = _input_email;
+    data.email = _input_email;
+    var url = URL + '/v1/site/email-is-used';
+    //data = JSON.stringify(data);
+    console.log(data);
     try {
         $.post(url, data, function (result) {
             $('#input_regEmail').before(function (index) {
-                if (result == false) {
+                console.log(result);
+                if (result.email_is_used == true) {
                     return '<p class="alert red">Email is not available</p>'
                 }
                 else {
@@ -163,12 +221,12 @@ $body.on("blur", '#input_regEmail', function() {
     catch (err) {
         console.log('Error:' + err.name + ' ' + err.message);
         $('#input_regEmail').before(function (index) {
-                return '<p class="alert red">' + err.name + ' '+ err.message +'</p>';
+            return '<p class="alert red">' + err.name + ' '+ err.message +'</p>';
         });
     }
 });
 $body.on("click", "#btn_backToLogin", function() {
-    $('#container').load('resources.html #window_loginScreen', function() {
+    $('#container').load('resources2.html #window_loginScreen', function() {
         if (local_email) {
             $($('#input_email')).attr('placeholder', local_email);
         }
@@ -197,16 +255,14 @@ $body.on("click", "#btn_regNextStep", function() {
         alert('Please enter the same PIN-Codes');
         return false;
     }
-    var url = 'http://simple.com';
-    var data = ['regOptionsList'];
+    var url = URL + '/v1/site/get-likes-struggles-arr';
     try {
-        $.post(url,data, function(_result) {
-            var result = _result;
-            $.each(result.likes, function(index,value) {
-                $('#likes').append('<li><span>' + value + '</span><input type="radio" name="' + value + '" value="0"><input type="radio" name="' + value + '" value="1"></li>');
+        $.get(url, function(_result) {
+            $.each(_result.likes, function(index,value) {
+                $('#likes').append('<li><span>' +  value + '</span><input type="radio" name="' + index + '" value="1"><input type="radio" name="' + index + '" value="0"  checked></li>');
             });
-            $.each(result.struggles, function(index,value) {
-                $('#struggles').append('<li><span>' + value + '</span><input type="checkbox" name="' + value + '"></li>')
+            $.each(_result.struggles, function(index,value) {
+                $('#struggles').append('<li><span>' + value + '</span><input type="checkbox" name="' + index + '"></li>')
             })
         })
     }
@@ -236,16 +292,20 @@ $body.on("click", "#btn_backToStep3", function() {
     $(WINDOW_SWITCH_REGISTER_3_4).toggleClass('hide');
 });
 $body.on("click", "#btn_regFinish", function() {
-    var form_info = $('form[name="info"]').serialize();
-    var form_likes = $('form[name="likes"]').serialize();
-    var form_struggles = $('form[name="struggles"]').serialize();
-    var form_contacts = $('form[name="contacts"]').serialize();
-    var form = form_info + '&' + form_likes + '&' + form_struggles +'&'+ form_contacts;
-    var url= 'http://simple.com';
-    var data = ['registerForm', form];
-    data = JSON.stringify(data);
+    var info = {"first_name": $('#input_name').val(),
+        "surname": $('#input_surname').val(),
+        "birthday": $('#input_birthdate').val(),
+        "city": $('#input_location').val(),
+        "email": $('#input_regEmail').val(),
+        "pin": $('#input_newPin').val()};
+    var likes = $('form[name="likes"]').serializeObject();
+    var struggles = $('form[name="struggles"]').serializeObject();
+    var data = {"User" : info, "Likes" : likes, "Struggles" : struggles, "AppUser": contacts};
+    console.log(data);
+    url = URL + '/v1/site/signup';
     try {
         $.post(url, data, function(result) {
+            console.log(result);
             if (result == false) {
                 alert('Error:' + result);
                 return false;
@@ -263,7 +323,11 @@ $body.on("click", "#btn_regFinish", function() {
 $body.on('click', '#btn_friend', function() {
     navigator.contacts.pickContact(function(contact) {
         var name = contact.displayName;
-        $('#input_friend').val(name);
+        var phone = contact.phoneNumbers[0].value;
+        phone = phone.replace(/\-|\x20/g,"");
+        contacts.person_win_name = name;
+        contacts.person_win_phone = phone;
+        $('#input_friendName').val(name);
     }, function(err) {
         console.log(err);
     });
@@ -271,14 +335,18 @@ $body.on('click', '#btn_friend', function() {
 $body.on('click', '#btn_support', function() {
     navigator.contacts.pickContact(function(contact) {
         var name = contact.displayName;
-        $('#input_support').val(name);
+        var phone = contact.phoneNumbers[0].value;
+        phone = phone.replace(/\-|\x20/g,"");
+        contacts.person_support_name = name;
+        contacts.person_support_phone = phone;
+        $('#input_supportName').val(name);
     }, function(err) {
         console.log(err);
     });
 });
 //-----------------------------  SCREEN 9 ----------------------
 $body.on("click", "#btn_regComplete", function() {
-    $('#container').load('resources.html #window_loginScreen', function() {
+    $('#container').load('resources2.html #window_loginScreen', function() {
         if (local_email) {
             $($('#input_email')).attr('placeholder', local_email);
         }
@@ -286,9 +354,10 @@ $body.on("click", "#btn_regComplete", function() {
 });
 
 $(document).ready( function() {
-    $('#container').load('resources.html #window_loginScreen', function() {
+    $('#container').load('resources2.html #window_loginScreen', function() {
         if (local_email) {
             $($('#input_email')).attr('placeholder', local_email);
         }
     });
+    $('body').css('height', $(document).height());
 });

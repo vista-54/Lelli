@@ -11,10 +11,7 @@
     <div id="div_login">
         <form onsubmit="return false;" name="login">
             <input id="input_email" name="Email" type="email" maxlength="25" placeholder="email">
-            <div id="div_pinCell" style="display:inline;">
-                <input id="input_personalPin" name="Pin" type="password" maxlength="4" pattern="[0-9]*" placeholder="pin" class="hide">
-                <input id="input_pinMask" type="tel" placeholder="pin" maxlength="4" />
-            </div>
+            <input id="input_personalPin" name="Pin" type="password" maxlength="4" pattern="[0-9]*" placeholder="pin">
             <input type="submit" value="Log in">
         </form>
         <p>forgot your password? <a href="#" id="link_forgotPin">Tap here</a></p>
@@ -53,10 +50,10 @@
         <p>Please enter the details below</p>
         <input id="input_name" name="Name" placeholder="First Name">
         <input id="input_surname" name="Surname" placeholder="Surname">
-        <input id="input_birthdate" name="BirthDate" type="date" placeholder="Birth date">
+        <input id="input_birthdate" name="BirthDate" type="text" placeholder="Birth date">
         <input id="input_location" name="Location" placeholder="City Location">
-        <input id="input_regEmail" name="Email" type="email" placeholder="Email Adress" required>
-        <input id="input_regEmailConfirm" type="email" placeholder="Confirm Email Adress" required>
+        <input id="input_regEmail" name="Email" type="email" placeholder="Email Address" required>
+        <input id="input_regEmailConfirm" type="email" placeholder="Confirm Email Address" required>
         <input id="input_newPin" name="Pin" type="password" maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="Pin" required>
         <input id="input_newPinConfirm" type="password" maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="Confirm Pin" required>
         <button id="btn_backToLogin">Back to login</button>
@@ -67,21 +64,7 @@
     <div id="div_registerLikes" class="hide">
         <form name="likes" onsubmit="return false">
             <ul id="likes">
-            <li id="like_animals">
-                <span>Animals</span>
-                <input type="radio" name="animals" value="yes">like
-                <input type="radio" name="animals" value="no">dislike
-            </li>
-            <li id="like_tv">
-                <span>Watch TV</span>
-                <input type="radio" name="tv" value="yes">like
-                <input type="radio" name="tv" value="no">dislike
-            </li>
-            <li id="like_films">
-                <span>Films</span>
-                <input type="radio" name="films" value="yes">like
-                <input type="radio" name="films" value="no">dislike
-            </li>
+
             </ul>
         <input id="btn_backToStep1" type="button" value="Back">
         <input id="btn_regNextStep3" type="button" value="Continue">
@@ -91,15 +74,7 @@
     <div id="div_registerStruggles" class="hide">
         <form name="struggles" onsubmit="return false">
             <ul id="struggles">
-                <li>
-                    <input type="checkbox" name="Eating full meals" value="yes">Eating full meals
-                </li>
-                <li>
-                    <input type="checkbox" name="Crowds" value="yes">Crowds
-                </li>
-                <li>
-                    <input type="checkbox" name="Being in public" value="yes">Being in public
-                </li>
+
             </ul>
         <input id="btn_backToStep2" type="button" value="Back">
         <input id="btn_nextStep4" type="submit" value="Continue">
@@ -110,12 +85,12 @@
         <form name="contacts">
             <div>
                 <p>Would call if you won a lottery?</p>
-                <input name="Friend" id="input_friend" placeholder="Name" disabled>
+                <input name="Friend" id="input_friendName" placeholder="Name" disabled>
                 <input id="btn_friend" type="button" value="Search">
             </div>
             <div>
                 <p>Who would you call if you needed a support?</p>
-                <input name="Support" id="input_support" placeholder="Name" disabled>
+                <input name="Support" id="input_supportName" placeholder="Name" disabled>
                 <input id="btn_support" type="button" value="Search">
             </div>
             <button id="btn_backToFirstStep">Back</button>

@@ -85,6 +85,22 @@ module.exports = [
         "id": "cordova-plugin-whitelist.whitelist",
         "pluginId": "cordova-plugin-whitelist",
         "runs": true
+    },
+    {
+        "file": "plugins/hu.dpal.phonegap.plugins.PinDialog/www/pin.js",
+        "id": "hu.dpal.phonegap.plugins.PinDialog.PinDialog",
+        "pluginId": "hu.dpal.phonegap.plugins.PinDialog",
+        "merges": [
+            "window.plugins.pinDialog"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-datepicker/www/android/DatePicker.js",
+        "id": "cordova-plugin-datepicker.DatePicker",
+        "pluginId": "cordova-plugin-datepicker",
+        "clobbers": [
+            "datePicker"
+        ]
     }
 ];
 module.exports.metadata = 

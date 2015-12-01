@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="window_loginScreen" class="container">
+        <div class="register-pages">
+        <header>
+            <p>Welcome to</p>
+            <h1>lelly</h1>
+        </header>
+        <!--2-->
+        <div id="div_login">
+            <form onsubmit="return false;" name="login">
+                <input id="input_email" class="enter" type="email" maxlength="25" placeholder="email">
+                <input id="input_personalPin" class="enter" type="password" maxlength="4" pattern="[0-9]*" placeholder="pin" inputmode="numeric" required>
+                <input class="red-button" type="submit" value="login"><div class="spinner hide"></div>
+            </form>
+            <p class="small-margin">forgot your password? <a href="#" id="link_forgotPin">tap here</a></p>
+            <p class="or">OR</p>
+            <input id="btn_goToRegister" type="button" class="blue-button" value="register">
+        </div>
+        <!--3-->
+        <div id="div_forgotPin" class="hide">
+            <form name="sendEmail" onsubmit="return false;">
+                <label for="input_recoverEmail">
+                    <span>Enter your email and</span>
+                    <span>we will send you your new pin</span>
+                </label>
+                <input id="input_recoverEmail" class="enter" type="email" placeholder="email" required>
+                <input id="btn_sendPin" type="submit" class="purple-button" value="send">
+            </form>
+            <input id="btn_backToLog" type="button" class="green-button" value="back">
+        </div>
+        <!--4-->
+        <div id="div_sendPin" class="pin-sent hide">
+            <p>Your new pin has been sent</p>
+            <input id="btn_backToLog2" type="button" class="green-button back-sent" value="back">
+        </div>
+        </div>
+    </div>
+    <!--5-->
+    <div id="window_locked" class="container">
+        <div class="the-end-pages">
+        <h1>lelly</h1>
+        <p class="medium-text">Wrong pin (x3)</p>
+        <p class="big-text">App locked</p>
+        <input id="btn_backToLog3" type="button" class="pink-button" value="continue">
+    </div>
+    </div>
+</body>
+</html>
