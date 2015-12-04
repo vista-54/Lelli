@@ -1,6 +1,6 @@
 {
-    "version": "0.1.3",
-    "name": "hu.dpal.phonegap.plugins.pindialog",
+    "version": "0.1.5",
+    "name": "z1key.phonegap.plugins.pindialog",
     "cordova_name": "PinDialog",
     "description": "\n\t\t\tPhoneGap numeric password dialog plugin for Android and iOS. Forked from https://github.com/apache/cordova-plugin-dialogs.git\n\t",
     "license": "MIT",

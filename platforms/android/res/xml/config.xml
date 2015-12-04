@@ -18,6 +18,9 @@
     <feature name="DatePickerPlugin">
         <param name="android-package" value="com.plugin.datepicker.DatePickerPlugin" />
     </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
     <allow-intent href="market:*" />
     <splash density="port-hdpi" src="res/drawable-port-hdpi/screen.png" />
     <splash density="port-ldpi" src="res/drawable-port-ldpi/screen.png" />

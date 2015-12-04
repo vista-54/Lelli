@@ -47,12 +47,44 @@ table {
 .hide {
     display: none;
 }
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+#spinner_login {
+    top: 61%;
+    right: 16%;
+}
+#spinner_regInfo {
+    bottom:4%;
+    left: 75%;
+}
+#spinner_regEmail {
+    bottom:4%;
+    left: 75%;
+}
+.spinner {
+    position: absolute;
+    height: 10vw;
+    width: 10vw;
+    background: url('spinner.gif') no-repeat;
+    background-size: cover;
+}
+
+/*ARSEN CSS FILE*/
+
+.menu .fa, .menu .right p, h1 {
+    text-align: center
+}
+
 #div_forgotPin span, input, li {
     display: block
 }
-html, body {
-    height: 100%;
-    width: 100%;
+
+.details-pages #div_registerLikes, .details-pages #div_registerStruggles {
+    overflow-x: auto
 }
 
 .name-pages p, .register-pages header p, .the-end-pages p, .upper {
@@ -72,15 +104,11 @@ a, a:active, a:visited {
     text-decoration: none
 }
 
-.register-pages {
+.register-pages, html {
     width: 100%;
     height: 100%
 }
-.spinner {
-    width: 60px;
-    height: 60px;
-    background: #fff;
-}
+
 input {
     margin: 0 auto;
     font-size: 6.5vw;
@@ -88,11 +116,10 @@ input {
 }
 
 h1 {
-    font-size: 14.3vh;
+    font-size: 24vw;
     letter-spacing: .05em;
     color: #fff;
-    font-family: Cabin, sans-serif;
-    text-align: center
+    font-family: Cabin, sans-serif
 }
 
 .bold {
@@ -119,32 +146,39 @@ h1 {
     margin: 2.5%
 }
 
-.menu .left .fa {
-    padding: 19%
-}
-
 .menu .right {
     float: right;
     margin: 2.5%
 }
 
-.menu .right .fa {
-    padding: 1.7vh 0 0 37%
+.menu .right p {
+    font-size: 9vh !important;
+    padding-left: 0;
+    font-family: Rokkitt, serif !important
+}
+
+.menu .fa {
+    width: 7.8vh;
+    line-height: 7.8vh
+}
+
+.menu .fa-2x {
+    font-size: 5vh
 }
 
 .star .big-circle i {
     margin: 0;
-    width: 75px;
-    height: 75px;
+    width: 12.1vh;
+    height: 12.1vh;
     text-align: center;
-    line-height: 75px;
+    line-height: 12.1vh;
     vertical-align: middle
 }
 
 .mini-borders form div {
     position: relative;
     width: 81%;
-    margin: 4.1vh auto
+    margin: 0 auto
 }
 
 .mini-borders form div::after, .mini-borders form div::before {
@@ -159,7 +193,7 @@ h1 {
 }
 
 .blue-button, .green-button, .orange-button, .pink-button, .purple-button, .red-button {
-    height: 6.615vh;
+    height: 11vw;
     width: 46.03%;
     text-align: center
 }
@@ -190,9 +224,17 @@ h1 {
     background-color: #f16d54
 }
 
+.red-button:active {
+    background-color: #ce2f11
+}
+
 .blue-button {
     color: #fff;
     background-color: #6a96d3
+}
+
+.blue-button:active {
+    background-color: #3162a6
 }
 
 .purple-button {
@@ -200,14 +242,26 @@ h1 {
     background-color: #8e7ab9
 }
 
+.purple-button:active {
+    background-color: #5b4786
+}
+
 .green-button {
     color: #fff;
     background-color: #39bb99
 }
 
+.green-button:active {
+    background-color: #216d59
+}
+
 .pink-button {
     color: #fff;
     background-color: #ee5567
+}
+
+.pink-button:active {
+    background-color: #c91429
 }
 
 .orange-button {
@@ -219,6 +273,10 @@ h1 {
     -webkit-border-radius: 50%;
     width: 20px;
     height: 20px
+}
+
+.orange-button:active {
+    background-color: #c0870d
 }
 
 .small-circle-red {
@@ -234,17 +292,16 @@ h1 {
 .medium-circle-gray {
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
     background-color: #e5e8ed;
-    margin-top: 1.5vh
+    width: 8vh;
+    height: 8vh
 }
 
 .medium-circle-green {
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    width: 57px;
-    height: 57px;
+    width: 9.2vh;
+    height: 9.2vh;
     background-color: #77cab8
 }
 
@@ -267,19 +324,23 @@ h1 {
 .big-circle {
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    width: 75px;
-    height: 75px;
+    width: 12.1vh;
+    height: 12.1vh;
     background: #f2ba41;
     color: #fff
 }
 
+.big-circle .fa-3x {
+    font-size: 7.5vh
+}
+
 .square {
-    width: 48px;
-    height: 48px;
+    width: 7.8vh;
+    height: 7.8vh;
     background: #64454b;
     color: #fff;
-    -webkit-border-radius: 10px;
-    border-radius: 10px
+    -webkit-border-radius: 20%;
+    border-radius: 20%
 }
 
 .enter, .register-pages {
@@ -287,29 +348,29 @@ h1 {
 }
 
 .register-pages .blue-button, .register-pages .red-button {
-    margin-top: 4vh
+    margin-top: 6%
 }
 
 .register-pages p {
     text-align: center;
-    font-size: 3.25vh
+    font-size: 5.4vw
 }
 
 .register-pages .or {
-    font-size: 5vh;
-    margin: 4vh auto -1vh;
+    font-size: 9vw;
+    margin: 7vw auto -2vw;
     font-family: Chivo, sans-serif;
     color: #3a3d44
 }
 
 .register-pages .small-margin {
-    margin-top: 1vh
+    margin-top: 2%
 }
 
 .enter {
     border-bottom: 2px solid #000;
     color: #000;
-    margin-top: 5.5vh;
+    margin-top: 9.5%;
     width: 59%;
     padding-left: 2%
 }
@@ -320,42 +381,43 @@ h1 {
 
 .register-pages header {
     width: 100%;
-    height: 36.88375vh;
+    height: 36.88375%;
     font-family: Cabin, sans-serif;
     color: #fff;
     text-align: center
 }
 
 .register-pages header p {
-    padding: 6vh 0 1vh;
-    font-size: 5.8vh
+    padding: 10% 0 2%;
+    font-size: 9.8vw
 }
 
 #div_forgotPin {
-    padding-top: 3vh
+    padding-top: 5vw
 }
 
 #div_forgotPin .enter {
-    margin-top: 4.8vh
+    margin-top: 8.4vw
 }
 
 #div_forgotPin form .purple-button {
-    margin: 4vh auto 18vh
+    margin: 6.1vw auto 31vw
 }
 
 #div_forgotPin span {
     margin-left: 7%;
-    font-size: 2.9vh;
+    font-size: 4.9vw;
     font-family: 'Open Sans', sans-serif;
     color: #3a3d44
 }
 
 #div_forgotPin .back-sent {
-    margin-top: 42vh
+    margin-top: 71vw
 }
 
 .the-end-pages h1 {
-    margin: 10vh auto 11vh
+    margin: 0 auto 11vh;
+    padding-top: 10vh;
 }
 
 .the-end-pages p {
@@ -374,18 +436,24 @@ h1 {
 
 .details-pages .blue-header {
     width: 100%;
-    height: 6.775vh;
+    height: 11.775vw;
     background-color: #6a96d3
 }
 
 .details-pages p {
     text-align: left;
-    font-size: 1.25em
+    font-size: 5vw;
+    font-family: 'Open Sans', sans-serif;
+    color: #5e6166
 }
 
 .details-pages .article {
     width: 90%;
-    margin: 3.6vh 5% 4vh
+    margin: 7.1vw 7% 3vw
+}
+
+.details-pages .need-margin {
+    margin-bottom: 4.2vh
 }
 
 .details-pages .green-header, .details-pages .red-header {
@@ -396,17 +464,32 @@ h1 {
 .details-pages .green-header p, .details-pages .red-header p {
     text-transform: uppercase;
     color: #fff;
-    padding-left: 5%;
+    padding-left: 6%;
     font-weight: 700;
-    font-size: 1.7em
+    font-size: 5vh;
+    font-family: 'Roboto Condensed', sans-serif
 }
 
-.details-pages .green-header > p, .details-pages .red-header > p {
-    padding-top: 1.6vh
+.details-pages .green-header > p:first-child, .details-pages .red-header > p:first-child {
+    padding-top: 1.9vh
 }
 
 .details-pages .green-header {
     background-color: #39bb99
+}
+
+.details-pages .green-header p {
+    font-family: Oswald, sans-serif;
+    font-size: 4.6vh;
+    letter-spacing: .05em;
+    font-weight: 400
+}
+
+.details-pages .description-block, .details-pages .description-block2 {
+    font-family: 'Open Sans', sans-serif;
+    color: #5e6166;
+    line-height: 11.1vh;
+    vertical-align: middle
 }
 
 .details-pages .white-block {
@@ -417,51 +500,65 @@ h1 {
     -webkit-user-select: none
 }
 
-.details-pages .pink-button {
-    margin-top: 1.8vh
-}
-
-.details-pages .description-block, .details-pages .description-block2 {
+.details-pages .description-block {
     width: 51%;
-    font-size: 2em;
-    padding: 2.3vh 0 0 5%;
-    float: left
+    font-size: 4.1vh;
+    padding-left: 7%;
+    float: left;
+    height: 11.1vh
 }
 
 .details-pages .button-block {
-    width: 44%;
+    padding-right: 8%;
     float: right
+}
+
+.details-pages .button-block2, .details-pages .description-block2 {
+    float: left;
+    padding-left: 5%;
+    height: 11.1vh
+}
+
+.details-pages .fa-3x {
+    font-size: 8vh
 }
 
 .details-pages .description-block2 {
-    width: 78%;
-    float: right
+    font-size: 4.1vh
 }
 
-.details-pages .button-block2 {
-    width: 12%;
-    float: left;
-    padding-left: 5%
+.details-pages .button-block2 label {
+    line-height: 11.1vh
 }
 
 .details-pages .button-block2 .fa {
-    color: #e5e8ed
+    color: #e5e8ed;
+    line-height: 8vh;
+    vertical-align: middle;
+    width: 8vh;
+    text-align: center
 }
 
 .details-pages .enter {
-    font-size: 1.6em;
-    margin: 4.1vh auto;
-    width: 98%
+    font-size: 6vw;
+    margin: 0 auto 8.5vw;
+    width: 95%;
+    padding-left: 5%
+}
+
+.details-pages .last {
+    margin: 0 auto 5vw
 }
 
 .details-pages .likes {
-    width: 9%;
     display: inline-block;
     color: #cdcdcd
 }
 
 .details-pages .fa {
-    margin-top: 2.4vh
+    height: 11.1vh;
+    line-height: 11.1vh;
+    vertical-align: middle
 }
 
 .details-pages .rotate {
@@ -486,17 +583,35 @@ h1 {
     color: #dc4355
 }
 
-.details-pages .fa-check {
-    margin-top: .6vh
+.feeling-pages p, .name-pages p {
+    color: #fff;
+    font-family: Oswald, sans-serif
 }
 
 .details-pages span {
-    display: block
+    display: inline-block;
+    vertical-align: middle
 }
 
 .details-pages .fa-2x {
-    font-size: 2.4em;
-    padding: .6vh 0 0 10%
+    font-size: 6vh
+}
+
+.details-pages .pink-button {
+    margin-top: 3vw
+}
+
+.details-pages .scroll {
+    width: 100%;
+    height: 57vh
+}
+
+.details-pages #div_registerStruggles .scroll {
+    height: 57vh
+}
+
+.details-pages .second-margin {
+    margin-top: 3vh
 }
 
 .name-pages {
@@ -505,15 +620,16 @@ h1 {
 
 .name-pages .green-block, .name-pages .orange-block {
     width: 100%;
-    height: 38.5vh;
+    height: 68.5vw;
     background-color: #f2ba41;
-    padding-top: 5%
+    padding-top: 2.5vw
 }
 
 .name-pages .green-block {
     background-color: #39bb99;
-    height: 43vh;
-    margin-bottom: 3vh
+    height: 72vw;
+    margin-bottom: 5vw;
+    padding-top: 7vw
 }
 
 .name-pages .enter1, .name-pages .enter2 {
@@ -521,18 +637,18 @@ h1 {
     width: 59%;
     padding-left: 2%;
     background-color: #f2ba41;
-    margin: 5vh auto 2vh
+    margin: 7vw auto 4vw
 }
 
 .name-pages .enter2 {
-    background-color: #39bb99
+    background-color: #39bb99;
+    margin: 4vw auto 4.5vw
 }
 
 .name-pages p {
-    color: #fff;
-    font-size: 1.9em;
-    font-weight: 700;
-    padding-left: 5%
+    font-size: 7.6vw;
+    padding-left: 7%;
+    letter-spacing: .05em
 }
 
 .feeling-pages {
@@ -546,9 +662,9 @@ h1 {
 }
 
 .feeling-pages p {
-    color: #fff;
-    font-size: 1.5em;
-    padding-left: 9%
+    font-size: 3.5vh;
+    padding-left: 9%;
+    letter-spacing: .1em
 }
 
 .feeling-pages .red-block {
@@ -568,7 +684,7 @@ h1 {
 
 .feeling-pages .smiles {
     width: 90%;
-    margin: 3vh auto 0;
+    margin: 3.5vh auto 0;
     height: 16vh
 }
 
@@ -579,7 +695,7 @@ h1 {
 
 .feeling-pages .smiles .smile-one p {
     color: #000;
-    font-size: 1em;
+    font-size: 2.2vh;
     text-align: center;
     margin-top: 1vh;
     padding: 0
@@ -592,21 +708,28 @@ h1 {
 
 .task-pages .green-block, .task-pages .purple-block {
     height: 50vh;
-    background-color: #db7093
+    background-image: url(../img/01.jpg);
+    background-size: cover
+}
+
+.done-today .green-block, .task-pages .green-block {
+    background-image: url(../img/16.jpg)
 }
 
 .task-pages .green-block p, .task-pages .purple-block p {
     color: #fff;
-    font-size: 1.7em;
-    text-align: center
+    font-size: 4.3vh;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: .05em
+}
+
+.congratulations-pages p, .done-today textarea, .select-a-task-pages p {
+    font-family: 'Open Sans', sans-serif
 }
 
 .task-pages .green-block .align, .task-pages .purple-block .align {
     padding-top: 7vh
-}
-
-.task-pages .green-block {
-    background-color: #90ee90
 }
 
 .task-pages .green-block .align {
@@ -618,7 +741,8 @@ h1 {
 }
 
 .done-today .green-block {
-    height: 32vh
+    height: 32vh;
+    background-size: cover
 }
 
 .done-today .menu {
@@ -642,20 +766,37 @@ h1 {
     margin: -1.2vh auto 0;
     height: 37.5vh;
     background-color: #fefefe;
-    font-size: 1.5em;
+    font-size: 3vh;
     padding: 2%;
-    resize: none
+    resize: none;
+    color: #3f444a
+}
+
+.done-today textarea::-webkit-input-placeholder {
+    color: #3f444a
 }
 
 .done-today .icons {
     width: 83%;
-    margin: 0 auto 1vh;
-    padding-left: 6%
+    margin: 0 auto;
+    padding-left: 3.5%
 }
 
 .done-today .icon {
-    float: left;
-    margin: -4vh 4% 2vh 1%
+    margin: -4vh auto 2vh
+}
+
+.done-today .need-margin {
+    display: inline-block;
+    width: 23%
+}
+
+.record .medium-circle-green {
+    background-color: #f06d54
+}
+
+.record .green-block {
+    background-image: url(../img/11.jpg)
 }
 
 .congratulations-pages {
@@ -664,29 +805,40 @@ h1 {
 
 .congratulations-pages p {
     text-align: center;
-    font-size: 1.3em
+    font-size: 3.1vh;
+    color: #3f444a
 }
 
 .congratulations-pages .big-circle {
-    width: 127px;
-    height: 127px;
-    margin: 9vh auto
+    width: 20vh;
+    height: 20vh;
+    margin: 9.3vh auto
 }
 
 .congratulations-pages .big-circle i {
     text-align: center;
     vertical-align: middle;
-    line-height: 127px;
-    width: 127px
+    line-height: 20vh;
+    width: 20vh
+}
+
+.congratulations-pages .big-circle .fa-5x {
+    font-size: 14vh
 }
 
 .congratulations-pages .need-margin {
-    margin: 11vh auto 7vh;
-    font-size: 1.8em
+    margin: 11.8vh auto 7vh;
+    font-size: 4.1vh;
+    color: #000
 }
 
 .congratulations-pages .upper {
-    font-size: 1.9em
+    font-size: 5.1vh;
+    color: #000
+}
+
+.congratulations-pages .right p {
+    color: #fff
 }
 
 .select-a-task-pages .need-margin {
@@ -696,7 +848,7 @@ h1 {
 .select-a-task-pages p {
     text-align: center;
     color: #fff;
-    font-size: 1.7em
+    font-size: 4.1vh
 }
 
 .select-a-task-pages .purple-block, .select-a-task-pages .task-pages .green-block, .task-pages .select-a-task-pages .green-block {
@@ -716,17 +868,21 @@ h1 {
     vertical-align: middle
 }
 
+.select-a-task-pages .task-block .left {
+    text-align: left;
+    padding-left: 10%
+}
+
 .select-a-task-pages .task-block .big-circle {
     display: inline-block;
-    float: right;
-    margin: 2vh 5% 0 0
+    margin-top: 2.2vh
 }
 
 .select-a-task-pages .task-block .big-circle i {
     vertical-align: middle;
-    line-height: 75px;
+    line-height: 12.1vh;
     text-align: center;
-    width: 75px
+    width: 12.1vh
 }
 
 .select-a-task-pages .task2 {
@@ -735,33 +891,4 @@ h1 {
 
 .select-a-task-pages .task3 {
     background-color: #ffdab9
-}
-/**/
-.register-pages header {
-    width: 100%;
-    height: 36.88375%;
-    font-family: Cabin,sans-serif;
-    color: #fff;
-    text-align: center;
-}
-.register-pages header p {
-    font-size: 5.8vh;
-    padding: 0;
-    padding-top: 10%;
-}
-h1 {
-    font-size: 14.3vh;
-}
-.enter {
-    margin-top: 8.6%;
-}
-.blue-button, .green-button, .orange-button, .pink-button, .purple-button, .red-button {
-    height: 6.615vh;
-    min-height: 41px;
-}
-.register-pages .or {
-    margin: 8% auto -1%;
-}
-.register-pages .blue-button, .register-pages .red-button {
-    margin-top: 6%;
 }

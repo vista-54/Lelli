@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>lelly</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <!--[if lt IE 9]>
+    <script src="app/bower_components/html5shiv/dist/html5shiv.js"></script>
+
+    <![endif]-->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bodya.css">
+    <link rel="stylesheet" href="css/style.min.css"/>
+</head>
+<body>
+<div id="window_registerScreen" class="container">
+    <div id="div_registerInfo" class="container details-pages">
+        <div class="blue-header"></div>
+        <div class="article">
+            <p>Please enter the details below!</p>
+        </div>
+        <div class="mini-borders">
+            <form id="form_register" onsubmit="return false;" name="register">
+                <div><input id="input_name" class="enter" placeholder="First Name"></div>
+                <div><input id="input_surname" class="enter" placeholder="Surname"></div>
+                <div><input id="input_birthdate" class="enter" type="text" placeholder="Birth date"></div>
+                <div> <input id="input_location" class="enter" placeholder="City Location"></div>
+                <div><input id="input_regEmail" class="enter" type="email" placeholder="Email Adress" required></div>
+                <div><input id="input_regEmailConfirm" class="enter" type="email" placeholder="Confirm Email Adress" required></div>
+                <div><input id="input_newPin" class="enter" name="pin" type="password" maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="Pin" required></div>
+                <div class="last"><input id="input_newPinConfirm" class="enter last" name="pin" type="password" maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="Confirm Pin" required></div>
+                <input id="btn_regNextStep" type="button" class="pink-button" value="continue">
+            </form>
+        </div>
+    </div>
+<!-- bower:js -->
+<script src="app/bower_components/jquery/dist/jquery.js"></script>
+<!-- endbower -->
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

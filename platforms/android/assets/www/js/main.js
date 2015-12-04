@@ -4,12 +4,6 @@
 
 var $body = $('body');
 var local_email = localStorage['Lelly_login_email'];
-var WINDOW_SWITCH_LOGIN_1_2 = '#div_login, #div_forgotPin';
-var WINDOW_SWITCH_LOGIN_2_3 = '#div_forgotPin, #div_sendPin';
-var WINDOW_SWITCH_REGISTER_1_2 = '#div_registerInfo, #div_registerLikes';
-var WINDOW_SWITCH_REGISTER_2_3 = '#div_registerLikes, #div_registerStruggles';
-var WINDOW_SWITCH_REGISTER_3_4 = '#div_registerStruggles, #div_registerContacts';
-var WINDOW_SWITCH_REGISTER_4_5 = '#div_registerContacts, #div_registerComplete';
 var contacts = {"person_win_name": 'Vasya',
                 "person_win_phone": '0950017346',
                 "person_support_name": 'Petya',
@@ -90,6 +84,9 @@ $body.on("focus", '#input_personalPin, #input_newPin, #input_newPinConfirm', fun
 $body.on("click", '#input_personalPin', function() {
     logPinDialog();
 });
+$body.on('click', '#btn_logOut', function() {
+    request_logged('POST','site','logout','', logOut);
+});
 $body.on('submit', 'form[name="login"]', function() {
     var $input_email = $('#input_email');
     var input_email_placeholder = $input_email.attr('placeholder');
@@ -108,34 +105,16 @@ $body.on('submit', 'form[name="login"]', function() {
         $input_email.val(_email);
     }
     // request to server;
-    var data = {'email': _email,
-                'pin': _pin};
-    var url = URL + '/v1/site/login';
-    $.post(url, data, onAjaxSuccess, onAjaxError);
-    //startLoadingAnimation();
-    console.log(data);
-    function onAjaxSuccess(_result) {
-        //stopLoadingAnimation();
-        console.log(_result);
-        if(_result == true) {
-            localStorage.setItem('Lelly_login_email', _email);
-            alert(data + ' ready to send to server');
-        }
-        else {
-            console.log('Error: ' + _result)
-        }
-    }
-    // Response true CallBack
-    function onAjaxError() {
-        alert("Could't connect to server");
-        return false;
-    }
+    var data = {AppLoginForm:{'email': _email,
+                'pin': _pin}};
+    $('.spinner').css('display','block');
+    request('POST','site','login', data, login);
 });
 $body.on("click", "#link_forgotPin", function() {
     $(WINDOW_SWITCH_LOGIN_1_2).toggleClass('hide');
 });
 $body.on("click", "#btn_goToRegister", function() {
-    $('#container').load('resources.html #window_registerScreen');
+    $('#container').load('resources2.html #window_registerScreen');
 });
 //--------------------------  SCREEN 3  -----------------------
 $body.on("click", "#btn_sendPin", function() {
@@ -145,27 +124,12 @@ $body.on("click", "#btn_sendPin", function() {
     // request to server;
 
     var data = {};
-    data.id = 'forgotPin';
-    data.body = _email;
-    data = JSON.stringify(data);
-    try {
-        $.post(url, data, function (result) {
-            console.log('Success request' + url + data);
-            $(WINDOW_SWITCH_LOGIN_2_3).toggleClass('hide');
-        });
-    }
-    catch (err) {
-        console.log('Error request' + err.name + ' ' + err.message);
-    }
-
-    //Error callback
-    //alert('Whats was wrong');
-
+    data.email = _email;
+    request('type','site','send-new-pin-on-email', data, forgotPin, errorCallBack);
 });
 $body.on("click", "#btn_backToLog", function() {
     $(WINDOW_SWITCH_LOGIN_1_2).toggleClass('hide');
 });
-
 //--------------------------  SCREEN 4 ------------------------
 $body.on("click", "#btn_backToLog2", function() {
     $(WINDOW_SWITCH_LOGIN_2_3).toggleClass('hide');
@@ -202,28 +166,8 @@ $body.on("blur", '#input_regEmail', function() {
     // Request to server to identity email
     var data = {};
     data.email = _input_email;
-    var url = URL + '/v1/site/email-is-used';
-    //data = JSON.stringify(data);
     console.log(data);
-    try {
-        $.post(url, data, function (result) {
-            $('#input_regEmail').before(function (index) {
-                console.log(result);
-                if (result.email_is_used == true) {
-                    return '<p class="alert red">Email is not available</p>'
-                }
-                else {
-                    return '<p class="alert green">Email is available</p>'
-                }
-            });
-        });
-    }
-    catch (err) {
-        console.log('Error:' + err.name + ' ' + err.message);
-        $('#input_regEmail').before(function (index) {
-            return '<p class="alert red">' + err.name + ' '+ err.message +'</p>';
-        });
-    }
+    request('POST','site','email-is-used', data, checkEmail,errorCallBack);
 });
 $body.on("click", "#btn_backToLogin", function() {
     $('#container').load('resources2.html #window_loginScreen', function() {
@@ -255,23 +199,9 @@ $body.on("click", "#btn_regNextStep", function() {
         alert('Please enter the same PIN-Codes');
         return false;
     }
-    var url = URL + '/v1/site/get-likes-struggles-arr';
-    try {
-        $.get(url, function(_result) {
-            $.each(_result.likes, function(index,value) {
-                $('#likes').append('<li><span>' +  value + '</span><input type="radio" name="' + index + '" value="1"><input type="radio" name="' + index + '" value="0"  checked></li>');
-            });
-            $.each(_result.struggles, function(index,value) {
-                $('#struggles').append('<li><span>' + value + '</span><input type="checkbox" name="' + index + '"></li>')
-            })
-        })
-    }
-    catch (err) {
-        console.log('Request Error: '+ err.name + ' ' + err.message);
-    }
+    $('#spinner_regInfo').css('display','block');
+    request('GET','site','get-likes-struggles-arr','', download_likesAndStruggles,errorCallBack);
     //-----------------------------  SCREEN 7 ------------------------
-
-    $(WINDOW_SWITCH_REGISTER_1_2).toggleClass('hide');
 });
 $body.on("click", "#btn_backToStep1", function() {
     $(WINDOW_SWITCH_REGISTER_1_2).toggleClass('hide');
@@ -333,17 +263,23 @@ $body.on('click', '#btn_friend', function() {
     });
 });
 $body.on('click', '#btn_support', function() {
-    navigator.contacts.pickContact(function(contact) {
-        var name = contact.displayName;
-        var phone = contact.phoneNumbers[0].value;
-        phone = phone.replace(/\-|\x20/g,"");
-        contacts.person_support_name = name;
-        contacts.person_support_phone = phone;
-        $('#input_supportName').val(name);
-    }, function(err) {
-        console.log(err);
+    var options      = new ContactFindOptions();
+    options.filter   = $('#input_supportName').val();
+    options.multiple = true;
+    options.desiredFields = [navigator.contacts.fieldType.id];
+    options.hasPhoneNumber = true;
+    var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+    navigator.contacts.find(fields, onSuccess, function(err) {console.log(err)}, options);
+        //var name = contact.displayName;
+        //var phone = contact.phoneNumbers[0].value;
+        //phone = phone.replace(/\-|\x20/g,"");
+        //contacts.person_support_name = name;
+        //contacts.person_support_phone = phone;
+        //$('#input_supportName').val(name);
     });
-});
+function onSuccess(contacts) {
+    alert('Found ' + contacts.length + ' contacts.');
+};
 //-----------------------------  SCREEN 9 ----------------------
 $body.on("click", "#btn_regComplete", function() {
     $('#container').load('resources2.html #window_loginScreen', function() {

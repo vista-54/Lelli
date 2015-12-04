@@ -1,0 +1,824 @@
+@charset "UTF-8";
+.bold, .medium-text {
+    font-weight: 700
+}
+
+.menu .fa, .menu .right p, h1 {
+    text-align: center
+}
+
+#div_forgotPin span, input, li {
+    display: block
+}
+
+.register-pages header p, .the-end-pages p, .upper {
+    text-transform: uppercase
+}
+
+.details-pages #div_registerLikes, .details-pages #div_registerStruggles {
+    overflow-x: auto
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline-style: none
+}
+
+@font-face {
+    font-family: Helvetica LT Std-Roman;
+    src: local("☺"), url(../fonts/HelveticaLTStd-Roman.ttf) format("truetype"), url(../fonts/HelveticaLTStd-Roman.svg) format("svg");
+    font-style: normal
+}
+
+@font-face {
+    font-family: HelveticaLTStd-Cond;
+    src: local("☺"), url(../fonts/HelveticaLTStd-Cond.ttf) format("truetype"), url(../fonts/HelveticaLTStd-Cond.svg) format("svg");
+    font-style: normal
+}
+
+a, a:active, a:visited {
+    color: #6a96d3;
+    font-weight: 700;
+    text-decoration: none
+}
+
+.register-pages, html {
+    width: 100%;
+    height: 100%
+}
+
+input {
+    margin: 0 auto;
+    font-size: 6.5vw;
+    -webkit-appearance: none;
+    font-family: "Helvetica LT Std-Roman", sans-serif
+}
+
+h1 {
+    font-size: 24vw;
+    letter-spacing: .05em;
+    color: #fff;
+    font-family: Cabin, sans-serif
+}
+
+.big-text {
+    font-size: 8.9vw;
+    font-family: HelveticaLTStd-Cond, sans-serif
+}
+
+.medium-text {
+    font-size: 6vw;
+    font-family: "Helvetica LT Std", sans-serif
+}
+
+.menu {
+    height: 12.5vh
+}
+
+.menu .left {
+    float: left;
+    margin: 2.5%
+}
+
+.menu .right {
+    float: right;
+    margin: 2.5%
+}
+
+.menu .right p {
+    font-size: 9vh !important;
+    padding-left: 0;
+    font-family: Rokkitt, serif !important
+}
+
+.menu .fa {
+    width: 7.8vh;
+    line-height: 7.8vh
+}
+
+.menu .fa-2x {
+    font-size: 5vh
+}
+
+.star .big-circle i {
+    margin: 0;
+    width: 12.1vh;
+    height: 12.1vh;
+    text-align: center;
+    line-height: 12.1vh;
+    vertical-align: middle
+}
+
+.mini-borders form div {
+    position: relative;
+    width: 81%;
+    margin: 0 auto
+}
+
+.mini-borders form div::after, .mini-borders form div::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 2px;
+    height: 12px;
+    background: #000
+}
+
+.blue-button, .green-button, .orange-button, .pink-button, .purple-button, .red-button {
+    height: 11vw;
+    width: 46.03%;
+    text-align: center
+}
+
+.mini-borders form div::after {
+    left: auto;
+    right: 0
+}
+
+::-webkit-input-placeholder {
+    color: #000
+}
+
+:-moz-placeholder {
+    color: #000
+}
+
+::-moz-placeholder {
+    color: #000
+}
+
+:-ms-input-placeholder {
+    color: #000
+}
+
+.red-button {
+    color: #fff;
+    background-color: #f16d54
+}
+
+.red-button:active {
+    background-color: #ce2f11
+}
+
+.blue-button {
+    color: #fff;
+    background-color: #6a96d3
+}
+
+.blue-button:active {
+    background-color: #3162a6
+}
+
+.purple-button {
+    color: #fff;
+    background-color: #8e7ab9
+}
+
+.purple-button:active {
+    background-color: #5b4786
+}
+
+.green-button {
+    color: #fff;
+    background-color: #39bb99
+}
+
+.green-button:active {
+    background-color: #216d59
+}
+
+.pink-button {
+    color: #fff;
+    background-color: #ee5567
+}
+
+.pink-button:active {
+    background-color: #c91429
+}
+
+.orange-button {
+    color: #fff;
+    background-color: #f2ba41
+}
+
+.small-circle-green, .small-circle-red {
+    -webkit-border-radius: 50%;
+    width: 20px;
+    height: 20px
+}
+
+.orange-button:active {
+    background-color: #c0870d
+}
+
+.small-circle-red {
+    border-radius: 50%;
+    background-color: red
+}
+
+.small-circle-green {
+    border-radius: 50%;
+    background-color: green
+}
+
+.medium-circle-gray {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #e5e8ed;
+    width: 8vh;
+    height: 8vh
+}
+
+.medium-circle-green {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 9.2vh;
+    height: 9.2vh;
+    background-color: #77cab8
+}
+
+.medium-circle-pink, .medium-circle-red {
+    -webkit-border-radius: 50%;
+    width: 50px;
+    height: 50px
+}
+
+.medium-circle-red {
+    border-radius: 50%;
+    background-color: red
+}
+
+.medium-circle-pink {
+    border-radius: 50%;
+    background-color: pink
+}
+
+.big-circle {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 12.1vh;
+    height: 12.1vh;
+    background: #f2ba41;
+    color: #fff
+}
+
+.big-circle .fa-3x {
+    font-size: 7.5vh
+}
+
+.square {
+    width: 7.8vh;
+    height: 7.8vh;
+    background: #64454b;
+    color: #fff;
+    -webkit-border-radius: 20%;
+    border-radius: 20%
+}
+
+.enter, .register-pages {
+    background-color: #e5e8ed
+}
+
+.register-pages {
+    font-family: 'Helvetica LT Std-Roman', sans-serif;
+    color: #3a3d44
+}
+
+.register-pages .blue-button, .register-pages .red-button {
+    margin-top: 6%
+}
+
+.register-pages p {
+    text-align: center;
+    font-size: 5vw
+}
+
+.register-pages .or {
+    font-size: 9vw;
+    margin: 7% auto -2%;
+    color: #3a3d44
+}
+
+.register-pages .small-margin {
+    margin-top: 2%
+}
+
+.enter {
+    border-bottom: 2px solid #000;
+    color: #000;
+    margin-top: 9.5%;
+    width: 59%;
+    padding-left: 2%
+}
+
+.register-pages header, .the-end-pages {
+    background-color: #bed8cb
+}
+
+.register-pages header {
+    width: 100%;
+    height: 36.88375%;
+    font-family: Cabin, sans-serif;
+    color: #fff;
+    text-align: center
+}
+
+.register-pages header p {
+    padding: 10% 0 2%;
+    font-size: 9.8vw
+}
+
+#div_forgotPin {
+    padding-top: 5%
+}
+
+#div_forgotPin .enter {
+    margin-top: 8.4%
+}
+
+#div_forgotPin form .purple-button {
+    margin: 6.1% auto 31%
+}
+
+#div_forgotPin span {
+    margin-left: 7%;
+    font-size: 5.2vw
+}
+
+#div_forgotPin .back-sent {
+    margin-top: 71%
+}
+
+.the-end-pages h1 {
+    margin: 18% auto 21%
+}
+
+.the-end-pages p {
+    text-align: center;
+    color: #3e4852
+}
+
+.the-end-pages input {
+    margin-top: 68%
+}
+
+.details-pages {
+    background-color: #e5e8ed;
+    font-family: 'Helvetica LT Std-Roman', sans-serif
+}
+
+.details-pages .green-header p, .details-pages .red-header p, .name-pages p {
+    text-transform: uppercase;
+    font-family: HelveticaLTStd-Cond, sans-serif;
+    font-weight: 700
+}
+
+.details-pages .blue-header {
+    width: 100%;
+    height: 11.775vw;
+    background-color: #6a96d3
+}
+
+.details-pages p {
+    text-align: left;
+    font-size: 5vw;
+    color: #5e6166
+}
+
+.details-pages .article {
+    width: 90%;
+    margin: 7% 8%
+}
+
+.details-pages .need-margin {
+    margin-bottom: 4.2vh
+}
+
+.details-pages .green-header, .details-pages .red-header {
+    height: 17vh;
+    background-color: #dc4355
+}
+
+.details-pages .green-header p, .details-pages .red-header p {
+    color: #fff;
+    padding-left: 8%;
+    font-size: 5vh
+}
+
+.details-pages .description-block, .details-pages .description-block2 {
+    color: #5e6166;
+    line-height: 11.1vh;
+    height: 11.1vh;
+    vertical-align: middle
+}
+
+.details-pages .green-header > p:first-child, .details-pages .red-header > p:first-child {
+    padding-top: 1.9vh
+}
+
+.details-pages .green-header {
+    background-color: #39bb99
+}
+
+.details-pages .white-block {
+    background-color: #fff;
+    width: 100%;
+    height: 11.1vh;
+    border-bottom: 2px solid #d0d0d0;
+    -webkit-user-select: none
+}
+
+.details-pages .description-block {
+    width: 51%;
+    font-size: 4.1vh;
+    padding-left: 7%;
+    float: left
+}
+
+.details-pages .button-block {
+    padding-right: 8%;
+    float: right
+}
+
+.details-pages .fa-3x {
+    font-size: 8vh
+}
+
+.details-pages .description-block2 {
+    font-size: 4.1vh;
+    padding-left: 5%;
+    float: left
+}
+
+.details-pages .button-block2 {
+    float: left;
+    height: 11.1vh;
+    padding-left: 9.5%
+}
+
+.details-pages .button-block2 label {
+    line-height: 11.1vh
+}
+
+.details-pages .button-block2 .fa {
+    color: #e5e8ed;
+    line-height: 8vh;
+    vertical-align: middle;
+    width: 8vh;
+    text-align: center
+}
+
+.details-pages .enter {
+    font-size: 6vw;
+    margin: 0 auto 10.3%;
+    width: 95%;
+    padding-left: 5%
+}
+
+.details-pages .last {
+    margin: 0 auto 5vw
+}
+
+.details-pages .likes {
+    display: inline-block;
+    color: #cdcdcd
+}
+
+.details-pages .fa {
+    height: 11.1vh;
+    line-height: 11.1vh;
+    vertical-align: middle
+}
+
+.details-pages .rotate {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+.details-pages input[type=radio] + label i {
+    color: #cdcdcd
+}
+
+.details-pages input[type=radio]:checked + label i {
+    color: #dc4355
+}
+
+.details-pages input[type=checkbox] + label i {
+    color: #cdcdcd
+}
+
+.details-pages input[type=checkbox]:checked + label i {
+    color: #dc4355
+}
+
+.details-pages span {
+    display: inline-block;
+    vertical-align: middle
+}
+
+.details-pages .fa-2x {
+    font-size: 6vh
+}
+
+.details-pages .pink-button {
+    margin-top: 3%
+}
+
+.details-pages .scroll {
+    width: 100%;
+    height: 57vh
+}
+
+.details-pages #div_registerStruggles .scroll {
+    height: 57vh
+}
+
+.details-pages .second-margin {
+    margin-top: 3vh
+}
+
+.name-pages {
+    background-color: #e5e8ed
+}
+
+.name-pages .green-block, .name-pages .orange-block {
+    width: 100%;
+    height: 67.5vw;
+    background-color: #f2ba41;
+    padding-top: 4%
+}
+
+.name-pages .green-block {
+    background-color: #39bb99;
+    height: 71vw;
+    margin-bottom: 5vw;
+    padding-top: 7vw
+}
+
+.name-pages .enter1, .name-pages .enter2 {
+    border-bottom: 2px solid #000;
+    width: 59%;
+    padding-left: 2%;
+    background-color: #f2ba41;
+    margin: 7vw auto 4vw
+}
+
+.name-pages .enter2 {
+    background-color: #39bb99;
+    margin: 5vw auto 4.5vw
+}
+
+.name-pages p {
+    color: #fff;
+    font-size: 8.6vw;
+    padding-left: 8%
+}
+
+.feeling-pages {
+    background-color: #e5e8ed
+}
+
+.feeling-pages .big-circle {
+    position: relative;
+    float: right;
+    margin: 5vh 4% 0 0
+}
+
+.feeling-pages p {
+    color: #fff;
+    font-size: 3.5vh;
+    padding-left: 9%;
+    font-family: Oswald, sans-serif;
+    letter-spacing: .1em
+}
+
+.feeling-pages .red-block {
+    height: 24.35vh;
+    background-color: #ee5567
+}
+
+.feeling-pages .blue-block {
+    height: 16.13vh;
+    background-color: #5c97b5;
+    font-size: 1.2em
+}
+
+.feeling-pages .blue-block .bold {
+    padding-top: 3vh
+}
+
+.feeling-pages .smiles {
+    width: 90%;
+    margin: 3.5vh auto 0;
+    height: 16vh
+}
+
+.feeling-pages .smiles .smile-one {
+    width: 33.3%;
+    float: left
+}
+
+.feeling-pages .smiles .smile-one p {
+    color: #000;
+    font-size: 2.2vh;
+    text-align: center;
+    margin-top: 1vh;
+    padding: 0
+}
+
+.feeling-pages .smiles .smile-one .fa {
+    display: block;
+    text-align: center
+}
+
+.task-pages .green-block, .task-pages .purple-block {
+    height: 50vh;
+    background-image: url(../img/01.jpg);
+    background-size: cover
+}
+
+.done-today .green-block, .task-pages .green-block {
+    background-image: url(../img/16.jpg)
+}
+
+.task-pages .green-block p, .task-pages .purple-block p {
+    color: #fff;
+    font-size: 4.3vh;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: .05em
+}
+
+.congratulations-pages p, .done-today textarea, .select-a-task-pages p {
+    font-family: 'Open Sans', sans-serif
+}
+
+.task-pages .green-block .align, .task-pages .purple-block .align {
+    padding-top: 7vh
+}
+
+.task-pages .green-block .align {
+    padding-top: 20vh
+}
+
+.done-today {
+    background-color: #e5e8ed
+}
+
+.done-today .green-block {
+    height: 32vh;
+    background-size: cover
+}
+
+.done-today .menu {
+    height: 11vh
+}
+
+.done-today .big-circle {
+    margin: 15px auto 0
+}
+
+.done-today .enter {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    margin-top: 4.5vh
+}
+
+.done-today textarea {
+    display: block;
+    width: 78%;
+    margin: -1.2vh auto 0;
+    height: 37.5vh;
+    background-color: #fefefe;
+    font-size: 3vh;
+    padding: 2%;
+    resize: none;
+    color: #3f444a
+}
+
+.done-today textarea::-webkit-input-placeholder {
+    color: #3f444a
+}
+
+.done-today .icons {
+    width: 83%;
+    margin: 0 auto;
+    padding-left: 3.5%
+}
+
+.done-today .icon {
+    margin: -4vh auto 2vh
+}
+
+.done-today .need-margin {
+    display: inline-block;
+    width: 23%
+}
+
+.record .medium-circle-green {
+    background-color: #f06d54
+}
+
+.record .green-block {
+    background-image: url(../img/11.jpg)
+}
+
+.congratulations-pages {
+    background-color: #bed8cb
+}
+
+.congratulations-pages p {
+    text-align: center;
+    font-size: 3.1vh;
+    color: #3f444a
+}
+
+.congratulations-pages .big-circle {
+    width: 20vh;
+    height: 20vh;
+    margin: 9.3vh auto
+}
+
+.congratulations-pages .big-circle i {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20vh;
+    width: 20vh
+}
+
+.congratulations-pages .big-circle .fa-5x {
+    font-size: 14vh
+}
+
+.congratulations-pages .need-margin {
+    margin: 11.8vh auto 7vh;
+    font-size: 4.1vh;
+    color: #000
+}
+
+.congratulations-pages .upper {
+    font-size: 5.1vh;
+    color: #000
+}
+
+.congratulations-pages .right p {
+    color: #fff
+}
+
+.select-a-task-pages .need-margin {
+    margin: 7vh auto 3vh
+}
+
+.select-a-task-pages p {
+    text-align: center;
+    color: #fff;
+    font-size: 4.1vh
+}
+
+.select-a-task-pages .purple-block, .select-a-task-pages .task-pages .green-block, .task-pages .select-a-task-pages .green-block {
+    height: 50.5vh;
+    background-color: purple
+}
+
+.select-a-task-pages .task-block {
+    height: 16.5vh;
+    background-color: #db7093
+}
+
+.select-a-task-pages .task-block p {
+    width: 65%;
+    float: left;
+    line-height: 16.5vh;
+    vertical-align: middle
+}
+
+.select-a-task-pages .task-block .left {
+    text-align: left;
+    padding-left: 10%
+}
+
+.select-a-task-pages .task-block .big-circle {
+    display: inline-block;
+    margin-top: 2.2vh
+}
+
+.select-a-task-pages .task-block .big-circle i {
+    vertical-align: middle;
+    line-height: 12.1vh;
+    text-align: center;
+    width: 12.1vh
+}
+
+.select-a-task-pages .task2 {
+    background-color: plum
+}
+
+.select-a-task-pages .task3 {
+    background-color: #ffdab9
+}
