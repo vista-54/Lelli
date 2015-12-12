@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="window_loginScreen" class="container">
+    <div class="register-pages">
+        <header>
+            <p>Welcome to</p>
+            <h1>lelly</h1>
+        </header>
+        <!--2-->
+        <div id="div_login">
+            <div id="spinner_login" class="spinner"></div>
+            <form onsubmit="return false;" name="login">
+                <input id="input_email" class="enter" type="email" maxlength="25" placeholder="email">
+                <input id="input_personalPin" class="enter" type="password" maxlength="4" pattern="[0-9]*" placeholder="pin" inputmode="numeric" required>
+                <input class="red-button" type="submit" value="login">
+            </form>
+            <p class="small-margin">forgot your password? <a href="#" id="link_forgotPin">tap here</a></p>
+            <p class="or">OR</p>
+            <input id="btn_goToRegister" type="button" class="blue-button" value="register">
+            <input id="btn_logOut" type="button" class="blue-button" value="Log Out">
+        </div>
+        <!--3-->
+        <div id="div_forgotPin" class="hide">
+            <form name="sendEmail" onsubmit="return false;">
+                <label for="input_recoverEmail">
+                    <span>Enter your email and</span>
+                    <span>we will send you your new pin</span>
+                </label>
+                <input id="input_recoverEmail" class="enter" type="email" placeholder="email" required>
+                <input id="btn_sendPin" type="submit" class="purple-button" value="send">
+            </form>
+            <input id="btn_backToLog" type="button" class="green-button" value="back">
+        </div>
+        <!--4-->
+        <div id="div_sendPin" class="pin-sent hide">
+            <p>Your new pin has been sent</p>
+            <input id="btn_backToLog2" type="button" class="green-button back-sent" value="back">
+        </div>
+    </div>
+</div>
+<!--5-->
+<div id="window_locked" class="container">
+    <div class="the-end-pages">
+        <h1>lelly</h1>
+        <p class="medium-text">Wrong pin (x3)</p>
+        <p class="big-text">App locked</p>
+        <input id="btn_backToLog3" type="button" class="pink-button" value="continue">
+    </div>
+</div>
+<!--6-->
+<div id="window_registerScreen" class="container">
+    <div id="div_registerInfo" class="container details-pages">
+        <div class="blue-header"></div>
+        <div class="article">
+            <p>Please enter the details below!</p>
+        </div>
+        <div class="mini-borders">
+            <form id="form_register" onsubmit="return false;" name="register">
+                <div><input id="input_name" class="enter" placeholder="First Name"></div>
+                <div><input id="input_surname" class="enter" placeholder="Surname"></div>
+                <div><input id="input_birthdate" class="enter" type="text" placeholder="Birth date"></div>
+                <div> <input id="input_location" class="enter" placeholder="City Location"></div>
+                <div><input id="input_regEmail" class="enter" type="email" placeholder="Email Adress" required></div>
+                <div><input id="input_regEmailConfirm" class="enter" type="email" placeholder="Confirm Email Adress" required></div>
+                <div><input id="input_newPin" class="enter" name="pin" type="password" maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="Pin" required></div>
+                <div class="last"><input id="input_newPinConfirm" class="enter last" name="pin" type="password" maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="Confirm Pin" required></div>
+                <input id="btn_regNextStep" type="button" class="pink-button" value="continue">
+            </form>
+            <div id="spinner_regInfo" class="spinner"></div>
+        </div>
+    </div>
+    <!--7-->
+    <div id="div_registerLikes" class="container details-pages hide">
+        <div class="red-header">
+            <p>Your likes</p>
+            <p>And dislikes</p>
+        </div>
+        <div class="article need-margin">
+            <p>Tap the like or dislike icon on</p>
+            <p>provided subjects</p>
+        </div>
+        <div>
+            <form name="likes">
+                <ul id="likes">
+                    <!--'<li id="like_animals"><div class="white-block"><div class="description-block">' + value + '</div><div class="button-block"><input class="likes" id="radio_animal_1" type="radio" name="'+ index + '"><label for="radio_animal_1"><i class="fa fa-thumbs-down fa-3x"></i></label><input class="likes" id="radio_animal_0" type="radio" name="' + index + '"><label for="radio_animal_0"><i class="fa rotate fa-thumbs-down fa-3x"></i></label></div></div></li>'-->
+                </ul>
+            </form>
+        </div>
+        <input id="btn_regNextStep3" type="button" class="pink-button" value="continue">
+    </div>
+    <!--8-->
+    <div id="div_registerStruggles" class="container details-pages hide">
+        <div class="green-header">
+            <p>Your</p>
+            <p>Struggles</p>
+        </div>
+        <div class="article">
+            <p>Tap the struggles you are</p>
+            <p>experiencing</p>
+        </div>
+        <div>
+            <form name="struggles">
+                <ul id="struggles">
+                    <!--<li><div class="white-block"><div class="button-block2"><input id="chk_1" type="checkbox"><label for="chk_1"><span class="medium-circle-gray"><i class="fa fa-check fa-2x"></i></span></label></div><div class="description-block2">Eating full meals</div></div></li>-->
+                </ul>
+            </form>
+        </div>
+        <input id="btn_nextStep4" type="button" class="pink-button" value="continue">
+    </div>
+    <div id="div_registerContacts" class="container name-pages hide">
+        <form name="contacts">
+            <div class="orange-block">
+                <p>First person you</p>
+                <p>Would call if you</p>
+                <p>Won a lottery?</p>
+                <input id="input_friendName" class="enter1" placeholder="Name">
+                <input id="btn_friend" type="button" class="green-button" value="search">
+            </div>
+            <div class="green-block">
+                <p>Who would you</p>
+                <p>Call if you</p>
+                <p>Needed support?</p>
+                <input id="input_supportName" class="enter2" placeholder="Name">
+                <input id="btn_support" class="orange-button" type="button" value="search">
+            </div>
+            <input id="btn_regFinish" type="button" class="pink-button" value="continue">
+        </form>
+    </div>
+    <div id="div_registerComplete" class=" container the-end-pages hide">
+        <h1>lelly</h1>
+        <p class="medium-text">Registration</p>
+        <p class="big-text">Complete</p>
+        <input id="btn_regComplete" type="button" class="pink-button" value="continue">
+    </div>
+</div>
+</body>
+</html>

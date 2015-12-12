@@ -1,14 +1,66 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.app.lelly" version="0.0.2"
+        xmlns="http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <preference name="phonegap-version" value="3.7.0"/>
+    <preference name="loglevel" value="DEBUG" />
+    <platform name="android">
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        <uses-permission android:name="android.permission.READ_CONTACTS" />
+        <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    </config-file>
+    <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="Contacts">
+            <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
+        </feature>
+        <feature name="SplashScreen">
+            <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+            <param name="onload" value="true" />
+        </feature>
+        <feature name="Whitelist">
+            <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+            <param name="onload" value="true" />
+        </feature>
+        <feature name="PinDialog">
+            <param name="android-package" value="z1key.phonegap.plugins.PinDialog" />
+        </feature>
+        <feature name="DatePickerPlugin">
+            <param name="android-package" value="com.plugin.datepicker.DatePickerPlugin" />
+        </feature>
+        <feature name="NetworkStatus">
+            <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+        </feature>
+        <preference name="SplashScreen" value="screen" />
+        <preference name="SplashScreenDelay" value="3000" />
+        <preference name="SplashMaintainAspectRatio" value="true" />
+        <preference name="Orientation" value="portrait" />
+    </config-file>
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <plugin name="me.dusty.contacts" spec="0.2.12" source="pgb" />
+    <plugin name="z1key.phonegap.plugins.pindialog" source="npm"/>
+    <plugin name="cordova-plugin-datepicker" source="npm" />
+    <plugin name="org.apache.cordova.network-information" spec="0.2.12" source="pgb" />
+    <plugin name="org.apache.cordova.splashscreen" spec="0.2.7" source="pgb" />
+    <plugin name="com.synconset.imagepicker" spec="1.0.4" source="pgb" />
+    <allow-intent href="market:*" />
     <name>Lelly</name>
     <description>
-        [Description]
+        Lelly
     </description>
     <author email="apes@at.work" href="http://www.apes-at-work.com/">
         Apes At Work
     </author>
     <content src="index.html" />
-    <gap:plugin name="cordova-plugin-splashscreen"/>
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -16,20 +68,4 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <platform name="android">
-        <allow-intent href="market:*" />
-        <splash src="/android_asset/www/res/LellyApp_SplashPage.jpg" density="port-hdpi"/>
-        <splash src="/android_asset/www/res/LellyApp_SplashPage.jpg" density="port-ldpi"/>
-        <splash src="/android_asset/www/res/LellyApp_SplashPage.jpg" density="port-mdpi"/>
-        <splash src="/android_asset/www/res/LellyApp_SplashPage.jpg" density="port-xhdpi"/>
-        <preference name="SplashScreen" value="/android_asset/www/res/LellyApp_SplashPage.jpg'" />
-        <preference name="SplashScreenDelay" value="3000" />
-        <preference name="SplashMaintainAspectRatio" value="true" />
-        <preference name="Orientation" value="portrait" />
-        <preference name="phonegap-version" value="3.6.3"/>
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
 </widget>

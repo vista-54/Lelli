@@ -10,21 +10,39 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Chivo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
     <script src="cordova.js"></script>
     <script src="js/jq/jquery-2.1.4.min.js"></script>
-    <script src="js/ajax.js"></script>
     <script src="js/const.js"></script>
     <script>
         $(document).ready(function() {
         document.addEventListener("deviceready", onDeviceReady, false);
         });
-        function onDeviceReady() {
-        }
     </script>
 </head>
 <body>
 <div id="container" class="container">
 </div>
+<!--31-->
+<div id="window_pin" class="container register-complete pin hide">
+    <div class="logo">
+        <div class="medium-square">lelly</div>
+    </div>
+    <div class="circles2">
+        <div class="small-circle-pink"></div>
+        <div class="small-circle-red"></div>
+        <div class="small-circle-orange"></div>
+        <div class="small-circle-green"></div>
+        <div class="small-circle-blue"></div>
+        <div class="small-circle-purple"></div>
+    </div>
+    <span>Please enter your pin</span>
+    <input id="input_lockScreen" class="enter" type="password" maxlength="4" pattern="*[0-9]" placeholder="PIN" required>
+    <input id="btn_lockScreen" type="button" class="pink-button" value="continue">
+</div>
+<script src="js/functions.js"></script>
 <script src="js/main.js"></script>
+<script src="js/ajax.js"></script>
 </body>
 </html>

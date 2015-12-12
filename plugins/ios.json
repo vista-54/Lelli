@@ -1,0 +1,39 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.ionic.keyboard": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "com.synconset.imagepicker": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-datepicker": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "z1key.phonegap.plugins.PinDialog": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "org.apache.cordova.camera": {
+            "PACKAGE_NAME": "com.app.lelly"
+        }
+    },
+    "dependent_plugins": {}
+}

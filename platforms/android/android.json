@@ -31,6 +31,22 @@
                         {
                             "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"PinDialog\"><param name=\"android-package\" value=\"z1key.phonegap.plugins.PinDialog\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ImagePicker\"><param name=\"android-package\" value=\"com.synconset.ImagePicker\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -52,6 +68,22 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<activity android:label=\"@string/multi_app_name\" android:name=\"com.synconset.MultiImageChooserActivity\" android:theme=\"@android:style/Theme.Holo.Light\"></activity>",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 1
                         }
                     ]
@@ -77,6 +109,18 @@
         },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "z1key.phonegap.plugins.PinDialog": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "com.ionic.keyboard": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "com.synconset.imagepicker": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "org.apache.cordova.camera": {
+            "PACKAGE_NAME": "com.app.lelly"
         }
     },
     "dependent_plugins": {},
@@ -198,6 +242,62 @@
             "pluginId": "cordova-plugin-network-information",
             "clobbers": [
                 "Connection"
+            ]
+        },
+        {
+            "file": "plugins/z1key.phonegap.plugins.PinDialog/www/pin.js",
+            "id": "z1key.phonegap.plugins.PinDialog.PinDialog",
+            "pluginId": "z1key.phonegap.plugins.PinDialog",
+            "merges": [
+                "window.plugins.pinDialog"
+            ]
+        },
+        {
+            "file": "plugins/com.ionic.keyboard/www/keyboard.js",
+            "id": "com.ionic.keyboard.keyboard",
+            "pluginId": "com.ionic.keyboard",
+            "clobbers": [
+                "cordova.plugins.Keyboard"
+            ]
+        },
+        {
+            "file": "plugins/com.synconset.imagepicker/www/imagepicker.js",
+            "id": "com.synconset.imagepicker.ImagePicker",
+            "pluginId": "com.synconset.imagepicker",
+            "clobbers": [
+                "plugins.imagePicker"
+            ]
+        },
+        {
+            "file": "plugins/org.apache.cordova.camera/www/CameraConstants.js",
+            "id": "org.apache.cordova.camera.Camera",
+            "pluginId": "org.apache.cordova.camera",
+            "clobbers": [
+                "Camera"
+            ]
+        },
+        {
+            "file": "plugins/org.apache.cordova.camera/www/CameraPopoverOptions.js",
+            "id": "org.apache.cordova.camera.CameraPopoverOptions",
+            "pluginId": "org.apache.cordova.camera",
+            "clobbers": [
+                "CameraPopoverOptions"
+            ]
+        },
+        {
+            "file": "plugins/org.apache.cordova.camera/www/Camera.js",
+            "id": "org.apache.cordova.camera.camera",
+            "pluginId": "org.apache.cordova.camera",
+            "clobbers": [
+                "navigator.camera"
+            ]
+        },
+        {
+            "file": "plugins/org.apache.cordova.camera/www/CameraPopoverHandle.js",
+            "id": "org.apache.cordova.camera.CameraPopoverHandle",
+            "pluginId": "org.apache.cordova.camera",
+            "clobbers": [
+                "CameraPopoverHandle"
             ]
         }
     ]

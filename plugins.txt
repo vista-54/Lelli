@@ -1,0 +1,1 @@
+<plugin name="com.synconset.imagepicker" spec="1.0.4" source="pgb" />

@@ -1,0 +1,7 @@
+{
+    "AddressBook.framework": 1,
+    "AddressBookUI.framework": 1,
+    "SystemConfiguration.framework": 1,
+    "ImageIO.framework": 2,
+    "CoreLocation.framework": 2
+}

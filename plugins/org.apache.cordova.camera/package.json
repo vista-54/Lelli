@@ -1,0 +1,21 @@
+{
+    "version": "0.2.3",
+    "name": "org.apache.cordova.camera",
+    "cordova_name": "Camera",
+    "description": "Cordova Camera Plugin",
+    "license": "Apache 2.0",
+    "keywords": [
+        "cordova",
+        "camera"
+    ],
+    "platforms": [
+        "android",
+        "ios",
+        "blackberry10",
+        "wp7",
+        "wp8",
+        "windows8",
+        "firefoxos"
+    ],
+    "engines": []
+}

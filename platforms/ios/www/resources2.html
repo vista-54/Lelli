@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="window_loginScreen" class="container">
+        <!--2-->
+        <div id="div_login" class="register-pages">
+            <header>
+                <p>Welcome to</p>
+                <h1>lelly</h1>
+            </header>
+            <form onsubmit="return false;" name="login">
+                <input id="input_email" class="enter" type="email" maxlength="25" placeholder="email">
+                <input id="input_personalPin" class="enter" type="password" maxlength="4" pattern="[0-9]*" placeholder="pin" inputmode="numeric" required>
+                <div class="spinner-box">
+                    <input class="red-button" type="submit" value="login">
+                    <div class="spinner"></div>
+                </div>
+            </form>
+            <p class="small-margin">forgot your password? <a href="#" id="link_forgotPin">tap here</a></p>
+            <p class="or">OR</p>
+            <input id="btn_goToRegister" type="button" class="blue-button" value="register">
+            <input id="btn_logOut" type="button" class="blue-button" value="log out">
+        </div>
+        <!--3-->
+        <div id="div_forgotPin" class="register-pages hide">
+            <header>
+                <p>Welcome to</p>
+                <h1>lelly</h1>
+            </header>
+            <form name="sendEmail" onsubmit="return false;">
+                <label for="input_recoverEmail">
+                    <span>Enter your email and</span>
+                    <span>we will send you your new pin</span>
+                </label>
+                <input id="input_recoverEmail" class="enter" type="email" placeholder="email" required>
+                <input id="btn_sendPin" type="submit" class="purple-button" value="send">
+            </form>
+            <input id="btn_backToLog" type="button" class="green-button" value="back">
+        </div>
+        <!--4-->
+        <div id="div_sendPin" class="pin-sent register-pages hide">
+            <header>
+                <p>Welcome to</p>
+                <h1>lelly</h1>
+            </header>
+            <span>Your new pin has been sent</span>
+            <input id="btn_backToLog2" type="button" class="green-button back-sent" value="back">
+        </div>
+    </div>
+</div>
+    <!--5-->
+<div id="window_locked" class="container the-end-pages">
+    <h1>lelly</h1>
+    <p class="medium-text">Wrong pin (x3)</p>
+    <p class="big-text">App locked</p>
+    <input id="btn_backToLog3" type="button" class="pink-button" value="continue">
+</div>
+    <!--6-->
+<div id="window_registerScreen" class="container">
+    <div id="div_registerInfo" class="container details-pages">
+        <div class="blue-header"></div>
+        <div class="article">
+            <p>Please enter the details below!</p>
+        </div>
+        <div class="mini-borders">
+            <form id="form_register" onsubmit="return false;" name="register">
+                <div><input id="input_name" class="enter" placeholder="First Name"></div>
+                <div><input id="input_surname" class="enter" placeholder="Surname"></div>
+                <div><input id="input_birthdate" class="enter" type="text" placeholder="Birth date"></div>
+                <div> <input id="input_location" class="enter" placeholder="City Location"></div>
+                <div><input id="input_regEmail" class="enter" type="email" placeholder="Email Adress" required></div>
+                <div><input id="input_regEmailConfirm" class="enter" type="email" placeholder="Confirm Email Adress" required></div>
+                <div><input id="input_newPin" class="enter" name="pin" type="password" maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="Pin" required></div>
+                <div class="last"><input id="input_newPinConfirm" class="enter last" name="pin" type="password" maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="Confirm Pin" required></div>
+                <input id="btn_regNextStep" type="button" class="pink-button" value="continue">
+            </form>
+        </div>
+    </div>
+    <!--7-->
+    <div id="div_registerLikes" class="container details-pages hide">
+        <div class="red-header">
+            <p>Your likes</p>
+            <p>And dislikes</p>
+        </div>
+        <div class="article need-margin">
+            <p>Tap the like or dislike icon on</p>
+            <p>provided subjects</p>
+        </div>
+        <div class="likes-box">
+            <div class="scroll">
+                <form name="likes">
+                    <ul id="likes">
+
+                    </ul>
+                </form>
+            </div>
+        </div>
+        <input id="btn_regNextStep3" type="button" class="pink-button" value="continue">
+    </div>
+    <!--8-->
+    <div id="div_registerStruggles" class="container details-pages hide">
+        <div class="green-header">
+            <p>Your</p>
+
+            <p>Struggles</p>
+        </div>
+        <div class="article my-margin">
+            <p>Tap on the struggles you are</p>
+
+            <p>experiencing</p>
+        </div>
+        <div class="likes-box">
+            <div class="scroll">
+                <form name="struggles">
+                    <ul id="struggles">
+
+                    </ul>
+                </form>
+            </div>
+        </div>
+        <input id="btn_nextStep4" type="button" class="pink-button" value="continue">
+    </div>
+    <!--9-->
+    <div id="div_registerContacts" class="container name-pages hide">
+        <form name="contacts">
+            <div class="orange-block">
+                <p>First person you</p>
+                <p>Would call if you</p>
+                <p>Won a lottery?</p>
+                <input id="input_friendName" class="enter1" placeholder="Name">
+                <input id="btn_friend" type="button" class="green-button" value="search">
+            </div>
+            <div class="green-block">
+                <p>Who would you</p>
+                <p>Call if you</p>
+                <p>Needed support?</p>
+                <input id="input_supportName" class="enter2" placeholder="Name">
+                <input id="btn_support" class="orange-button" type="button" value="search">
+            </div>
+            <input id="btn_regFinish" type="button" class="pink-button" value="continue">
+        </form>
+    </div>
+    <!--10-->
+    <div id="div_registerComplete" class=" container the-end-pages hide">
+        <h1>lelly</h1>
+        <p class="medium-text">Registration</p>
+        <p class="big-text">Complete</p>
+        <input id="btn_regComplete" type="button" class="pink-button" value="continue">
+    </div>
+</div>
+    <!--11-->
+<div id="window_moodScreen" class="container">
+    <div class="feeling-pages star">
+        <div class="red-block">
+            <div class="menu">
+                <div class="btn_menu square left">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <div class="btn_emergency square right">
+                    <i class="fa fa-exclamation fa-2x"></i>
+                </div>
+            </div>
+            <div class="big-circle">
+                <i class="fa fa-star fa-3x"></i>
+            </div>
+            <p class="upper">Today is</p>
+            <p class="bold"><span id="day_is">Monday</span><span id="date_is"> 10th </span><span id="month_is"> Nov</span></p>
+        </div>
+        <div class="blue-block">
+            <p class="bold">Hi <span id="user_name_is">Molly</span>!</p>
+            <p>How are you feeling?</p>
+        </div>
+        <div class="smiles">
+            <div class="smile-one" mood="unsure">
+                <div class="smile-type">
+                    <img src="img/unsure.png" alt="smile">
+                </div>
+                <p class="description-smile">Unsure</p>
+            </div>
+            <div class="smile-one" mood="meh">
+                <div class="smile-type">
+                    <img src="img/meh.png" alt="smile">
+                </div>
+                <p class="description-smile">Meh</p>
+            </div>
+            <div class="smile-one" mood="horror">
+                <div class="smile-type">
+                    <img src="img/horror.png" alt="smile">
+                </div>
+                <p class="description-smile">Horror</p>
+            </div>
+        </div>
+        <div class="smiles">
+            <div class="smile-one" mood="happy">
+                <div class="smile-type">
+                    <img src="img/happy.png" alt="smile">
+                </div>
+                <p class="description-smile">Happy</p>
+            </div>
+            <div class="smile-one" mood="awesome">
+                <div class="smile-type">
+                    <img src="img/awesome.png" alt="smile">
+                </div>
+                <p class="description-smile">Awesome</p>
+            </div>
+            <div class="smile-one" mood="omg">
+                <div class="smile-type">
+                    <img src="img/omg.png" alt="smile">
+                </div>
+                <p class="description-smile">OMG!</p>
+            </div>
+        </div>
+        <div class="smiles need-margin">
+            <div class="smile-one" mood="sad">
+                <div class="smile-type">
+                    <img src="img/sad.png" alt="smile">
+                </div>
+                <p class="description-smile">Sad</p>
+            </div>
+            <div class="smile-one" mood="angry">
+                <div class="smile-type">
+                    <img src="img/angry.png" alt="smile">
+                </div>
+                <p class="description-smile">Angry</p>
+            </div>
+            <div class="smile-one" mood="crying">
+                <div class="smile-type">
+                    <img src="img/crying.png" alt="smile">
+                </div>
+                <p class="description-smile">Crying</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <!--Positive Mood Block-->
+<div id="window_moodPositive" class="container">
+    <!--12-->
+    <div id="div_taskActivityScreen" class="task-pages">
+            <div  id="btn_selectTask" class="purple-block">
+                <div class="menu">
+                    <div class="btn_menu square left">
+                        <i class="fa fa-bars fa-2x"></i>
+                    </div>
+                    <div class="square right">
+                        <i class="fa fa-exclamation fa-2x"></i>
+                    </div>
+                </div>
+                <div>
+                    <p class="upper bold">Select</p>
+                    <p class="upper bold">A task</p>
+                </div>
+            </div>
+            <div id="btn_activityRec" class="green-block">
+                <div class="align">
+                    <p class="upper bold">Record an</p>
+                    <p class="upper bold">Activity</p>
+                </div>
+            </div>
+    </div>
+    <!--13-->
+    <div id="div_activityRecScreen" class="task-pages done-today star hide">
+        <div class="task-pages done-today star">
+            <div class="green-block">
+                <div class="menu">
+                    <div class="btn_menu square left">
+                        <i class="fa fa-bars fa-2x"></i>
+                    </div>
+                    <div class="square right">
+                        <i class="fa fa-exclamation fa-2x"></i>
+                    </div>
+                </div>
+                <p class="upper bold">Record an</p>
+                <p class="upper bold">Activity</p>
+                <div class="big-circle">
+                    <i class="fa fa-star fa-3x"></i>
+                </div>
+            </div>
+            <div class="mini-borders">
+                <form >
+                    <div>
+                        <input id="input_activityRecTitle" class="enter" type="text" placeholder="TITLE" required>
+                    </div>
+                    <textarea id="textarea_activityRec" name="text" placeholder="What have you done today?"></textarea>
+                </form>
+                <div class="icons">
+                    <div id="btn_activityAddPhoto" class="need-margin"><div class="icon medium-circle-green">
+                        <img src="img/photo.png" alt="number">
+                    </div></div>
+                    <div id="btn_activityAddContact" class="need-margin"><div class="icon medium-circle-green">
+                        <img src="img/number.png" alt="number">
+                    </div></div>
+                    <div class="need-margin"><div class="icon medium-circle-green">
+                        <img src="img/smile.png" alt="number">
+                    </div></div>
+                    <div class="need-margin"><div class="icon medium-circle-green">
+                        <img src="img/map.png" alt="number">
+                    </div></div>
+                </div>
+            </div>
+            <input id="btn_activityRecDone" type="button" class="blue-button" value="done">
+        </div>
+    </div>
+    <!--14-->
+    <div id="div_activityRecordedScreen" class="congratulations-pages hide">
+        <div class="menu">
+            <div class="btn_menu square left">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+            <div class="square right">
+                <i class="fa fa-exclamation fa-2x"></i>
+            </div>
+        </div>
+        <p class="bold need-margin">Congratulations!</p>
+        <p class="upper bold">Activity recorded</p>
+        <p>You have earned XX star points.</p>
+        <p>Tap the icon to see your</p>
+        <p>overall score.</p>
+        <div class="big-circle">
+            <i class="fa fa-star fa-5x"></i>
+        </div>
+        <input id="btn_activityComplete" type="button" class="pink-button" value="continue">
+    </div>
+    <!--15-->
+    <div id="div_selectTaskScreen" class="select-a-task-pages hide">
+        <div class="purple-block">
+            <div class="menu">
+                <div class="btn_menu square left">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <div class="square right">
+                    <i class="fa fa-exclamation fa-2x"></i>
+                </div>
+            </div>
+            <div class="need-margin">
+                <p class="upper bold">Select</p>
+                <p class="upper bold">A task</p>
+            </div>
+            <p><img id="btn_taskRefresh" src="img/refresh.png" alt="refresh"></p>
+        </div>
+        <div class="task-block">
+            <p id="taskItem_1" class="bold upper">Task 1</p>
+            <div class="my-margin">
+                <div class="big-circle">
+                    <i class="fa fa-star fa-3x"></i>
+                </div>
+            </div>
+        </div>
+        <div class="task-block task2">
+            <p id="taskItem_2" class="bold upper">Task 2</p>
+            <div class="my-margin">
+                <div class="big-circle">
+                    <i class="fa fa-star fa-3x"></i>
+                </div>
+            </div>
+        </div>
+        <div class="task-block task3">
+            <p id="taskItem_3" class="bold upper">Task 3</p>
+            <div class="my-margin">
+                <div class="big-circle">
+                    <i class="fa fa-star fa-3x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!--Task Recorder Block-->
+<div id="window_taskRecorder" class="container">
+    <!--16-->
+    <div id="div_taskRecorderScreen" class="task-pages done-today star record">
+        <div class="green-block">
+            <div class="menu">
+                <div class="square left">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <div class="square right">
+                    <p>!</p>
+                </div>
+            </div>
+            <p class="upper bold">Record a</p>
+            <p class="upper bold">Task</p>
+            <div class="big-circle">
+                <i class="fa fa-star fa-3x"></i>
+            </div>
+        </div>
+        <div class="mini-borders">
+            <form >
+                <div>
+                    <input id="input_taskRecTitle" class="enter" type="email" placeholder="TITLE" required>
+                </div>
+                <textarea id="textarea_taskRec" name="text" placeholder="What have you done today?"></textarea>
+            </form>
+            <div class="icons">
+                <div id="btn_taskAddPhoto" class="need-margin"><div class="icon medium-circle-green">
+                    <img src="img/photo.png" alt="number">
+                </div></div>
+                <div id="btn_taskAddContact" class="need-margin"><div class="icon medium-circle-green">
+                    <img src="img/number.png" alt="number">
+                </div></div>
+                <div class="need-margin"><div class="icon medium-circle-green">
+                    <img src="img/smile.png" alt="number">
+                </div></div>
+                <div class="need-margin"><div class="icon medium-circle-green">
+                    <img src="img/map.png" alt="number">
+                </div></div>
+            </div>
+        </div>
+        <input id="btn_taskRecDone" type="button" class="blue-button" value="done">
+    </div>
+    <!--17-->
+    <div id="div_taskRecordCompleteScreen" class="congratulations-pages hide">
+        <div class="menu">
+            <div class="btn_menu square left">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+            <div class="square right">
+                <i class="fa fa-exclamation fa-2x"></i>
+            </div>
+        </div>
+        <p class="bold need-margin">Congratulations!</p>
+        <p class="upper bold">Task recorded</p>
+        <p>You have earned XX star points.</p>
+        <p>Tap the icon to see your</p>
+        <p>overall score.</p>
+        <div class="big-circle">
+            <i class="fa fa-star fa-5x"></i>
+        </div>
+        <input id="btn_taskComplete" type="button" class="pink-button" value="continue">
+    </div>
+</div>
+    <!--Your Overview Screen-->
+    <!--18-->
+    <div id="window_overview">
+
+    </div>
+    <!--Mood Negative Block-->
+<div id="window_moodNegative">
+    <!--19-->
+    <div id="div_dontWorryScreen">
+
+    </div>
+    <!--20-->
+    <div id="div_lowMoodRecScreen" class="hide">
+
+    </div>
+</div>
+</body>
+</html>
