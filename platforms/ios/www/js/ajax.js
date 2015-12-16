@@ -52,10 +52,8 @@ function checkEmail(result) {
     console.log(result);
     if (result.email_is_used == true) {
         $('#input_regEmail').css('border-color','red');
-        $('#input_regEmail').before(function (index) {
-            return '<p class="alert red">Email is not available</p>'
-        })
-    }
+        $('#input_regEmail').addClass('placeholder');
+        }
     else {
         $('#input_regEmail').css('border-color','green');
     }
@@ -65,10 +63,11 @@ function checkEmail(result) {
 function download_likesAndStruggles(result){
     console.log(result);
     $.each(result.likes, function(index,value) {
-        $('#likes').append('<li><div class="white-block"><div class="description-block">' + value + '</div><div class="button-block"><input class="likes" id="like' + index + '" type="radio" name="'+ index + '" value="0"><label for="like' + index + '"><i class="fa fa-thumbs-down fa-3x"></i></label><input class="likes" id="like' + index + 'z" type="radio" name="' + index + '"value="1"><label for="like' + index + 'z"><i class="fa rotate fa-thumbs-down fa-3x"></i></label></div></div></li>');
+        $('#likes').append('<li id="like_animals"><div class="white-block"><div class="description-block"><span>'+value+'</span></div><div class="button-block"><input class="likes" id="like'+index+'_0" type="radio" name="'+value+'" value="0"><label for="like'+index+'_0"><i class="fa fa-thumbs-down fa-3x"></i></label><input class="likes" id="like'+index+'_1" type="radio" name="'+value+'" value="1"><label for="like'+index+'_1"><i class="fa rotate fa-thumbs-down fa-3x"></i></label></div></div></li>'
+    );
     });
     $.each(result.struggles, function(index,value) {
-        $('#struggles').append('<li><div class="white-block"><div class="button-block2"><input id="'+ index + 'gh" name="'+ index +'" type="checkbox"><label for="'+ index + 'gh"><span class="medium-circle-gray"><i class="fa fa-check fa-2x"></i></span></label></div><div class="description-block2">'+value+'</div></div></li>');
+        $('#struggles').append('<li><div class="white-block"><div class="button-block2"><input id="struggle'+index+'" type="checkbox"><label for="struggle'+index+'"><span class="medium-circle-gray"><i class="fa fa-check fa-2x"></i></span></label></div><div class="description-block2">'+value+'</div></div></li>');
     });
     $(WINDOW_SWITCH_REGISTER_1_2).toggleClass('hide');
 }
@@ -146,9 +145,9 @@ function getTasks(result) {
         return false
     }
     else {
-        $('#taskItem_1').html(result.tasks[0]);
-        $('#taskItem_2').html(result.tasks[1]);
-        $('#taskItem_3').html(result.tasks[2]);
+        $('.task1 > p').html(result.tasks[0]);
+        $('.task2 > p').html(result.tasks[1]);
+        $('.task3 > p').html(result.tasks[2]);
     }
 }
 

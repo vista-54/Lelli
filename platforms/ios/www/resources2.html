@@ -23,7 +23,6 @@
             <p class="small-margin">forgot your password? <a href="#" id="link_forgotPin">tap here</a></p>
             <p class="or">OR</p>
             <input id="btn_goToRegister" type="button" class="blue-button" value="register">
-            <input id="btn_logOut" type="button" class="blue-button" value="log out">
         </div>
         <!--3-->
         <div id="div_forgotPin" class="register-pages hide">
@@ -53,49 +52,47 @@
     </div>
 </div>
     <!--5-->
-<div id="window_locked" class="container the-end-pages">
-    <h1>lelly</h1>
-    <p class="medium-text">Wrong pin (x3)</p>
-    <p class="big-text">App locked</p>
-    <input id="btn_backToLog3" type="button" class="pink-button" value="continue">
-</div>
+    <div id="window_locked" class="container the-end-pages">
+        <div class="medium-square">lelly</div>
+        <p class="medium-text">Wrong pin (x3)</p>
+        <p class="big-text">App locked</p>
+        <div class="lock">
+            <img src="img/lock.png" alt="lock">
+        </div>
+    </div>
     <!--6-->
 <div id="window_registerScreen" class="container">
     <div id="div_registerInfo" class="container details-pages">
-        <div class="blue-header"></div>
         <div class="article">
             <p>Please enter the details below!</p>
         </div>
-        <div class="mini-borders">
-            <form id="form_register" onsubmit="return false;" name="register">
-                <div><input id="input_name" class="enter" placeholder="First Name"></div>
-                <div><input id="input_surname" class="enter" placeholder="Surname"></div>
-                <div><input id="input_birthdate" class="enter" type="text" placeholder="Birth date"></div>
-                <div> <input id="input_location" class="enter" placeholder="City Location"></div>
-                <div><input id="input_regEmail" class="enter" type="email" placeholder="Email Adress" required></div>
-                <div><input id="input_regEmailConfirm" class="enter" type="email" placeholder="Confirm Email Adress" required></div>
-                <div><input id="input_newPin" class="enter" name="pin" type="password" maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="Pin" required></div>
-                <div class="last"><input id="input_newPinConfirm" class="enter last" name="pin" type="password" maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="Confirm Pin" required></div>
-                <input id="btn_regNextStep" type="button" class="pink-button" value="continue">
-            </form>
-        </div>
+        <form id="form_register" onsubmit="return false;" name="register">
+            <div><input id="input_name" class="enter" placeholder="First Name"></div>
+            <div><input id="input_surname" class="enter" placeholder="Surname"></div>
+            <div><input id="input_birthdate" class="enter" type="text" placeholder="Date of birth"></div>
+            <div> <input id="input_location" class="enter" placeholder="City Location"></div>
+            <div><input id="input_regEmail" class="enter" type="email" placeholder="Email Adress" required></div>
+            <div><input id="input_regEmailConfirm" class="enter" type="email" placeholder="Confirm Email Adress" required></div>
+            <div><input id="input_newPin" class="enter" name="pin" type="password" maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="Pin" required></div>
+            <div class="last"><input id="input_newPinConfirm" class="enter last" name="pin" type="password" maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="Confirm Pin" required></div>
+        </form>
+        <input id="btn_regNextStep" type="button" class="pink-button" value="continue">
     </div>
     <!--7-->
     <div id="div_registerLikes" class="container details-pages hide">
         <div class="red-header">
-            <p>Your likes</p>
+            <div class="medium-square">lelly</div>
+            <p class="need-margin">Your likes</p>
             <p>And dislikes</p>
         </div>
         <div class="article need-margin">
-            <p>Tap the like or dislike icon on</p>
-            <p>provided subjects</p>
+            <p>Tap the like or dislike icon</p>
+            <p>on provided subjects</p>
         </div>
         <div class="likes-box">
             <div class="scroll">
                 <form name="likes">
-                    <ul id="likes">
-
-                    </ul>
+                    <ul id="likes"></ul>
                 </form>
             </div>
         </div>
@@ -104,20 +101,18 @@
     <!--8-->
     <div id="div_registerStruggles" class="container details-pages hide">
         <div class="green-header">
-            <p>Your</p>
-
+            <div class="medium-square">lelly</div>
+            <p class="need-margin">Your</p>
             <p>Struggles</p>
         </div>
-        <div class="article my-margin">
-            <p>Tap on the struggles you are</p>
-
-            <p>experiencing</p>
+        <div class="article need-margin">
+            <p>Tap on the struggles you</p>
+            <p>are experiencing</p>
         </div>
         <div class="likes-box">
             <div class="scroll">
                 <form name="struggles">
                     <ul id="struggles">
-
                     </ul>
                 </form>
             </div>
@@ -127,52 +122,66 @@
     <!--9-->
     <div id="div_registerContacts" class="container name-pages hide">
         <form name="contacts">
-            <div class="orange-block">
-                <p>First person you</p>
-                <p>Would call if you</p>
-                <p>Won a lottery?</p>
-                <input id="input_friendName" class="enter1" placeholder="Name">
-                <input id="btn_friend" type="button" class="green-button" value="search">
+            <div class="logo">
+                <div class="medium-square">lelly</div>
             </div>
-            <div class="green-block">
-                <p>Who would you</p>
-                <p>Call if you</p>
-                <p>Needed support?</p>
-                <input id="input_supportName" class="enter2" placeholder="Name">
-                <input id="btn_support" class="orange-button" type="button" value="search">
+            <div class="name-block">
+                <p>First person you would call</p>
+                <p>if you won a lottery?</p>
+                <input id="input_friendName" class="enter" placeholder="Name">
+                <div id="btn_friend" class="medium-circle-pink">
+                    <i class="fa fa-bars fa-3x"></i>
+                </div>
+            </div>
+            <div class="name-block">
+                <p>Who would you call if you</p>
+                <p>needed support?</p>
+                <input id="input_supportName" class="enter need-margin" placeholder="Name">
+                <div id="btn_support" class="medium-circle-pink">
+                    <i class="fa fa-bars"></i>
+                </div>
             </div>
             <input id="btn_regFinish" type="button" class="pink-button" value="continue">
         </form>
     </div>
     <!--10-->
-    <div id="div_registerComplete" class=" container the-end-pages hide">
-        <h1>lelly</h1>
+    <div id="div_registerComplete" class="register-complete hide">
+        <div class="logo">
+            <div class="medium-square">lelly</div>
+        </div>
+        <div class="circles">
+            <div class="small-circle-pink"></div>
+            <div class="small-circle-red"></div>
+            <div class="small-circle-orange"></div>
+            <div class="small-circle-green"></div>
+            <div class="small-circle-blue"></div>
+            <div class="small-circle-purple"></div>
+        </div>
         <p class="medium-text">Registration</p>
         <p class="big-text">Complete</p>
-        <input id="btn_regComplete" type="button" class="pink-button" value="continue">
     </div>
 </div>
     <!--11-->
 <div id="window_moodScreen" class="container">
     <div class="feeling-pages star">
-        <div class="red-block">
+        <div class="green-block">
             <div class="menu">
                 <div class="btn_menu square left">
                     <i class="fa fa-bars fa-2x"></i>
                 </div>
                 <div class="btn_emergency square right">
-                    <i class="fa fa-exclamation fa-2x"></i>
+                    <p>!</p>
                 </div>
             </div>
-            <div class="big-circle">
-                <i class="fa fa-star fa-3x"></i>
-            </div>
             <p class="upper">Today is</p>
+            <div class="star-point">
+                <img src="img/star.png" alt="star">
+            </div>
             <p class="bold"><span id="day_is">Monday</span><span id="date_is"> 10th </span><span id="month_is"> Nov</span></p>
         </div>
         <div class="blue-block">
             <p class="bold">Hi <span id="user_name_is">Molly</span>!</p>
-            <p>How are you feeling?</p>
+            <p class="upper">How are you feeling?</p>
         </div>
         <div class="smiles">
             <div class="smile-one" mood="unsure">
@@ -227,8 +236,8 @@
                 </div>
                 <p class="description-smile">Angry</p>
             </div>
-            <div class="smile-one" mood="crying">
-                <div class="smile-type">
+            <div class="smile-one">
+                <div class="smile-type" mood="crying">
                     <img src="img/crying.png" alt="smile">
                 </div>
                 <p class="description-smile">Crying</p>
@@ -238,71 +247,95 @@
 </div>
     <!--Positive Mood Block-->
 <div id="window_moodPositive" class="container">
-    <!--12-->
+    <!--12/15-->
     <div id="div_taskActivityScreen" class="task-pages">
-            <div  id="btn_selectTask" class="purple-block">
-                <div class="menu">
-                    <div class="btn_menu square left">
-                        <i class="fa fa-bars fa-2x"></i>
-                    </div>
-                    <div class="square right">
-                        <i class="fa fa-exclamation fa-2x"></i>
-                    </div>
+        <div id="btn_selectTask" class="purple-block">
+            <div class="menu">
+                <div class="btn_menu square left">
+                    <i class="fa fa-bars fa-2x"></i>
                 </div>
-                <div>
-                    <p class="upper bold">Select</p>
-                    <p class="upper bold">A task</p>
+                <div class="btn_emergency square right">
+                    <p>!</p>
                 </div>
             </div>
-            <div id="btn_activityRec" class="green-block">
-                <div class="align">
-                    <p class="upper bold">Record an</p>
-                    <p class="upper bold">Activity</p>
+            <div>
+                <p class="upper bold">Select<br>A task</p>
+            </div>
+            <p><img id="btn_taskRefresh" src="img/refresh.png" alt="refresh"></p>
+        </div>
+        <div id="btn_activityRec" class="green-block">
+            <div class="align">
+                <p class="upper bold">Record an</p>
+                <p class="upper bold">Activity</p>
+            </div>
+        </div>
+        <div id="block_tasks">
+        <div class="task-block task1">
+            <p class="bold upper">Task 1</p>
+            <div class="my-margin">
+                <div class="star-point">
+                    <img src="img/star.png" alt="star">
                 </div>
             </div>
+        </div>
+        <div class="task-block task2">
+            <p class="bold upper">Task 2</p>
+            <div class="my-margin">
+                <div class="star-point">
+                    <img src="img/star.png" alt="star">
+                </div>
+            </div>
+        </div>
+        <div class="task-block task3">
+            <p class="bold upper">Task 3</p>
+            <div class="my-margin">
+                <div class="star-point">
+                    <img src="img/star.png" alt="star">
+                </div>
+            </div>
+        </div>
+        </div>
     </div>
     <!--13-->
     <div id="div_activityRecScreen" class="task-pages done-today star hide">
-        <div class="task-pages done-today star">
-            <div class="green-block">
-                <div class="menu">
-                    <div class="btn_menu square left">
-                        <i class="fa fa-bars fa-2x"></i>
-                    </div>
-                    <div class="square right">
-                        <i class="fa fa-exclamation fa-2x"></i>
-                    </div>
+        <div class="green-block">
+            <div class="menu">
+                <div class="btn_menu square left">
+                    <i class="fa fa-bars fa-2x"></i>
                 </div>
-                <p class="upper bold">Record an</p>
-                <p class="upper bold">Activity</p>
-                <div class="big-circle">
-                    <i class="fa fa-star fa-3x"></i>
+                <div class="btn_emergency square right">
+                    <p>!</p>
                 </div>
             </div>
-            <div class="mini-borders">
-                <form >
-                    <div>
-                        <input id="input_activityRecTitle" class="enter" type="text" placeholder="TITLE" required>
-                    </div>
-                    <textarea id="textarea_activityRec" name="text" placeholder="What have you done today?"></textarea>
-                </form>
-                <div class="icons">
-                    <div id="btn_activityAddPhoto" class="need-margin"><div class="icon medium-circle-green">
-                        <img src="img/photo.png" alt="number">
-                    </div></div>
-                    <div id="btn_activityAddContact" class="need-margin"><div class="icon medium-circle-green">
-                        <img src="img/number.png" alt="number">
-                    </div></div>
-                    <div class="need-margin"><div class="icon medium-circle-green">
-                        <img src="img/smile.png" alt="number">
-                    </div></div>
-                    <div class="need-margin"><div class="icon medium-circle-green">
-                        <img src="img/map.png" alt="number">
-                    </div></div>
-                </div>
+            <p class="upper bold">Record an</p>
+            <p class="upper bold">Activity</p>
+            <div class="star-point">
+                <img src="img/star.png" alt="star">
             </div>
-            <input id="btn_activityRecDone" type="button" class="blue-button" value="done">
         </div>
+        <div class="mini-borders">
+            <form >
+                <div>
+                    <input id="input_activityRecTitle" class="enter" type="email" placeholder="Title" required>
+                </div>
+                <textarea id="textarea_activityRec" name="text" placeholder="What have you done today?"></textarea>
+            </form>
+            <div class="icons">
+                <div id="btn_activityAddPhoto" class="need-margin"><div class="icon medium-circle-green">
+                    <img src="img/photo.png" alt="number">
+                </div></div>
+                <div id="btn_activityAddContact" class="need-margin"><div class="icon medium-circle-green">
+                    <img src="img/number.png" alt="number">
+                </div></div>
+                <div class="need-margin"><div class="icon medium-circle-green">
+                    <img src="img/smile.png" alt="number">
+                </div></div>
+                <div class="need-margin"><div class="icon medium-circle-green">
+                    <img src="img/map.png" alt="number">
+                </div></div>
+            </div>
+        </div>
+        <input id="btn_activityRecDone" type="button" class="blue-button" value="done">
     </div>
     <!--14-->
     <div id="div_activityRecordedScreen" class="congratulations-pages hide">
@@ -310,86 +343,44 @@
             <div class="btn_menu square left">
                 <i class="fa fa-bars fa-2x"></i>
             </div>
-            <div class="square right">
-                <i class="fa fa-exclamation fa-2x"></i>
+            <div class="btn_emergency square right">
+                <p>!</p>
             </div>
         </div>
         <p class="bold need-margin">Congratulations!</p>
         <p class="upper bold">Activity recorded</p>
         <p>You have earned XX star points.</p>
-        <p>Tap the icon to see your</p>
+        <p>Tap the star icon to see your</p>
         <p>overall score.</p>
-        <div class="big-circle">
-            <i class="fa fa-star fa-5x"></i>
+        <div class="star-point">
+            <img src="img/star.png" alt="star">
         </div>
         <input id="btn_activityComplete" type="button" class="pink-button" value="continue">
-    </div>
-    <!--15-->
-    <div id="div_selectTaskScreen" class="select-a-task-pages hide">
-        <div class="purple-block">
-            <div class="menu">
-                <div class="btn_menu square left">
-                    <i class="fa fa-bars fa-2x"></i>
-                </div>
-                <div class="square right">
-                    <i class="fa fa-exclamation fa-2x"></i>
-                </div>
-            </div>
-            <div class="need-margin">
-                <p class="upper bold">Select</p>
-                <p class="upper bold">A task</p>
-            </div>
-            <p><img id="btn_taskRefresh" src="img/refresh.png" alt="refresh"></p>
-        </div>
-        <div class="task-block">
-            <p id="taskItem_1" class="bold upper">Task 1</p>
-            <div class="my-margin">
-                <div class="big-circle">
-                    <i class="fa fa-star fa-3x"></i>
-                </div>
-            </div>
-        </div>
-        <div class="task-block task2">
-            <p id="taskItem_2" class="bold upper">Task 2</p>
-            <div class="my-margin">
-                <div class="big-circle">
-                    <i class="fa fa-star fa-3x"></i>
-                </div>
-            </div>
-        </div>
-        <div class="task-block task3">
-            <p id="taskItem_3" class="bold upper">Task 3</p>
-            <div class="my-margin">
-                <div class="big-circle">
-                    <i class="fa fa-star fa-3x"></i>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
     <!--Task Recorder Block-->
 <div id="window_taskRecorder" class="container">
     <!--16-->
-    <div id="div_taskRecorderScreen" class="task-pages done-today star record">
+    <div id="div_taskRecorderScreen" class="taskRec task-pages done-today star record">
         <div class="green-block">
             <div class="menu">
-                <div class="square left">
+                <div class="btn_menu square left">
                     <i class="fa fa-bars fa-2x"></i>
                 </div>
-                <div class="square right">
+                <div class=" btn-emergency square right">
                     <p>!</p>
                 </div>
             </div>
             <p class="upper bold">Record a</p>
             <p class="upper bold">Task</p>
-            <div class="big-circle">
-                <i class="fa fa-star fa-3x"></i>
+            <div class="star-point">
+                <img src="img/star.png" alt="star">
             </div>
         </div>
         <div class="mini-borders">
             <form >
                 <div>
-                    <input id="input_taskRecTitle" class="enter" type="email" placeholder="TITLE" required>
+                    <input id="input_taskRecTitle" class="enter" type="text" placeholder="Title" required>
                 </div>
                 <textarea id="textarea_taskRec" name="text" placeholder="What have you done today?"></textarea>
             </form>
@@ -420,31 +411,239 @@
                 <i class="fa fa-exclamation fa-2x"></i>
             </div>
         </div>
-        <p class="bold need-margin">Congratulations!</p>
-        <p class="upper bold">Task recorded</p>
-        <p>You have earned XX star points.</p>
-        <p>Tap the icon to see your</p>
-        <p>overall score.</p>
-        <div class="big-circle">
-            <i class="fa fa-star fa-5x"></i>
-        </div>
+    <p class="bold need-margin">Congratulations!</p>
+    <p class="upper bold">Task recorded</p>
+    <p>You have earned XX star points.</p>
+    <p>Tap the star icon to see your</p>
+    <p>overall score.</p>
+    <div class="star-point">
+        <img src="img/star.png" alt="star">
+    </div>
         <input id="btn_taskComplete" type="button" class="pink-button" value="continue">
     </div>
 </div>
     <!--Your Overview Screen-->
     <!--18-->
-    <div id="window_overview">
+    <div id="window_overview" class="container">
 
     </div>
     <!--Mood Negative Block-->
-<div id="window_moodNegative">
+<div id="window_moodNegative" class="container">
     <!--19-->
-    <div id="div_dontWorryScreen">
-
+    <div id="div_dontWorryScreen" class="dont-worry">
+            <div class="block">
+                <div class="menu">
+                    <div class="btn_menu square left">
+                        <i class="fa fa-bars fa-2x"></i>
+                    </div>
+                    <div class="btn_emergency square right">
+                        <p>!</p>
+                    </div>
+                </div>
+                <p class="upper bold">Don't worry!</p>
+                <p>select one of the options below</p>
+            </div>
+            <div id="btn_watsWrong" class="block2">
+                <p class="upper bold">Tell me <br> whats <br> wrong ?</p>
+            </div>
+            <div class="block3">
+                <p class="upper bold">Select a task!</p>
+            </div>
+            <div class="tasks">
+                <div class="square">
+                    <img id="" src="img/refresh.png" alt="refresh">
+                </div>
+                <div class="task-block task1">
+                    <p class="bold upper">Task 1</p>
+                    <div class="my-margin">
+                        <div class="star-point">
+                            <img src="img/star.png" alt="star">
+                        </div>
+                    </div>
+                </div>
+                <div class="task-block task2">
+                    <p class="bold upper">Task 2</p>
+                    <div class="my-margin">
+                        <div class="star-point">
+                            <img src="img/star.png" alt="star">
+                        </div>
+                    </div>
+                </div>
+                <div class="task-block task3">
+                    <p class="bold upper">Task 3</p>
+                    <div class="my-margin">
+                        <div class="star-point">
+                            <img src="img/star.png" alt="star">
+                        </div>
+                    </div>
+                </div>
+        </div>
     </div>
     <!--20-->
-    <div id="div_lowMoodRecScreen" class="hide">
-
+    <div id="div_lowMoodRecScreen" class="lowMoodRec task-pages done-today star recorder hide">
+            <div class="green-block">
+                <div class="menu">
+                    <div class="btn_menu square left">
+                        <i class="fa fa-bars fa-2x"></i>
+                    </div>
+                    <div class="btn_emergency square right">
+                        <p>!</p>
+                    </div>
+                </div>
+                <p class="upper bold">Low mood</p>
+                <p class="upper bold">recorder</p>
+            </div>
+            <div class="mini-borders">
+                <form >
+                    <div>
+                        <input id="input_lowMoodTitle" class="enter" type="email" placeholder="Don't worry!" required>
+                    </div>
+                    <textarea id="textarea_lowMood" name="text" placeholder="Everyone feels down sometimes, what's up?"></textarea>
+                </form>
+                <div class="icons">
+                    <div id="btn_lowMoodAddPhoto" class="need-margin"><div class="icon medium-circle-green">
+                        <img src="img/photo.png" alt="number">
+                    </div></div>
+                    <div id="btn_lowMoodAddContact" class="need-margin"><div class="icon medium-circle-green">
+                        <img src="img/number.png" alt="number">
+                    </div></div>
+                    <div class="need-margin"><div class="icon medium-circle-green">
+                        <img src="img/smile.png" alt="number">
+                    </div></div>
+                    <div class="need-margin"><div class="icon medium-circle-green">
+                        <img src="img/map.png" alt="number">
+                    </div></div>
+                </div>
+            </div>
+            <input id="btn_lowMoodRecDone" type="button" class="blue-button" value="done">
+    </div>
+</div>
+    <!------------------------CALL MENU BUTTON BLOCK----------------------------------->
+<div id="window_emergencyCall" class="container">
+    <!--28-->
+    <div id="div_callFriend" class="call">
+        <div class="blue-block">
+            <div class="menu">
+                <div class="btn_menu square left">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+            </div>
+            <p>Do you want to call ...</p>
+            <p>and talk it through</p>
+            <p>with them?</p>
+        </div>
+        <div id="contact_friend" class="white-block">
+            <div class="need-margin"> <span class="medium-circle-gray">
+             <img src="img/user.png" alt="user">
+        </span></div>
+            <p>Sarah White</p>
+        </div>
+        <div id="contact_support" class="white-block">
+            <div class="need-margin"><span class="medium-circle-gray">
+            <img src="img/user.png" alt="user">
+        </span></div>
+            <p>Joe Brown</p>
+        </div>
+        <div id="contact_other" class="white-block last">
+            <div class="need-margin"><span class="medium-circle-gray">
+             <i class="fa fa-bars fa-4x"></i>
+        </span></div>
+            <p>Other</p>
+        </div>
+        <div class="align">
+            <p>I bet they'd be glad to</p>
+            <p>hear from you!</p>
+        </div>
+        <input id="btn_CallAFriend_NO" type="button" class="pink-button" value="no">
+        <input id="btn_CallAFriend_IAmOk" type="button" class="purple-button" value="I'm ok">
+    </div>
+    <!--29-->
+    <div id="div_notAloneScreen" class="call alone hide">
+        <div class="blue-block">
+            <div class="menu">
+                <div class="btn_menu square left">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <div class="btn_emergency square right">
+                    <p>!</p>
+                </div>
+            </div>
+            <p class="upper">You're not alone!</p>
+            <p>There are a variety of</p>
+            <p>People available to help you.</p>
+        </div>
+        <div class="white-block">
+            <div class="need-margin">
+                <img src="img/www.png" alt="www">
+            </div>
+            <p class="upper">Local counselling services</p>
+        </div>
+        <div class="white-block">
+            <div class="need-margin">
+                <img src="img/phone.png" alt="phone">
+            </div>
+            <p class="upper">Samaritans</p>
+        </div>
+        <div class="white-block last">
+            <div class="need-margin">
+                <img src="img/planeta.png" alt="planeta">
+            </div>
+            <p class="upper">Other help</p>
+        </div>
+        <input id="btn_URNotAlone_No" type="button" class="pink-button" value="no">
+        <input id="btn_URNotAlone_IAmOk" type="button" class="purple-button" value="I'm ok">
+    </div>
+    <!--30-->
+    <div id="div_callEmergency" class="help hide">
+            <div class="header-block">
+                <div class="menu">
+                    <div class="btn_menu square left">
+                        <i class="fa fa-bars fa-2x"></i>
+                    </div>
+                </div>
+                <div class="red-square">
+                    <p>!</p>
+                </div>
+                <p>For non-urgent help</p>
+                <p>tap below:</p>
+            </div>
+            <div id="btn_callNonUrgent" class="blue-block">
+                <div class="align">
+                    <div class="big-circle">
+                        <span>111</span>
+                    </div>
+                </div>
+            </div>
+            <p>In a emergency</p>
+            <p>tap below:</p>
+            <div id="btn_callEmergency" class="red-block">
+                <div class="align">
+                    <div class="big-circle second">
+                        <span>999</span>
+                    </div>
+                </div>
+            </div>
+            <input id="btn_emergency_IAmOk" type="button" class="purple-button" value="I'm ok">
+    </div>
+    <!--32-->
+    <div id="div_didUCallScreen" class="did-u-call hide">
+        <div class="birds-block">
+            <div class="menu">
+                <div class="btn_menu square left">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <div class="btn_emergency square right">
+                    <p>!</p>
+                </div>
+            </div>
+            <p>Did you call?</p>
+        </div>
+        <div id="btn_CallYes" class="yes-block">
+            <p>Yes</p>
+        </div>
+        <div id="btn_CallNo" class="no-block">
+            <p>no</p>
+        </div>
     </div>
 </div>
 </body>

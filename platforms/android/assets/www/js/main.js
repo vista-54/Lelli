@@ -1,24 +1,115 @@
-/**
- * Created by Bohdan on 23.11.2015.
- */
+var $body = $('body');
+var local_email = localStorage['Lelly_login_email'];
+var contacts = {};
+var photo;
+
 $(document).ready( function() {
     $('#container').load('resources2.html #window_loginScreen', function() {
         if (local_email) {
             $($('#input_email')).attr('placeholder', local_email);
         }
     });
-    $('body').css('height', $(document).height());
+    $('body').css('height', $(window).height());
 });
 function onDeviceReady() {
-    document.addEventListener("pause", onPause, false)
+    document.addEventListener("backbutton", onBackKeyDown, false);
 }
-var $body = $('body');
-var local_email = localStorage['Lelly_login_email'];
-var contacts = {};
-var photo;
 $body.on('submit','form', function(e) {
+    cordova.plugins.Keyboard.close();
     e.preventDefault();
 });
+
+// ------------------------------ MENU BUTTONS ------------------------------------------------------
+$body.on('click', '.btn_menu', function(event){
+    $("#window_menu").stop(true,true).animate({width: "100%"},250);
+    event.stopPropagation();
+});
+
+$body.on('click', '.top-menu, .bot-menu, .bot-menu ul li', function(event) {
+    function menuContainerShow() {
+            $('#menu_container').fadeIn(400);
+    }
+    if($(this).hasClass('top-menu')) {
+        $('#menu_container').fadeOut(400);
+    }
+    else {
+        switch (this.id) {
+            case 'btn_menu_info' :
+                hideMenu();
+                menuContainerHide();
+                $('#menu_container').load('resources2.html #window_menu_info', function () {
+                    menuContainerShow();
+                });
+                break;
+            case 'btn_menu_overview' :
+                hideMenu();
+                menuContainerHide();
+                $('#menu_container').load('resources2.html #window_menu_overview', function () {
+                    menuContainerShow();
+                });
+                break;
+            case 'btn_menu_connections':
+                hideMenu();
+                menuContainerHide();
+                $('#menu_container').load('resources2.html #window_menu_connections', function () {
+                    menuContainerShow();
+                });
+                break;
+            case 'btn_menu_password':
+                hideMenu();
+                menuContainerHide();
+                $('#menu_container').load('resources2.html #window_menu_password', function () {
+                    menuContainerShow();
+                });
+                break;
+            case 'btn_menu_points':
+                hideMenu();
+                menuContainerHide();
+                $('#menu_container').load('resources2.html #window_menu_points', function () {
+                    menuContainerShow();
+                });
+                break;
+            case 'btn_menu_expansions' :
+                hideMenu();
+                menuContainerHide();
+                $('#menu_container').load('resources2.html #window_menu_expansions', function () {
+                    menuContainerShow();
+                });
+                break;
+            default:
+                event.stopPropagation();
+        }
+    }
+});
+
+$body.on('click', '.a25', function(){
+    hideMenu();
+});
+
+$body.on('click','.btn_emergency', function() {
+    var names = [];
+    menuContainerHide();
+    if (localStorage['Lelly_contacts']) {
+    names.push(JSON.parse(localStorage['Lelly_contacts']).friend.name);
+    names.push(JSON.parse(localStorage['Lelly_contacts']).support.name);
+    names.push(JSON.parse(localStorage['Lelly_contacts']).non_urgent);
+    names.push(JSON.parse(localStorage['Lelly_contacts']).emergency);
+    }
+    else {
+        request_logged('GET', 'site', 'action', null, function (result) {
+            names.push(result.contacts.friend.name);
+            names.push(result.contacts.support.name);
+        }, requestErrorCallBack)
+    }
+    $('#container').load('resources2.html #window_emergencyCall', function () {
+        $('#contact_friend > p').text(names[0]);
+        $('#contact_support > p').text(names[1]);
+        $('#btn_callNonUrgent span').text(names[2]);
+        $('#btn_callEmergency span').text(names[3]);
+        $('#div_callFriend').toggleClass('hide');
+    });
+});
+
 //--------------------------- SCREEN 2 ---------------------------
 $body.on("focus", '#input_lockScreen, #input_personalPin, #input_newPin, #input_newPinConfirm', function(e) {
     e.preventDefault();
@@ -60,8 +151,28 @@ $body.on('submit', 'form[name="login"]', function() {
     var data = {AppLoginForm:{'email': _email,
                 'pin': _pin}};
     $('.spinner').css('display','inline-block');
-    request('POST','site','login', data, login);
+    //request('POST','site','login', data, login);
     show_moodscreen('Bohdan');
+    document.addEventListener("pause", onPause, false);
+    document.addEventListener("resume", onResume, false);
+    localStorage['Lelly_pin'] = _pin;
+    localStorage['Lelly_contacts'] = JSON.stringify({
+        'friend' : {
+            'name' : 'Bohdan Samondros',
+            'phone' : '0950017346'},
+        'support' : {
+            'name' : 'Bohdan',
+            'phone' : '0963820290'},
+        'samaritans': {
+            'name' : 'Samaritans',
+            'phone' : '000 00 01'},
+        'non_urgent' : '121',
+        'emergency' : '212',
+        'local_services' : {
+            'name' : 'Local counselling services',
+            'link': 'http://yandex.ru'},
+        'other' : 'http://google.com'
+        });
 });
 $body.on("click", "#link_forgotPin", function() {
     $(WINDOW_SWITCH_LOGIN_1_2).toggleClass('hide');
@@ -204,6 +315,8 @@ $body.on("click", "#btn_regFinish", function() {
 });
 $body.on('click', '#btn_friend', function() {
     navigator.contacts.pickContact(function(contact) {
+        $('#window_pin').hide();
+        $('#after_pause_block').hide();
         var name = contact.displayName;
         var phone = contact.phoneNumbers[0].value;
         phone = phone.replace(/\-|\x20/g,"");
@@ -215,14 +328,9 @@ $body.on('click', '#btn_friend', function() {
     });
 });
 $body.on('click', '#btn_support', function() {
-    //var options      = new ContactFindOptions();
-    //options.filter   = $('#input_supportName').val();
-    //options.multiple = true;
-    //options.desiredFields = [navigator.contacts.fieldType.id];
-    //options.hasPhoneNumber = true;
-    //var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
-    //navigator.contacts.find(fields, onSuccess, function(err) {console.log(err)}, options);
     navigator.contacts.pickContact(function (contact) {
+        $('#window_pin').hide();
+        $('#after_pause_block').hide();
         var name = contact.displayName;
         var phone = contact.phoneNumbers[0].value;
         phone = phone.replace(/\-|\x20/g, "");
@@ -231,13 +339,12 @@ $body.on('click', '#btn_support', function() {
         $('#input_supportName').val(name);
     });
 });
-function onSuccess(contacts) {
-    alert('Found ' + contacts.length + ' contacts.');
-};
 
 //-----------------------------  SCREEN 10 ----------------------------------------------------------
 $body.on('click', 'btn_regComplete', function() {
     show_moodscreen(user_name);
+    document.addEventListener("pause", onPause, false);
+    document.addEventListener("resume", onResume, false);
 });
 //-----------------------------  SCREEN 11 ----------------------------------------------------------
 $body.on('click', '.smile-one', function() {
@@ -290,13 +397,6 @@ $body.on('click', '.smile-one', function() {
         })
     }
 });
-// ------------------------------ MENU BUTTONS ------------------------------------------------------
-$body.on('click', '.btn_menu',function() {
-    $('#container').load('resources2.html #window_loginScreen');
-});
-$body.on('click','.btn_emergency', function() {
-    $('#container').load('resources2.html #window_emergencyCall');
-});
 
 //-----------------------------  SCREEN 12 ----------------------------------------------------------
 $body.on('click', '#btn_selectTask', function() {
@@ -311,7 +411,7 @@ $body.on('click', '#btn_activityRec', function() {
 $body.on('click', '#btn_activityRecDone', function() {
     var title = $('#input_activityRecTitle').val();
     if (title.length == 0) {
-        $('#input_activityRecTitle').css('border-color','red').addClass('placeholder');
+        $('#input_activityRecTitle').addClass('placeholder');
         return false;
     }
     var textarea = $('#textarea_activityRec').val();
@@ -339,9 +439,11 @@ $body.on('click', '#btn_activityAddContact', function() {
     var element = $(this).find('div');
     addContact(element);
 });
-//-----------------------------  SCREEN 14 ----------------------------------------------------------
-$body.on('click', '#btn_activityComplete', function() {
-    $('#container').load('resources2.html #window_moodScreen');
+//-----------------------------  SCREEN 14 / 17 ----------------------------------------------------------
+$body.on('click', '#btn_activityComplete, #btn_taskComplete', function() {
+    $('#container').load('resources2.html #window_moodScreen', function() {
+        show_moodscreen('Bohdan');
+    });
 });
 //-----------------------------  SCREEN 15 / 19 ----------------------------------------------------------
 $body.on('click', '.task-block', function() {
@@ -361,7 +463,7 @@ $body.on('click', '#btn_taskRecDone', function() {
     var title = $('#input_taskRecTitle').val();
     var textarea = $('#textarea_taskRec').val();
     if (title.length == 0) {
-        $('#input_taskRecTitle').css('border-color','red').addClass('placeholder');
+        $('#input_taskRecTitle').addClass('placeholder');
         return false;
     }
     if (textarea.length == 0) {
@@ -388,11 +490,6 @@ $body.on('click', '#btn_taskAddContact', function() {
     addContact(element);
 });
 
-//-----------------------------  SCREEN 17 ----------------------------------------------------------
-$body.on('click', '#btn_taskComplete', function() {
-    $('#container').load('resources2.html #window_moodScreen');
-});
-
 //-----------------------------  SCREEN 19 ----------------------------------------------------------
 $body.on('click', '#btn_watsWrong', function() {
     $(WINDOW_SWITCH_MAIN_19_20).toggleClass('hide');
@@ -403,9 +500,10 @@ $body.on('click', '#btn_lowMoodRecDone', function() {
     var title = $('#input_lowMoodTitle').val();
     var textarea = $('#textarea_lowMood').val();
     if (title.length == 0) {
-        $('#input_lowMoodTitle').css('border-color','red').addClass('placeholder');
+        $('#input_lowMoodTitle').addClass('placeholder');
         return false;
     }
+
     if (textarea.length == 0) {
         $('#textarea_lowMood').addClass('placeholder');
         return false;
@@ -418,9 +516,10 @@ $body.on('click', '#btn_lowMoodRecDone', function() {
     };
     //TEMPORARY function for testing without connection
     //$('#reward_for_task_complete').text(result.reward);
-    $('#container').load('resources2.html #window_moodScreen');
-    $(WINDOW_SWITCH_MAIN_20_14).toggleClass('hide');
-    request_logged('POST', 'site', 'action', data, taskRecorded);
+    $('#container').load('resources2.html #window_moodPositive', function() {
+        $(WINDOW_SWITCH_MAIN_20_14).toggleClass('hide');
+    });
+    //request_logged('POST', 'site', 'action', data, taskRecorded);
 });
 $body.on('click', '#btn_lowMoodAddPhoto', function() {
     var element = $(this).find('div');
@@ -432,24 +531,108 @@ $body.on('click', '#btn_lowMoodAddContact', function() {
 });
 
 //---------------------------------- SCREEN 28 -------------------------------------------
-$body.on('click', '#btn_CallAFriendNO', function() {
+$body.on('click', '#btn_CallAFriend_NO', function() {
     $(WINDOW_SWITCH_EMERGENCY_28_29).toggleClass('hide');
 });
-$body.on('click', '#btn_IAmOk', function() {
-    $('#container').load('resources2.html #window_moodScreen');
+//---------------------------------- SCREEN 28 / 29 -------------------------------------------
+$body.on('click', '#btn_URNotAlone_No', function() {
+    $(WINDOW_SWITCH_EMERGENCY_29_30).toggleClass('hide');
 });
-//---------------------------------- SCREEN 29 -------------------------------------------
-$body.on('click', '#btn_IAmOk2', function() {
-    $('#container').load('resources2.html #window_moodScreen');
+
+$body.on('click', '.white-block', function() {
+    if (this.id === 'contact_friend') {
+        var phone = JSON.parse(localStorage['Lelly_contacts']).friend.phone;
+        setTimeout(function() {
+            $(WINDOW_SWITCH_EMERGENCY_28_32).toggleClass('hide');
+        },400);
+        $('#btn_CallNo').removeClass('_no2').addClass('_no');
+        dial(phone);
+    }
+    if (this.id === 'contact_support') {
+        var phone = JSON.parse(localStorage['Lelly_contacts']).support.phone;
+        setTimeout(function() {
+            $(WINDOW_SWITCH_EMERGENCY_28_32).toggleClass('hide');
+        },400);
+        $('#btn_CallNo').removeClass('_no2').addClass('_no');
+        dial(phone);
+    }
+    if (this.id === 'contact_other') {
+        $('#btn_CallNo').removeClass('_no2').addClass('_no');
+        navigator.contacts.pickContact(function(contact) {
+            var phone = contact.phoneNumbers[0].value;
+            if (contact.phoneNumbers.length > 0) {
+                $(WINDOW_SWITCH_EMERGENCY_28_32).toggleClass('hide');
+                phone = phone.replace(/\-|\x20/g,"");
+                dial(phone);
+            }
+        }, function(err) {
+            console.log(err);
+        });
+    }
+    if (this.id === 'contact_localService') {
+        setTimeout(function() {
+            $(WINDOW_SWITCH_EMERGENCY_32_29).toggleClass('hide');
+            $('#btn_CallNo').removeClass('_no').addClass('_no2');
+            $('#p_didUCall').text('Did it help?');
+        },400);
+        var link = JSON.parse(localStorage['Lelly_contacts']).local_services.link;
+        window.location.href = link;
+     }
+    if (this.id === 'contact_samaritans') {
+        setTimeout(function() {
+            $(WINDOW_SWITCH_EMERGENCY_32_29).toggleClass('hide');
+            $('#btn_CallNo').removeClass('_no').addClass('_no2');
+        },400);
+        var phone = JSON.parse(localStorage['Lelly_contacts']).samaritans.phone;
+        dial(phone);
+        }
+    if (this.id === 'contact_otherWWW') {
+        setTimeout(function() {
+            $('#btn_CallNo').removeClass('_no').addClass('_no2');
+            $('#p_didUCall').text('Did it help?');
+            $(WINDOW_SWITCH_EMERGENCY_32_29).toggleClass('hide');
+        },400);
+        var link = JSON.parse(localStorage['Lelly_contacts']).other;
+        window.location.href = link;
+    }
 });
-$body.on('click', '#btn_IAmOk2', function() {
-    $('#container').load('resources2.html #window_moodScreen');
+//---------------------------------- SCREEN 30 -------------------------------------------
+$body.on('click', '#btn_emergency_IAmOk, #btn_URNotAlone_IAmOk, #btn_CallAFriend_IAmOk, #btn_CallYes', function() {
+    $('#container').load('resources2.html #window_moodScreen', function() {
+        show_moodscreen('Bohdan');
+    });
+});
+
+$body.on('click', '.call_emergency', function() {
+    if (this.id === 'btn_callNonUrgent') {
+        var phone = $('#btn_callNonUrgent span').text();
+        dial(phone);
+    }
+    if (this.id === 'btn_callEmergency') {
+        var phone = $('#btn_callEmergency span').text();
+        dial(phone);
+    }
 });
 //---------------------------------- SCREEN 31 -------------------------------------------
 $('#input_lockScreen').click(function () {
     lockPinDialog();
 });
 $('#btn_lockScreen').click(function () {
+    var pin_true = localStorage['Lelly_pin'];
+    var pin_field = $('#input_lockScreen');
+    if (pin_field.val() !== pin_true) {
+        pin_field.css('border-color','red').addClass('placeholder');
+        return false;
+    }
     $('#window_pin').fadeOut(300);
     $('#input_lockScreen').val(null);
+});
+
+//---------------------------------- SCREEN 32 -------------------------------------------
+$body.on('click', '._no', function() {
+    $(WINDOW_SWITCH_EMERGENCY_32_29).toggleClass('hide');
+});
+$body.on('click', '._no2', function () {
+    $(WINDOW_SWITCH_EMERGENCY_32_30).toggleClass('hide');
+    (this).removeClass('not-help-for-me');
 });

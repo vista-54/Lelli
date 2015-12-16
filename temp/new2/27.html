@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>lelly</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <!--[if lt IE 9]>
+    <script src="app/bower_components/html5shiv/dist/html5shiv.js"></script>
+
+    <![endif]-->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.min.css"/>
+</head>
+<body>
+<div class="connections overview">
+<div class="gray-block">
+    <div class="menu">
+        <div class="btn_menu square left">
+            <i class="fa fa-bars fa-2x"></i>
+        </div>
+        <div class="btn_emergency square right">
+            <p>!</p>
+        </div>
+    </div>
+    <p class="upper bold">You overview</p>
+</div>
+ <div class="descriptions">
+<div class="tabs">
+    <ul class="tabs-controls">
+        <li class="tabs-controls-item active" data-class="first">
+        <a class="tabs-control-link" href="#">Mood <img class="arrow" src="../img/arrow.png" alt="lock"></a>
+        </li>
+        <li class="tabs-controls-item" data-class="second">
+            <a class="tabs-control-link" href="#">Progress <img class="arrow" src="../img/arrow.png" alt="lock"></a>
+        </li>
+        <li class="tabs-controls-item" data-class="third">
+            <a class="tabs-control-link" href="#"><img src="../img/lock.png" alt="lock"> History</a>
+        </li>
+    </ul>
+    <span class="hr"></span>
+    <ul class="tabs-list">
+        <li class="tabs-item tabs-item-first active">
+            <p>March</p>
+            <div class="graph"></div>
+            <input id="btn_goToRegister1" type="button" class="blue-button" value="NEGATIVE">
+            <input id="btn_goToRegister2" type="button" class="red-button" value="POSITIVE">
+        </li>
+        <li class="tabs-item tabs-item-second">
+            <p>Second</p>
+            <div class="graph2"></div>
+        </li>
+        <li class="tabs-item tabs-item-third">
+            <p>Third</p>
+            <div class="graph3"></div>
+        </li>
+
+    </ul>
+</span>
+     <input id="btn_backToLog2" type="button" class="pink-button" value="continue">
+     </div>
+     </div>
+</div>
+<!-- bower:js -->
+<script src="app/bower_components/jquery/dist/jquery.js"></script>
+<!-- endbower -->
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

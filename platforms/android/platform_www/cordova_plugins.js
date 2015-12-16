@@ -1,6 +1,22 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
+        "file": "plugins/com.ionic.keyboard/www/keyboard.js",
+        "id": "com.ionic.keyboard.keyboard",
+        "pluginId": "com.ionic.keyboard",
+        "clobbers": [
+            "cordova.plugins.Keyboard"
+        ]
+    },
+    {
+        "file": "plugins/com.synconset.imagepicker/www/imagepicker.js",
+        "id": "com.synconset.imagepicker.ImagePicker",
+        "pluginId": "com.synconset.imagepicker",
+        "clobbers": [
+            "plugins.imagePicker"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-contacts/www/contacts.js",
         "id": "cordova-plugin-contacts.contacts",
         "pluginId": "cordova-plugin-contacts",
@@ -73,28 +89,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-        "id": "cordova-plugin-splashscreen.SplashScreen",
-        "pluginId": "cordova-plugin-splashscreen",
-        "clobbers": [
-            "navigator.splashscreen"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-whitelist/whitelist.js",
-        "id": "cordova-plugin-whitelist.whitelist",
-        "pluginId": "cordova-plugin-whitelist",
-        "runs": true
-    },
-    {
-        "file": "plugins/hu.dpal.phonegap.plugins.PinDialog/www/pin.js",
-        "id": "hu.dpal.phonegap.plugins.PinDialog.PinDialog",
-        "pluginId": "hu.dpal.phonegap.plugins.PinDialog",
-        "merges": [
-            "window.plugins.pinDialog"
-        ]
-    },
-    {
         "file": "plugins/cordova-plugin-datepicker/www/android/DatePicker.js",
         "id": "cordova-plugin-datepicker.DatePicker",
         "pluginId": "cordova-plugin-datepicker",
@@ -120,28 +114,27 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/z1key.phonegap.plugins.PinDialog/www/pin.js",
-        "id": "z1key.phonegap.plugins.PinDialog.PinDialog",
-        "pluginId": "z1key.phonegap.plugins.PinDialog",
-        "merges": [
-            "window.plugins.pinDialog"
+        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+        "id": "cordova-plugin-splashscreen.SplashScreen",
+        "pluginId": "cordova-plugin-splashscreen",
+        "clobbers": [
+            "navigator.splashscreen"
         ]
     },
     {
-        "file": "plugins/com.ionic.keyboard/www/keyboard.js",
-        "id": "com.ionic.keyboard.keyboard",
-        "pluginId": "com.ionic.keyboard",
+        "file": "plugins/cordova-plugin-whitelist/whitelist.js",
+        "id": "cordova-plugin-whitelist.whitelist",
+        "pluginId": "cordova-plugin-whitelist",
+        "runs": true
+    },
+    {
+        "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
+        "id": "ionic-plugin-keyboard.keyboard",
+        "pluginId": "ionic-plugin-keyboard",
         "clobbers": [
             "cordova.plugins.Keyboard"
-        ]
-    },
-    {
-        "file": "plugins/com.synconset.imagepicker/www/imagepicker.js",
-        "id": "com.synconset.imagepicker.ImagePicker",
-        "pluginId": "com.synconset.imagepicker",
-        "clobbers": [
-            "plugins.imagePicker"
-        ]
+        ],
+        "runs": true
     },
     {
         "file": "plugins/org.apache.cordova.camera/www/CameraConstants.js",
@@ -173,6 +166,22 @@ module.exports = [
         "pluginId": "org.apache.cordova.camera",
         "clobbers": [
             "CameraPopoverHandle"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.home/www/home.js",
+        "id": "org.apache.cordova.home.home",
+        "pluginId": "org.apache.cordova.home",
+        "merges": [
+            "navigator.home"
+        ]
+    },
+    {
+        "file": "plugins/z1key.phonegap.plugins.PinDialog/www/pin.js",
+        "id": "z1key.phonegap.plugins.PinDialog.PinDialog",
+        "pluginId": "z1key.phonegap.plugins.PinDialog",
+        "merges": [
+            "window.plugins.pinDialog"
         ]
     }
 ];

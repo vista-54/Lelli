@@ -80,5 +80,22 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "org.apache.cordova.home": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ZhichengChen/cordova-plugin-android-home",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "ionic-plugin-keyboard": {
+        "source": {
+            "type": "registry",
+            "id": "ionic-plugin-keyboard"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

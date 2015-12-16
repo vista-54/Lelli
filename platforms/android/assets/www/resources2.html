@@ -5,14 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-    <div id="window_loginScreen" class="container">
-        <!--2-->
-        <div id="div_login" class="register-pages">
+<!--Login Block-->
+<div id="window_loginScreen" class="container">
+    <!--2-->
+    <div id="div_login" class="register-pages">
             <header>
                 <p>Welcome to</p>
                 <h1>lelly</h1>
             </header>
-            <form onsubmit="return false;" name="login">
+            <form name="login">
                 <input id="input_email" class="enter" type="email" maxlength="25" placeholder="email">
                 <input id="input_personalPin" class="enter" type="password" maxlength="4" pattern="[0-9]*" placeholder="pin" inputmode="numeric" required>
                 <div class="spinner-box">
@@ -24,13 +25,13 @@
             <p class="or">OR</p>
             <input id="btn_goToRegister" type="button" class="blue-button" value="register">
         </div>
-        <!--3-->
-        <div id="div_forgotPin" class="register-pages hide">
+    <!--3-->
+    <div id="div_forgotPin" class="register-pages hide">
             <header>
                 <p>Welcome to</p>
                 <h1>lelly</h1>
             </header>
-            <form name="sendEmail" onsubmit="return false;">
+            <form name="sendEmail">
                 <label for="input_recoverEmail">
                     <span>Enter your email and</span>
                     <span>we will send you your new pin</span>
@@ -40,8 +41,8 @@
             </form>
             <input id="btn_backToLog" type="button" class="green-button" value="back">
         </div>
-        <!--4-->
-        <div id="div_sendPin" class="pin-sent register-pages hide">
+    <!--4-->
+    <div id="div_sendPin" class="pin-sent register-pages hide">
             <header>
                 <p>Welcome to</p>
                 <h1>lelly</h1>
@@ -49,7 +50,6 @@
             <span>Your new pin has been sent</span>
             <input id="btn_backToLog2" type="button" class="green-button back-sent" value="back">
         </div>
-    </div>
 </div>
     <!--5-->
     <div id="window_locked" class="container the-end-pages">
@@ -60,13 +60,14 @@
             <img src="img/lock.png" alt="lock">
         </div>
     </div>
-    <!--6-->
+<!--Sign-up Block-->
 <div id="window_registerScreen" class="container">
-    <div id="div_registerInfo" class="container details-pages">
+    <!--6-->
+    <div id="div_registerInfo" class="details-pages">
         <div class="article">
             <p>Please enter the details below!</p>
         </div>
-        <form id="form_register" onsubmit="return false;" name="register">
+        <form id="form_register" name="register">
             <div><input id="input_name" class="enter" placeholder="First Name"></div>
             <div><input id="input_surname" class="enter" placeholder="Surname"></div>
             <div><input id="input_birthdate" class="enter" type="text" placeholder="Date of birth"></div>
@@ -79,7 +80,7 @@
         <input id="btn_regNextStep" type="button" class="pink-button" value="continue">
     </div>
     <!--7-->
-    <div id="div_registerLikes" class="container details-pages hide">
+    <div id="div_registerLikes" class="details-pages hide">
         <div class="red-header">
             <div class="medium-square">lelly</div>
             <p class="need-margin">Your likes</p>
@@ -99,7 +100,7 @@
         <input id="btn_regNextStep3" type="button" class="pink-button" value="continue">
     </div>
     <!--8-->
-    <div id="div_registerStruggles" class="container details-pages hide">
+    <div id="div_registerStruggles" class="details-pages hide">
         <div class="green-header">
             <div class="medium-square">lelly</div>
             <p class="need-margin">Your</p>
@@ -120,7 +121,7 @@
         <input id="btn_nextStep4" type="button" class="pink-button" value="continue">
     </div>
     <!--9-->
-    <div id="div_registerContacts" class="container name-pages hide">
+    <div id="div_registerContacts" class="name-pages hide">
         <form name="contacts">
             <div class="logo">
                 <div class="medium-square">lelly</div>
@@ -361,7 +362,7 @@
     <!--Task Recorder Block-->
 <div id="window_taskRecorder" class="container">
     <!--16-->
-    <div id="div_taskRecorderScreen" class="task-pages done-today star record">
+    <div id="div_taskRecorderScreen" class="taskRec task-pages done-today star record">
         <div class="green-block">
             <div class="menu">
                 <div class="btn_menu square left">
@@ -407,8 +408,8 @@
             <div class="btn_menu square left">
                 <i class="fa fa-bars fa-2x"></i>
             </div>
-            <div class="square right">
-                <i class="fa fa-exclamation fa-2x"></i>
+            <div class="btn_emergency square right">
+                <p>!</p>
             </div>
         </div>
     <p class="bold need-margin">Congratulations!</p>
@@ -422,11 +423,57 @@
         <input id="btn_taskComplete" type="button" class="pink-button" value="continue">
     </div>
 </div>
-    <!--Your Overview Screen-->
     <!--18-->
-    <div id="window_overview" class="container">
+<div id="window_menu_overview" class="container">
+    <div class="connections overview">
+        <div class="gray-block">
+            <div class="menu">
+                <div class="btn_menu square left">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <div class="btn_emergency square right">
+                    <p>!</p>
+                </div>
+            </div>
+            <p class="upper bold">You overview</p>
+        </div>
+        <div class="descriptions">
+            <div class="tabs">
+                <ul class="tabs-controls">
+                    <li class="tabs-controls-item active" data-class="first">
+                        <a class="tabs-control-link" href="#">Mood <img class="arrow" src="img/arrow.png" alt="lock"></a>
+                    </li>
+                    <li class="tabs-controls-item" data-class="second">
+                        <a class="tabs-control-link" href="#">Progress <img class="arrow" src="img/arrow.png" alt="lock"></a>
+                    </li>
+                    <li class="tabs-controls-item" data-class="third">
+                        <a class="tabs-control-link" href="#"><img src="img/lock.png" alt="lock"> History</a>
+                    </li>
+                </ul>
+                <span class="hr"></span>
+                <ul class="tabs-list">
+                    <li class="tabs-item tabs-item-first active">
+                        <p>March</p>
+                        <div class="graph"></div>
+                        <input type="button" class="blue-button" value="NEGATIVE">
+                        <input type="button" class="red-button" value="POSITIVE">
+                    </li>
+                    <li class="tabs-item tabs-item-second">
+                        <p>Second</p>
+                        <div class="graph2"></div>
+                    </li>
+                    <li class="tabs-item tabs-item-third">
+                        <p>Third</p>
+                        <div class="graph3"></div>
+                    </li>
 
+                </ul>
+                </span>
+                <input type="button" class="pink-button" value="continue">
+            </div>
+        </div>
     </div>
+</div>
     <!--Mood Negative Block-->
 <div id="window_moodNegative" class="container">
     <!--19-->
@@ -480,7 +527,7 @@
         </div>
     </div>
     <!--20-->
-    <div id="div_lowMoodRecScreen" class="task-pages done-today star recorder hide">
+    <div id="div_lowMoodRecScreen" class="lowMoodRec task-pages done-today star recorder hide">
             <div class="green-block">
                 <div class="menu">
                     <div class="btn_menu square left">
@@ -490,8 +537,8 @@
                         <p>!</p>
                     </div>
                 </div>
-                <p class="upper bold">Record a</p>
-                <p class="upper bold">Task</p>
+                <p class="upper bold">Low mood</p>
+                <p class="upper bold">recorder</p>
             </div>
             <div class="mini-borders">
                 <form >
@@ -519,9 +566,231 @@
     </div>
 </div>
     <!------------------------CALL MENU BUTTON BLOCK----------------------------------->
+    <!--22-->
+<div id="window_menu_info" class="container info">
+    <div class="gray-block">
+        <div class="menu">
+            <div class="btn_menu square left">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+            <div class="btn_emergency square right">
+                <p>!</p>
+            </div>
+        </div>
+        <p class="upper bold">Info</p>
+        <p class="upper">About</p>
+        <p class="upper">Connections</p>
+        <p class="upper">Password screen</p>
+    </div>
+    <div class="descriptions">
+        <div class="about">
+            <p class="upper bold">About</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+</div>
+    <!--23-->
+<div id="window_menu_connections" class="container connections">
+        <div class="gray-block">
+            <div class="menu">
+                <div class="btn_menu square left">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <div class="btn_emergency square right">
+                    <p>!</p>
+                </div>
+            </div>
+            <p class="upper bold">Connections</p>
+            <img src="img/question.png">
+        </div>
+        <div class="descriptions">
+            <p>Who is connected?</p>
+            <div class="disconnect-box">
+                <h1>Disconnect [user?]</h1>
+                <p>Yes</p>
+                <p class="need-margin">No</p>
+            </div>
+            <div class="white-block active">
+                <div class="block">
+                    <p class="bold">Mom</p>
+                </div>
+                <div class="block circle">
+                    <div class="align">
+                        <div class="small-circle-red"></div>
+                    </div>
+                </div>
+                <div class="block">
+                    <p>User ID</p>
+                </div>
+                <div class="block">
+                    <p>RITO 36</p>
+                </div>
+            </div>
+            <div class="white-block">
+                <div class="block">
+                    <p class="bold">Sam</p>
+                </div>
+                <div class="block circle">
+                    <div class="align">
+                        <div class="small-circle-red"></div>
+                    </div>
+                </div>
+                <div class="block">
+                    <p>User ID</p>
+                </div>
+                <div class="block">
+                    <p>DITO 37</p>
+                </div>
+            </div>
+            <div class="white-block">
+                <div class="block">
+                    <p class="bold">Tim</p>
+                </div>
+                <div class="block circle">
+                    <div class="align">
+                        <div class="small-circle-red"></div>
+                    </div>
+                </div>
+                <div class="block">
+                    <p>User ID</p>
+                </div>
+                <div class="block">
+                    <p>TITO 66</p>
+                </div>
+            </div>
+        </div>
+</div>
+    <!--24-->
+<div id="window_menu_password" class="container connections password-screen">
+        <div class="gray-block">
+            <div class="menu">
+                <div class="btn_menu square left">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <div class="btn_emergency square right">
+                    <p>!</p>
+                </div>
+            </div>
+            <p class="upper bold">Password screen</p>
+            <img src="img/question.png">
+        </div>
+        <div class="descriptions">
+            <p>Couple with web portal user</p>
+            <form>
+                <input class="input" type="text" size="40">
+                <input type="button" class="green-button" value="search">
+                <div class="generate">
+                    <span>generate password</span>
+                    <img src="img/lock.png" alt="lock">
+                </div>
+                <input class="input" type="text" size="40">
+            </form>
+            <div class="spinner">
+            </div>
+            <input type="button" class="pink-button" value="connected">
+        </div>
+</div>
+    <!--25-->
+<div id="window_menu_points" class="container connections points">
+        <div class="gray-block">
+            <div class="menu">
+                <div class="btn_menu square left">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <div class="btn_emergency square right">
+                    <p>!</p>
+                </div>
+            </div>
+            <p class="upper bold">Points / Stars</p>
+            <img src="img/question.png">
+        </div>
+        <div class="descriptions">
+            <div class="scroll">
+                <p class="bold">You currently have:</p>
+                <p>22</p>
+                <p class="upper">Star points</p>
+                <div class="star-point">
+                    <img src="img/star.png" alt="star">
+                </div>
+            </div>
+            <p class="align">What are stare points ?</p>
+            <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+</div>
+    <!--26-->
+<div id="window_menu_expansions" class="container connections expansions">
+        <div class="gray-block">
+            <div class="menu">
+                <div class="btn_menu square left">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <div class="btn_emergency square right">
+                    <p>!</p>
+                </div>
+            </div>
+            <p class="upper bold">Expansions</p>
+            <img src="img/question.png">
+        </div>
+        <div class="descriptions">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ornare dictum ligula. Maecenas
+                elementum suscipit</p>
+            <div class="eat-block">
+                <div class="eat">
+                    <img src="img/eat1.png" alt="eat">
+                    <p>Bi-Polar</p>
+                </div>
+                <div class="eat">
+                    <img src="img/eat2.png" alt="eat">
+                    <p>Eating Disorder</p>
+                </div>
+            </div>
+            <div class="eat-block">
+                <div class="eat">
+                    <img src="img/eat3.png" alt="eat">
+                    <p>Gardening</p>
+                </div>
+                <div class="eat">
+                    <img src="img/eat4.png" alt="eat">
+                    <p>Fishing</p>
+                </div>
+            </div>
+
+        </div>
+</div>
+    <!-- EMERGENCY MENU BLOCK-->
 <div id="window_emergencyCall" class="container">
     <!--28-->
-    <div id="div_callFriend" class="call">
+    <div id="div_callFriend" class="call hide">
         <div class="blue-block">
             <div class="menu">
                 <div class="btn_menu square left">
@@ -532,19 +801,19 @@
             <p>and talk it through</p>
             <p>with them?</p>
         </div>
-        <div class="white-block">
+        <div id="contact_friend" class="white-block">
             <div class="need-margin"> <span class="medium-circle-gray">
              <img src="img/user.png" alt="user">
         </span></div>
             <p>Sarah White</p>
         </div>
-        <div class="white-block">
+        <div id="contact_support" class="white-block">
             <div class="need-margin"><span class="medium-circle-gray">
             <img src="img/user.png" alt="user">
         </span></div>
             <p>Joe Brown</p>
         </div>
-        <div class="white-block last">
+        <div id="contact_other" class="white-block last">
             <div class="need-margin"><span class="medium-circle-gray">
              <i class="fa fa-bars fa-4x"></i>
         </span></div>
@@ -554,8 +823,8 @@
             <p>I bet they'd be glad to</p>
             <p>hear from you!</p>
         </div>
-        <input id="btn_CallAFriendNO" type="button" class="pink-button" value="no">
-        <input id="btn_IAmOk" type="button" class="purple-button" value="I'm ok">
+        <input id="btn_CallAFriend_NO" type="button" class="pink-button" value="no">
+        <input id="btn_CallAFriend_IAmOk" type="button" class="purple-button" value="I'm ok">
     </div>
     <!--29-->
     <div id="div_notAloneScreen" class="call alone hide">
@@ -564,85 +833,73 @@
                 <div class="btn_menu square left">
                     <i class="fa fa-bars fa-2x"></i>
                 </div>
-                <div class="btn_emergency square right">
-                    <p>!</p>
-                </div>
             </div>
             <p class="upper">You're not alone!</p>
             <p>There are a variety of</p>
             <p>People available to help you.</p>
         </div>
-        <div class="white-block">
+        <div id="contact_localService" class="white-block">
             <div class="need-margin">
                 <img src="img/www.png" alt="www">
             </div>
             <p class="upper">Local counselling services</p>
         </div>
-        <div class="white-block">
+        <div id="contact_samaritans" class="white-block">
             <div class="need-margin">
                 <img src="img/phone.png" alt="phone">
             </div>
             <p class="upper">Samaritans</p>
         </div>
-        <div class="white-block last">
+        <div id="contact_otherWWW" class="white-block last">
             <div class="need-margin">
                 <img src="img/planeta.png" alt="planeta">
             </div>
             <p class="upper">Other help</p>
         </div>
-        <input type="button" class="pink-button" value="no">
-        <input type="button" class="purple-button" value="I'm ok">
+        <input id="btn_URNotAlone_No" type="button" class="pink-button" value="no">
+        <input id="btn_URNotAlone_IAmOk" type="button" class="purple-button" value="I'm ok">
+    </div>
+    <!--30-->
+    <div id="div_callEmergency" class="help hide">
+            <div class="header-block">
+                <div class="menu">
+                    <div class="btn_menu square left">
+                        <i class="fa fa-bars fa-2x"></i>
+                    </div>
+                </div>
+                <p>For non-urgent help</p>
+                <p>tap below:</p>
+            </div>
+            <div id="btn_callNonUrgent" class="call_emergency blue-block">
+                <div class="align">
+                    <div class="big-circle">
+                        <span>111</span>
+                    </div>
+                </div>
+            </div>
+            <p>In a emergency</p>
+            <p>tap below:</p>
+            <div id="btn_callEmergency" class="call_emergency red-block">
+                <div class="align">
+                    <div class="big-circle second">
+                        <span>999</span>
+                    </div>
+                </div>
+            </div>
+            <input id="btn_emergency_IAmOk" type="button" class="purple-button" value="I'm ok">
     </div>
     <!--32-->
     <div id="div_didUCallScreen" class="did-u-call hide">
         <div class="birds-block">
-            <div class="menu">
-                <div class="btn_menu square left">
-                    <i class="fa fa-bars fa-2x"></i>
-                </div>
-                <div class="btn_emergency square right">
-                    <p>!</p>
-                </div>
-            </div>
-            <p>Did you call?</p>
+            <div class="menu"></div>
+            <p id="p_didUCall">Did you call?</p>
         </div>
-        <div id="btn_CallYes" class="yes-block">
+        <div id="btn_CallYes" class="yes-block _yes">
             <p>Yes</p>
         </div>
-        <div id="btn_CallNo" class="no-block">
+        <div id="btn_CallNo" class="no-block _no">
             <p>no</p>
         </div>
-    </div>
-    <div class="help">
-        <div class="header-block">
-            <div class="menu">
-                <div class="btn_menu square left">
-                    <i class="fa fa-bars fa-2x"></i>
-                </div>
-            </div>
-            <div class="red-square">
-                <p>!</p>
-            </div>
-            <p>For non-urgent help</p>
-            <p>tap below:</p>
-        </div>
-        <div class="blue-block">
-            <div class="align">
-                <div class="big-circle">
-                    <span>111</span>
-                </div>
-            </div>
-        </div>
-        <p>In a emergency</p>
-        <p>tap below:</p>
-        <div class="red-block">
-            <div class="align">
-                <div class="big-circle second">
-                    <span>999</span>
-                </div>
-            </div>
-        </div>
-        <input  type="button" class="purple-button" value="I'm ok">
     </div>
 </div>
 </body>

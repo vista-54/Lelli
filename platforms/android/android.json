@@ -9,19 +9,15 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ImagePicker\"><param name=\"android-package\" value=\"com.synconset.ImagePicker\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Contacts\"><param name=\"android-package\" value=\"org.apache.cordova.contacts.ContactManager\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"PinDialog\"><param name=\"android-package\" value=\"hu.dpal.phonegap.plugins.PinDialog\" /></feature>",
                             "count": 1
                         },
                         {
@@ -33,19 +29,27 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"PinDialog\"><param name=\"android-package\" value=\"z1key.phonegap.plugins.PinDialog\" /></feature>",
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"ImagePicker\"><param name=\"android-package\" value=\"com.synconset.ImagePicker\" /></feature>",
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
                             "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Home\"><param name=\"android-package\" value=\"org.apache.cordova.home.Home\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"PinDialog\"><param name=\"android-package\" value=\"z1key.phonegap.plugins.PinDialog\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -53,6 +57,18 @@
             },
             "AndroidManifest.xml": {
                 "parents": {
+                    "/manifest/application": [
+                        {
+                            "xml": "<activity android:label=\"@string/multi_app_name\" android:name=\"com.synconset.MultiImageChooserActivity\" android:theme=\"@android:style/Theme.Holo.Light\"></activity>",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        }
+                    ],
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.READ_CONTACTS\" />",
@@ -74,57 +90,64 @@
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 1
                         }
-                    ],
-                    "/manifest/application": [
-                        {
-                            "xml": "<activity android:label=\"@string/multi_app_name\" android:name=\"com.synconset.MultiImageChooserActivity\" android:theme=\"@android:style/Theme.Holo.Light\"></activity>",
-                            "count": 1
-                        }
-                    ],
-                    "/manifest": [
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 1
-                        }
                     ]
                 }
             }
         }
     },
     "installed_plugins": {
-        "cordova-plugin-contacts": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "hu.dpal.phonegap.plugins.PinDialog": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-datepicker": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "z1key.phonegap.plugins.PinDialog": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
         "com.ionic.keyboard": {
             "PACKAGE_NAME": "com.app.lelly"
         },
         "com.synconset.imagepicker": {
             "PACKAGE_NAME": "com.app.lelly"
         },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-datepicker": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
         "org.apache.cordova.camera": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "org.apache.cordova.home": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "z1key.phonegap.plugins.PinDialog": {
             "PACKAGE_NAME": "com.app.lelly"
         }
     },
     "dependent_plugins": {},
     "modules": [
+        {
+            "file": "plugins/com.ionic.keyboard/www/keyboard.js",
+            "id": "com.ionic.keyboard.keyboard",
+            "pluginId": "com.ionic.keyboard",
+            "clobbers": [
+                "cordova.plugins.Keyboard"
+            ]
+        },
+        {
+            "file": "plugins/com.synconset.imagepicker/www/imagepicker.js",
+            "id": "com.synconset.imagepicker.ImagePicker",
+            "pluginId": "com.synconset.imagepicker",
+            "clobbers": [
+                "plugins.imagePicker"
+            ]
+        },
         {
             "file": "plugins/cordova-plugin-contacts/www/contacts.js",
             "id": "cordova-plugin-contacts.contacts",
@@ -198,28 +221,6 @@
             ]
         },
         {
-            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-            "id": "cordova-plugin-splashscreen.SplashScreen",
-            "pluginId": "cordova-plugin-splashscreen",
-            "clobbers": [
-                "navigator.splashscreen"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-whitelist/whitelist.js",
-            "id": "cordova-plugin-whitelist.whitelist",
-            "pluginId": "cordova-plugin-whitelist",
-            "runs": true
-        },
-        {
-            "file": "plugins/hu.dpal.phonegap.plugins.PinDialog/www/pin.js",
-            "id": "hu.dpal.phonegap.plugins.PinDialog.PinDialog",
-            "pluginId": "hu.dpal.phonegap.plugins.PinDialog",
-            "merges": [
-                "window.plugins.pinDialog"
-            ]
-        },
-        {
             "file": "plugins/cordova-plugin-datepicker/www/android/DatePicker.js",
             "id": "cordova-plugin-datepicker.DatePicker",
             "pluginId": "cordova-plugin-datepicker",
@@ -245,28 +246,27 @@
             ]
         },
         {
-            "file": "plugins/z1key.phonegap.plugins.PinDialog/www/pin.js",
-            "id": "z1key.phonegap.plugins.PinDialog.PinDialog",
-            "pluginId": "z1key.phonegap.plugins.PinDialog",
-            "merges": [
-                "window.plugins.pinDialog"
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "pluginId": "cordova-plugin-splashscreen",
+            "clobbers": [
+                "navigator.splashscreen"
             ]
         },
         {
-            "file": "plugins/com.ionic.keyboard/www/keyboard.js",
-            "id": "com.ionic.keyboard.keyboard",
-            "pluginId": "com.ionic.keyboard",
+            "file": "plugins/cordova-plugin-whitelist/whitelist.js",
+            "id": "cordova-plugin-whitelist.whitelist",
+            "pluginId": "cordova-plugin-whitelist",
+            "runs": true
+        },
+        {
+            "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
+            "id": "ionic-plugin-keyboard.keyboard",
+            "pluginId": "ionic-plugin-keyboard",
             "clobbers": [
                 "cordova.plugins.Keyboard"
-            ]
-        },
-        {
-            "file": "plugins/com.synconset.imagepicker/www/imagepicker.js",
-            "id": "com.synconset.imagepicker.ImagePicker",
-            "pluginId": "com.synconset.imagepicker",
-            "clobbers": [
-                "plugins.imagePicker"
-            ]
+            ],
+            "runs": true
         },
         {
             "file": "plugins/org.apache.cordova.camera/www/CameraConstants.js",
@@ -298,6 +298,22 @@
             "pluginId": "org.apache.cordova.camera",
             "clobbers": [
                 "CameraPopoverHandle"
+            ]
+        },
+        {
+            "file": "plugins/org.apache.cordova.home/www/home.js",
+            "id": "org.apache.cordova.home.home",
+            "pluginId": "org.apache.cordova.home",
+            "merges": [
+                "navigator.home"
+            ]
+        },
+        {
+            "file": "plugins/z1key.phonegap.plugins.PinDialog/www/pin.js",
+            "id": "z1key.phonegap.plugins.PinDialog.PinDialog",
+            "pluginId": "z1key.phonegap.plugins.PinDialog",
+            "merges": [
+                "window.plugins.pinDialog"
             ]
         }
     ]

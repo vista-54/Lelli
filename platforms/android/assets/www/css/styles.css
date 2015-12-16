@@ -1,3 +1,4 @@
+/*ARSEN CSSSSSSS*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -41,60 +42,65 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-.container {
-    height: 100%;
-}
-.hide {
-    display: none;
-}
-.red {
-    color: red;
-}
-.green {
-    color: green;
-}
-.spinner {
-    display: inline-block;
-    position: relative;
-    height: 1.8em;
-    width: 1.8em;
-    background: url('spinner.gif');
-    background-size: cover;
-    line-height: 1.8em;
-    vertical-align: middle;
-}
 
-.record .medium-circle-red {
-    background-color: #77cab8;
-}
-.medium-circle-red {
-    background-color: #ec5664;
-}
-.placeholder::-webkit-input-placeholder {
-    color: #ec5664 !important;
-}
-#btn_taskRefresh {
-    width: 3.5em;
-    margin-top: 1em;
-}
-#window_pin {
+/* ARSEN*/
+@charset "UTF-8";
+#modal-form {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    border: 3px #000 solid;
+    background-color: #e5e8ec;
     position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
+    top: 45%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+    display: none;
+    opacity: 0;
+    z-index: 5;
+    padding: 20px 0;
+}
+#overlay {
+    z-index:3;
+    position:fixed;
+    background-color:#000;
+    opacity:0.8;
+    filter:alpha(opacity=80);
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    cursor:pointer;
+    display:none;
+}
+#modal-form .smiles-enter {
+    height: 30%;
     width: 100%;
 }
-/*ARSEN CSS FILE*/
-@charset "UTF-8";
-.menu .fa, .menu .right p, h1 {
-    text-align: center
+#modal-form .smile-one-enter {
+    height: 100%;
+    width: 32.6%;
+    display: inline-block;
 }
-
+#modal-form .align {
+    margin-bottom: 5%;
+}
+#modal-form .smile-type-enter img {
+    width: 5em;
+    height: 5em;
+    display: block;
+    margin: 0 auto 10%;
+}
+#modal-form .smile-one-enter p {
+    text-align: center;
+    font-size: 2em;
+}
 input, li {
     display: block
 }
 
-.details-pages .description-block2, .did-u-call p, .register-complete p, .register-pages header p, .the-end-pages p, .upper {
+.details-pages .description-block2, .did-u-call p, .overview .descriptions a, .register-complete p, .register-pages header p, .the-end-pages p, .upper {
     text-transform: uppercase
 }
 
@@ -107,7 +113,12 @@ input, li {
 
 body {
     font-size: 14px;
-    font-family: 'Open Sans', sans-serif
+    font-family: 'Open Sans', sans-serif;
+    height: 100%
+}
+
+.medium-square, h1 {
+    font-family: Cabin, sans-serif
 }
 
 @font-face {
@@ -143,7 +154,7 @@ h1 {
     font-size: 9em;
     letter-spacing: .05em;
     color: #fff;
-    font-family: Cabin, sans-serif
+    text-align: center
 }
 
 .bold {
@@ -159,36 +170,6 @@ h1 {
     font-size: 2.2em;
     padding-top: 70%;
     font-weight: 700
-}
-
-.menu {
-    height: 51%
-}
-
-.menu .left {
-    float: left;
-    margin: 2.5%
-}
-
-.menu .right {
-    float: right;
-    margin: 2.5%
-}
-
-.menu .right p {
-    font-size: 5em !important;
-    font-family: 'Open Sans Condensed', sans-serif;
-    padding: 0 !important;
-    line-height: .85em !important
-}
-
-.menu .fa {
-    width: 1.44em;
-    line-height: 1.44em
-}
-
-.menu .fa-2x {
-    font-size: 3.3em
 }
 
 .star .big-circle i {
@@ -417,7 +398,6 @@ h1 {
     vertical-align: middle;
     line-height: 2.5em;
     font-size: 4em;
-    font-family: Cabin, sans-serif;
     background-color: #ee5567;
     -webkit-box-shadow: 0 0 15px 1px rgba(143, 136, 143, .4);
     box-shadow: 0 0 15px 1px rgba(143, 136, 143, .4)
@@ -605,8 +585,8 @@ h1 {
 }
 
 .details-pages .description-block {
-    width: 67%;
-    font-size: 1.8em;
+    width: 63%;
+    font-size: 2em;
     padding-left: 7%;
     height: 100%;
     line-height: 100%;
@@ -671,46 +651,6 @@ h1 {
     color: #cdcdcd
 }
 
-.details-pages .fa {
-    vertical-align: middle
-}
-
-.details-pages .rotate {
-    -webkit-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg)
-}
-
-.details-pages input[type=radio] + label i {
-    color: #cdcdcd
-}
-
-.details-pages input[type=radio]:checked + label i {
-    color: #a390c4
-}
-
-.details-pages input[type=checkbox] + label i {
-    color: #cdcdcd
-}
-
-.details-pages input[type=checkbox]:checked + label i {
-    color: #ec5664
-}
-
-.details-pages input[type=checkbox]:checked + label .medium-circle-gray {
-    border: .3em solid #ec5664;
-    background-color: #fff
-}
-
-.details-pages span {
-    display: inline-block;
-    vertical-align: middle
-}
-
-.details-pages .fa-2x {
-    font-size: 3.6em
-}
-
 .details-pages .pink-button {
     margin-top: 2.2%
 }
@@ -729,7 +669,7 @@ h1 {
 
 .details-pages .likes-box {
     overflow-x: auto;
-    height: 58%
+    height: 55%
 }
 
 .details-pages .likes-box .scroll, .details-pages .likes-box .scroll form, .details-pages .likes-box .scroll form ul {
@@ -740,12 +680,51 @@ h1 {
     height: 20%
 }
 
+.details-pages .second-margin {
+    margin-top: 3%
+}
+
+.details-pages label span {
+    width: 6em;
+    height: 5.2em;
+    background-size: cover;
+    display: inline-block
+}
+
+.details-pages input[type='checkbox'] + label i {
+    color: #cdcdcd;
+}
+.details-pages input[type='checkbox']:checked + label i {
+    color: #ec5664;
+}
+.details-pages input[type='checkbox']:checked + label .medium-circle-gray {
+    border: 0.3em solid #ec5664;
+    background-color: white;
+}
+
 .name-pages, .name-pages form {
     height: 100%
 }
 
-.details-pages .second-margin {
-    margin-top: 3%
+.details-pages .dislike {
+    background-image: url(../img/dislike-false.png);
+    background-size: cover;
+    margin-right: 7%
+}
+
+.details-pages .like {
+    background-size: cover;
+    background-image: url(../img/like-false.png)
+}
+
+.details-pages input[type=radio]:checked + label .dislike {
+    background-image: url(../img/dislike.png);
+    background-size: cover;
+}
+
+.details-pages input[type=radio]:checked + label .like {
+    background-image: url(../img/like.png);
+    background-size: cover;
 }
 
 .name-pages {
@@ -850,9 +829,9 @@ h1 {
 
 .feeling-pages .star-point {
     position: absolute;
-    bottom: -3em;
-    right: 5%;
-    margin: 0
+    bottom: -4em;
+    right: 3%;
+    margin: 0;
 }
 
 .feeling-pages p {
@@ -936,12 +915,12 @@ h1 {
 
 .task-pages .green-block, .task-pages .purple-block {
     height: 50%;
-    background-image: url(../img/01.jpg);
+    background-image: url(../img/01.png);
     background-size: cover
 }
 
 .done-today .green-block, .task-pages .green-block {
-    background-image: url(../img/16.jpg)
+    background-image: url(../img/16.png)
 }
 
 .task-pages .green-block p, .task-pages .purple-block p {
@@ -967,10 +946,9 @@ h1 {
     left: calc(50% - 3.5em)
 }
 
-.done-today .star-point img {
-    width: 7em;
-    margin: 0 auto;
-    display: block
+.star-point img {
+    width: 8em;
+    height: auto;
 }
 
 .done-today .icons img {
@@ -1045,7 +1023,7 @@ h1 {
 }
 
 .record .green-block {
-    background-image: url(../img/11.jpg)
+    background-image: url(../img/11.png)
 }
 
 .recorder .medium-circle-green {
@@ -1053,7 +1031,7 @@ h1 {
 }
 
 .recorder .green-block {
-    background-image: url(../img/09.jpg)
+    background-image: url(../img/09.png)
 }
 
 .recorder form {
@@ -1110,13 +1088,36 @@ h1 {
     color: #fff
 }
 
-.select-a-task-pages .need-margin {
+.task-pages {
+    height: 100%;
+}
+
+.task-pages .need-margin {
     margin: 14% auto 3%;
     font-size: 1.3em;
     line-height: 1.3
 }
+
+.task-pages p {
+    text-align: center;
+    color: #fff;
+    font-size: 1.9em;
+    font-weight: 600
+}
+
+.task-pages .purple-block {
+    height: 50%;
+    background-image: url(../img/01.png);
+    background-size: cover
+}
+
+.task-pages .purple-block img, .task-pages .green-block img, .task-pages .green-block img {
+    width: 4.2em;
+    height: auto
+}
+
 .task-pages .task-block {
-    height: 33.4%;
+    height: 34%;
     background-color: #7c6b95;
     width: 100%;
     display: table
@@ -1134,9 +1135,7 @@ h1 {
     font-size: 2.2em;
     padding-left: 13%
 }
-.task-pages .upper {
-    color: white;
-}
+
 .task-pages .task2 {
     background-color: #a290c4
 }
@@ -1171,7 +1170,7 @@ h1 {
 
 .dont-worry .block {
     height: 34%;
-    background-image: url(../img/14.jpg);
+    background-image: url(../img/14.png);
     background-size: cover
 }
 
@@ -1212,10 +1211,6 @@ h1 {
     height: 100%;
     vertical-align: middle;
     font-weight: 600
-}
-
-.call .align, .did-u-call p, .help .big-circle span, .help p, .pin span {
-    text-align: center
 }
 
 .dont-worry .tasks .task2 {
@@ -1314,6 +1309,7 @@ h1 {
 }
 
 .call .align {
+    text-align: center;
     font-size: 2.5em;
     margin: 4% auto;
     color: #3a3d44;
@@ -1391,13 +1387,14 @@ h1 {
 .did-u-call p {
     font-weight: 700;
     font-size: 3em;
-    color: #fff
+    color: #fff;
+    text-align: center
 }
 
 .did-u-call .birds-block {
     height: 50%;
     width: 100%;
-    background-image: url(../img/07.jpg);
+    background-image: url(../img/07.png);
     background-size: cover
 }
 
@@ -1435,6 +1432,7 @@ h1 {
 }
 
 .help p {
+    text-align: center;
     font-size: 2em;
     color: #434a54
 }
@@ -1494,6 +1492,7 @@ h1 {
 }
 
 .help .big-circle span {
+    text-align: center;
     vertical-align: middle;
     line-height: 3em;
     display: block;
@@ -1505,7 +1504,7 @@ h1 {
     background-color: #a4343f
 }
 
-.pin .enter {
+.menu-open .top-menu, .pin .enter {
     background-color: #bcd8ca
 }
 
@@ -1518,6 +1517,7 @@ h1 {
 }
 
 .pin span {
+    text-align: center;
     font-size: 2.4em;
     display: block
 }
@@ -1536,6 +1536,537 @@ h1 {
 .pin .circles2 {
     width: 23em;
     margin: 2.5% auto
+}
+
+.menu-open {
+    height: 100%;
+    width: 80%;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.menu-open .top-menu {
+    height: 23%
+}
+
+.menu-open .logo {
+    padding: 10% 0 2% 15%
+}
+
+.menu-open .medium-square {
+    float: none;
+    background-color: #bcd8ca;
+    margin: 0;
+    width: 2em;
+    height: 2em;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 2em;
+    font-size: 4em
+}
+
+.menu-open .bot-menu {
+    height: 77%;
+    background-color: #434a54
+}
+
+.menu-open .small-circle-blue, .menu-open .small-circle-green, .menu-open .small-circle-orange, .menu-open .small-circle-pink, .menu-open .small-circle-purple, .menu-open .small-circle-red {
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0 .15em
+}
+
+.menu-open .circles3 {
+    margin-left: 12%
+}
+
+.menu-open ul {
+    padding-top: 4%
+}
+
+.menu-open ul li {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2.2em;
+    padding-right: 3.5%;
+    padding-left: 15%;
+    width: 1000px;
+    line-height: 200%;
+}
+
+.menu-open ul li:active {
+    background-color: #a4343f
+}
+
+.info {
+    height: 100%
+}
+
+.info .gray-block {
+    height: 44.5%;
+    background-image: url(../img/18.png);
+    background-size: cover
+}
+
+.info .gray-block .menu {
+    height: 29%
+}
+
+.info .gray-block P {
+    color: #fff;
+    font-size: 2em;
+    padding-left: 9%;
+    margin-bottom: 5%;
+    font-weight: 700
+}
+
+.info .gray-block .bold {
+    font-size: 3em;
+    margin-bottom: 13%
+}
+
+.info .descriptions {
+    overflow-y: scroll;
+    background-color: #e5e8ec;
+    height: 55.4%;
+    width: 100%
+}
+
+.info .descriptions p {
+    color: #434a54;
+    font-size: 2.2em;
+    padding: 0 6% 0 9%
+}
+
+.info .descriptions .upper {
+    margin: 5% 0 2%
+}
+
+.connections {
+    height: 100%
+}
+
+.connections .gray-block {
+    height: 23%;
+    background-color: #434a54
+}
+
+.connections .gray-block .menu {
+    height: 57%
+}
+
+.connections .gray-block P {
+    font-size: 2.5em;
+    text-align: center;
+    color: #fff
+}
+
+.connections .gray-block img {
+    position: absolute;
+    width: 5em;
+    height: 5em;
+    right: 3.5%;
+    top: 19%;
+    z-index:1;
+}
+
+.connections .descriptions {
+    height: 77%;
+    background-color: #e5e8ec
+}
+
+.connections .descriptions .disconnect-box {
+    display: none;
+    position: absolute;
+    width: 85%;
+    height: 37%;
+    background-color: #666e78;
+    -webkit-border-radius: 3%;
+    border-radius: 3%;
+    margin-left: 7.5%;
+    top: 29%
+}
+
+.connections .descriptions .disconnect-box h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 2em;
+    font-family: "Helvetica LT Std", sans-serif;
+    font-weight: 700;
+    padding-top: 5%
+}
+
+.connections .descriptions .disconnect-box p {
+    width: 53%;
+    height: 2em;
+    color: #fff;
+    border: .12em solid #fff;
+    margin: 9% auto 0;
+    padding: 0;
+    font-family: "Helvetica LT Std", sans-serif;
+    font-weight: 700;
+    vertical-align: middle;
+    line-height: 2em
+}
+
+.connections .descriptions .disconnect-box p:active {
+    background-color: #a4343f
+}
+
+.connections .descriptions .disconnect-box .need-margin {
+    margin-top: 14%
+}
+
+.connections .descriptions p {
+    text-align: center;
+    font-size: 2.2em;
+    color: #434a54;
+    padding: 14% 0 9%
+}
+
+.connections .descriptions .white-block {
+    background-color: #fff;
+    border-bottom: 2px solid #ccc;
+    height: 10.5%;
+    width: 100%
+}
+
+.connections .descriptions .white-block .block {
+    width: 29%;
+    display: table;
+    float: left
+}
+
+.connections .descriptions .white-block .block p {
+    display: table-cell;
+    vertical-align: middle;
+    color: #666e78
+}
+
+.connections .descriptions .white-block .circle {
+    width: 3em;
+    height: 100%;
+    display: table
+}
+
+.connections .descriptions .white-block .circle .align {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%
+}
+
+.connections .descriptions .white-block .circle .small-circle-green {
+    display: table-cell;
+    width: 3em;
+    height: 3em;
+    vertical-align: middle
+}
+
+.connections .descriptions .active .small-circle-red {
+    background-color: #a0ce69
+}
+
+.password-screen .input {
+    width: 88%;
+    height: 2.1em;
+    margin: 0 auto 4%
+}
+
+.password-screen .green-button {
+    background-color: #1fa597;
+    opacity: .7
+}
+
+.password-screen .generate {
+    width: 76%;
+    margin: 7% auto 4%;
+    height: 1.5em;
+    background-color: #a9b1bc;
+    color: grey;
+    text-align: center;
+    font-size: 3em;
+    vertical-align: middle;
+    line-height: 1.5em;
+    font-family: initial, sans-serif
+}
+
+.password-screen .generate img {
+    width: .85em;
+    height: 1.1em;
+    position: absolute;
+    opacity: .7;
+    margin-top: .15em;
+    left: -webkit-calc(50% - .45em);
+    left: calc(50% - .45em)
+}
+
+.password-screen .descriptions p {
+    text-align: center;
+    font-size: 2.1em;
+    color: #434a54;
+    padding: 15% 0 4%
+}
+
+.password-screen .pink-button {
+    margin-top: 3%;
+    background-color: #d71a60;
+    opacity: .7
+}
+
+.password-screen .spinner {
+    display: block;
+    height: 7em;
+    width: 7em;
+    background: url(../img/spinner3.gif);
+    background-size: cover;
+    margin: 0 auto
+}
+
+.points {
+    height: 100%
+}
+
+.points .descriptions {
+    overflow-y: scroll
+}
+
+.points .descriptions p {
+    font-size: 12em;
+    padding: 0;
+    font-weight: 700;
+    line-height: .8em;
+    font-family: "Helvetica LT Std", sans-serif
+}
+
+.points .descriptions .bold {
+    font-size: 2em;
+    padding: 16% 0 8%
+}
+
+.points .descriptions .upper {
+    font-size: 2.1em;
+    padding: 1% 0 5%;
+    font-weight: 400;
+    color: #000
+}
+
+.points .descriptions .star-point {
+    float: none;
+    margin: 0
+}
+
+.points .descriptions .star-point img {
+    margin: 0 auto;
+    width: 12em;
+    display: block
+}
+
+.points .descriptions .align {
+    font-size: 2em;
+    margin: 5% 0
+}
+
+.points .descriptions .text {
+    width: 75%;
+    margin: 0 auto;
+    font-size: 2em;
+    font-weight: 400;
+    line-height: 1.2em;
+    font-family: "Open Sans", sans-serif
+}
+
+.expansions .descriptions p {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 2.1em;
+    padding: 8% 0
+}
+
+.expansions .eat-block {
+    height: 34%
+}
+
+.expansions .eat-block .eat {
+    width: 49%;
+    height: 100%;
+    display: inline-block
+}
+
+.expansions .eat-block .eat img {
+    width: 12em;
+    height: 12em;
+    margin: 0 auto;
+    display: block
+}
+
+.expansions .eat-block .eat p {
+    font-size: 2.2em;
+    padding: 5% 0 0
+}
+
+.overview {
+    height: 100%
+}
+
+.overview .descriptions .hr {
+    background-color: #f4ba43;
+    height: .11em;
+    width: 100%
+}
+
+.overview .descriptions .tabs-controls {
+    padding-top: .7em;
+    height: 4.2em;
+    border-bottom: .2em solid #f4ba43
+}
+
+.overview .descriptions .tabs-controls .active a {
+    border-bottom: .4em solid #f4ba43
+}
+
+.overview .descriptions .pink-button {
+    margin-top: 18%;
+    font-size: 3em;
+    line-height: 1.4em;
+    height: 1.5em
+}
+
+.overview .descriptions .tabs {
+    height: 65%;
+    margin-bottom: 10%
+}
+
+.overview .descriptions .tabs-list {
+    height: 100%
+}
+
+.overview .descriptions .tabs-list input {
+    width: 45%;
+    display: inline-block;
+    float: left;
+    height: 1.8em;
+    font-size: 1.9em;
+    line-height: 1.9em;
+    margin-top: 4.5%
+}
+
+.overview .descriptions .tabs-list .blue-button {
+    background-color: #1fa597;
+    opacity: .8;
+    margin-left: 5%
+}
+
+.overview .descriptions .tabs-list .blue-button:active {
+    background-color: #0f4f48
+}
+
+.overview .descriptions .tabs-list .red-button {
+    background-color: #D71A60;
+    opacity: .8
+}
+
+.overview .descriptions .tabs-list .red-button:active {
+    background-color: #7c0f37
+}
+
+.overview .descriptions .tabs-item {
+    height: 100%;
+    list-style: none;
+    display: none
+}
+
+.overview .descriptions .tabs-item.active {
+    display: block
+}
+
+.overview .descriptions a {
+    font-size: 2.1em;
+    color: #434a54;
+    text-align: center;
+    width: 33.3%;
+    display: block;
+    float: left;
+    padding: .3em 0;
+    font-weight: 400;
+    height: 1.1em;
+    position: relative
+}
+
+.overview .descriptions a i {
+    float: right;
+    font-size: 2em;
+    margin-right: .1em
+}
+
+.overview .descriptions a img {
+    width: .9em;
+    height: 1.2em;
+    float: left;
+    opacity: .8;
+    padding-left: 5%
+}
+
+.overview .descriptions a .arrow {
+    width: .1em;
+    padding: 0;
+    position: absolute;
+    right: -1%
+}
+
+.overview .descriptions p {
+    padding: 11% 0 1%;
+    color: #000;
+    font-size: 2.2em
+}
+
+.overview .descriptions .graph, .overview .descriptions .graph2, .overview .descriptions .graph3 {
+    height: 64%;
+    width: 90%;
+    background-color: #db7093;
+    margin: 0 auto
+}
+
+.overview .descriptions .graph2 {
+    background-color: #daa520
+}
+
+.overview .descriptions .graph3 {
+    background-color: #00bfff
+}
+
+.menu {
+    height: 51%
+}
+
+.menu .left {
+    float: left;
+    margin: 2.5%
+}
+
+.menu .right {
+    float: right;
+    margin: 2.5%
+}
+
+.menu .right p {
+    text-align: center;
+    font-size: 5em;
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 0;
+    line-height: .9em
+}
+
+.menu .fa {
+    text-align: center;
+    width: 1.44em;
+    line-height: 1.44em
+}
+
+.menu .fa-2x {
+    font-size: 3.3em
 }
 
 @media screen and (min-width: 320px) and (max-width: 359px) {
@@ -1559,6 +2090,10 @@ h1 {
         font-size: 8px
     }
 
+    .details-pages .article {
+        padding-bottom: 2%
+    }
+
     #div_registerContacts .pink-button {
         margin-top: 11%
     }
@@ -1571,7 +2106,7 @@ h1 {
         margin-bottom: 0
     }
 
-    .select-a-task-pages .need-margin {
+    .task-pages .need-margin {
         margin-top: 7%
     }
 
@@ -1594,6 +2129,46 @@ h1 {
     .pin .pink-button {
         margin-top: 35%
     }
+
+    .menu-open .top-menu {
+        height: 26%
+    }
+
+    .menu-open .bot-menu {
+        height: 74%
+    }
+
+    .info .gray-block .bold {
+        margin-bottom: 7%
+    }
+
+    .password-screen .descriptions p {
+        padding: 5% 0 2%
+    }
+
+    .password-screen .generate {
+        margin: 3% auto
+    }
+
+    .expansions {
+        font-size: 7px
+    }
+
+    .connections .descriptions .disconnect-box {
+        height: 43%
+    }
+
+    .overview .descriptions p {
+        padding: 7% 0 1%
+    }
+
+    .overview .descriptions .pink-button {
+        margin-top: 10%
+    }
+
+    .menu {
+        font-size: 9px
+    }
 }
 
 @media screen and (min-width: 360px) and (max-width: 409px) {
@@ -1606,7 +2181,7 @@ h1 {
     }
 
     #window_registerScreen {
-        font-size: 7px
+        font-size: 8px
     }
 
     #div_registerLikes, #div_registerStruggles, .done-today, .feeling-pages {
@@ -1633,7 +2208,7 @@ h1 {
         margin-bottom: 0
     }
 
-    .select-a-task-pages .need-margin {
+    .task-pages .need-margin {
         margin-top: 5%
     }
 
@@ -1651,6 +2226,10 @@ h1 {
 
     .pin .pink-button {
         margin-top: 50%
+    }
+
+    .menu {
+        font-size: 11px
     }
 }
 
@@ -1691,7 +2270,7 @@ h1 {
         margin-bottom: 0
     }
 
-    .select-a-task-pages .need-margin {
+    .task-pages .need-margin {
         margin-top: 5%
     }
 
@@ -1705,6 +2284,10 @@ h1 {
 
     .congratulations-pages .need-margin {
         margin: 0 auto 12.5%
+    }
+
+    .menu {
+        font-size: 12px
     }
 }
 
@@ -1749,7 +2332,7 @@ h1 {
         margin-bottom: 0
     }
 
-    .select-a-task-pages .need-margin {
+    .task-pages .need-margin {
         margin-top: 5%
     }
 
@@ -1767,6 +2350,16 @@ h1 {
 
     .congratulations-pages .need-margin {
         margin: 0 auto 12.5%
+    }
+
+    .menu {
+        font-size: 13px
+    }
+    #modal-form {
+        width: 400px;
+        height: 400px;
+        margin-top: -200px;
+        margin-left: -200px;
     }
 }
 
@@ -1819,7 +2412,7 @@ h1 {
         padding-top: 30%
     }
 
-    .select-a-task-pages .need-margin {
+    .task-pages .need-margin {
         margin-top: 5%
     }
 
@@ -1833,6 +2426,16 @@ h1 {
 
     .congratulations-pages .need-margin {
         margin: 0 auto 12.5%
+    }
+
+    .menu {
+        font-size: 15px
+    }
+    #modal-form {
+        width: 440px;
+        height: 440px;
+        margin-top: -220px;
+        margin-left: -220px;
     }
 }
 
@@ -1885,7 +2488,7 @@ h1 {
         padding-top: 30%
     }
 
-    .select-a-task-pages .need-margin {
+    .task-pages .need-margin {
         margin-top: 5%
     }
 
@@ -1908,4 +2511,120 @@ h1 {
     .pin .pink-button {
         margin-top: 50%
     }
+
+    .menu {
+        font-size: 17px
+    }
+    #modal-form {
+        width: 500px;
+        height: 500px;
+        margin-top: -250px;
+        margin-left: -250px;
+    }
+}
+
+/* My CSSS*/
+.container {
+    height: 100%;
+}
+.hide {
+    display: none;
+}
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+.spinner {
+    display: inline-block;
+    position: relative;
+    height: 1.8em;
+    width: 1.8em;
+    background: url('spinner.gif');
+    background-size: cover;
+    line-height: 1.8em;
+    vertical-align: middle;
+}
+.medium-circle-red {
+    background-color: #ec5664;
+}
+.placeholder::-webkit-input-placeholder {
+    color: #ec5664 !important;
+}
+#btn_taskRefresh {
+    width: 3.5em;
+    margin-top: 1em;
+}
+#window_pin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+}
+.taskRec .medium-circle-red, .lowMoodRec .medium-circle-red {
+    background-color: #77cab8;
+}
+
+#after_pause_block {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 25;
+    background-color: black;
+}
+#block_tasks {
+    height: 0;
+    width: 100%;
+}
+#form_register div {
+    margin-bottom: 10%;
+}
+#div_registerLikes label {
+    width: 50%;
+}
+#window_menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    z-index: 25;
+}
+#menu_container {
+    position: absolute;
+    width: 100%;
+    display: none;
+    top:0;
+    right: 0;
+    z-index: 5;
+}
+/*********************ARSEN***********************************/
+
+.medium-circle-green {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 5.5em;
+    height: 5.5em;
+    background-color: #77cab8
+}
+
+.medium-circle-pink, .medium-circle-red {
+    -webkit-border-radius: 50%;
+    width: 5.5em;
+    height: 5.5em
+}
+.medium-circle-red {
+    border-radius: 50%;
+    background-color: #ec5664
+}
+.congratulations-pages .pink-button {
+    margin-top: 26%;
 }

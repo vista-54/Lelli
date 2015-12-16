@@ -1,1 +1,4 @@
 <plugin name="com.synconset.imagepicker" spec="1.0.4" source="pgb" />
+<plugin name="Home" value="org.apache.cordova.plugin.Home"/>
+<plugin name="com.teamnemitoff.phonedialer" spec="0.3.0" source="pgb" />
+<plugin name="com.ionic.keyboard" spec="1.0.3" source="pgb" />

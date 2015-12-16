@@ -1,4 +1,4 @@
-package hu.dpal.phonegap.plugins;
+package z1key.phonegap.plugins;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;

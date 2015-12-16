@@ -63,27 +63,52 @@ table {
     line-height: 1.8em;
     vertical-align: middle;
 }
-
-.record .medium-circle-red {
-    background-color: #77cab8
+.medium-circle-red {
+    background-color: #ec5664;
 }
 .placeholder::-webkit-input-placeholder {
-    color: red;
+    color: #ec5664 !important;
 }
-/*ARSEN CSS FILE*/
-.bold, .medium-text {
-    font-weight: 700
+#btn_taskRefresh {
+    width: 3.5em;
+    margin-top: 1em;
+}
+#window_pin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+}
+.taskRec .medium-circle-red, .lowMoodRec .medium-circle-red {
+    background-color: #77cab8;
 }
 
+#after_pause_block {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 25;
+    background-color: black;
+}
+
+/*********************ARSEN***********************************/
+
+@charset "UTF-8";
 .menu .fa, .menu .right p, h1 {
     text-align: center
 }
 
-#div_forgotPin span, input, li {
+input, li {
     display: block
 }
 
-.register-pages header p, .the-end-pages p, .upper {
+.details-pages .description-block2, .did-u-call p, .register-complete p, .register-pages header p, .the-end-pages p, .upper {
     text-transform: uppercase
 }
 
@@ -95,7 +120,8 @@ table {
 }
 
 body {
-    font-size: 14px
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif
 }
 
 @font-face {
@@ -123,27 +149,30 @@ a, a:active, a:visited {
 
 input {
     margin: 0 auto;
-    font-size: 1.6em;
-    -webkit-appearance: none;
-    /*font-family: "Helvetica LT Std-Roman", sans-serif*/
+    font-size: 2.5em;
+    -webkit-appearance: none
 }
 
 h1 {
-    font-size: 7em;
+    font-size: 9em;
     letter-spacing: .05em;
     color: #fff;
     font-family: Cabin, sans-serif
 }
 
+.bold {
+    font-weight: 700
+}
+
 .big-text {
-    font-size: 2.3em;
-    font-family: HelveticaLTStd-Cond, sans-serif;
-    padding-top: 1%
+    font-size: 2.7em;
+    padding-top: 2%
 }
 
 .medium-text {
-    font-size: 1.6em;
-    font-family: "Helvetica LT Std", sans-serif
+    font-size: 2.2em;
+    padding-top: 70%;
+    font-weight: 700
 }
 
 .menu {
@@ -161,9 +190,10 @@ h1 {
 }
 
 .menu .right p {
-    font-size: 4em !important;
-    padding-left: 0;
-    font-family: Rokkitt, serif !important
+    font-size: 5em !important;
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 0 !important;
+    line-height: .85em !important
 }
 
 .menu .fa {
@@ -172,7 +202,7 @@ h1 {
 }
 
 .menu .fa-2x {
-    font-size: 2.6em
+    font-size: 3.3em
 }
 
 .star .big-circle i {
@@ -186,7 +216,7 @@ h1 {
 
 .mini-borders form div {
     position: relative;
-    width: 81%;
+    width: 82%;
     margin: 0 auto
 }
 
@@ -202,10 +232,10 @@ h1 {
 }
 
 .blue-button, .green-button, .orange-button, .pink-button, .purple-button, .red-button {
-    height: 1.8em;
-    line-height: 1.8em;
-    vertical-align: middle;
+    height: 1.7em;
+    line-height: 1.7em;
     width: 46.03%;
+    vertical-align: middle;
     text-align: center
 }
 
@@ -280,10 +310,11 @@ h1 {
     background-color: #f2ba41
 }
 
-.small-circle-green, .small-circle-red {
-    -webkit-border-radius: 50%;
-    width: 20px;
-    height: 20px
+.small-circle-green, .small-circle-pink, .small-circle-red {
+    width: 2.4em;
+    height: 2.4em;
+    display: inline-block;
+    margin: 0 .33em
 }
 
 .orange-button:active {
@@ -291,40 +322,76 @@ h1 {
 }
 
 .small-circle-red {
+    -webkit-border-radius: 50%;
     border-radius: 50%;
-    background-color: red
+    background-color: #f26e54
 }
 
 .small-circle-green {
+    -webkit-border-radius: 50%;
     border-radius: 50%;
-    background-color: green
+    background-color: #a0ce69
+}
+
+.small-circle-pink {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #ec5664
+}
+
+.small-circle-orange {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 2.4em;
+    height: 2.4em;
+    display: inline-block;
+    margin: 0 .33em;
+    background-color: #ffcd58
+}
+
+.small-circle-blue, .small-circle-purple {
+    -webkit-border-radius: 50%;
+    width: 2.4em;
+    height: 2.4em;
+    display: inline-block;
+    margin: 0 .33em
+}
+
+.small-circle-blue {
+    border-radius: 50%;
+    background-color: #6897d0
+}
+
+.small-circle-purple {
+    border-radius: 50%;
+    background-color: #d2b8c9
 }
 
 .medium-circle-gray {
     -webkit-border-radius: 50%;
     border-radius: 50%;
     background-color: #e5e8ed;
-    width: 3.86em;
-    height: 3.86em
+    width: 5em;
+    height: 5em
 }
 
 .medium-circle-green {
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    width: 4.2em;
-    height: 4.2em;
+    width: 5.5em;
+    height: 5.5em;
     background-color: #77cab8
 }
 
 .medium-circle-pink, .medium-circle-red {
     -webkit-border-radius: 50%;
-    width: 50px;
-    height: 50px
+    width: 5.5em;
+    height: 5.5em
 }
 
 .medium-circle-red {
     border-radius: 50%;
-    background-color: red
+    background-color: #ec5664
 }
 
 .medium-circle-pink {
@@ -346,12 +413,28 @@ h1 {
 }
 
 .square {
-    width: 3.7em;
-    height: 3.7em;
-    background: #64454b;
+    width: 4.7em;
+    height: 4.7em;
+    background: rgba(64, 64, 65, .8);
     color: #fff;
     -webkit-border-radius: 20%;
     border-radius: 20%
+}
+
+.medium-square {
+    width: 2.5em;
+    height: 2.5em;
+    float: right;
+    margin: 3% 6% 0 0;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 2.5em;
+    font-size: 4em;
+    font-family: Cabin, sans-serif;
+    background-color: #ee5567;
+    -webkit-box-shadow: 0 0 15px 1px rgba(143, 136, 143, .4);
+    box-shadow: 0 0 15px 1px rgba(143, 136, 143, .4)
 }
 
 .enter, .register-pages {
@@ -359,22 +442,21 @@ h1 {
 }
 
 .register-pages {
-    font-family: 'Helvetica LT Std-Roman', sans-serif;
     color: #3a3d44
 }
 
 .register-pages .blue-button, .register-pages .red-button {
-    margin-top: 7.7%
+    margin-top: 8.4%
 }
 
 .register-pages p {
     text-align: center;
-    font-size: 1.29em
+    font-size: 1.8em
 }
 
 .register-pages .or {
-    font-size: 2.3em;
-    margin: 8% auto -2%;
+    font-size: 3.5em;
+    margin: 6% auto -2%;
     color: #3a3d44
 }
 
@@ -385,7 +467,7 @@ h1 {
 .enter {
     border-bottom: 2px solid #000;
     color: #000;
-    margin-top: 9.5%;
+    margin-top: 8.5%;
     width: 59%;
     padding-left: 2%
 }
@@ -397,14 +479,15 @@ h1 {
 .register-pages header {
     width: 100%;
     height: 36.88375%;
-    font-family: Cabin, sans-serif;
     color: #fff;
-    text-align: center
+    text-align: center;
+    -webkit-box-shadow: 0 0 20px 1px rgba(143, 136, 143, .4);
+    box-shadow: 0 0 20px 1px rgba(143, 136, 143, .4)
 }
 
 .register-pages header p {
     padding: 11% 0 5%;
-    font-size: 2.6em
+    font-size: 3.6em
 }
 
 #div_forgotPin .enter {
@@ -412,21 +495,29 @@ h1 {
 }
 
 #div_forgotPin form .purple-button {
-    margin: 6.1% auto 31%
+    margin: 5.4% auto 30%
 }
 
 #div_forgotPin span, #div_sendPin span {
     margin-left: 7%;
-    line-height: 1.3em;
-    font-size: 1.35em
+    font-size: 1.95em;
+    line-height: 1.21em
 }
 
-#div_forgotPin .back-sent, #div_sendPin .green-button {
-    margin-top: 71%
+#div_forgotPin span {
+    display: block
+}
+
+#div_forgotPin .back-sent {
+    margin-top: 70%
 }
 
 #div_forgotPin header, #div_sendPin header {
     margin-bottom: 5%
+}
+
+#div_sendPin .green-button {
+    margin-top: 71%
 }
 
 .spinner-box {
@@ -438,30 +529,21 @@ h1 {
     margin: 0 2% 0 27%
 }
 
-.the-end-pages h1 {
-    margin: 0 auto 24%;
-    padding-top: 18%
-}
-
 .the-end-pages p {
     text-align: center;
     color: #3e4852
 }
 
-.the-end-pages input {
-    margin-top: 69.5%
+.the-end-pages .lock img {
+    margin: 8% auto 0;
+    width: 8em;
+    height: auto;
+    display: block
 }
 
 .details-pages {
     background-color: #e5e8ed;
-    font-family: 'Helvetica LT Std-Roman', sans-serif;
     height: 100%
-}
-
-.details-pages .green-header p, .details-pages .red-header p, .name-pages p {
-    text-transform: uppercase;
-    font-family: HelveticaLTStd-Cond, sans-serif;
-    font-weight: 700
 }
 
 .details-pages .blue-header {
@@ -472,13 +554,19 @@ h1 {
 
 .details-pages p {
     text-align: left;
-    font-size: 1.35em;
+    font-size: 1.43em;
     color: #5e6166
 }
 
 .details-pages .article {
     width: 90%;
-    margin: 5% 0 8% 7.5%
+    padding: 16.5% 0 7% 8%;
+    font-size: 1.35em
+}
+
+.details-pages #form_register {
+    width: 82%;
+    margin: 0 auto 9%
 }
 
 .details-pages .my-margin {
@@ -486,28 +574,34 @@ h1 {
 }
 
 .details-pages .need-margin {
-    margin-bottom: 7.2%;
+    margin-bottom: 1%;
     padding-top: 2%;
     line-height: 1.5em
 }
 
 .details-pages .green-header, .details-pages .red-header {
-    height: 17.1%;
-    background-color: #dc4355
+    height: 20%
 }
 
 .details-pages .green-header p, .details-pages .red-header p {
-    color: #fff;
-    padding-left: 8%;
-    font-size: 2.4em
+    color: #000;
+    text-transform: uppercase;
+    padding: 0 0 0 8%;
+    font-weight: 700;
+    font-size: 2.5em
 }
 
-.details-pages .green-header > p:first-child, .details-pages .red-header > p:first-child {
-    padding-top: 5%
+.details-pages .green-header .need-margin, .details-pages .red-header .need-margin {
+    padding-top: 6%;
+    margin-bottom: 0
 }
 
-.details-pages .green-header {
-    background-color: #39bb99
+.details-pages .green-header .medium-square, .details-pages .red-header .medium-square {
+    background-color: #bcd8ca
+}
+
+.details-pages .green-header .medium-square {
+    background-color: #6897d0
 }
 
 .details-pages .white-block {
@@ -525,16 +619,17 @@ h1 {
 }
 
 .details-pages .description-block {
-    width: 64%;
+    width: 67%;
     font-size: 1.8em;
     padding-left: 7%;
     height: 100%;
     line-height: 100%;
-    color: #5e6166
+    color: #5e6166;
+    font-weight: 600
 }
 
 .details-pages .fa-3x {
-    font-size: 3.6em
+    font-size: 4.5em
 }
 
 .details-pages .description-block2 {
@@ -543,7 +638,8 @@ h1 {
     height: 100%;
     line-height: 100%;
     color: #5e6166;
-    width: 69%
+    width: 69%;
+    font-weight: 600
 }
 
 .details-pages .button-block2 {
@@ -573,10 +669,11 @@ h1 {
 }
 
 .details-pages .enter {
-    font-size: 1.6em;
-    margin: 0 auto 10.3%;
-    width: 95%;
-    padding-left: 5%
+    font-size: 2.6em;
+    margin: 0 auto 8.2%;
+    width: 98%;
+    padding-left: 2%;
+    font-weight: 300
 }
 
 .details-pages .last {
@@ -603,7 +700,7 @@ h1 {
 }
 
 .details-pages input[type=radio]:checked + label i {
-    color: #dc4355
+    color: #a390c4
 }
 
 .details-pages input[type=checkbox] + label i {
@@ -611,7 +708,12 @@ h1 {
 }
 
 .details-pages input[type=checkbox]:checked + label i {
-    color: #dc4355
+    color: #ec5664
+}
+
+.details-pages input[type=checkbox]:checked + label .medium-circle-gray {
+    border: .3em solid #ec5664;
+    background-color: #fff
 }
 
 .details-pages span {
@@ -620,11 +722,11 @@ h1 {
 }
 
 .details-pages .fa-2x {
-    font-size: 3em
+    font-size: 3.6em
 }
 
 .details-pages .pink-button {
-    margin-top: 3%
+    margin-top: 2.2%
 }
 
 .details-pages #div_registerLikes {
@@ -652,51 +754,107 @@ h1 {
     height: 20%
 }
 
+.name-pages, .name-pages form {
+    height: 100%
+}
+
 .details-pages .second-margin {
     margin-top: 3%
 }
 
 .name-pages {
-    background-color: #e5e8ed
+    background-color: #bcd8ca;
+    color: #434a54
 }
 
-.name-pages form {
-    height: 100%
+.name-pages .medium-square {
+    background-color: #d2b8c9
 }
 
-.name-pages .green-block, .name-pages .orange-block {
-    width: 100%;
-    height: 40%;
-    background-color: #f2ba41;
-    padding-top: 4%
+.name-pages .logo {
+    height: 30%
 }
 
-.name-pages .green-block {
-    background-color: #39bb99;
-    height: 41.5%;
-    margin-bottom: 5%;
-    padding-top: 7%
-}
-
-.name-pages .enter1, .name-pages .enter2 {
-    border-bottom: 2px solid #000;
+.name-pages .enter {
+    border-bottom: 2px solid #434a54;
+    color: #434a54;
     width: 59%;
-    padding-left: 2%;
-    background-color: #f2ba41;
-    margin: 8% auto 4%
+    background-color: #bcd8ca;
+    margin: 9.5% -1em 11% 20%;
+    font-weight: 300;
+    display: inline-block
 }
 
-.name-pages .enter2 {
-    background-color: #39bb99;
-    margin: 5% auto 4.5%
+.name-pages .medium-circle-pink {
+    background-color: #d2b8c9;
+    color: #fff;
+    display: inline-block;
+    width: 5em;
+    height: 5em;
+    vertical-align: middle;
+    line-height: 6.5em;
+    text-align: center
+}
+
+.name-pages .medium-circle-pink .fa {
+    font-size: 3.25em
+}
+
+.name-pages .need-margin {
+    margin-top: 8%
 }
 
 .name-pages p {
-    color: #fff;
     padding-left: 8%;
-    font-size: 2.3em;
-    line-height: 1.1em;
-    padding-top: 1%
+    font-size: 1.95em
+}
+
+.name-pages .pink-button {
+    margin-top: 26%
+}
+
+.register-complete {
+    background-color: #bcd8ca
+}
+
+.register-complete .logo {
+    padding-top: 35%
+}
+
+.register-complete .medium-square {
+    width: 2.2em;
+    height: 2.2em;
+    font-size: 7.5em;
+    line-height: 2em;
+    float: none;
+    margin: 0 auto;
+    background-color: #bcd8ca
+}
+
+.register-complete p {
+    text-align: center;
+    color: #3e4852;
+    font-size: 3.4em
+}
+
+.register-complete .medium-text {
+    padding-top: 4%;
+    font-size: 2.3em
+}
+
+.register-complete .circles {
+    margin: 3% auto;
+    width: 19.8em
+}
+
+.star-point {
+    float: right;
+    margin: 2% 3%
+}
+
+.star-point img {
+    width: 6em;
+    height: auto
 }
 
 .feeling-pages {
@@ -704,36 +862,42 @@ h1 {
     height: 100%
 }
 
-.feeling-pages .big-circle {
-    position: relative;
-    float: right;
-    margin: 9% 2% 0 0
+.feeling-pages .star-point {
+    position: absolute;
+    bottom: -3em;
+    right: 5%;
+    margin: 0
 }
 
 .feeling-pages p {
     color: #fff;
-    font-size: 1.7em;
-    padding-left: 9%;
-    font-family: "Helvetica LT Std", sans-serif
+    font-size: 2.55em;
+    padding-left: 9%
 }
 
 .feeling-pages .bold {
-    font-size: 2.05em
+    font-size: 2.8em
 }
 
-.feeling-pages .red-block {
+.feeling-pages .green-block {
     height: 24.35%;
-    background-color: #ee5567
+    background-color: #39ba99;
+    position: relative
 }
 
-.feeling-pages .blue-block {
+.feeling-pages .blue-block, .feeling-pages .help .red-block, .help .feeling-pages .red-block {
     height: 16.13%;
     background-color: #5c97b5;
     font-size: 1.2em
 }
 
-.feeling-pages .blue-block .bold {
-    padding-top: 4%
+.feeling-pages .blue-block .bold, .feeling-pages .help .red-block .bold, .help .feeling-pages .red-block .bold {
+    padding-top: 6%;
+    font-size: 2.3em
+}
+
+.feeling-pages .blue-block .upper, .feeling-pages .help .red-block .upper, .help .feeling-pages .red-block .upper {
+    font-size: 2.05em
 }
 
 .feeling-pages .smiles {
@@ -761,7 +925,7 @@ h1 {
 
 .feeling-pages .smiles .smile-one p {
     color: #000;
-    font-size: 1em;
+    font-size: 2em;
     text-align: center;
     margin-top: 44%;
     padding: 0
@@ -787,7 +951,7 @@ h1 {
 .task-pages .green-block, .task-pages .purple-block {
     height: 50%;
     background-image: url(../img/01.jpg);
-    background-size: cover
+    background-size: cover;
 }
 
 .done-today .green-block, .task-pages .green-block {
@@ -796,9 +960,9 @@ h1 {
 
 .task-pages .green-block p, .task-pages .purple-block p {
     color: #fff;
-    font-size: 1.9em;
+    font-size: 2.5em;
     text-align: center;
-    font-family: "Helvetica LT Std", sans-serif
+    line-height: 1.3em
 }
 
 .task-pages .green-block .align {
@@ -809,11 +973,25 @@ h1 {
     background-color: #e5e8ed
 }
 
-.done-today img {
-    width: 3.5em;
+.done-today .star-point {
+    float: none;
+    position: absolute;
+    bottom: -3em;
+    left: -webkit-calc(50% - 3.5em);
+    left: calc(50% - 3.5em)
+}
+
+.done-today .star-point img {
+    width: 7em;
+    margin: 0 auto;
+    display: block
+}
+
+.done-today .icons img {
+    width: 4.5em;
     height: auto;
-    padding-left: .35em;
-    padding-top: .7em
+    padding-left: .5em;
+    padding-top: 1em
 }
 
 .done-today .mini-borders {
@@ -821,31 +999,26 @@ h1 {
 }
 
 .done-today .blue-button {
-    margin-top: 16%
+    margin-top: 14.7%
 }
 
 .done-today form {
     height: 100%;
-    margin-top: 8%
+    margin-top: 7%
 }
 
 .done-today .green-block {
     height: 32%;
-    background-size: cover
+    background-size: cover;
+    position: relative
 }
 
 .done-today .menu {
     height: 37%
 }
 
-.done-today .big-circle {
-    margin: 2% auto 0
-}
-
 .done-today .enter {
-    width: 100%;
-    padding: 0;
-    text-align: center;
+    width: 98%;
     margin-top: 4.5%
 }
 
@@ -855,11 +1028,11 @@ h1 {
     margin: 5% auto;
     height: 78.5%;
     background-color: #fefefe;
-    font-family: "Helvetica LT Std-Roman", sans-serif;
-    font-size: 1.45em;
+    font-size: 1.9em;
     padding: 3%;
     resize: none;
-    color: #3f444a
+    color: #3f444a;
+    font-family: "Open Sans", sans-serif
 }
 
 .done-today textarea::-webkit-input-placeholder {
@@ -889,51 +1062,60 @@ h1 {
     background-image: url(../img/11.jpg)
 }
 
+.recorder .medium-circle-green {
+    background-color: #ec5664
+}
+
+.recorder .green-block {
+    background-image: url(../img/09.jpg)
+}
+
+.recorder form {
+    margin-top: 0
+}
+
+.recorder textarea {
+    margin-top: 3%;
+    height: 85.5%
+}
+
+.recorder .mini-borders {
+    height: 48%
+}
+
 .congratulations-pages {
     background-color: #bed8cb;
     height: 100%
 }
 
+.congratulations-pages .star-point {
+    float: none
+}
+
+.congratulations-pages .star-point img {
+    display: block;
+    margin: 17% auto 15.5%;
+    width: 12em
+}
+
 .congratulations-pages .menu {
-    height: 21%
+    height: 20%
 }
 
 .congratulations-pages p {
     text-align: center;
-    font-size: 1.4em;
-    font-family: "Helvetica LT Std", sans-serif;
+    font-size: 1.9em;
     color: #3f444a
 }
 
-.congratulations-pages .second-font {
-    font-family: "Helvetica LT Std-Roman", sans-serif
-}
-
-.congratulations-pages .big-circle {
-    width: 10em;
-    height: 10em;
-    margin: 16.3% auto 13%
-}
-
-.congratulations-pages .big-circle i {
-    text-align: center;
-    vertical-align: middle;
-    line-height: 1.66666667em;
-    width: 1.66666667em
-}
-
-.congratulations-pages .big-circle .fa-5x {
-    font-size: 6em
-}
-
 .congratulations-pages .need-margin {
-    margin: 5.8% auto 11%;
-    font-size: 1.9em;
+    margin: 0 auto 19.5%;
+    font-size: 2.8em;
     color: #000
 }
 
 .congratulations-pages .upper {
-    font-size: 2.4em;
+    font-size: 2.5em;
     color: #000;
     margin-bottom: 2%
 }
@@ -942,468 +1124,802 @@ h1 {
     color: #fff
 }
 
-.select-a-task-pages {
-    height: 100%;
-    background-color: #b6a5cf
-}
-
-.select-a-task-pages .menu {
-    height: 25%
-}
-
 .select-a-task-pages .need-margin {
-    margin: 13% auto 3%;
-    font-size: 1.3em
+    margin: 14% auto 3%;
+    font-size: 1.3em;
+    line-height: 1.3
 }
-
-.select-a-task-pages p {
-    text-align: center;
-    color: #fff;
-    font-size: 1.6em;
-    font-family: "Helvetica LT Std", sans-serif
-}
-
-.select-a-task-pages .purple-block, .select-a-task-pages .task-pages .green-block, .task-pages .select-a-task-pages .green-block {
-    height: 49%;
-    background-image: url(../img/01.jpg);
-    background-size: cover
-}
-
-.select-a-task-pages .purple-block img, .select-a-task-pages .task-pages .green-block img, .task-pages .select-a-task-pages .green-block img {
-    width: 3.2em;
-    height: auto
-}
-
-.select-a-task-pages .task-block {
-    height: 17%;
+.task-pages .task-block {
+    height: 33.4%;
     background-color: #7c6b95;
     width: 100%;
     display: table
 }
 
-.select-a-task-pages .task-block p {
-    width: 75%;
-    vertical-align: middle;
-    display: table-cell;
-    text-align: left;
-    height: 100%;
-    font-size: 2em;
-    padding-left: 13%
-}
-
-.select-a-task-pages .task-block .big-circle {
-    width: 6em;
-    height: 6em;
-    display: inline-block
-}
-
-.select-a-task-pages .task-block .big-circle i {
-    vertical-align: middle;
-    line-height: 1.5em;
-    text-align: center;
-    width: 1.5em
-}
-
-.select-a-task-pages .task-block .my-margin {
+.task-pages .task-block .my-margin, .task-pages .task-block p {
     display: table-cell;
     height: 100%;
     vertical-align: middle
 }
 
-.select-a-task-pages .task2 {
+.task-pages .task-block p {
+    width: 75%;
+    text-align: left;
+    font-size: 2.2em;
+    padding-left: 13%
+}
+.task-pages .upper {
+    color: white;
+}
+.task-pages .task2 {
     background-color: #a290c4
 }
 
-.select-a-task-pages .task3 {
+.task-pages .task3 {
     background-color: #b6a5cf
 }
 
-@media screen and (min-width: 320px) and (min-height: 480px) {
+.task-pages .star-point {
+    margin: 0 22% 0 0
+}
+
+.task-pages .star-point img {
+    width: 7em
+}
+
+.dont-worry {
+    height: 100%;
+    background-color: #8d7181
+}
+
+.dont-worry p {
+    color: #fff;
+    text-align: center;
+    font-size: 2.25em
+}
+
+.dont-worry .bold {
+    font-size: 2.8em;
+    color: #fff
+}
+
+.dont-worry .block {
+    height: 34%;
+    background-image: url(../img/14.jpg);
+    background-size: cover
+}
+
+.dont-worry .block2, .dont-worry .block3 {
+    height: 33%;
+    background-color: #ec5664;
+    display: table;
+    width: 100%
+}
+
+.dont-worry .block2 p, .dont-worry .block3 p {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.dont-worry .block3 {
+    background-color: #8d7181
+}
+
+.dont-worry .tasks {
+    height: 51%;
+    display: block;
+    background-color: #d1c6cd
+}
+
+.dont-worry .tasks .task-block {
+    height: 33.33333333%;
+    background-color: #a48d9a;
+    display: table;
+    width: 100%
+}
+
+.dont-worry .tasks .task-block p {
+    width: 75%;
+    text-align: left;
+    padding-left: 13%;
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+    font-weight: 600
+}
+
+.call .align, .did-u-call p, .help .big-circle span, .help p, .pin span {
+    text-align: center
+}
+
+.dont-worry .tasks .task2 {
+    background-color: #bbaab3
+}
+
+.dont-worry .tasks .task3 {
+    background-color: #d1c6cd
+}
+
+.dont-worry .tasks .my-margin {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle
+}
+
+.dont-worry .tasks .star-point {
+    display: table;
+    width: 100%
+}
+
+.dont-worry .tasks .star-point img {
+    width: 8em;
+    display: table-cell;
+    vertical-align: middle
+}
+
+.dont-worry .tasks .square {
+    display: table;
+    width: 7em;
+    height: 7em;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 43%;
+    left: 3%
+}
+
+.dont-worry .tasks .square img {
+    display: table-cell;
+    vertical-align: middle;
+    width: 4em;
+    margin: 1.5em auto 0
+}
+
+.call {
+    height: 100%;
+    background-color: #e5e8ec
+}
+
+.call .menu {
+    height: 42%
+}
+
+.call .blue-block, .call .help .red-block, .help .call .red-block {
+    height: 29.5%;
+    background-color: #7dacc2;
+    margin-bottom: 15%
+}
+
+.call .blue-block P, .call .help .red-block P, .help .call .red-block P {
+    font-size: 3em;
+    color: #fff;
+    padding-left: 8%;
+    font-weight: 700
+}
+
+.call .white-block {
+    height: 11%;
+    border-bottom: .23em solid #ccc;
+    background-color: #fff;
+    vertical-align: middle;
+    display: table;
+    width: 100%
+}
+
+.call .need-margin, .call .white-block p {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.call .white-block p {
+    font-size: 2em;
+    color: #404041;
+    font-weight: 600
+}
+
+.call .white-block img {
+    margin: 1em auto 0;
+    width: 4em;
+    height: 4em
+}
+
+.call .last {
+    border: none
+}
+
+.call .align {
+    font-size: 2.5em;
+    margin: 4% auto;
+    color: #3a3d44;
+    font-weight: 600
+}
+
+.call .pink-button {
+    margin-bottom: 2%
+}
+
+.call .need-margin {
+    width: 30%;
+    padding-left: 10%
+}
+
+.call .medium-circle-gray {
+    width: 6em;
+    height: 6em;
+    display: table;
+    color: #fff;
+    text-align: center;
+    background-color: #ccd0d9
+}
+
+.call .medium-circle-gray i {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.alone .blue-block, .alone .help .red-block, .help .alone .red-block {
+    background-color: #f58b76;
+    margin-bottom: 16.5%
+}
+
+.alone .blue-block p, .alone .help .red-block p, .help .alone .red-block p {
+    font-size: 2.2em
+}
+
+.alone .blue-block .upper, .alone .help .red-block .upper, .help .alone .red-block .upper {
+    font-size: 3em;
+    margin-bottom: 3%
+}
+
+.alone .white-block {
+    height: 11.5%
+}
+
+.alone .white-block p {
+    font-size: 1.6em
+}
+
+.alone .white-block img {
+    width: 6em;
+    height: 6em;
+    margin: 0
+}
+
+.alone .need-margin {
+    width: 28%;
+    padding-left: 9%
+}
+
+.alone .pink-button {
+    margin: 18% auto 3%
+}
+
+.did-u-call {
+    height: 100%
+}
+
+.did-u-call .menu {
+    height: 46%
+}
+
+.did-u-call p {
+    font-weight: 700;
+    font-size: 3em;
+    color: #fff
+}
+
+.did-u-call .birds-block {
+    height: 50%;
+    width: 100%;
+    background-image: url(../img/07.jpg);
+    background-size: cover
+}
+
+.did-u-call .no-block, .did-u-call .yes-block {
+    display: table;
+    width: 100%;
+    height: 25%;
+    background-color: #39ba99
+}
+
+.did-u-call .no-block p, .did-u-call .yes-block p {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.did-u-call .no-block :active, .did-u-call .yes-block :active {
+    background-color: #216c59
+}
+
+.did-u-call .no-block {
+    background-color: #db4554
+}
+
+.did-u-call .no-block :active {
+    background-color: #9c1e2b
+}
+
+.help {
+    height: 100%;
+    background-color: #bcd8ca
+}
+
+.help .menu {
+    height: 23.5%
+}
+
+.help p {
+    font-size: 2em;
+    color: #434a54
+}
+
+.help .header-block {
+    height: 32.5%
+}
+
+.help .red-square {
+    width: 10em;
+    height: 10em;
+    -webkit-border-radius: 20%;
+    border-radius: 20%;
+    margin: 0 auto 3%;
+    background-color: rgba(219, 69, 84, .8)
+}
+
+.help .red-square p {
+    font-size: 16em;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #fff;
+    vertical-align: top;
+    line-height: .55em
+}
+
+.help .blue-block, .help .red-block {
+    height: 22%;
+    background-color: #39add8;
+    margin-bottom: 2%;
+    display: table;
+    width: 100%
+}
+
+.help .red-block {
+    background-color: #db4554;
+    margin-top: 2%
+}
+
+.help .purple-button {
+    margin-top: 10.5%
+}
+
+.help .align {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.help .big-circle {
+    width: 12em;
+    height: 12em;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #2b82a2;
+    margin: 0 auto;
+    vertical-align: middle;
+    display: block
+}
+
+.help .big-circle span {
+    vertical-align: middle;
+    line-height: 3em;
+    display: block;
+    font-size: 4em;
+    font-weight: 700
+}
+
+.help .second {
+    background-color: #a4343f
+}
+
+.pin .enter {
+    background-color: #bcd8ca
+}
+
+.pin .pink-button {
+    margin-top: 58.5%
+}
+
+.pin .logo {
+    padding-top: 16%
+}
+
+.pin span {
+    font-size: 2.4em;
+    display: block
+}
+
+.pin .medium-square {
+    width: 2.2em;
+    height: 2.2em;
+    font-size: 8.5em
+}
+
+.pin .small-circle-blue, .pin .small-circle-green, .pin .small-circle-orange, .pin .small-circle-pink, .pin .small-circle-purple, .pin .small-circle-red {
+    width: 2.8em;
+    height: 2.8em
+}
+
+.pin .circles2 {
+    width: 23em;
+    margin: 2.5% auto
+}
+
+@media screen and (min-width: 320px) and (max-width: 359px) {
     body {
-        font-size: 11.5px
+        font-size: 8.5px
     }
 
-    #window_registerScreen {
-        font-size: 9px
-    }
-
-    #div_registerContacts, #div_registerLikes, #div_registerStruggles, .congratulations-pages, .done-today {
-        font-size: 10px
+    #div_registerLikes, #div_registerStruggles, #window_registerScreen {
+        font-size: 7.5px
     }
 
     #div_sendPin .green-button {
-        margin-top: 60%
+        margin-top: 68%
     }
 
-    .the-end-pages input {
-        margin-top: 45%
+    #window_registerScreen .article {
+        padding: 7% 0 4% 8%
     }
 
-    .feeling-pages .smiles {
-        margin-top: 3%
+    #div_registerContacts, .call, .congratulations-pages, .done-today, .feeling-pages {
+        font-size: 8px
     }
 
-    .task-pages .green-block .align {
-        padding-top: 29%
-    }
-
-    .done-today .blue-button {
-        margin-top: 14%
-    }
-
-    .congratulations-pages .menu {
-        height: 15%
-    }
-
-    .select-a-task-pages .menu {
-        height: 20%
-    }
-
-    .menu {
-        font-size: 11px
-    }
-}
-
-@media screen and (min-width: 320px) and (min-height: 533px) {
-    body {
-        font-size: 13px
-    }
-
-    #window_locked {
-        font-size: 14px
-    }
-
-    .the-end-pages input {
-        margin-top: 55%
-    }
-
-    #window_registerScreen {
-        font-size: 11.5px
-    }
-
-    .details-pages .description-block {
-        width: 58%
-    }
-
-    #div_registerContacts, #div_registerLikes, #div_registerStruggles {
-        font-size: 12.5px
-    }
-
-    .feeling-pages .bold {
-        font-size: 1.7em
-    }
-
-    .congratulations-pages, .done-today {
-        font-size: 11px
-    }
-
-    .done-today .blue-button {
-        margin-top: 16%
-    }
-
-    .congratulations-pages .menu {
-        height: 21%
-    }
-
-    .select-a-task-pages {
-        font-size: 13px
-    }
-
-    .select-a-task-pages .menu {
-        height: 23%
-    }
-
-    .menu {
-        font-size: 12.5px
-    }
-}
-
-@media screen and (min-width: 320px) and (min-height: 568px) {
-    #div_registerContacts, #window_registerScreen {
-        font-size: 12.5px
-    }
-
-    .congratulations-pages, .done-today {
-        font-size: 12px
-    }
-
-    .task-pages .green-block .align {
-        padding-top: 35%
-    }
-
-    .done-today .blue-button {
-        margin-top: 17%
-    }
-
-    .menu {
-        font-size: 14px
-    }
-}
-
-@media screen and (min-width: 360px) and (min-height: 640px) {
-    #div_registerContacts, #div_registerLikes, #div_registerStruggles, body {
-        font-size: 14px
-    }
-
-    #window_locked, #window_registerScreen {
-        font-size: 15px
+    #div_registerContacts .pink-button {
+        margin-top: 11%
     }
 
     .feeling-pages .smiles {
-        margin-top: 6%
+        margin-bottom: 6%
     }
 
-    .done-today {
-        font-size: 14px
+    .feeling-pages .need-margin {
+        margin-bottom: 0
     }
 
-    .congratulations-pages, .select-a-task-pages {
-        font-size: 13px
-    }
-
-    .done-today .blue-button {
-        margin-top: 17.5%
-    }
-
-    .congratulations-pages .menu {
-        height: 21%
-    }
-
-    .select-a-task-pages .menu {
-        height: 25%
-    }
-
-    .menu {
-        font-size: 15px
-    }
-}
-
-@media screen and (min-width: 375px) and (min-height: 627px) {
-    body {
-        font-size: 15px
-    }
-
-    #window_locked {
-        font-size: 13px
-    }
-
-    #window_registerScreen {
-        font-size: 13.5px
-    }
-
-    #div_registerContacts, #div_registerLikes, #div_registerStruggles, .congratulations-pages, .done-today {
-        font-size: 14px
-    }
-
-    .feeling-pages .smiles {
-        margin-top: 5%
-    }
-
-    .done-today .blue-button {
-        margin-top: 16%
-    }
-
-    .congratulations-pages .menu {
-        height: 23%
-    }
-
-    .menu {
-        font-size: 15.5px
-    }
-}
-
-@media screen and (min-width: 414px) and (min-height: 736px) {
-    #window_registerScreen, body {
-        font-size: 17px
-    }
-
-    #div_registerContacts, #div_registerLikes, #div_registerStruggles {
-        font-size: 16px
-    }
-
-    #window_locked {
-        font-size: 18px
-    }
-
-    .done-today, .menu {
-        font-size: 16px
-    }
-
-    .feeling-pages .smiles {
+    .select-a-task-pages .need-margin {
         margin-top: 7%
     }
 
-    .done-today .blue-button {
-        margin-top: 17.5%
+    .congratulations-pages .star-point img {
+        margin: 10% auto
+    }
+
+    .call .blue-block, .call .help .red-block, .help .call .red-block {
+        margin-bottom: 10%
+    }
+
+    .help {
+        font-size: 7px
+    }
+
+    .pin {
+        font-size: 8px
+    }
+
+    .pin .pink-button {
+        margin-top: 35%
     }
 }
 
-@media screen and (min-width: 600px) and (min-height: 900px) {
-    #window_locked, #window_registerScreen {
-        font-size: 20px
-    }
-
-    #div_registerLikes {
-        font-size: 18px
-    }
-
-    #div_registerLikes .description-block {
-        width: 67%
-    }
-
-    #div_registerContacts, #div_registerStruggles {
-        font-size: 19px
-    }
-
-    .feeling-pages .smiles {
-        margin-top: 5%
-    }
-
-    .done-today .blue-button {
-        margin-top: 14.5%
-    }
-
-    .congratulations-pages, .select-a-task-pages {
-        font-size: 18px
-    }
-
-    .done-today .big-circle {
-        margin: 9% auto 0
-    }
-
-    .menu {
-        font-size: 19px
-    }
-}
-
-@media screen and (min-width: 768px) and (min-height: 1024px) {
+@media screen and (min-width: 360px) and (max-width: 409px) {
     body {
-        font-size: 19px
-    }
-
-    #div_sendPin .green-button {
-        margin-top: 58%
-    }
-
-    #window_locked {
-        font-size: 22px
-    }
-
-    .the-end-pages input {
-        margin-top: 40%
-    }
-
-    #window_registerScreen {
-        font-size: 17px
-    }
-
-    #div_registerContacts, #div_registerLikes, #div_registerStruggles {
-        font-size: 18px
-    }
-
-    .done-today, .task-pages {
-        font-size: 22px
-    }
-
-    .details-pages .description-block {
-        width: 75%
-    }
-
-    .name-pages .green-block {
-        margin-bottom: 3.5%
-    }
-
-    .feeling-pages .red-block {
-        height: 22%
-    }
-
-    .feeling-pages .blue-block {
-        height: 16%
-    }
-
-    .feeling-pages .big-circle {
-        margin-top: 6%
-    }
-
-    .feeling-pages .smiles {
-        margin-top: 4%
-    }
-
-    .task-pages .green-block .align {
-        padding-top: 25%
-    }
-
-    .congratulations-pages, .menu, .select-a-task-pages {
-        font-size: 20px
-    }
-
-    .done-today .blue-button {
-        margin-top: 14%
-    }
-
-    .done-today .green-block {
-        height: 29%
-    }
-
-    .done-today .big-circle {
-        margin: 1% auto 0
-    }
-
-    .congratulations-pages .menu {
-        height: 15%
-    }
-
-    .select-a-task-pages .menu {
-        height: 20%
-    }
-}
-
-@media screen and (min-width: 800px) and (min-height: 1200px) {
-    body {
-        font-size: 26px
+        font-size: 9px
     }
 
     #div_sendPin .green-button {
         margin-top: 65%
     }
 
-    #window_locked {
-        font-size: 30px
+    #window_registerScreen {
+        font-size: 7px
     }
 
-    #div_registerContacts, #div_registerLikes, #div_registerStruggles, #window_registerScreen, .done-today, .task-pages {
-        font-size: 26px
+    #div_registerLikes, #div_registerStruggles, .done-today, .feeling-pages {
+        font-size: 8px
     }
 
-    .the-end-pages input {
-        margin-top: 50%
+    #window_registerScreen .article {
+        padding-top: 11.5%
     }
 
-    .task-pages .green-block .align {
-        padding-top: 31%
+    .name-pages .pink-button {
+        margin-top: 10%
+    }
+
+    .register-complete .circles {
+        width: 20.8em
+    }
+
+    .feeling-pages .smiles {
+        margin-bottom: 7%
+    }
+
+    .feeling-pages .need-margin {
+        margin-bottom: 0
+    }
+
+    .select-a-task-pages .need-margin {
+        margin-top: 5%
     }
 
     .done-today .blue-button {
-        margin-top: 17%
+        margin-top: 13.5%
     }
 
-    .done-today .green-block {
-        height: 29%
+    .congratulations-pages .star-point img {
+        margin: 13% auto
     }
 
-    .congratulations-pages {
-        font-size: 24px
+    .congratulations-pages .need-margin {
+        margin: 0 auto 12.5%
     }
 
-    .congratulations-pages .menu {
-        height: 21%
+    .pin .pink-button {
+        margin-top: 50%
+    }
+}
+
+@media screen and (min-width: 410px) and (max-width: 479px) {
+    body {
+        font-size: 10.5px
     }
 
-    .select-a-task-pages {
-        font-size: 22px
+    #div_sendPin .green-button {
+        margin-top: 65%
     }
 
-    .menu {
-        font-size: 24px
+    #window_registerScreen {
+        font-size: 9px
+    }
+
+    #div_registerLikes, #div_registerStruggles, .done-today, .feeling-pages {
+        font-size: 8px
+    }
+
+    #window_registerScreen .article {
+        padding-top: 9%
+    }
+
+    .name-pages .pink-button {
+        margin-top: 10%
+    }
+
+    .register-complete .circles {
+        width: 20.8em
+    }
+
+    .feeling-pages .smiles {
+        margin-bottom: 7%
+    }
+
+    .feeling-pages .need-margin {
+        margin-bottom: 0
+    }
+
+    .select-a-task-pages .need-margin {
+        margin-top: 5%
+    }
+
+    .done-today .blue-button {
+        margin-top: 13.5%
+    }
+
+    .congratulations-pages .star-point img {
+        margin: 13% auto
+    }
+
+    .congratulations-pages .need-margin {
+        margin: 0 auto 12.5%
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 520px) {
+    body {
+        font-size: 12.5px
+    }
+
+    #div_sendPin .green-button {
+        margin-top: 62%
+    }
+
+    #window_registerScreen {
+        font-size: 11px
+    }
+
+    #window_registerScreen .article {
+        padding-top: 9%
+    }
+
+    #div_registerLikes, #div_registerStruggles {
+        font-size: 10.5px
+    }
+
+    .name-pages .pink-button {
+        margin-top: 10%
+    }
+
+    .register-complete .circles {
+        width: 20.8em
+    }
+
+    .feeling-pages {
+        font-size: 8px
+    }
+
+    .feeling-pages .smiles {
+        margin-bottom: 7%
+    }
+
+    .feeling-pages .need-margin {
+        margin-bottom: 0
+    }
+
+    .select-a-task-pages .need-margin {
+        margin-top: 5%
+    }
+
+    .done-today {
+        font-size: 10.5px
+    }
+
+    .done-today .blue-button {
+        margin-top: 13.5%
+    }
+
+    .congratulations-pages .star-point img {
+        margin: 13% auto
+    }
+
+    .congratulations-pages .need-margin {
+        margin: 0 auto 12.5%
+    }
+}
+
+@media screen and (min-width: 520px) and (max-width: 599px) {
+    body {
+        font-size: 11px
+    }
+
+    #div_sendPin .green-button {
+        margin-top: 55%
+    }
+
+    #window_registerScreen {
+        font-size: 9px
+    }
+
+    #window_registerScreen .article {
+        padding-top: 5%
+    }
+
+    .medium-text {
+        padding-top: 50%
+    }
+
+    #div_registerLikes, #div_registerStruggles {
+        font-size: 10px
+    }
+
+    .done-today, .feeling-pages {
+        font-size: 11px
+    }
+
+    .name-pages .pink-button {
+        margin-top: 10%
+    }
+
+    .register-complete .circles {
+        width: 20.8em
+    }
+
+    .feeling-pages .smiles {
+        margin-bottom: 5%
+    }
+
+    .feeling-pages .need-margin {
+        margin-bottom: 0
+    }
+
+    .task-pages .green-block .align {
+        padding-top: 30%
+    }
+
+    .select-a-task-pages .need-margin {
+        margin-top: 5%
+    }
+
+    .done-today .blue-button {
+        margin-top: 11%
+    }
+
+    .congratulations-pages .star-point img {
+        margin: 13% auto
+    }
+
+    .congratulations-pages .need-margin {
+        margin: 0 auto 12.5%
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 699px) {
+    body {
+        font-size: 14px
+    }
+
+    #div_sendPin .green-button {
+        margin-top: 60%
+    }
+
+    #window_registerScreen {
+        font-size: 14.5px
+    }
+
+    #window_registerScreen .article {
+        padding-top: 5%
+    }
+
+    .medium-text {
+        padding-top: 60%
+    }
+
+    #div_registerLikes, #div_registerStruggles {
+        font-size: 13px
+    }
+
+    .name-pages .pink-button {
+        margin-top: 10%
+    }
+
+    .register-complete .circles {
+        width: 20.8em
+    }
+
+    .feeling-pages {
+        font-size: 11px
+    }
+
+    .feeling-pages .smiles {
+        margin-bottom: 5%
+    }
+
+    .feeling-pages .need-margin {
+        margin-bottom: 0
+    }
+
+    .task-pages .green-block .align {
+        padding-top: 30%
+    }
+
+    .select-a-task-pages .need-margin {
+        margin-top: 5%
+    }
+
+    .done-today {
+        font-size: 13px
+    }
+
+    .done-today .blue-button {
+        margin-top: 14%
+    }
+
+    .congratulations-pages .star-point img {
+        margin: 15% auto
+    }
+
+    .congratulations-pages .need-margin {
+        margin: 0 auto 14.5%
+    }
+
+    .pin .pink-button {
+        margin-top: 50%
     }
 }

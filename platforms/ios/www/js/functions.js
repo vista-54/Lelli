@@ -1,3 +1,18 @@
+
+function onPause() {
+    $('#after_pause_block').show();
+    setTimeout(function() {
+        $('#window_pin').show();
+    },500);
+}
+function onResume() {
+    setTimeout(function() {
+        $('#after_pause_block').hide();
+    },300);
+}
+function onBackKeyDown() {
+    navigator.home.home(function() {console.log('Home success')} , function(err){console.log('Error:' + err)})
+}
 // Check the Pin length UNIVERSAL Function
 function checkPin(value) {
     if (value == 0) {
@@ -7,7 +22,6 @@ function checkPin(value) {
         return false;
     }
 }
-
 //PinDialog on Screen 2 (login)
 function logPinDialog() {
     window.plugins.pinDialog.prompt(" ", function(results) {
@@ -25,6 +39,22 @@ function logPinDialog() {
     }, "Enter PIN", ["OK","Cancel"]);
 }
 
+//PinDialog on Screen 31 (LockScreen)
+function lockPinDialog() {
+    window.plugins.pinDialog.prompt(" ", function(results) {
+        if(results.buttonIndex == 1)
+        {
+            // OK clicked, show input value
+            $('#input_lockScreen').val(results.input1).blur();
+        }
+        if(results.buttonIndex == 2)
+        {
+            // Cancel clicked
+            $('#input_lockScreen').blur();
+            return false;
+        }
+    }, "Enter PIN", ["OK","Cancel"]);
+}
 //PinDialog on Screen 6 (Register)
 function regPinDialog() {
     window.plugins.pinDialog.prompt(" ", function(results) {
@@ -89,7 +119,10 @@ function iconChangeColor(result, element) {
 
 //ADD CONTACT TO TASK/ACTIVITY
 function addContact(element) {
+    $('#after_pause_block').show();
     navigator.contacts.pickContact(function(contact) {
+        $('#window_pin').hide();
+        $('#after_pause_block').hide();
         var contact_array = [contact];
         iconChangeColor(contact_array, element);
         var name = contact.displayName;
@@ -105,8 +138,11 @@ function addContact(element) {
 // ADD IMAGE TO TASK/ACTIVITY
 function addImage(element){
     photo = {};
+    $('#after_pause_block').show();
     window.imagePicker.getPictures(
         function(results) {
+            $('#window_pin').hide();
+            $('#after_pause_block').hide();
             iconChangeColor(results, element);
             for (var i = 0; i < results.length; i++) {
                 console.log('Image URI: ' + results[i]);
@@ -116,4 +152,11 @@ function addImage(element){
             console.log('Error: ' + error);
         }
     );
+}
+
+// Check titles and textareas on activities and tasks
+function checkTitles(title, textarea) {
+    var title_val = title.val();
+    var textarea_val = textarea.val();
+
 }

@@ -33,6 +33,12 @@
         },
         "org.apache.cordova.camera": {
             "PACKAGE_NAME": "com.app.lelly"
+        },
+        "org.apache.cordova.home": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.app.lelly"
         }
     },
     "dependent_plugins": {}

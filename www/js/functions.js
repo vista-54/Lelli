@@ -1,8 +1,17 @@
 
 function onPause() {
+    $('#after_pause_block').show();
     setTimeout(function() {
         $('#window_pin').show();
     },500);
+}
+function onResume() {
+    setTimeout(function() {
+        $('#after_pause_block').hide();
+    },300);
+}
+function onBackKeyDown() {
+    navigator.home.home(function() {console.log('Home success')} , function(err){console.log('Error:' + err)})
 }
 // Check the Pin length UNIVERSAL Function
 function checkPin(value) {
@@ -13,7 +22,6 @@ function checkPin(value) {
         return false;
     }
 }
-
 //PinDialog on Screen 2 (login)
 function logPinDialog() {
     window.plugins.pinDialog.prompt(" ", function(results) {
@@ -61,6 +69,10 @@ function regPinDialog() {
             return false;
         }
     }, "Enter PIN", ["OK","Cancel"]);
+}
+// DIALER
+function dial(phone) {
+    window.location.href = 'tel:' + phone;
 }
 
 //PinDialog on Screen 6 (Register)
@@ -111,7 +123,10 @@ function iconChangeColor(result, element) {
 
 //ADD CONTACT TO TASK/ACTIVITY
 function addContact(element) {
+    $('#after_pause_block').show();
     navigator.contacts.pickContact(function(contact) {
+        $('#window_pin').hide();
+        $('#after_pause_block').hide();
         var contact_array = [contact];
         iconChangeColor(contact_array, element);
         var name = contact.displayName;
@@ -127,8 +142,11 @@ function addContact(element) {
 // ADD IMAGE TO TASK/ACTIVITY
 function addImage(element){
     photo = {};
+    $('#after_pause_block').show();
     window.imagePicker.getPictures(
         function(results) {
+            $('#window_pin').hide();
+            $('#after_pause_block').hide();
             iconChangeColor(results, element);
             for (var i = 0; i < results.length; i++) {
                 console.log('Image URI: ' + results[i]);
@@ -139,10 +157,10 @@ function addImage(element){
         }
     );
 }
-
-// Check titles and textareas on activities and tasks
-function checkTitles(title, textarea) {
-    var title_val = title.val();
-    var textarea_val = textarea.val();
-
+// MENU HIDE
+function hideMenu() {
+    $("#window_menu").stop(true,true).animate({width: "0"},250);
+}
+function menuContainerHide() {
+    $('#menu_container').fadeOut(400);
 }
