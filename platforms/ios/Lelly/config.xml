@@ -36,8 +36,14 @@
     <feature name="PinDialog">
         <param name="ios-package" value="CDVPinDialog" />
     </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
     <feature name="Camera">
         <param name="ios-package" value="CDVCamera" />
+    </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
     </feature>
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />

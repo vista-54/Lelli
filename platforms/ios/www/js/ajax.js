@@ -1,6 +1,6 @@
 var wrong_pinCounter = 0;
 var user_name;
-var URL = 'http://192.168.0.102/api';
+var URL = 'http://192.168.0.126/api';
 var versions = '/v1/';
 $(document).ajaxStop(function() {
     $('.spinner').hide();
@@ -8,8 +8,8 @@ $(document).ajaxStop(function() {
 $(document).ajaxComplete(function() {
     $('.spinner').hide();
 });
-// -------------------------UNITED AJAX REQUEST FUNCTIONS-------------------------------
-function request_logged(type, controller, action, data, successCallBack, errorCallBack){
+// ------------------------- UNITED AJAX REQUEST FUNCTIONS -------------------------------
+function request_logged(type, controller, action, data, successCallBack, requestErrorCallBack){
     $.ajax({
         type: type,
         url: URL + versions + controller + '/'+ action,
@@ -18,10 +18,10 @@ function request_logged(type, controller, action, data, successCallBack, errorCa
         },
         data: data,
         success:successCallBack,
-        error: errorCallBack
+        error: requestErrorCallBack
     })
 }
-function request(type, controller, action, data, successCallBack, errorCallBack){
+function request(type, controller, action, data, successCallBack, requestErrorCallBack){
     $.ajax({
         type: type,
         url: URL + versions + controller + '/'+ action,
@@ -63,11 +63,11 @@ function checkEmail(result) {
 function download_likesAndStruggles(result){
     console.log(result);
     $.each(result.likes, function(index,value) {
-        $('#likes').append('<li id="like_animals"><div class="white-block"><div class="description-block"><span>'+value+'</span></div><div class="button-block"><input class="likes" id="like'+index+'_0" type="radio" name="'+value+'" value="0"><label for="like'+index+'_0"><i class="fa fa-thumbs-down fa-3x"></i></label><input class="likes" id="like'+index+'_1" type="radio" name="'+value+'" value="1"><label for="like'+index+'_1"><i class="fa rotate fa-thumbs-down fa-3x"></i></label></div></div></li>'
+        $('#likes').append('<li id="like_animals"><div class="white-block"><div class="description-block"><span class="upper">'+value+'</span></div><div class="button-block"><input class="likes" id="like'+index+'_0" type="radio" name="'+value+'" value="0" checked><label for="like'+index+'_0"><span class="dislike"></span></label><input class="likes" id="like'+index+'_1" type="radio" name="'+value+'" value="1"><label for="like'+index+'_1"><span class="like"></span></label></div></div></li>'
     );
     });
     $.each(result.struggles, function(index,value) {
-        $('#struggles').append('<li><div class="white-block"><div class="button-block2"><input id="struggle'+index+'" type="checkbox"><label for="struggle'+index+'"><span class="medium-circle-gray"><i class="fa fa-check fa-2x"></i></span></label></div><div class="description-block2">'+value+'</div></div></li>');
+        $('#struggles').append('<li><div class="white-block"><div class="button-block2"><input id="struggle'+index+'" type="checkbox"><label for="struggle'+index+'"><span class="medium-circle-gray"><i class="fa fa-check fa-3x"></i></span></label></div><div class="description-block2">'+value+'</div></div></li>');
     });
     $(WINDOW_SWITCH_REGISTER_1_2).toggleClass('hide');
 }
@@ -81,6 +81,7 @@ function register_finish(result) {
     else {
         localStorage['Lelly_auth_key'] = result.auth_key;
         user_name = result.user_name;
+        console.log(result);
         $(WINDOW_SWITCH_REGISTER_4_5).toggleClass('hide');
         contacts = {};
     }
@@ -89,6 +90,7 @@ function register_finish(result) {
 //LOG OUT
 function logOut(result) {
     localStorage.removeItem('Lelly_authKey');
+    localStorage.removeItem('Lelly_pin');
     console.log(result);
 }
 
@@ -97,9 +99,13 @@ function login(result) {
     if(result.auth_key && result.accept) {
         localStorage.setItem('Lelly_login_email', _email);
         localStorage['Lelly_authKey'] = result.auth_key;
+        localStorage['Lelly_pin'] = _pin;
+        localStorage['Lelly_contacts'] = result.contacts;
         user_name = localStorage['Lelly_UserName'] = result.user_name;
         console.log(result);
         show_moodscreen(user_name);
+        document.addEventListener("pause", onPause, false);
+        document.addEventListener("resume", onResume, false);
     }
     else {
         if (result.message === 'wrong pin') wrong_pinCounter += 1;

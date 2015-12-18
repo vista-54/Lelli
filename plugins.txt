@@ -1,4 +1,6 @@
 <plugin name="com.synconset.imagepicker" spec="1.0.4" source="pgb" />
-<plugin name="Home" value="org.apache.cordova.plugin.Home"/>
+<plugin name="org.apache.cordova.home" source="npm"/>
 <plugin name="com.teamnemitoff.phonedialer" spec="0.3.0" source="pgb" />
 <plugin name="com.ionic.keyboard" spec="1.0.3" source="pgb" />
+<plugin name="fi.avaus.cordova.geolocation" spec="0.3.11" source="pgb" />
+<plugin name="it.adacto.cordova.device" spec="0.1" source="pgb" />

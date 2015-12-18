@@ -41,15 +41,15 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Home\"><param name=\"android-package\" value=\"org.apache.cordova.home.Home\" /></feature>",
                             "count": 1
                         },
                         {
                             "xml": "<feature name=\"PinDialog\"><param name=\"android-package\" value=\"z1key.phonegap.plugins.PinDialog\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -83,14 +83,23 @@
                             "count": 1
                         },
                         {
-                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
                             "count": 1
                         }
                     ]
+                }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": []
                 }
             }
         }
@@ -108,6 +117,9 @@
         "cordova-plugin-datepicker": {
             "PACKAGE_NAME": "com.app.lelly"
         },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.app.lelly"
         },
@@ -120,13 +132,13 @@
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.app.lelly"
         },
-        "org.apache.cordova.camera": {
-            "PACKAGE_NAME": "com.app.lelly"
-        },
         "org.apache.cordova.home": {
             "PACKAGE_NAME": "com.app.lelly"
         },
         "z1key.phonegap.plugins.PinDialog": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "com.app.lelly"
         }
     },
@@ -269,38 +281,6 @@
             "runs": true
         },
         {
-            "file": "plugins/org.apache.cordova.camera/www/CameraConstants.js",
-            "id": "org.apache.cordova.camera.Camera",
-            "pluginId": "org.apache.cordova.camera",
-            "clobbers": [
-                "Camera"
-            ]
-        },
-        {
-            "file": "plugins/org.apache.cordova.camera/www/CameraPopoverOptions.js",
-            "id": "org.apache.cordova.camera.CameraPopoverOptions",
-            "pluginId": "org.apache.cordova.camera",
-            "clobbers": [
-                "CameraPopoverOptions"
-            ]
-        },
-        {
-            "file": "plugins/org.apache.cordova.camera/www/Camera.js",
-            "id": "org.apache.cordova.camera.camera",
-            "pluginId": "org.apache.cordova.camera",
-            "clobbers": [
-                "navigator.camera"
-            ]
-        },
-        {
-            "file": "plugins/org.apache.cordova.camera/www/CameraPopoverHandle.js",
-            "id": "org.apache.cordova.camera.CameraPopoverHandle",
-            "pluginId": "org.apache.cordova.camera",
-            "clobbers": [
-                "CameraPopoverHandle"
-            ]
-        },
-        {
             "file": "plugins/org.apache.cordova.home/www/home.js",
             "id": "org.apache.cordova.home.home",
             "pluginId": "org.apache.cordova.home",
@@ -314,6 +294,14 @@
             "pluginId": "z1key.phonegap.plugins.PinDialog",
             "merges": [
                 "window.plugins.pinDialog"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "id": "cordova-plugin-device.device",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
             ]
         }
     ]

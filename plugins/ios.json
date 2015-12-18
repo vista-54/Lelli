@@ -31,13 +31,16 @@
         "z1key.phonegap.plugins.PinDialog": {
             "PACKAGE_NAME": "com.app.lelly"
         },
-        "org.apache.cordova.camera": {
-            "PACKAGE_NAME": "com.app.lelly"
-        },
         "org.apache.cordova.home": {
             "PACKAGE_NAME": "com.app.lelly"
         },
         "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "com.app.lelly"
         }
     },

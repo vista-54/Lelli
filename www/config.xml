@@ -3,56 +3,6 @@
         xmlns="http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
-    <preference name="phonegap-version" value="3.7.0"/>
-    <preference name="loglevel" value="DEBUG" />
-    <platform name="android">
-    <config-file target="AndroidManifest.xml" parent="/manifest">
-        <uses-permission android:name="android.permission.INTERNET" />
-        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-        <uses-permission android:name="android.permission.READ_CONTACTS" />
-        <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    </config-file>
-    <config-file target="res/xml/config.xml" parent="/*">
-        <feature name="Contacts">
-            <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
-        </feature>
-        <feature name="SplashScreen">
-            <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
-            <param name="onload" value="true" />
-        </feature>
-        <feature name="Whitelist">
-            <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
-            <param name="onload" value="true" />
-        </feature>
-        <feature name="PinDialog">
-            <param name="android-package" value="z1key.phonegap.plugins.PinDialog" />
-        </feature>
-        <feature name="DatePickerPlugin">
-            <param name="android-package" value="com.plugin.datepicker.DatePickerPlugin" />
-        </feature>
-        <feature name="NetworkStatus">
-            <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
-        </feature>
-        <preference name="SplashScreen" value="screen" />
-        <preference name="SplashScreenDelay" value="3000" />
-        <preference name="SplashMaintainAspectRatio" value="true" />
-        <preference name="Orientation" value="portrait" />
-    </config-file>
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
-    <plugin name="me.dusty.contacts" spec="0.2.12" source="pgb" />
-    <plugin name="z1key.phonegap.plugins.pindialog" source="npm"/>
-    <plugin name="cordova-plugin-datepicker" source="npm" />
-    <plugin name="org.apache.cordova.network-information" spec="0.2.12" source="pgb" />
-    <plugin name="org.apache.cordova.splashscreen" spec="0.2.7" source="pgb" />
-    <plugin name="com.synconset.imagepicker" spec="1.0.4" source="pgb" />
-    <allow-intent href="market:*" />
     <name>Lelly</name>
     <description>
         Lelly
@@ -68,4 +18,40 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <preference name="phonegap-version" value="3.7.0"/>
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="splashScreen" value="screen" />
+    <preference name="splashScreenDelay" value="3000" />
+    <preference name="splashMaintainAspectRatio" value="true" />
+    <preference name="orientation" value="portrait" />
+    <preference name="auto-hide-splash-screen" value="false" />
+    <platform name="android">
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        <uses-permission android:name="android.permission.READ_CONTACTS" />
+        <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    </config-file>
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <plugin name="me.dusty.contacts" spec="0.2.12" source="pgb" />
+    <plugin name="z1key.phonegap.plugins.pindialog" source="npm"/>
+    <plugin name="cordova-plugin-datepicker" source="npm" />
+    <plugin name="org.apache.cordova.network-information" spec="0.2.12" source="pgb" />
+    <!--<plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" />-->
+    <plugin name="com.synconset.imagepicker" spec="1.0.4" source="pgb" />
+    <plugin name="org.apache.cordova.home" source="npm"/>
+    <plugin name="com.teamnemitoff.phonedialer" spec="0.3.0" source="pgb" />
+    <plugin name="com.ionic.keyboard" spec="1.0.3" source="pgb" />
+    <plugin name="fi.avaus.cordova.geolocation" spec="0.3.11" source="pgb" />
+    <plugin name="it.adacto.cordova.device" spec="0.1" source="pgb" />
+    <gap:splash platform="android" src="res/screen/android/screen.png" />
+    <gap:splash platform="ios" src="res/screen/ios/screen.png"/>
+    <allow-intent href="market:*" />
 </widget>
