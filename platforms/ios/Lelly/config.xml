@@ -45,6 +45,7 @@
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
     </feature>
+    <preference name="CameraUsesGeolocation" value="false" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <name>Lelly</name>

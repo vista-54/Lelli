@@ -13,7 +13,7 @@
                 <p>Welcome to</p>
                 <h1>lelly</h1>
             </header>
-            <form name="login">
+            <form name="login" onsubmit="return false">
                 <input id="input_email" class="enter" type="email" maxlength="25" placeholder="email">
                 <input id="input_personalPin" class="enter" type="password" maxlength="4" pattern="[0-9]*" placeholder="pin" inputmode="numeric" required>
                 <div class="spinner-box">
@@ -454,7 +454,10 @@
                 <ul class="tabs-list">
                     <li class="tabs-item tabs-item-first active">
                         <p>March</p>
-                        <div class="graph"></div>
+                        <div class="graph">
+                            <span class="graph-number">31</span>
+                            <div class="ct-chart ct-perfect-fifth"></div>
+                        </div>
                         <input type="button" class="blue-button" value="NEGATIVE">
                         <input type="button" class="red-button" value="POSITIVE">
                     </li>
@@ -565,7 +568,7 @@
             <input id="btn_lowMoodRecDone" type="button" class="blue-button" value="done">
     </div>
 </div>
-    <!------------------------CALL MENU BUTTON BLOCK----------------------------------->
+    <!------------------------ MENU BUTTON BLOCK----------------------------------->
     <!--22-->
 <div id="window_menu_info" class="container info">
     <div class="gray-block">
@@ -578,9 +581,9 @@
             </div>
         </div>
         <p class="upper bold">Info</p>
-        <p class="upper">About</p>
-        <p class="upper">Connections</p>
-        <p class="upper">Password screen</p>
+        <p id="link_about" class="info_link upper">About</p>
+        <p id="link_connections" class="info_link upper">Connections</p>
+        <p id="link_password" class="info_link upper">Password screen</p>
     </div>
     <div class="descriptions">
         <div class="about">

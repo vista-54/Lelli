@@ -1,9 +1,14 @@
 var $body = $('body');
 var local_email = localStorage['Lelly_login_email'];
 var contacts = {};
-var photo;
+var photo = [];
 var mood;
 var geo_location = {};
+var star_points = null;
+var graph = {
+    'label' : GRAPH_LABEL[1],
+    'data' : [[2,4,3,6,7,8,3,5,7,8,4,3,5],[7,5,6,6,7,3,2,4,1,8,6,3,1]]
+    };
 
 $(document).ready( function() {
     $('body').css('height', $(window).height());
@@ -18,7 +23,7 @@ function onDeviceReady() {
     console.log(device.platform);
 }
 $body.on('submit','form', function(e) {
-    cordova.plugins.Keyboard.close();
+    //cordova.plugins.Keyboard.close();
     e.preventDefault();
 });
 
@@ -47,6 +52,7 @@ $body.on('click', '.top-menu, .bot-menu, .bot-menu ul li', function(event) {
                 hideMenu();
                 $('#menu_container').load('resources2.html #window_menu_overview', function () {
                     menuContainerShow();
+                    buildgraph(graph);
                 });
                 break;
             case 'btn_menu_connections':
@@ -339,7 +345,7 @@ $body.on('click', '#btn_support', function() {
 });
 
 //-----------------------------  SCREEN 10 ----------------------------------------------------------
-$body.on('click', 'btn_regComplete', function() {
+$body.on('click', '.register-complete', function() {
     show_moodscreen(user_name);
     document.addEventListener("pause", onPause, false);
     document.addEventListener("resume", onResume, false);
@@ -426,13 +432,17 @@ $body.on('click', '#btn_activityRecDone', function() {
     //TEMPORARY comment for testing without connection
     //$('#reward_for_activity_complete').text(result.reward);
     $(WINDOW_SWITCH_MAIN_13_14).toggleClass('hide');
-    photo = null;
+    photo = [];
+    contacts = {};
+    geo_location = {};
+    mood = null;
     request_logged('POST','site', 'action', data, activityRecorded);
 });
 
 $body.on('click', '.btn_addPhoto', function() {
     var element = $(this).find('div');
-    addImage(element);
+    //addImage(element);
+    addImage2(element);
 });
 $body.on('click', '.btn_addContact', function() {
     var element = $(this).find('div');
@@ -487,7 +497,29 @@ $body.on('click', '#btn_taskRecDone', function() {
     //TEMPORARY function for testing without connection
     //$('#reward_for_task_complete').text(result.reward);
     $(WINDOW_SWITCH_MAIN_16_17).toggleClass('hide');
+    photo = [];
+    contacts = {};
+    geo_location = {};
+    mood = null;
     request_logged('POST', 'site', 'action', data, taskRecorded);
+});
+
+//-----------------------------  SCREEN 18 -------------------------------------------------------
+$body.on('click', '.connections .descriptions .active', function(){
+    $(".disconnect-box").css({"display": "block"});
+});
+
+$body.on('click','.tabs-control-link', function(e){
+    e.preventDefault();
+    var item = $(this).closest(".tabs-controls-item"),
+        contentItem = $(".tabs-item"),
+        itemPosition = item.data("class");
+
+    contentItem.filter(".tabs-item-" + itemPosition)
+        .add(item)
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
 });
 
 //-----------------------------  SCREEN 19 ----------------------------------------------------------
@@ -519,9 +551,24 @@ $body.on('click', '#btn_lowMoodRecDone', function() {
     $('#container').load('resources2.html #window_moodPositive', function() {
         $(WINDOW_SWITCH_MAIN_20_14).toggleClass('hide');
     });
+    photo = [];
+    contacts = {};
+    geo_location = {};
+    mood = null;
     //request_logged('POST', 'site', 'action', data, taskRecorded);
 });
-
+//---------------------------------- SCREEN 22 -------------------------------------------
+$body.on('click', '.info_link',function (event) {
+    event.preventDefault();
+    switch (this.id) {
+        case '#link_connections':
+            break;
+        case '#link_password':
+            break;
+        case '#link_about':
+            break;
+    }
+});
 //---------------------------------- SCREEN 28 -------------------------------------------
 $body.on('click', '#btn_CallAFriend_NO', function() {
     $(WINDOW_SWITCH_EMERGENCY_28_29).toggleClass('hide');

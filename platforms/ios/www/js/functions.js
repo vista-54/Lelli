@@ -24,7 +24,7 @@ function checkPin(value) {
 }
 //PinDialog on Screen 2 (login)
 function logPinDialog() {
-    if (cordova.device.platform === 'android') {
+    if (device.platform === 'Android') {
         window.plugins.pinDialog.prompt(" ", function(results) {
             if(results.buttonIndex == 1)
             {
@@ -44,34 +44,36 @@ function logPinDialog() {
 
 //PinDialog on Screen 31 (LockScreen)
 function lockPinDialog() {
-    window.plugins.pinDialog.prompt(" ", function(results) {
-        if(results.buttonIndex == 1)
-        {
-            // OK clicked, show input value
-            $('#input_lockScreen').val(results.input1).blur();
-        }
-        if(results.buttonIndex == 2)
-        {
-            // Cancel clicked
-            $('#input_lockScreen').blur();
-            return false;
-        }
-    }, "Enter PIN", ["OK","Cancel"]);
+    if (device.platform === 'Android') {
+        window.plugins.pinDialog.prompt(" ", function (results) {
+            if (results.buttonIndex == 1) {
+                // OK clicked, show input value
+                $('#input_lockScreen').val(results.input1).blur();
+            }
+            if (results.buttonIndex == 2) {
+                // Cancel clicked
+                $('#input_lockScreen').blur();
+                return false;
+            }
+        }, "Enter PIN", ["OK", "Cancel"]);
+    }
+    else return;
 }
 //PinDialog on Screen 6 (Register)
 function regPinDialog() {
-    window.plugins.pinDialog.prompt(" ", function(results) {
-        if(results.buttonIndex == 1)
-        {
-            // OK clicked, show input value
-            $('#input_newPin').val(results.input1).blur();
-        }
-        if(results.buttonIndex == 2)
-        {
-            // Cancel clicked
-            return false;
-        }
-    }, "Enter PIN", ["OK","Cancel"]);
+    if (device.platform === 'Android') {
+        window.plugins.pinDialog.prompt(" ", function (results) {
+            if (results.buttonIndex == 1) {
+                // OK clicked, show input value
+                $('#input_newPin').val(results.input1).blur();
+            }
+            if (results.buttonIndex == 2) {
+                // Cancel clicked
+                return false;
+            }
+        }, "Enter PIN", ["OK", "Cancel"]);
+    }
+    else return;
 }
 // DIALER
 function dial(phone) {
@@ -80,16 +82,17 @@ function dial(phone) {
 
 //PinDialog on Screen 6 (Register)
 function regPinConfirmDialog() {
-    window.plugins.pinDialog.prompt(" ", function(results) {
-        if(results.buttonIndex == 1)
-        {
-            $('#input_newPinConfirm').val(results.input1).blur();
-        }
-        if(results.buttonIndex == 2)
-        {
-            return false;
-        }
-    }, "Confirm PIN", ["OK","Cancel"]);
+    if (device.platform === 'Android') {
+        window.plugins.pinDialog.prompt(" ", function (results) {
+            if (results.buttonIndex == 1) {
+                $('#input_newPinConfirm').val(results.input1).blur();
+            }
+            if (results.buttonIndex == 2) {
+                return false;
+            }
+        }, "Confirm PIN", ["OK", "Cancel"]);
+    }
+    else return;
 }
 
 //SERIALIZE OBJECT
@@ -246,26 +249,41 @@ function reloadPauseLisneter() {
     document.removeEventListener("pause", onPause, false);
     setTimeout(function() {
         document.addEventListener("pause", onPause, false);
-    },500);
+    },1000);
 }
-//function checkIfLocationIsOn(){
-//    cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
-//            console.log("Location is " + (enabled ? "enabled" : "disabled"));
-//            if(!enabled){
-//                navigator.notification.confirm("Your GPS is switched OFF - would you like to open the Settings page to turn it ON?",
-//                    function(result){
-//                        if(result == 1){ // Yes
-//                            cordova.plugins.diagnostic.switchToLocationSettings();
-//                        }
-//                    }, "Open Location Settings?");
-//            }else{
-//                if(positionWatchId){
-//                    clearWatch();
-//                }
-//                addWatch();
-//            }
-//        }, function(error){
-//            console.error("The following error occurred: "+error);
-//        }
-//    );
-//}
+
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        switch (img) {
+            case 1:
+                reader.onload = function (e) {
+                    $("#imagelist").append("<img class=\"image\" id=\"img1\" src=" + e.target.result + ">");
+//            $('#img1').attr('src', e.target.result);
+                    $('#add_img').css({'margin': '-60px 0 -40px -101px'});
+                    img++;
+                };
+                break;
+            case 2:
+                reader.onload = function (e) {
+//            $('#img2').attr('src', e.target.result);
+                    $("#imagelist").append("<img class=\"image\" id=\"img2\" src=" + e.target.result + ">");
+                    img++;
+                };
+                $('#add_img').css({'margin': '-60px 0 -40px 44px'});
+                break;
+            case 3:
+                reader.onload = function (e) {
+//            $('#img3').attr('src', e.target.result);
+                    $("#imagelist").append("<img class=\"image\" id=\"img3\" src=" + e.target.result + ">");
+                    img++;
+                    $('#add_img').css({'display': 'none'});
+                };
+                break;
+        }
+
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}

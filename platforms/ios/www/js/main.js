@@ -15,7 +15,7 @@ $(document).ready( function() {
 });
 function onDeviceReady() {
     document.addEventListener("backbutton", onBackKeyDown, false);
-    console.log(cordova.device);
+    console.log(device.platform);
 }
 $body.on('submit','form', function(e) {
     cordova.plugins.Keyboard.close();
@@ -432,7 +432,7 @@ $body.on('click', '#btn_activityRecDone', function() {
 
 $body.on('click', '.btn_addPhoto', function() {
     var element = $(this).find('div');
-    addImage(element);
+    //addImage(element);
 });
 $body.on('click', '.btn_addContact', function() {
     var element = $(this).find('div');

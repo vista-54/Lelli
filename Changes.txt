@@ -1,0 +1,28 @@
+.details-pages .pink-button {
+    position: fixed;
+    bottom: 3%;
+    left: 27%;
+}
+.spinner {
+    display: inline-block;
+    position: relative;
+    height: 1.8em;
+    width: 1.8em;
+    background: url('../img/spinner3.gif');
+    background-size: cover;
+    line-height: 1.8em;
+    vertical-align: middle;
+}
+.register-complete {
+    background-color: #bcd8ca;
+    height: 100%;
+}
+.details-pages .likes-box {
+    overflow-x: auto;
+    height: 53%
+}
+.name-pages .pink-button {
+    position: fixed;
+    bottom: 3%;
+    left: 27%;
+}

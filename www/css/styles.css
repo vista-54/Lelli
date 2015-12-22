@@ -592,7 +592,8 @@ h1 {
     height: 100%;
     line-height: 100%;
     color: #5e6166;
-    font-weight: 600
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .details-pages .fa-3x {
@@ -666,7 +667,7 @@ h1 {
 
 .details-pages .likes-box {
     overflow-x: auto;
-    height: 55%
+    height: 53%
 }
 
 .details-pages .likes-box .scroll, .details-pages .likes-box .scroll form, .details-pages .likes-box .scroll form ul {
@@ -682,10 +683,14 @@ h1 {
 }
 
 .details-pages label span {
-    width: 6em;
-    height: 6em;
+    width: 5.7em;
+    height: 5em;
     background-size: cover;
     display: inline-block
+}
+.details-pages .likes-box .button-block2 label span {
+    width: 6em;
+    height: 6em;
 }
 #div_registerLikes label span {
     width: 5.7em;
@@ -777,11 +782,14 @@ h1 {
 }
 
 .name-pages .pink-button {
-    margin-top: 26%
+    position: fixed;
+    bottom: 3%;
+    left: 27%;
 }
 
 .register-complete {
-    background-color: #bcd8ca
+    background-color: #bcd8ca;
+    height: 100%;
 }
 
 .register-complete .logo {
@@ -1510,12 +1518,6 @@ h1 {
     background-color: #bcd8ca
 }
 
-.pin .pink-button {
-    position: static;
-    bottom: 4%;
-    left: 27%;
-}
-
 .pin .logo {
     padding-top: 16%
 }
@@ -1642,11 +1644,12 @@ h1 {
 .info .descriptions p {
     color: #434a54;
     font-size: 2.2em;
-    padding: 0 6% 0 9%
+    padding: 0 6% 1em 9%
 }
 
 .info .descriptions .upper {
-    margin: 5% 0 2%
+    margin: 5% 0 2%;
+    padding: 0 6% 0 9%;
 }
 
 .connections {
@@ -1783,7 +1786,9 @@ h1 {
     background-color: #1fa597;
     opacity: .7
 }
-
+.password-screen .green-button:active {
+    background-color: #007264;
+}
 .password-screen .generate {
     width: 76%;
     margin: 7% auto 4%;
@@ -1821,7 +1826,9 @@ h1 {
     bottom: 3%;
     left: 27%;
 }
-
+.password-screen .pink-button:active {
+    background-color: #a4002d;
+}
 .password-screen .spinner {
     display: block;
     height: 7em;
@@ -1881,7 +1888,8 @@ h1 {
     font-size: 2em;
     font-weight: 400;
     line-height: 1.2em;
-    font-family: "Open Sans", sans-serif
+    font-family: "Open Sans", sans-serif;
+    padding-bottom: 1em;
 }
 
 .expansions .descriptions p {
@@ -1934,9 +1942,9 @@ h1 {
 }
 
 .overview .descriptions .pink-button {
-    font-size: 3em;
-    line-height: 1.4em;
-    height: 1.5em;
+    font-size: 2.5em;
+    line-height: 1.7em;
+    height: 1.7em;
     position: fixed;
     bottom: 4%;
     left: 27%;
@@ -2033,10 +2041,14 @@ h1 {
 .overview .descriptions .graph, .overview .descriptions .graph2, .overview .descriptions .graph3 {
     height: 64%;
     width: 90%;
-    background-color: #db7093;
     margin: 0 auto
 }
 
+.overview .descriptions .graph {
+    background-image: url('../img/bg-graph.png');
+    background-size: 100%;
+    position: relative;
+}
 .overview .descriptions .graph2 {
     background-color: #daa520
 }
@@ -2045,6 +2057,12 @@ h1 {
     background-color: #00bfff
 }
 
+.overview .graph-number {
+    position: absolute;
+    right: -1%;
+    top: 5.5%;
+    font-size: 2em
+}
 .menu {
     height: 51%
 }
@@ -2109,7 +2127,12 @@ h1 {
     .feeling-pages .need-margin {
         margin-bottom: 0
     }
-
+    .done-today .green-block {
+        height: 30%;
+    }
+    .done-today .blue-button {
+        margin-top: 3%;
+    }
     .congratulations-pages .star-point img {
         margin: 10% auto
     }
@@ -2357,13 +2380,10 @@ h1 {
 
 @media screen and (min-width: 520px) and (max-width: 599px) {
     body {
-        font-size: 11px
+        font-size: 15px
     }
     .done-today .blue-button {
         margin-top: 4%;
-    }
-    #window_registerScreen {
-        font-size: 9px
     }
 
     #window_registerScreen .article {
@@ -2375,19 +2395,27 @@ h1 {
     }
 
     .medium-text {
-        padding-top: 50%
+        padding-top: 70%
     }
 
-    #div_registerLikes, #div_registerStruggles {
+    .details-pages .likes-box {
+        font-size: 13px;
+    }
+    #div_registerStruggles {
         font-size: 10px
     }
 
-    .done-today, .feeling-pages {
-        font-size: 11px
+    .done-today {
+        font-size: 13px;
     }
-
+    .feeling-pages {
+        font-size: 14px
+    }
+    .pin .pink-button {
+        margin-top: 50%;
+    }
     .name-pages .pink-button {
-        margin-top: 10%
+        margin-top: 20%
     }
 
     .register-complete .circles {
@@ -2413,6 +2441,12 @@ h1 {
     .congratulations-pages .need-margin {
         margin: 0 auto 12.5%
     }
+    .expansions {
+        font-size: 13px;
+    }
+    .overview .descriptions a {
+        font-size: 2em;
+    }
 
     .menu {
         font-size: 15px
@@ -2430,7 +2464,7 @@ h1 {
         font-size: 14px
     }
     .done-today .blue-button {
-        margin-top: 2%;
+        margin-top: 3%;
     }
     #window_registerScreen {
         font-size: 14.5px
@@ -2530,6 +2564,9 @@ h1 {
     .done-today {
         font-size: 18px;
     }
+    .done-today .blue-button {
+        margin-top: 4%;
+    }
 }
 @media screen and (min-width: 1536px) {
     body {
@@ -2576,6 +2613,9 @@ h1 {
     }
     .expansions .descriptions p {
         padding: 6% 0;
+    }
+    .done-today .blue-button {
+        margin-top: 4%;
     }
 }
 
@@ -2642,7 +2682,7 @@ h1 {
     position: relative;
     height: 1.8em;
     width: 1.8em;
-    background: url('spinner.gif');
+    background: url('../img/spinner3.gif');
     background-size: cover;
     line-height: 1.8em;
     vertical-align: middle;
@@ -2683,6 +2723,7 @@ h1 {
 #block_tasks {
     height: 0;
     width: 100%;
+    overflow: hidden;
 }
 #form_register div {
     margin-bottom: 10%;
@@ -2710,6 +2751,9 @@ h1 {
 .modal_mood:active {
     background-color: rgba(255, 246, 0, 0.53);
 }
+/*.info_link:active {*/
+    /*color: red;*/
+/*}*/
 /*********************ARSEN***********************************/
 
 .medium-circle-green {

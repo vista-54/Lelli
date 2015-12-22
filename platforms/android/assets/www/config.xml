@@ -20,9 +20,9 @@
     <allow-intent href="geo:*" />
     <preference name="phonegap-version" value="3.7.0"/>
     <preference name="loglevel" value="DEBUG" />
-    <preference name="splashScreen" value="screen" />
-    <preference name="splashScreenDelay" value="3000" />
-    <preference name="splashMaintainAspectRatio" value="true" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="orientation" value="portrait" />
     <preference name="auto-hide-splash-screen" value="false" />
     <platform name="android">
@@ -45,12 +45,15 @@
     <plugin name="cordova-plugin-datepicker" source="npm" />
     <plugin name="org.apache.cordova.network-information" spec="0.2.12" source="pgb" />
     <!--<plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" />-->
-    <plugin name="com.synconset.imagepicker" spec="1.0.4" source="pgb" />
+    <!--<plugin name="com.synconset.imagepicker" spec="1.0.4" source="pgb" />-->
     <plugin name="org.apache.cordova.home" source="npm"/>
     <plugin name="com.teamnemitoff.phonedialer" spec="0.3.0" source="pgb" />
     <plugin name="com.ionic.keyboard" spec="1.0.3" source="pgb" />
     <plugin name="fi.avaus.cordova.geolocation" spec="0.3.11" source="pgb" />
+    <plugin name="it.adacto.cordova.device" spec="0.1" source="pgb" />
+    <plugin name="org.apache.cordova.camera" spec="0.3.2" source="pgb" />
     <gap:splash platform="android" src="res/screen/android/screen.png" />
     <gap:splash platform="ios" src="res/screen/ios/screen.png"/>
+
     <allow-intent href="market:*" />
 </widget>

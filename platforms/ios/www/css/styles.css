@@ -2683,6 +2683,7 @@ h1 {
 #block_tasks {
     height: 0;
     width: 100%;
+    overflow: hidden;
 }
 #form_register div {
     margin-bottom: 10%;

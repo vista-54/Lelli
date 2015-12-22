@@ -1,4 +1,3 @@
-
 function onPause() {
     $('#after_pause_block').show();
     //setTimeout(function() {
@@ -129,7 +128,7 @@ function iconChangeColor(result, element) {
 
 //ADD CONTACT TO TASK/ACTIVITY
 function addContact(element) {
-    reloadPauseLisneter();
+    reloadPauseListener();
     $('#after_pause_block').show();
     navigator.contacts.pickContact(function(contact) {
         $('#window_pin').hide();
@@ -149,7 +148,7 @@ function addContact(element) {
 // ADD IMAGE TO TASK/ACTIVITY
 function addImage(element){
     photo = {};
-    reloadPauseLisneter();
+    reloadPauseListener();
     $('#after_pause_block').show();
     window.imagePicker.getPictures(
         function(results) {
@@ -165,6 +164,28 @@ function addImage(element){
         }
     );
 }
+
+function addImage2(element) {
+    var cameraOptions = {
+        'destinationType' : 1,
+        'sourceType' : 0
+    };
+    function cameraSuccess(imageData) {
+        $('#after_pause_block').hide();
+        console.log(imageData);
+        photo.push(imageData);
+        console.log(photo);
+        iconChangeColor(photo, element);
+    }
+
+    function cameraError(message) {
+        console.log('Failed because: ' + message);
+    }
+    reloadPauseListener();
+    $('#after_pause_block').show();
+    navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);
+}
+
 // ADD MOOD TO TASK/ACTIVITY
 
 function showMoodModal(element) {
@@ -216,7 +237,7 @@ function closeMoodModal() {
 // ADD LOCATION
 function addLocation(element) {
     geo_location = {};
-    reloadPauseLisneter();
+    reloadPauseListener();
     //$('#after_pause_block').show();
     var options = {
         maximumAge: 0,
@@ -245,9 +266,51 @@ function hideMenu() {
 function menuContainerHide() {
     $('#menu_container').fadeOut(400);
 }
-function reloadPauseLisneter() {
+function reloadPauseListener() {
     document.removeEventListener("pause", onPause, false);
     setTimeout(function() {
         document.addEventListener("pause", onPause, false);
     },1000);
+}
+function buildgraph(graph){
+    var options = {
+        showPoint: false,
+        fullWidth: true,
+        fullHeight: true,
+        high: 10,
+        showArea: true,
+        showLine: false,
+        axisX: {
+            showLabel: false,
+            showGrid: false,
+            offset: 0,
+            labelOffset: {
+                x: 0,
+                y: 0
+            }
+        },
+        axisY: {
+            showLabel: false,
+            showGrid: false,
+            offset: 0,
+            labelOffset: {
+                x: 0,
+                y: 0
+            }
+        }
+    };
+    var data = {
+        // A labels array that can contain any sort of values
+        labels: graph.label,
+        // Our series array that contains series objects or in this case series data arrays
+        series: [
+            graph.data[0],
+            graph.data[1]
+        ]
+    };
+
+    // Create a new line chart object where as first parameter we pass in a selector
+    // that is resolving to our chart container element. The Second parameter
+    // is the actual data object.
+    new Chartist.Line('.ct-chart', data, options);
 }
