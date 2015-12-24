@@ -15,11 +15,6 @@
     <script src="cordova.js"></script>
     <script src="js/jq/jquery-2.1.4.min.js"></script>
     <script src="js/const.js"></script>
-    <script>
-        $(document).ready(function() {
-            document.addEventListener("deviceready", onDeviceReady, false);
-        });
-    </script>
 </head>
 <body>
 <!--Main windows container-->
@@ -57,7 +52,7 @@
     </div>
 </div>
 <!--31-->
-<div id="window_pin" class="container register-complete pin hide">
+<div id="window_pin" class="container register-complete pin">
     <div class="logo">
         <div class="medium-square">lelly</div>
     </div>
@@ -70,7 +65,7 @@
         <div class="small-circle-purple"></div>
     </div>
     <span>Please enter your pin</span>
-    <input id="input_lockScreen" class="enter" type="password" maxlength="4" pattern="*[0-9]" placeholder="PIN" required>
+    <input id="input_lockScreen" class="enter" type="password" maxlength="4" pattern="[0-9]*" placeholder="PIN" required>
     <input id="btn_lockScreen" type="button" class="pink-button" value="continue">
 </div>
 <div id="after_pause_block"></div>
@@ -143,6 +138,9 @@
         </div>
     </div>
     <div id="overlay"></div>
+</div>
+<div id="window_loader" class="spinner">
+    <div></div>
 </div>
 <img src="img/01.png" height="0" width="0" style="display: none">
 <img src="img/07.png" height="0" width="0" style="display: none">

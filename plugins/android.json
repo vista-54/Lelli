@@ -45,6 +45,9 @@
         },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-screen-orientation": {
+            "PACKAGE_NAME": "com.app.lelly"
         }
     },
     "dependent_plugins": {}

@@ -1,12 +1,21 @@
-var $body = $('body');
+var $body = $(document);
+var wrong_pinCounter = 0;
+var user_name;
 var local_email = localStorage['Lelly_login_email'];
+var _pin;
+var _email;
 var contacts = {};
-var photo;
+var photo = '';
 var mood;
 var geo_location = {};
-
+var star_points = null;
+var screen_lock = true;
+var graph = {
+    'label' : GRAPH_LABEL[1],
+    'data' : [[2,4,3,6,7,8,3,5,7,8,4,3,5],[7,5,6,6,7,3,2,4,1,8,6,3,1]]
+    };
 $(document).ready( function() {
-    $('body').css('height', $(window).height());
+    document.addEventListener("deviceready", onDeviceReady, false);
     $('#container').load('resources2.html #window_loginScreen', function() {
         if (local_email) {
             $($('#input_email')).attr('placeholder', local_email);
@@ -14,11 +23,14 @@ $(document).ready( function() {
     });
 });
 function onDeviceReady() {
+    if (device.platform === 'iOS') StatusBar.overlaysWebView(false);
+    screen.lockOrientation('portrait');
     document.addEventListener("backbutton", onBackKeyDown, false);
     console.log(device.platform);
+    if (device.platform === 'Android') $('body').css('height', $(window).height());
 }
 $body.on('submit','form', function(e) {
-    cordova.plugins.Keyboard.close();
+    //cordova.plugins.Keyboard.close();
     e.preventDefault();
 });
 
@@ -47,6 +59,7 @@ $body.on('click', '.top-menu, .bot-menu, .bot-menu ul li', function(event) {
                 hideMenu();
                 $('#menu_container').load('resources2.html #window_menu_overview', function () {
                     menuContainerShow();
+                    buildgraph(graph);
                 });
                 break;
             case 'btn_menu_connections':
@@ -65,12 +78,24 @@ $body.on('click', '.top-menu, .bot-menu, .bot-menu ul li', function(event) {
                 hideMenu();
                 $('#menu_container').load('resources2.html #window_menu_points', function () {
                     menuContainerShow();
+                    $('#user_points').text(function() {
+                        var _local = localStorage('Lelly_points');
+                        var action = 'get-app-user-points';
+                        if (localStorage('Lelly_points')) return _local;
+                        else {
+                            request_logged('GET','site', action, function(result) {
+                                return result.points;
+                            }, requestErrorCallBack)
+                        }
+                    });
                 });
                 break;
             case 'btn_menu_expansions' :
                 hideMenu();
                 $('#menu_container').load('resources2.html #window_menu_expansions', function () {
                     menuContainerShow();
+                    var action = 'get-expansion-packs';
+                    request_logged('GET', 'site', action, null, getExpansionsPack, requestErrorCallBack);
                 });
                 break;
             default:
@@ -114,6 +139,9 @@ $body.on("focus", '#input_lockScreen, #input_personalPin, #input_newPin, #input_
 $body.on("focus", 'input', function() {
     $(this).css('border-color','');
     $(this).removeClass('placeholder');
+    if (device.platform === 'iOS') {
+        window.scrollTo(0,0);
+    }
 });
 $body.on("focus", 'textarea', function() {
     $(this).removeClass('placeholder');
@@ -127,8 +155,7 @@ $body.on('click', '#btn_logOut', function() {
 $body.on('submit', 'form[name="login"]', function() {
     var $input_email = $('#input_email');
     var input_email_placeholder = $input_email.attr('placeholder');
-    var _email;
-    var _pin = $('#input_personalPin').val();
+    _pin = $('#input_personalPin').val();
     if ($input_email.val().length > 0) {
         _email = $input_email.val();
     }
@@ -148,28 +175,28 @@ $body.on('submit', 'form[name="login"]', function() {
     var data = {AppLoginForm:{'email': _email,
                 'pin': _pin}};
     $('.spinner').css('display','inline-block');
-    //request('POST','site','login', data, login);
-    show_moodscreen('Bohdan');
+    request('POST','site','login', data, login);
+    //show_moodscreen('Bohdan');
     document.addEventListener("pause", onPause, false);
     document.addEventListener("resume", onResume, false);
     localStorage['Lelly_pin'] = _pin;
-    localStorage['Lelly_contacts'] = JSON.stringify({
-        'friend' : {
-            'name' : 'Bohdan Samondros',
-            'phone' : '0950017346'},
-        'support' : {
-            'name' : 'Bohdan',
-            'phone' : '0963820290'},
-        'samaritans': {
-            'name' : 'Samaritans',
-            'phone' : '000 00 01'},
-        'non_urgent' : '121',
-        'emergency' : '212',
-        'local_services' : {
-            'name' : 'Local counselling services',
-            'link': 'http://yandex.ru'},
-        'other' : 'http://google.com'
-        });
+    //localStorage['Lelly_contacts'] = JSON.stringify({
+    //    'friend' : {
+    //        'name' : 'Bohdan Samondros',
+    //        'phone' : '0950017346'},
+    //    'support' : {
+    //        'name' : 'Bohdan',
+    //        'phone' : '0963820290'},
+    //    'samaritans': {
+    //        'name' : 'Samaritans',
+    //        'phone' : '000 00 01'},
+    //    'non_urgent' : '121',
+    //    'emergency' : '212',
+    //    'local_services' : {
+    //        'name' : 'Local counselling services',
+    //        'link': 'http://yandex.ru'},
+    //    'other' : 'http://google.com'
+    //    });
 });
 $body.on("click", "#link_forgotPin", function() {
     $(WINDOW_SWITCH_LOGIN_1_2).toggleClass('hide');
@@ -216,12 +243,13 @@ $body.on("keyup", "#input_surname", function() {
 $body.on('focus', '#input_birthdate', function(e) {
     e.preventDefault();
 });
-$body.on('click', '#input_birthdate', function() {
+$body.on('click', '#input_birthdate', function(event) {
     datePicker.show({date: new Date(),mode: 'date'}, function(date){
         var month = date.getMonth() + 1;
         var d = date.getFullYear() + '-'+ month +'-'+date.getDate();
         $('#input_birthdate').val(d).blur();
     });
+    event.stopPropagation();
 });
 $body.on("click", '#input_newPin', regPinDialog);
 $body.on("click", '#input_newPinConfirm', regPinConfirmDialog);
@@ -339,7 +367,7 @@ $body.on('click', '#btn_support', function() {
 });
 
 //-----------------------------  SCREEN 10 ----------------------------------------------------------
-$body.on('click', 'btn_regComplete', function() {
+$body.on('click', '.register-complete', function() {
     show_moodscreen(user_name);
     document.addEventListener("pause", onPause, false);
     document.addEventListener("resume", onResume, false);
@@ -347,15 +375,18 @@ $body.on('click', 'btn_regComplete', function() {
 //-----------------------------  SCREEN 11 ----------------------------------------------------------
 $body.on('click', '.smile-one', function() {
     var data = $(this).attr('mood');
-    var action = 'mood';
-    console.log(data);
+    var action = 'save-mood';
+    var request_data = {'mood' : data};
+    console.log(request_data);
     if (data === 'happy' || data === 'awesome' || data === 'omg' || data === 'unsure' || data === 'meh' || data === 'horror') {
     //    Mood is positive or neutral
-        request_logged('POST', 'site', action, data, request_result);
+        request_logged('POST', 'site', action, request_data, request_result);
        $('#container').load('resources2.html #window_moodPositive', function() {
+           console.log('Screen loaded');
            $('#btn_taskRefresh').hide();
            $('#btn_selectTask').addClass('nomodified');
            $body.on("click", "#btn_selectTask.nomodified",function () {
+               console.log('select task button clicked');
                $('#btn_activityRec .align').hide();
                $("#btn_activityRec").animate({height: "0%"}, 300);
                $("#block_tasks").animate({height: "50%"}, 300);
@@ -379,7 +410,7 @@ $body.on('click', '.smile-one', function() {
     }
     else {
     //    Mood is negative
-        request_logged('POST', 'site', action, data, request_result);
+        request_logged('POST', 'site', action, request_data, request_result);
         $('#container').load('resources2.html #window_moodNegative', function() {
             $(".tasks").hide();
             $(".block3").click(function () {
@@ -402,11 +433,13 @@ $body.on('click', '#btn_selectTask', function() {
 
 });
 $body.on('click', '#btn_activityRec', function() {
+    console.log('activity rec button');
     $(WINDOW_SWITCH_MAIN_12_13).toggleClass('hide');
 });
 
 //-----------------------------  SCREEN 13 ----------------------------------------------------------
 $body.on('click', '#btn_activityRecDone', function() {
+    var action = 'activity-record';
     var title = $('#input_activityRecTitle').val();
     if (title.length == 0) {
         $('#input_activityRecTitle').addClass('placeholder');
@@ -417,22 +450,27 @@ $body.on('click', '#btn_activityRecDone', function() {
         $('#textarea_activityRec').addClass('placeholder');
         return false;
     }
+
     var data = {
         'title': title,
         'text': textarea,
         'photo': photo,
         'contact': contacts
     };
-    //TEMPORARY comment for testing without connection
-    //$('#reward_for_activity_complete').text(result.reward);
     $(WINDOW_SWITCH_MAIN_13_14).toggleClass('hide');
-    photo = null;
-    request_logged('POST','site', 'action', data, activityRecorded);
+    console.log(data);
+    request_logged('POST', 'site', action, data, activityRecorded, requestErrorCallBack);
+    photo = '';
+    contacts = {};
+    geo_location = {};
+    mood = null;
 });
 
 $body.on('click', '.btn_addPhoto', function() {
     var element = $(this).find('div');
     //addImage(element);
+    photo = '';
+    addImage2(element);
 });
 $body.on('click', '.btn_addContact', function() {
     var element = $(this).find('div');
@@ -487,7 +525,29 @@ $body.on('click', '#btn_taskRecDone', function() {
     //TEMPORARY function for testing without connection
     //$('#reward_for_task_complete').text(result.reward);
     $(WINDOW_SWITCH_MAIN_16_17).toggleClass('hide');
+    photo = '';
+    contacts = {};
+    geo_location = {};
+    mood = null;
     request_logged('POST', 'site', 'action', data, taskRecorded);
+});
+
+//-----------------------------  SCREEN 18 -------------------------------------------------------
+$body.on('click', '.connections .descriptions .active', function(){
+    $(".disconnect-box").css({"display": "block"});
+});
+
+$body.on('click','.tabs-control-link', function(e){
+    e.preventDefault();
+    var item = $(this).closest(".tabs-controls-item"),
+        contentItem = $(".tabs-item"),
+        itemPosition = item.data("class");
+
+    contentItem.filter(".tabs-item-" + itemPosition)
+        .add(item)
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
 });
 
 //-----------------------------  SCREEN 19 ----------------------------------------------------------
@@ -519,9 +579,31 @@ $body.on('click', '#btn_lowMoodRecDone', function() {
     $('#container').load('resources2.html #window_moodPositive', function() {
         $(WINDOW_SWITCH_MAIN_20_14).toggleClass('hide');
     });
+    photo = '';
+    contacts = {};
+    geo_location = {};
+    mood = null;
     //request_logged('POST', 'site', 'action', data, taskRecorded);
 });
-
+//---------------------------------- SCREEN 22 -------------------------------------------
+$body.on('click', '.info_link',function (event) {
+    event.preventDefault();
+    switch (this.id) {
+        case '#link_connections':
+            break;
+        case '#link_password':
+            break;
+        case '#link_about':
+            break;
+    }
+});
+//---------------------------------- SCREEN 26 -------------------------------------------
+$body.on('click', '.expansion_pack' ,function() {
+    var data = {'exp_pack_id': $(this).attr('data-id')};
+    var action = 'unlock-expansion-pack';
+    console.log();
+    request_logged('POST','site', action, data, request_result, requestErrorCallBack)
+});
 //---------------------------------- SCREEN 28 -------------------------------------------
 $body.on('click', '#btn_CallAFriend_NO', function() {
     $(WINDOW_SWITCH_EMERGENCY_28_29).toggleClass('hide');

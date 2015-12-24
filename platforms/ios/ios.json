@@ -51,6 +51,10 @@
                         {
                             "xml": "<preference name=\"CameraUsesGeolocation\" value=\"false\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"YoikScreenOrientation\"><param name=\"ios-package\" value=\"YoikScreenOrientation\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -109,6 +113,9 @@
             "PACKAGE_NAME": "com.app.lelly"
         },
         "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-screen-orientation": {
             "PACKAGE_NAME": "com.app.lelly"
         }
     },
@@ -378,6 +385,22 @@
             "pluginId": "cordova-plugin-camera",
             "clobbers": [
                 "CameraPopoverHandle"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-screen-orientation/www/screenorientation.js",
+            "id": "cordova-plugin-screen-orientation.screenorientation",
+            "pluginId": "cordova-plugin-screen-orientation",
+            "clobbers": [
+                "cordova.plugins.screenorientation"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-screen-orientation/www/screenorientation.ios.js",
+            "id": "cordova-plugin-screen-orientation.screenorientation.ios",
+            "pluginId": "cordova-plugin-screen-orientation",
+            "merges": [
+                "cordova.plugins.screenorientation"
             ]
         }
     ]

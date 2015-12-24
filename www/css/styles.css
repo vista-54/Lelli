@@ -107,7 +107,8 @@ input, li {
     margin: 0;
     padding: 0;
     border: none;
-    outline-style: none
+    outline-style: none;
+    -webkit-appearance: none;
 }
 
 body {
@@ -146,7 +147,12 @@ a, a:active, a:visited {
 input {
     margin: 0 auto;
     font-size: 2.5em;
-    -webkit-appearance: none
+    -webkit-appearance: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
 }
 
 h1 {
@@ -180,13 +186,13 @@ h1 {
     vertical-align: middle
 }
 
-.mini-borders form div {
+.mini-borders div {
     position: relative;
-    width: 82%;
+    width: 98%;
     margin: 0 auto
 }
 
-.mini-borders form div::after, .mini-borders form div::before {
+.mini-borders div::after, .mini-borders div::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -205,7 +211,7 @@ h1 {
     text-align: center
 }
 
-.mini-borders form div::after {
+.mini-borders div::after {
     left: auto;
     right: 0
 }
@@ -521,8 +527,7 @@ h1 {
 
 .details-pages p {
     text-align: left;
-    font-size: 1.43em;
-    color: #5e6166
+    font-size: 1.6em;
 }
 
 .details-pages .article {
@@ -533,7 +538,7 @@ h1 {
 
 .details-pages #form_register {
     width: 82%;
-    margin: 0 auto 9%
+    margin: 0 auto
 }
 
 .details-pages .my-margin {
@@ -644,10 +649,6 @@ h1 {
     font-weight: 300
 }
 
-.details-pages .last {
-    margin-bottom: 5%
-}
-
 .details-pages .likes {
     display: inline-block;
     color: #cdcdcd
@@ -691,6 +692,11 @@ h1 {
 .details-pages .likes-box .button-block2 label span {
     width: 6em;
     height: 6em;
+}
+.details-pages .pink-button {
+    position: absolute;
+    bottom: 3%;
+    left: 27%;
 }
 #div_registerLikes label span {
     width: 5.7em;
@@ -782,9 +788,7 @@ h1 {
 }
 
 .name-pages .pink-button {
-    position: fixed;
-    bottom: 3%;
-    left: 27%;
+    margin-top: 20%;
 }
 
 .register-complete {
@@ -823,15 +827,22 @@ h1 {
 }
 
 .star-point {
+    display: table;
     float: right;
-    margin: 2% 3%
-}
-
-.star-point img {
+    margin: 2% 3%;
     width: 6em;
-    height: auto
+    height: auto;
+    text-align: center;
+    background-image: url('../img/star.png');
+    background-size: cover;
 }
 
+.star-point p {
+    display: table-cell !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+    color: orange !important;
+}
 .feeling-pages {
     background-color: #e5e8ed;
     height: 100%
@@ -969,12 +980,13 @@ h1 {
 }
 
 .done-today .mini-borders {
-    height: 45%;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .done-today form {
-    height: 100%;
-    margin-top: 7%;
+    height: 34%;
+    margin-top: 4%;
 }
 
 .done-today .green-block {
@@ -989,16 +1001,16 @@ h1 {
 
 .done-today .enter {
     width: 98%;
-    margin-top: 4.5%
+    margin-top: 7.5%
 }
 
 .done-today textarea {
     display: block;
     width: 78%;
-    margin: 5% auto 0;
-    height: 74%;
+    margin: 0.5em auto 0;
+    height: 100%;
     background-color: #fefefe;
-    font-size: 1.9em;
+    font-size: 2.1em;
     padding: 0.5em 0.5em 0;
     resize: none;
     color: #3f444a;
@@ -1013,8 +1025,9 @@ h1 {
 .done-today .icons {
     width: 83%;
     padding-left: 10%;
-    margin-top: -2em;
+    margin-top: 1em;
     position: relative;
+    z-index: 2;
 }
 
 .done-today .icon {
@@ -1044,15 +1057,6 @@ h1 {
 
 .recorder form {
     margin-top: 0
-}
-
-.recorder textarea {
-    margin-top: 3%;
-    height: 85.5%
-}
-
-.recorder .mini-borders {
-    height: 48%
 }
 
 .congratulations-pages {
@@ -1124,6 +1128,7 @@ h1 {
 }
 
 .task-pages .task-block {
+    position: relative;
     height: 34%;
     background-color: #7c6b95;
     width: 100%;
@@ -1156,7 +1161,9 @@ h1 {
 }
 
 .task-pages .star-point img {
-    width: 7em
+    width: 7em;
+    position: relative;
+    z-index: 2;
 }
 
 .dont-worry {
@@ -1202,7 +1209,6 @@ h1 {
     display: block;
     background-color: #d1c6cd
 }
-
 .dont-worry .tasks .task-block {
     height: 33.33333333%;
     background-color: #a48d9a;
@@ -1380,7 +1386,7 @@ h1 {
 }
 
 .alone .pink-button {
-    margin: 18% auto 3%
+    margin: 14% auto 3%
 }
 
 .did-u-call {
@@ -1682,7 +1688,8 @@ h1 {
 
 .connections .descriptions {
     height: 77%;
-    background-color: #e5e8ec
+    background-color: #e5e8ec;
+    overflow-y: scroll;
 }
 
 .connections .descriptions .disconnect-box {
@@ -1822,9 +1829,7 @@ h1 {
 .password-screen .pink-button {
     background-color: #d71a60;
     opacity: .7;
-    position: fixed;
-    bottom: 3%;
-    left: 27%;
+    margin-top: 4%;
 }
 .password-screen .pink-button:active {
     background-color: #a4002d;
@@ -1896,11 +1901,12 @@ h1 {
     width: 80%;
     margin: 0 auto;
     font-size: 2.1em;
-    padding: 8% 0
+    padding: 8% 0;
+    height: 16%;
 }
 
 .expansions .eat-block {
-    height: 34%
+    height: 38%
 }
 
 .expansions .eat-block .eat {
@@ -2131,7 +2137,7 @@ h1 {
         height: 30%;
     }
     .done-today .blue-button {
-        margin-top: 3%;
+        margin-top: 5%;
     }
     .congratulations-pages .star-point img {
         margin: 10% auto
@@ -2193,9 +2199,15 @@ h1 {
         height: 5em;
         top: 19%;
     }
+    .task-pages .need-margin {
+        font-size: 1.1em;
+    }
 
     .menu {
         font-size: 9px
+    }
+    .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
+        font-size: 22px;
     }
 }
 
@@ -2211,10 +2223,6 @@ h1 {
     }
     #window_registerScreen {
         font-size: 8px
-    }
-
-    .done-today textarea {
-        border-bottom: 2em solid #fff;
     }
 
     #div_registerLikes, #div_registerStruggles, .done-today, .feeling-pages {
@@ -2252,15 +2260,14 @@ h1 {
     .menu {
         font-size: 11px
     }
+    .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
+        font-size: 26px;
+    }
 }
 
 @media screen and (min-width: 410px) and (max-width: 479px) {
     body {
         font-size: 10.5px
-    }
-
-    .done-today textarea {
-        border-bottom: 2em solid #fff;
     }
 
     .done-today .blue-button {
@@ -2279,10 +2286,6 @@ h1 {
 
     #window_registerScreen .article {
         padding-top: 9%
-    }
-
-    .name-pages .pink-button {
-        margin-top: 10%
     }
     .pin .pink-button {
         margin-top: 40%;
@@ -2310,6 +2313,9 @@ h1 {
     .menu {
         font-size: 12px
     }
+    .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
+        font-size: 30px;
+    }
 }
 
 @media screen and (min-width: 480px) and (max-width: 520px) {
@@ -2325,10 +2331,6 @@ h1 {
 
     #window_registerScreen .article {
         padding-top: 9%
-    }
-
-    .done-today textarea {
-        border-bottom: 2em solid #fff;
     }
 
     #div_registerLikes, #div_registerStruggles {
@@ -2376,6 +2378,9 @@ h1 {
         margin-top: -200px;
         margin-left: -200px;
     }
+    .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
+        font-size: 30px;
+    }
 }
 
 @media screen and (min-width: 520px) and (max-width: 599px) {
@@ -2388,10 +2393,6 @@ h1 {
 
     #window_registerScreen .article {
         padding-top: 5%
-    }
-
-    .done-today textarea {
-        border-bottom: 2em solid #fff;
     }
 
     .medium-text {
@@ -2413,9 +2414,6 @@ h1 {
     }
     .pin .pink-button {
         margin-top: 50%;
-    }
-    .name-pages .pink-button {
-        margin-top: 20%
     }
 
     .register-complete .circles {
@@ -2457,6 +2455,9 @@ h1 {
         margin-top: -220px;
         margin-left: -220px;
     }
+    .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
+        font-size: 36px;
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 799px) {
@@ -2480,10 +2481,6 @@ h1 {
 
     #div_registerLikes, #div_registerStruggles {
         font-size: 13px
-    }
-
-    .name-pages .pink-button {
-        margin-top: 10%
     }
 
     .register-complete .circles {
@@ -2531,6 +2528,9 @@ h1 {
         margin-top: -250px;
         margin-left: -250px;
     }
+    .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
+        font-size: 40px;
+    }
 }
 
 @media screen and (min-width: 800px) and (max-width: 1535px) {
@@ -2542,9 +2542,6 @@ h1 {
     }
     #window_registerScreen .details-pages .article {
         padding: 6.5% 0 5% 8%;
-    }
-    .name-pages .pink-button {
-        margin-top: 15%;
     }
     .feeling-pages .smiles {
         margin: 5.5% auto 7%;
@@ -2566,6 +2563,9 @@ h1 {
     }
     .done-today .blue-button {
         margin-top: 4%;
+    }
+    .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
+        font-size: 48px;
     }
 }
 @media screen and (min-width: 1536px) {
@@ -2617,6 +2617,9 @@ h1 {
     .done-today .blue-button {
         margin-top: 4%;
     }
+    .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
+        font-size: 56px;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 768px) {
@@ -2662,6 +2665,9 @@ h1 {
     .expansions .descriptions p {
         padding: 6% 0;
     }
+    .name-pages .pink-button {
+        margin-top: 10%;
+    }
 }
 
 /* My CSSS*/
@@ -2677,15 +2683,33 @@ h1 {
 .green {
     color: green;
 }
-.spinner {
-    display: inline-block;
+#window_loader {
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+.spinner-box .spinner {
+    display: block;
     position: relative;
-    height: 1.8em;
-    width: 1.8em;
+    width: 3em;
+    height: 3em;
     background: url('../img/spinner3.gif');
     background-size: cover;
-    line-height: 1.8em;
-    vertical-align: middle;
+}
+#window_loader div {
+    display: block;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    width: 5em;
+    height: 5em;
+    top: 45%;
+    background: url('../img/spinner3.gif');
+    background-size: cover;
 }
 .medium-circle-red {
     background-color: #ec5664;
@@ -2699,6 +2723,7 @@ h1 {
 }
 #window_pin {
     position: fixed;
+    display: none;
     top: 0;
     left: 0;
     z-index: 10;
@@ -2726,7 +2751,7 @@ h1 {
     overflow: hidden;
 }
 #form_register div {
-    margin-bottom: 10%;
+    margin-bottom: 9%;
 }
 #div_registerLikes label {
     width: 50%;
@@ -2751,9 +2776,13 @@ h1 {
 .modal_mood:active {
     background-color: rgba(255, 246, 0, 0.53);
 }
-/*.info_link:active {*/
-    /*color: red;*/
-/*}*/
+#window_registerScreen .pink-button {
+    position: static;
+    margin-top: -0.5em;
+}
+.info_link:active {
+    color: red;
+}
 /*********************ARSEN***********************************/
 
 .medium-circle-green {
@@ -2777,4 +2806,7 @@ h1 {
     position: fixed;
     bottom: 5%;
     left: 27%;
+}
+.button-block input, .button-block2 input {
+    display: none!important;
 }

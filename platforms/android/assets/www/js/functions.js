@@ -1,13 +1,13 @@
 function onPause() {
+    if (screen_lock == false) return false;
     $('#after_pause_block').show();
-    //setTimeout(function() {
-        $('#window_pin').show();
-    //},500);
+    $('#window_pin').show();
+    console.log('app have been paused');
 }
 function onResume() {
     setTimeout(function() {
         $('#after_pause_block').hide();
-    },300);
+    },200);
 }
 function onBackKeyDown() {
     navigator.home.home(function() {console.log('Home success')} , function(err){console.log('Error:' + err)})
@@ -38,7 +38,7 @@ function logPinDialog() {
             }
         }, "Enter PIN", ["OK","Cancel"]);
     }
-    else return;
+    else return false;
 }
 
 //PinDialog on Screen 31 (LockScreen)
@@ -146,42 +146,39 @@ function addContact(element) {
 }
 
 // ADD IMAGE TO TASK/ACTIVITY
-function addImage(element){
-    photo = {};
-    reloadPauseListener();
-    $('#after_pause_block').show();
-    window.imagePicker.getPictures(
-        function(results) {
-            $('#window_pin').hide();
-            $('#after_pause_block').hide();
-            iconChangeColor(results, element);
-            for (var i = 0; i < results.length; i++) {
-                console.log('Image URI: ' + results[i]);
-                photo[i] = 'Image URI: ' + results[i]
-            }
-        }, function (error) {
-            console.log('Error: ' + error);
-        }
-    );
-}
+//function addImage(element){
+//    photo = {};
+//    reloadPauseListener();
+//    $('#after_pause_block').show();
+//    window.imagePicker.getPictures(
+//        function(results) {
+//            $('#window_pin').hide();
+//            $('#after_pause_block').hide();
+//            iconChangeColor(results, element);
+//            for (var i = 0; i < results.length; i++) {
+//                console.log('Image URI: ' + results[i]);
+//                photo[i] = 'Image URI: ' + results[i]
+//            }
+//        }, function (error) {
+//            console.log('Error: ' + error);
+//        }
+//    );
+//}
 
 function addImage2(element) {
     var cameraOptions = {
-        'destinationType' : 1,
+        'destinationType' : 0,
         'sourceType' : 0
     };
     function cameraSuccess(imageData) {
         $('#after_pause_block').hide();
-        console.log(imageData);
-        photo.push(imageData);
-        console.log(photo);
-        iconChangeColor(photo, element);
+        iconChangeColor(imageData, element);
+        photo = "data:image/jpeg;base64," + imageData;
     }
 
     function cameraError(message) {
         console.log('Failed because: ' + message);
     }
-    reloadPauseListener();
     $('#after_pause_block').show();
     navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);
 }
@@ -267,9 +264,9 @@ function menuContainerHide() {
     $('#menu_container').fadeOut(400);
 }
 function reloadPauseListener() {
-    document.removeEventListener("pause", onPause, false);
+    screen_lock = false;
     setTimeout(function() {
-        document.addEventListener("pause", onPause, false);
+    screen_lock = true;
     },1000);
 }
 function buildgraph(graph){
@@ -313,4 +310,10 @@ function buildgraph(graph){
     // that is resolving to our chart container element. The Second parameter
     // is the actual data object.
     new Chartist.Line('.ct-chart', data, options);
+}
+function ajaxAnimationTasks(element) {
+    element.fadeOut(150);
+    setTimeout(function() {
+        element.attr('src','img/spinner2.gif').fadeIn(150);
+    },150);
 }

@@ -1,9 +1,7 @@
-
 function onPause() {
+    if (screen_lock == false) return false;
     $('#after_pause_block').show();
-    //setTimeout(function() {
-        $('#window_pin').show();
-    //},500);
+    $('#window_pin').show();
 }
 function onResume() {
     setTimeout(function() {
@@ -39,7 +37,7 @@ function logPinDialog() {
             }
         }, "Enter PIN", ["OK","Cancel"]);
     }
-    else return;
+    else return false;
 }
 
 //PinDialog on Screen 31 (LockScreen)
@@ -129,7 +127,7 @@ function iconChangeColor(result, element) {
 
 //ADD CONTACT TO TASK/ACTIVITY
 function addContact(element) {
-    reloadPauseLisneter();
+    reloadPauseListener();
     $('#after_pause_block').show();
     navigator.contacts.pickContact(function(contact) {
         $('#window_pin').hide();
@@ -147,24 +145,44 @@ function addContact(element) {
 }
 
 // ADD IMAGE TO TASK/ACTIVITY
-function addImage(element){
-    photo = {};
-    reloadPauseLisneter();
+//function addImage(element){
+//    photo = {};
+//    reloadPauseListener();
+//    $('#after_pause_block').show();
+//    window.imagePicker.getPictures(
+//        function(results) {
+//            $('#window_pin').hide();
+//            $('#after_pause_block').hide();
+//            iconChangeColor(results, element);
+//            for (var i = 0; i < results.length; i++) {
+//                console.log('Image URI: ' + results[i]);
+//                photo[i] = 'Image URI: ' + results[i]
+//            }
+//        }, function (error) {
+//            console.log('Error: ' + error);
+//        }
+//    );
+//}
+
+function addImage2(element) {
+    var cameraOptions = {
+        'destinationType' : 0,
+        'sourceType' : 0
+    };
+    function cameraSuccess(imageData) {
+        $('#after_pause_block').hide();
+        iconChangeColor(imageData, element);
+        photo = "data:image/jpeg;base64," + imageData;
+    }
+
+    function cameraError(message) {
+        console.log('Failed because: ' + message);
+    }
+    reloadPauseListener();
     $('#after_pause_block').show();
-    window.imagePicker.getPictures(
-        function(results) {
-            $('#window_pin').hide();
-            $('#after_pause_block').hide();
-            iconChangeColor(results, element);
-            for (var i = 0; i < results.length; i++) {
-                console.log('Image URI: ' + results[i]);
-                photo[i] = 'Image URI: ' + results[i]
-            }
-        }, function (error) {
-            console.log('Error: ' + error);
-        }
-    );
+    navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);
 }
+
 // ADD MOOD TO TASK/ACTIVITY
 
 function showMoodModal(element) {
@@ -216,7 +234,7 @@ function closeMoodModal() {
 // ADD LOCATION
 function addLocation(element) {
     geo_location = {};
-    reloadPauseLisneter();
+    reloadPauseListener();
     //$('#after_pause_block').show();
     var options = {
         maximumAge: 0,
@@ -245,45 +263,51 @@ function hideMenu() {
 function menuContainerHide() {
     $('#menu_container').fadeOut(400);
 }
-function reloadPauseLisneter() {
-    document.removeEventListener("pause", onPause, false);
+function reloadPauseListener() {
+    screen_lock = false;
     setTimeout(function() {
-        document.addEventListener("pause", onPause, false);
+    screen_lock = true;
     },1000);
 }
-
-
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        switch (img) {
-            case 1:
-                reader.onload = function (e) {
-                    $("#imagelist").append("<img class=\"image\" id=\"img1\" src=" + e.target.result + ">");
-//            $('#img1').attr('src', e.target.result);
-                    $('#add_img').css({'margin': '-60px 0 -40px -101px'});
-                    img++;
-                };
-                break;
-            case 2:
-                reader.onload = function (e) {
-//            $('#img2').attr('src', e.target.result);
-                    $("#imagelist").append("<img class=\"image\" id=\"img2\" src=" + e.target.result + ">");
-                    img++;
-                };
-                $('#add_img').css({'margin': '-60px 0 -40px 44px'});
-                break;
-            case 3:
-                reader.onload = function (e) {
-//            $('#img3').attr('src', e.target.result);
-                    $("#imagelist").append("<img class=\"image\" id=\"img3\" src=" + e.target.result + ">");
-                    img++;
-                    $('#add_img').css({'display': 'none'});
-                };
-                break;
+function buildgraph(graph){
+    var options = {
+        showPoint: false,
+        fullWidth: true,
+        fullHeight: true,
+        high: 10,
+        showArea: true,
+        showLine: false,
+        axisX: {
+            showLabel: false,
+            showGrid: false,
+            offset: 0,
+            labelOffset: {
+                x: 0,
+                y: 0
+            }
+        },
+        axisY: {
+            showLabel: false,
+            showGrid: false,
+            offset: 0,
+            labelOffset: {
+                x: 0,
+                y: 0
+            }
         }
+    };
+    var data = {
+        // A labels array that can contain any sort of values
+        labels: graph.label,
+        // Our series array that contains series objects or in this case series data arrays
+        series: [
+            graph.data[0],
+            graph.data[1]
+        ]
+    };
 
-
-        reader.readAsDataURL(input.files[0]);
-    }
+    // Create a new line chart object where as first parameter we pass in a selector
+    // that is resolving to our chart container element. The Second parameter
+    // is the actual data object.
+    new Chartist.Line('.ct-chart', data, options);
 }

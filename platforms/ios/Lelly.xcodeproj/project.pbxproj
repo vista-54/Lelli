@@ -78,6 +78,7 @@
 		5109297EAC39429CB8C12F6F /* UIImage+CropScaleOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = D52EA40BC7AD40B5BFA45687 /* UIImage+CropScaleOrientation.m */; };
 		AEA07A65D6AB49319D922D30 /* CDVCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B880E9D08B345A7B3A52906 /* CDVCamera.m */; };
 		D2B2C284771D4875869AC4AE /* CDVJpegHeaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE34AAFA82146ACA7BEC547 /* CDVJpegHeaderWriter.m */; };
+		D9F50EAB4A9D49608E78C7D8 /* YoikScreenOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A77FF7B8BAD44D6810D2ECE /* YoikScreenOrientation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +212,8 @@
 		323B566AC3B545B98A9A4083 /* CDVCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVCamera.h"; path = "cordova-plugin-camera/CDVCamera.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		B85BB861B3E2496BAC61B86C /* CDVJpegHeaderWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVJpegHeaderWriter.h"; path = "cordova-plugin-camera/CDVJpegHeaderWriter.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		BBFE4ABA396C4E66A91390AA /* CDVExif.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVExif.h"; path = "cordova-plugin-camera/CDVExif.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		4A77FF7B8BAD44D6810D2ECE /* YoikScreenOrientation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "YoikScreenOrientation.m"; path = "cordova-plugin-screen-orientation/YoikScreenOrientation.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		BDCA1B7351BD47B38B0BCA10 /* YoikScreenOrientation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "YoikScreenOrientation.h"; path = "cordova-plugin-screen-orientation/YoikScreenOrientation.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +388,8 @@
 				323B566AC3B545B98A9A4083 /* CDVCamera.h */,
 				B85BB861B3E2496BAC61B86C /* CDVJpegHeaderWriter.h */,
 				BBFE4ABA396C4E66A91390AA /* CDVExif.h */,
+				4A77FF7B8BAD44D6810D2ECE /* YoikScreenOrientation.m */,
+				BDCA1B7351BD47B38B0BCA10 /* YoikScreenOrientation.h */,
 			);
 			name = Plugins;
 			path = "Lelly/Plugins";
@@ -600,6 +605,7 @@
 				5109297EAC39429CB8C12F6F /* UIImage+CropScaleOrientation.m in Sources */,
 				AEA07A65D6AB49319D922D30 /* CDVCamera.m in Sources */,
 				D2B2C284771D4875869AC4AE /* CDVJpegHeaderWriter.m in Sources */,
+				D9F50EAB4A9D49608E78C7D8 /* YoikScreenOrientation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

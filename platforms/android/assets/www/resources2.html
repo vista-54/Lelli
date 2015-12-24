@@ -16,10 +16,7 @@
             <form name="login" onsubmit="return false">
                 <input id="input_email" class="enter" type="email" maxlength="25" placeholder="email">
                 <input id="input_personalPin" class="enter" type="password" maxlength="4" pattern="[0-9]*" placeholder="pin" inputmode="numeric" required>
-                <div class="spinner-box">
-                    <input class="red-button" type="submit" value="login">
-                    <div class="spinner"></div>
-                </div>
+                <input class="red-button" type="submit" value="login">
             </form>
             <p class="small-margin">forgot your password? <a href="#" id="link_forgotPin">tap here</a></p>
             <p class="or">OR</p>
@@ -72,8 +69,8 @@
             <div><input id="input_surname" class="enter" placeholder="Surname"></div>
             <div><input id="input_birthdate" class="enter" type="text" placeholder="Date of birth"></div>
             <div> <input id="input_location" class="enter" placeholder="City Location"></div>
-            <div><input id="input_regEmail" class="enter" type="email" placeholder="Email Adress" required></div>
-            <div><input id="input_regEmailConfirm" class="enter" type="email" placeholder="Confirm Email Adress" required></div>
+            <div><input id="input_regEmail" class="enter" type="email" placeholder="Email Address" required></div>
+            <div><input id="input_regEmailConfirm" class="enter" type="email" placeholder="Confirm Email Address" required></div>
             <div><input id="input_newPin" class="enter" name="pin" type="password" maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="Pin" required></div>
             <div class="last"><input id="input_newPinConfirm" class="enter last" name="pin" type="password" maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="Confirm Pin" required></div>
         </form>
@@ -262,7 +259,7 @@
             <div>
                 <p class="upper bold">Select<br>A task</p>
             </div>
-            <p><img id="btn_taskRefresh" src="img/refresh.png" alt="refresh"></p>
+            <p><img id="btn_taskRefresh" src="img/refresh.png" alt="refresh" class="task_refresh"></p>
         </div>
         <div id="btn_activityRec" class="green-block">
             <div class="align">
@@ -275,7 +272,7 @@
             <p class="bold upper">Task 1</p>
             <div class="my-margin">
                 <div class="star-point">
-                    <img src="img/star.png" alt="star">
+                    <p>90</p>
                 </div>
             </div>
         </div>
@@ -283,7 +280,7 @@
             <p class="bold upper">Task 2</p>
             <div class="my-margin">
                 <div class="star-point">
-                    <img src="img/star.png" alt="star">
+                    <p>90</p>
                 </div>
             </div>
         </div>
@@ -291,7 +288,7 @@
             <p class="bold upper">Task 3</p>
             <div class="my-margin">
                 <div class="star-point">
-                    <img src="img/star.png" alt="star">
+                    <p>90</p>
                 </div>
             </div>
         </div>
@@ -315,13 +312,13 @@
             </div>
         </div>
         <div class="mini-borders">
+            <div>
+                <input id="input_activityRecTitle" class="enter" type="email" placeholder="Title" required>
+            </div>
+        </div>
             <form >
-                <div>
-                    <input id="input_activityRecTitle" class="enter" type="email" placeholder="Title" required>
-                </div>
                 <textarea id="textarea_activityRec" name="text" placeholder="What have you done today?"></textarea>
             </form>
-        </div>
         <div class="icons">
             <div class="btn_addPhoto need-margin"><div class="icon medium-circle-green">
                 <img src="img/photo.png" alt="number">
@@ -379,13 +376,13 @@
             </div>
         </div>
         <div class="mini-borders">
+            <div>
+                <input id="input_taskRecTitle" class="enter" type="text" placeholder="Title" required>
+            </div>
+        </div>
             <form >
-                <div>
-                    <input id="input_taskRecTitle" class="enter" type="text" placeholder="Title" required>
-                </div>
                 <textarea id="textarea_taskRec" name="text" placeholder="What have you done today?"></textarea>
             </form>
-        </div>
         <div class="icons">
             <div class="btn_addPhoto need-margin"><div class="icon medium-circle-green">
                 <img src="img/photo.png" alt="number">
@@ -544,13 +541,13 @@
                 <p class="upper bold">recorder</p>
             </div>
             <div class="mini-borders">
+                <div>
+                    <input id="input_lowMoodTitle" class="enter" type="email" placeholder="Don't worry!" required>
+                </div>
+            </div>
                 <form >
-                    <div>
-                        <input id="input_lowMoodTitle" class="enter" type="email" placeholder="Don't worry!" required>
-                    </div>
                     <textarea id="textarea_lowMood" name="text" placeholder="Everyone feels down sometimes, what's up?"></textarea>
                 </form>
-            </div>
         <div class="icons">
             <div class="btn_addPhoto need-margin"><div class="icon medium-circle-green">
                 <img src="img/photo.png" alt="number">
@@ -724,7 +721,7 @@
         <div class="descriptions">
             <div class="scroll">
                 <p class="bold">You currently have:</p>
-                <p>22</p>
+                <p id="user_points">22</p>
                 <p class="upper">Star points</p>
                 <div class="star-point">
                     <img src="img/star.png" alt="star">
@@ -768,22 +765,22 @@
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ornare dictum ligula. Maecenas
                 elementum suscipit</p>
             <div class="eat-block">
-                <div class="eat">
+                <div data-id="1" class="expansion_pack eat">
                     <img src="img/eat1.png" alt="eat">
                     <p>Bi-Polar</p>
                 </div>
-                <div class="eat">
+                <div data-id="2"class="expansion_pack eat">
                     <img src="img/eat2.png" alt="eat">
                     <p>Eating Disorder</p>
                 </div>
             </div>
             <div class="eat-block">
-                <div class="eat">
+                <div data-id="3" class="expansion_pack eat">
                     <img src="img/eat3.png" alt="eat">
                     <p>Gardening</p>
                 </div>
-                <div class="eat">
-                    <img src="img/eat4.png" alt="eat">
+                <div data-id="4" class="expansion_pack eat">
+                    <img src="img/eat4.png" alt="expansion_pack eat">
                     <p>Fishing</p>
                 </div>
             </div>
@@ -869,6 +866,9 @@
                     <div class="btn_menu square left">
                         <i class="fa fa-bars fa-2x"></i>
                     </div>
+                </div>
+                <div class="red-square">
+                    <p>!</p>
                 </div>
                 <p>For non-urgent help</p>
                 <p>tap below:</p>

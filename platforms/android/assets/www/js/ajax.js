@@ -1,6 +1,4 @@
-var wrong_pinCounter = 0;
-var user_name;
-var URL = 'http://192.168.1.100/api';
+var URL = 'http://192.168.1.122/api';
 var versions = '/v1/';
 $(document).ajaxStop(function() {
     $('.spinner').hide();
@@ -8,18 +6,26 @@ $(document).ajaxStop(function() {
 $(document).ajaxComplete(function() {
     $('.spinner').hide();
 });
+function startAjaxAnimation() {
+    $('.spinner').show();
+}
 // ------------------------- UNITED AJAX REQUEST FUNCTIONS -------------------------------
 function request_logged(type, controller, action, data, successCallBack, requestErrorCallBack){
-    $.ajax({
-        type: type,
-        url: URL + versions + controller + '/'+ action,
-        headers: {
-            "Authorization" : 'Bearer ' + localStorage['Lelly_authKey']
-        },
-        data: data,
-        success:successCallBack,
-        error: requestErrorCallBack
-    })
+    try{
+        $.ajax({
+            type: type,
+            url: URL + versions + controller + '/'+ action,
+            headers: {
+                "Authorization" : 'Bearer ' + localStorage['Lelly_auth_key']
+            },
+            data: data,
+            success:successCallBack,
+            error: requestErrorCallBack
+        })
+    }
+    catch (err) {
+        console.log(err.name + '/r/n' + err.stack +'/r/n'+ err.message);
+    }
 }
 function request(type, controller, action, data, successCallBack, requestErrorCallBack){
     $.ajax({
@@ -63,10 +69,10 @@ function checkEmail(result) {
 function download_likesAndStruggles(result){
     console.log(result);
     $.each(result.likes, function(index,value) {
-        $('#likes').append('<li><div class="white-block"><div class="description-block"><span class="upper">'+value+'</span></div><div class="button-block"><input class="likes" id="like'+index+'_0" type="radio" name="'+value+'" value="0" checked><label for="like'+index+'_0"><span class="dislike"></span></label><input class="likes" id="like'+index+'_1" type="radio" name="'+value+'" value="1"><label for="like'+index+'_1"><span class="like"></span></label></div></div></li>');
+        $('#likes').append('<li><div class="white-block"><div class="description-block"><span class="upper">'+value+'</span></div><div class="button-block"><input class="likes" id="like'+index+'_0" type="radio" name="'+index+'" value="0" checked><label for="like'+index+'_0"><span class="dislike"></span></label><input class="likes" id="like'+index+'_1" type="radio" name="'+index+'" value="1"><label for="like'+index+'_1"><span class="like"></span></label></div></div></li>');
     });
     $.each(result.struggles, function(index,value) {
-        $('#struggles').append('<li><div class="white-block"><div class="button-block2"><input id="struggle'+index+'" name="'+ value +'" type="checkbox"><label for="struggle'+index+'"><span class="medium-circle-gray"><i class="fa fa-check fa-3x"></i></span></label></div><div class="description-block2">'+value+'</div></div></li>');
+        $('#struggles').append('<li><div class="white-block"><div class="button-block2"><input id="struggle'+index+'" name="'+ index +'" type="checkbox"><label for="struggle'+index+'"><span class="medium-circle-gray"><i class="fa fa-check fa-3x"></i></span></label></div><div class="description-block2">'+value+'</div></div></li>');
     });
     $(WINDOW_SWITCH_REGISTER_1_2).toggleClass('hide');
 }
@@ -78,8 +84,13 @@ function register_finish(result) {
         return false;
     }
     else {
+        localStorage.setItem('Lelly_login_email', _email);
         localStorage['Lelly_auth_key'] = result.auth_key;
-        user_name = result.user_name;
+        localStorage['Lelly_pin'] = _pin;
+        localStorage['Lelly_contacts'] = JSON.stringify(result.contacts);
+        localStorage['Lelly_points'] = result.points;
+        user_name = localStorage['Lelly_UserName'] || result.user_name;
+        star_points = localStorage['Lelly_points'];
         console.log(result);
         $(WINDOW_SWITCH_REGISTER_4_5).toggleClass('hide');
         contacts = {};
@@ -88,19 +99,21 @@ function register_finish(result) {
 
 //LOG OUT
 function logOut(result) {
-    localStorage.removeItem('Lelly_authKey');
+    localStorage.removeItem('Lelly_auth_key');
     localStorage.removeItem('Lelly_pin');
     console.log(result);
 }
 
 //LOG IN
 function login(result) {
-    if(result.auth_key && result.accept) {
+    if(result.auth_key && !result.errors) {
         localStorage.setItem('Lelly_login_email', _email);
-        localStorage['Lelly_authKey'] = result.auth_key;
+        localStorage['Lelly_auth_key'] = result.auth_key;
         localStorage['Lelly_pin'] = _pin;
-        localStorage['Lelly_contacts'] = result.contacts;
-        user_name = localStorage['Lelly_UserName'] = result.user_name;
+        localStorage['Lelly_contacts'] = JSON.stringify(result.contacts);
+        localStorage['Lelly_points'] = result.points;
+        user_name = localStorage['Lelly_UserName'] || result.user_name;
+        star_points = localStorage['Lelly_points'] || result.points;
         console.log(result);
         show_moodscreen(user_name);
         document.addEventListener("pause", onPause, false);
@@ -146,13 +159,25 @@ function forgotPin(result) {
 // GET TASKS
 function getTasks(result) {
     console.log(result);
+    var element = $('.task_refresh');
+    element.fadeOut(150);
+    setTimeout(function() {
+        element.attr('src','img/refresh.png').fadeIn(150);
+    },150);
     if (!result.tasks || result.tasks.length <=2) {
         return false
     }
     else {
-        $('.task1 > p').html(result.tasks[0]);
-        $('.task2 > p').html(result.tasks[1]);
-        $('.task3 > p').html(result.tasks[2]);
+        get_task_options.offset++;
+        $('.task1 > p').html(result.tasks[0].name).animate({"right":"+=50%"},300);
+        $('.task2 > p').html(result.tasks[1].name);
+        $('.task3 > p').html(result.tasks[2].name);
+        setTimeout(function() {
+            $('.task2 > p').animate({"right":"+=50%"},300);
+        },150);
+        setTimeout(function() {
+            $('.task3 > p').animate({"right":"+=50%"},300);
+        },300);
     }
 }
 
@@ -160,7 +185,7 @@ function getTasks(result) {
 function taskRecorded(result) {
     $('#reward_for_task_complete').text(result.reward);
     $(WINDOW_SWITCH_MAIN_16_17).toggleClass('hide');
-    photo = null;
+    photo = '';
     contacts = {};
 }
 
@@ -168,5 +193,14 @@ function taskRecorded(result) {
 function activityRecorded(result) {
     $('#reward_for_task_complete').text(result.reward);
     $(WINDOW_SWITCH_MAIN_13_14).toggleClass('hide');
-    photo = null;
+    photo = '';
+    contacts = {};
+}
+
+function getExpansionsPack(result) {
+    console.log(result);
+    if(!result.expansion_packs) {
+        return false;
+    }
+
 }
