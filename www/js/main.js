@@ -29,7 +29,7 @@ $(document).ready( function() {
 function onDeviceReady() {
     if (device.platform === 'iOS') {
         //StatusBar.overlaysWebView(false);
-        $(body).height($(document).height());
+        //$(body).css('height', $(window).height - 20 +'px')
     }
     screen.lockOrientation('portrait');
     document.addEventListener("backbutton", onBackKeyDown, false);
@@ -403,49 +403,54 @@ $body.on('click', '.smile-one', function() {
     var request_data = {'mood' : data};
     console.log(request_data);
     if (data === 'happy' || data === 'awesome' || data === 'omg' || data === 'unsure' || data === 'meh' || data === 'horror') {
-    //    Mood is positive or neutral
+        //    Mood is positive or neutral
         request_logged('POST', 'site', action, request_data, request_result);
-       $('#container').load('resources2.html #window_moodPositive', function() {
-           request_logged('POST','site', 'get-tasks', data, function(result) {
-               console.log(result);
-               if (!result.tasks || result.tasks.length <=2) {
-                   return false
-               }
-               else {
-                   get_task_options.offset++;
-                   $('.task1 > p').text(result.tasks[0].name);
-                   $('.task2 > p').text(result.tasks[1].name);
-                   $('.task3 > p').text(result.tasks[2].name);
-                   $('.task1 .tasks-star-point > p').text(result.tasks[0].points);
-                   $('.task2 .tasks-star-point > p').text(result.tasks[1].points);
-                   $('.task3 .tasks-star-point > p').text(result.tasks[2].points);
-               }
-           }, requestErrorCallBack);
-           console.log('Screen loaded');
-           $('#btn_taskRefresh').hide();
-           $('#btn_selectTask').addClass('nomodified');
-           $('#btn_selectTask.nomodified').click(function () {
-               console.log('select task button clicked');
-               $('#btn_activityRec .align').hide();
-               $("#btn_activityRec").animate({height: "0%"}, 300);
-               $("#block_tasks").animate({height: "50%"}, 300);
-               $(this).addClass('modified');
-               $(this).removeClass('nomodified');
-               setTimeout(function(){
-                   $("#btn_taskRefresh").fadeIn(400);
-               }, 400);
-           });
-       });
-        $('#btn_selectTask.modified').click(function() {
-            $('#btn_taskRefresh').fadeOut(400);
-            $(this).removeClass('modified');
-            $(this).addClass('nomodified');
-            $("#btn_activityRec").animate({height: "50%"}, 300);
-            $("#block_tasks").animate({height: "0%"}, 300);
-            setTimeout(function() {
-                $('#btn_activityRec .align').fadeIn(400);
-            }, 400);
-        })
+        $('#container').load('resources2.html #window_moodPositive', function () {
+            request_logged('POST', 'site', 'get-tasks', data, function (result) {
+                console.log(result);
+                if (!result.tasks || result.tasks.length <= 2) {
+                    return false
+                }
+                else {
+                    get_task_options.offset++;
+                    $('.task1 > p').text(result.tasks[0].name);
+                    $('.task2 > p').text(result.tasks[1].name);
+                    $('.task3 > p').text(result.tasks[2].name);
+                    $('.task1 .tasks-star-point > p').text(result.tasks[0].points);
+                    $('.task2 .tasks-star-point > p').text(result.tasks[1].points);
+                    $('.task3 .tasks-star-point > p').text(result.tasks[2].points);
+                }
+            }, requestErrorCallBack);
+            console.log('Screen loaded');
+            $('#btn_taskRefresh').hide();
+            $('#btn_selectTask').addClass('nomodified');
+            $('#btn_selectTask.nomodified').click(function () {
+                console.log('select task button clicked');
+                $('#btn_activityRec .align').hide();
+                $("#btn_activityRec").animate({height: "0%"}, 300);
+                $("#block_tasks").animate({height: "50%"}, 300);
+                $(this).addClass('modified');
+                $(this).removeClass('nomodified');
+                setTimeout(function () {
+                    $("#btn_taskRefresh").fadeIn(400);
+                }, 400);
+            });
+            $('#btn_selectTask.modified').click(function () {
+                $('#btn_taskRefresh').fadeOut(400);
+                $(this).removeClass('modified');
+                $(this).addClass('nomodified');
+                $("#btn_activityRec").animate({height: "50%"}, 300);
+                $("#block_tasks").animate({height: "0%"}, 300);
+                setTimeout(function () {
+                    $('#btn_activityRec .align').fadeIn(400);
+                }, 400);
+            });
+            $('#btn_activityRec').click(function () {
+                console.log('activity rec button');
+                get_task_options.offset = 1;
+                $(WINDOW_SWITCH_MAIN_12_13).toggleClass('hide');
+            });
+        });
     }
     else {
     //    Mood is negative
@@ -482,12 +487,6 @@ $body.on('click', '.smile-one', function() {
 });
 
 //-----------------------------  SCREEN 12 ----------------------------------------------------------
-
-$body.on('click', '#btn_activityRec', function() {
-    console.log('activity rec button');
-    get_task_options.offset = 1;
-    $(WINDOW_SWITCH_MAIN_12_13).toggleClass('hide');
-});
 
 //-----------------------------  SCREEN 13 ----------------------------------------------------------
 $body.on('click', '#btn_activityRecDone', function() {
