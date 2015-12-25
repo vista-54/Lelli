@@ -6,5 +6,6 @@
     "CoreLocation.framework": 2,
     "CoreBluetooth.framework": 1,
     "AVFoundation.framework": 2,
-    "Photos.framework": 1
+    "Photos.framework": 1,
+    "AudioToolbox.framework": 1
 }

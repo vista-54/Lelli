@@ -2,11 +2,12 @@ function onPause() {
     if (screen_lock == false) return false;
     $('#after_pause_block').show();
     $('#window_pin').show();
+    console.log('app have been paused');
 }
 function onResume() {
     setTimeout(function() {
         $('#after_pause_block').hide();
-    },300);
+    },200);
 }
 function onBackKeyDown() {
     navigator.home.home(function() {console.log('Home success')} , function(err){console.log('Error:' + err)})
@@ -178,7 +179,6 @@ function addImage2(element) {
     function cameraError(message) {
         console.log('Failed because: ' + message);
     }
-    reloadPauseListener();
     $('#after_pause_block').show();
     navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);
 }
@@ -310,4 +310,10 @@ function buildgraph(graph){
     // that is resolving to our chart container element. The Second parameter
     // is the actual data object.
     new Chartist.Line('.ct-chart', data, options);
+}
+function ajaxAnimationTasks(element) {
+    element.fadeOut(150);
+    setTimeout(function() {
+        element.attr('src','img/spinner2.gif').fadeIn(150);
+    },150);
 }

@@ -27,11 +27,17 @@ $(document).ready( function() {
     });
 });
 function onDeviceReady() {
-    if (device.platform === 'iOS') StatusBar.overlaysWebView(false);
+    if (device.platform === 'iOS') {
+        //StatusBar.overlaysWebView(false);
+        $(body).height($(document).height());
+    }
     screen.lockOrientation('portrait');
     document.addEventListener("backbutton", onBackKeyDown, false);
     console.log(device.platform);
     if (device.platform === 'Android') $('body').css('height', $(window).height());
+    window.alert = function (title, txt) {
+        navigator.notification.alert(txt, null, title, "OK");
+    };
 }
 $body.on('submit','form', function(e) {
     cordova.plugins.Keyboard.close();
@@ -148,8 +154,8 @@ $body.on("focus", '#input_lockScreen, #input_personalPin, #input_newPin, #input_
     e.preventDefault();
 });
 $body.on("focus", 'input', function() {
-    $(this).css('border-color','');
-    $(this).removeClass('placeholder');
+    $(this).css('border-color','')
+        .removeClass('placeholder');
     if (device.platform === 'iOS') {
         window.scrollTo(0,0);
     }
@@ -354,10 +360,12 @@ $body.on("click", "#btn_regFinish", function() {
     request('POST','site', 'signup', data, register_finish, requestErrorCallBack);
 });
 $body.on('click', '#btn_friend', function() {
+    $('#input_friendName').css('border-color','')
+        .removeClass('placeholder');
     navigator.contacts.pickContact(function(contact) {
         $('#window_pin').hide();
         $('#after_pause_block').hide();
-        var name = contact.displayName;
+        var name = contact.name.formatted;
         var phone = contact.phoneNumbers[0].value;
         phone = phone.replace(/\-|\x20/g,"");
         contacts.person_win_name = name;
@@ -368,10 +376,12 @@ $body.on('click', '#btn_friend', function() {
     });
 });
 $body.on('click', '#btn_support', function() {
+    $('#input_supportName').css('border-color','')
+        .removeClass('placeholder');
     navigator.contacts.pickContact(function (contact) {
         $('#window_pin').hide();
         $('#after_pause_block').hide();
-        var name = contact.displayName;
+        var name = contact.name.formatted;
         var phone = contact.phoneNumbers[0].value;
         phone = phone.replace(/\-|\x20/g, "");
         contacts.person_support_name = name;
@@ -381,7 +391,7 @@ $body.on('click', '#btn_support', function() {
 });
 
 //-----------------------------  SCREEN 10 ----------------------------------------------------------
-$body.on('click', 'div_registerComplete', function() {
+$body.on('click', '#div_registerComplete', function() {
     show_moodscreen(user_name);
     document.addEventListener("pause", onPause, false);
     document.addEventListener("resume", onResume, false);
@@ -405,13 +415,16 @@ $body.on('click', '.smile-one', function() {
                    get_task_options.offset++;
                    $('.task1 > p').text(result.tasks[0].name);
                    $('.task2 > p').text(result.tasks[1].name);
-                   $('.task3 > p').text(result.tasks[2].name)
+                   $('.task3 > p').text(result.tasks[2].name);
+                   $('.task1 .tasks-star-point > p').text(result.tasks[0].points);
+                   $('.task2 .tasks-star-point > p').text(result.tasks[1].points);
+                   $('.task3 .tasks-star-point > p').text(result.tasks[2].points);
                }
            }, requestErrorCallBack);
            console.log('Screen loaded');
            $('#btn_taskRefresh').hide();
            $('#btn_selectTask').addClass('nomodified');
-           $body.on("click", "#btn_selectTask.nomodified",function () {
+           $('#btn_selectTask.nomodified').click(function () {
                console.log('select task button clicked');
                $('#btn_activityRec .align').hide();
                $("#btn_activityRec").animate({height: "0%"}, 300);
@@ -423,7 +436,7 @@ $body.on('click', '.smile-one', function() {
                }, 400);
            });
        });
-        $body.on('click','#btn_selectTask.modified', function() {
+        $('#btn_selectTask.modified').click(function() {
             $('#btn_taskRefresh').fadeOut(400);
             $(this).removeClass('modified');
             $(this).addClass('nomodified');
@@ -447,7 +460,10 @@ $body.on('click', '.smile-one', function() {
                     get_task_options.offset++;
                     $('.task1 > p').text(result.tasks[0].name);
                     $('.task2 > p').text(result.tasks[1].name);
-                    $('.task3 > p').text(result.tasks[2].name)
+                    $('.task3 > p').text(result.tasks[2].name);
+                    $('.task1 .tasks-star-point > p').text(result.tasks[0].points);
+                    $('.task2 .tasks-star-point > p').text(result.tasks[1].points);
+                    $('.task3 .tasks-star-point > p').text(result.tasks[2].points);
                 }
             }, requestErrorCallBack);
             $(".tasks").hide();
@@ -466,10 +482,7 @@ $body.on('click', '.smile-one', function() {
 });
 
 //-----------------------------  SCREEN 12 ----------------------------------------------------------
-$body.on('click', '#btn_selectTask', function() {
-    //$(WINDOW_SWITCH_MAIN_12_15).toggleClass('hide');
 
-});
 $body.on('click', '#btn_activityRec', function() {
     console.log('activity rec button');
     get_task_options.offset = 1;
@@ -529,7 +542,7 @@ $body.on('click', '.btn_addLocation', function() {
 //-----------------------------  SCREEN 14 / 17 ----------------------------------------------------------
 $body.on('click', '#btn_activityComplete, #btn_taskComplete', function() {
     $('#container').load('resources2.html #window_moodScreen', function() {
-        show_moodscreen('Bohdan');
+        show_moodscreen(user_name);
     });
 });
 //-----------------------------  SCREEN 15 / 19 ----------------------------------------------------------
@@ -546,12 +559,15 @@ $body.on('click', '#btn_taskRefresh', function(e) {
     var data = get_task_options;
     console.log(data);
     ajaxAnimationTasks($(this));
-    $('.task1 > p').animate({"left":"+=50%"},300);
+    $('.task1 > p').animate({"left":"-=100%"},300);
+    $('.task1 .tasks-star-point > p').fadeOut(300);
     setTimeout(function() {
-        $('.task2 > p').animate({"left":"+=50%"},300);
+        $('.task2 > p').animate({"left":"-=100%"},300);
+        $('.task2 .tasks-star-point > p').fadeOut(300);
     },150);
     setTimeout(function() {
-        $('.task3 > p').animate({"left":"+=50%"},300);
+        $('.task3 > p').animate({"left":"-=100%"},300);
+        $('.task3 .tasks-star-point > p').fadeOut(300);
     },300);
     request_logged('POST','site', action, data, getTasks, requestErrorCallBack);
     e.stopPropagation();

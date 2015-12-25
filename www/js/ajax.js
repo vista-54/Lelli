@@ -106,6 +106,7 @@ function logOut(result) {
 
 //LOG IN
 function login(result) {
+    console.log(result);
     if(result.auth_key && !result.errors) {
         localStorage.setItem('Lelly_login_email', _email);
         localStorage['Lelly_auth_key'] = result.auth_key;
@@ -120,12 +121,20 @@ function login(result) {
         document.addEventListener("resume", onResume, false);
     }
     else {
-        if (result.message === 'wrong pin') wrong_pinCounter += 1;
-        if (wrong_pinCounter == 3) {
-            $('#container').load('resources2.html #window_locked');
-            wrong_pinCounter == 0;
+        if (result.errors.pin) {
+            wrong_pinCounter += 1;
+            window.alert('Sorry', result.errors.pin[0]);
+            if (wrong_pinCounter == 3) {
+                $('#container').load('resources2.html #window_locked');
+                wrong_pinCounter == 0;
+            }
         }
-        console.log(result);
+        else if (result.errors.email) {
+            window.alert('Sorry', result.errors.email[0]);
+        }
+        else {
+            window.alert('Sorry', 'An unexpected login error');
+        }
     }
 }
 
@@ -169,14 +178,19 @@ function getTasks(result) {
     }
     else {
         get_task_options.offset++;
-        $('.task1 > p').html(result.tasks[0].name).animate({"right":"+=50%"},300);
-        $('.task2 > p').html(result.tasks[1].name);
-        $('.task3 > p').html(result.tasks[2].name);
+        $('.task1 > p').text(result.tasks[0].name).animate({"left":"+=100%"},300);
+        $('.task1 .tasks-star-point > p').text(result.tasks[0].points).fadeIn(300);
+        $('.task2 > p').text(result.tasks[1].name);
+        $('.task2 .tasks-star-point > p').text(result.tasks[1].points);
+        $('.task3 > p').text(result.tasks[2].name);
+        $('.task3 .tasks-star-point > p').text(result.tasks[2].points);
         setTimeout(function() {
-            $('.task2 > p').animate({"right":"+=50%"},300);
+            $('.task2 > p').animate({"left":"+=100%"},300);
+            $('.task2 .tasks-star-point > p').fadeIn(300);
         },150);
         setTimeout(function() {
-            $('.task3 > p').animate({"right":"+=50%"},300);
+            $('.task3 > p').animate({"left":"+=100%"},300);
+            $('.task3 .tasks-star-point > p').fadeIn(300);
         },300);
     }
 }

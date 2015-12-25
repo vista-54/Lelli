@@ -135,7 +135,7 @@ function addContact(element) {
         $('#after_pause_block').hide();
         var contact_array = [contact];
         iconChangeColor(contact_array, element);
-        var name = contact.displayName;
+        var name = contact.name.formatted;
         var phone = contact.phoneNumbers[0].value;
         phone = phone.replace(/\-|\x20/g,"");
         contacts.name = name;

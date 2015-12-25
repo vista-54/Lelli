@@ -59,6 +59,10 @@
                         {
                             "xml": "<feature name=\"YoikScreenOrientation\"><param name=\"android-package\" value=\"net.yoik.cordova.plugins.screenorientation.YoikScreenOrientation\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -157,6 +161,9 @@
             "PACKAGE_NAME": "com.app.lelly"
         },
         "cordova-plugin-screen-orientation": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.app.lelly"
         }
     },
@@ -368,6 +375,22 @@
             "pluginId": "cordova-plugin-screen-orientation",
             "merges": [
                 "cordova.plugins.screenorientation"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+            "id": "cordova-plugin-dialogs.notification",
+            "pluginId": "cordova-plugin-dialogs",
+            "merges": [
+                "navigator.notification"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-dialogs/www/android/notification.js",
+            "id": "cordova-plugin-dialogs.notification_android",
+            "pluginId": "cordova-plugin-dialogs",
+            "merges": [
+                "navigator.notification"
             ]
         }
     ]

@@ -10,6 +10,10 @@ var mood;
 var geo_location = {};
 var star_points = null;
 var screen_lock = true;
+var get_task_options = {
+    'count': 3,
+    'offset': 1
+};
 var graph = {
     'label' : GRAPH_LABEL[1],
     'data' : [[2,4,3,6,7,8,3,5,7,8,4,3,5],[7,5,6,6,7,3,2,4,1,8,6,3,1]]
@@ -28,9 +32,12 @@ function onDeviceReady() {
     document.addEventListener("backbutton", onBackKeyDown, false);
     console.log(device.platform);
     if (device.platform === 'Android') $('body').css('height', $(window).height());
+    window.alert = function (title, txt) {
+        navigator.notification.alert(txt, null, title, "OK");
+    };
 }
 $body.on('submit','form', function(e) {
-    //cordova.plugins.Keyboard.close();
+    cordova.plugins.Keyboard.close();
     e.preventDefault();
 });
 
@@ -41,8 +48,8 @@ $body.on('click', '.btn_menu', function(event){
 });
 
 $body.on('click', '.top-menu, .bot-menu, .bot-menu ul li', function(event) {
+    $('#menu_container').fadeIn(400);
     function menuContainerShow() {
-            $('#menu_container').fadeIn(400);
     }
     if($(this).hasClass('top-menu')) {
         $('#menu_container').fadeOut(400);
@@ -83,6 +90,7 @@ $body.on('click', '.top-menu, .bot-menu, .bot-menu ul li', function(event) {
                         var action = 'get-app-user-points';
                         if (localStorage('Lelly_points')) return _local;
                         else {
+                            startAjaxAnimation();
                             request_logged('GET','site', action, function(result) {
                                 return result.points;
                             }, requestErrorCallBack)
@@ -95,6 +103,7 @@ $body.on('click', '.top-menu, .bot-menu, .bot-menu ul li', function(event) {
                 $('#menu_container').load('resources2.html #window_menu_expansions', function () {
                     menuContainerShow();
                     var action = 'get-expansion-packs';
+                    startAjaxAnimation();
                     request_logged('GET', 'site', action, null, getExpansionsPack, requestErrorCallBack);
                 });
                 break;
@@ -118,9 +127,14 @@ $body.on('click','.btn_emergency', function() {
     names.push(JSON.parse(localStorage['Lelly_contacts']).emergency);
     }
     else {
-        request_logged('GET', 'site', 'action', null, function (result) {
-            names.push(result.contacts.friend.name);
-            names.push(result.contacts.support.name);
+        var action = 'get-contacts';
+        startAjaxAnimation();
+        request_logged('GET', 'site', action, null, function (result) {
+            localStorage['Lelly_contacts'] = JSON.stringify(result.contacts);
+            names.push(result.friend.name);
+            names.push(result.support.name);
+            names.push(result.non_urgent);
+            names.push(result.emergency);
         }, requestErrorCallBack)
     }
     $('#container').load('resources2.html #window_emergencyCall', function () {
@@ -137,8 +151,8 @@ $body.on("focus", '#input_lockScreen, #input_personalPin, #input_newPin, #input_
     e.preventDefault();
 });
 $body.on("focus", 'input', function() {
-    $(this).css('border-color','');
-    $(this).removeClass('placeholder');
+    $(this).css('border-color','')
+        .removeClass('placeholder');
     if (device.platform === 'iOS') {
         window.scrollTo(0,0);
     }
@@ -148,9 +162,6 @@ $body.on("focus", 'textarea', function() {
 });
 $body.on("click", '#input_personalPin', function() {
     logPinDialog();
-});
-$body.on('click', '#btn_logOut', function() {
-    request_logged('POST','site','logout','', logOut);
 });
 $body.on('submit', 'form[name="login"]', function() {
     var $input_email = $('#input_email');
@@ -174,7 +185,7 @@ $body.on('submit', 'form[name="login"]', function() {
     // request to server;
     var data = {AppLoginForm:{'email': _email,
                 'pin': _pin}};
-    $('.spinner').css('display','inline-block');
+    startAjaxAnimation();
     request('POST','site','login', data, login);
     //show_moodscreen('Bohdan');
     document.addEventListener("pause", onPause, false);
@@ -214,7 +225,8 @@ $body.on("click", "#btn_sendPin", function() {
 
     var data = {};
     data.email = _email;
-    request('type','site','send-new-pin-on-email', data, forgotPin, errorCallBack);
+    startAjaxAnimation();
+    request('type','site','send-new-pin-on-email', data, forgotPin, requestErrorCallBack());
 });
 $body.on("click", "#btn_backToLog", function() {
     $(WINDOW_SWITCH_LOGIN_1_2).toggleClass('hide');
@@ -241,15 +253,19 @@ $body.on("keyup", "#input_surname", function() {
     $("#input_surname").val($("#input_surname").val().replace(/[^a-zа-яіїєґ]/i, ''));
 });
 $body.on('focus', '#input_birthdate', function(e) {
+    e.stopPropagation();
     e.preventDefault();
+    cordova.plugins.Keyboard.close();
 });
 $body.on('click', '#input_birthdate', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    cordova.plugins.Keyboard.close();
     datePicker.show({date: new Date(),mode: 'date'}, function(date){
         var month = date.getMonth() + 1;
         var d = date.getFullYear() + '-'+ month +'-'+date.getDate();
         $('#input_birthdate').val(d).blur();
     });
-    event.stopPropagation();
 });
 $body.on("click", '#input_newPin', regPinDialog);
 $body.on("click", '#input_newPinConfirm', regPinConfirmDialog);
@@ -299,8 +315,8 @@ $body.on("click", "#btn_regNextStep", function() {
         $('#input_newPinConfirm').css('border-color','red').addClass('placeholder');
         return false;
     }
-    $('#spinner_regInfo').css('display','block');
-    request('GET','site','get-likes-struggles-arr','', download_likesAndStruggles,requestErrorCallBack);
+    startAjaxAnimation();
+    request('GET','site','get-likes-struggles-arr', null, download_likesAndStruggles,requestErrorCallBack);
     //-----------------------------  SCREEN 7 ------------------------
 });
 $body.on("click", "#btn_backToStep1", function() {
@@ -337,9 +353,12 @@ $body.on("click", "#btn_regFinish", function() {
         return false;
     }
     console.log(data);
-    request('POST','site', 'signup', data, register_finish);
+    startAjaxAnimation();
+    request('POST','site', 'signup', data, register_finish, requestErrorCallBack);
 });
 $body.on('click', '#btn_friend', function() {
+    $('#input_friendName').css('border-color','')
+        .removeClass('placeholder');
     navigator.contacts.pickContact(function(contact) {
         $('#window_pin').hide();
         $('#after_pause_block').hide();
@@ -354,6 +373,8 @@ $body.on('click', '#btn_friend', function() {
     });
 });
 $body.on('click', '#btn_support', function() {
+    $('#input_supportName').css('border-color','')
+        .removeClass('placeholder');
     navigator.contacts.pickContact(function (contact) {
         $('#window_pin').hide();
         $('#after_pause_block').hide();
@@ -367,7 +388,7 @@ $body.on('click', '#btn_support', function() {
 });
 
 //-----------------------------  SCREEN 10 ----------------------------------------------------------
-$body.on('click', '.register-complete', function() {
+$body.on('click', '#div_registerComplete', function() {
     show_moodscreen(user_name);
     document.addEventListener("pause", onPause, false);
     document.addEventListener("resume", onResume, false);
@@ -382,6 +403,21 @@ $body.on('click', '.smile-one', function() {
     //    Mood is positive or neutral
         request_logged('POST', 'site', action, request_data, request_result);
        $('#container').load('resources2.html #window_moodPositive', function() {
+           request_logged('POST','site', 'get-tasks', data, function(result) {
+               console.log(result);
+               if (!result.tasks || result.tasks.length <=2) {
+                   return false
+               }
+               else {
+                   get_task_options.offset++;
+                   $('.task1 > p').text(result.tasks[0].name);
+                   $('.task2 > p').text(result.tasks[1].name);
+                   $('.task3 > p').text(result.tasks[2].name);
+                   $('.task1 .tasks-star-point > p').text(result.tasks[0].points);
+                   $('.task2 .tasks-star-point > p').text(result.tasks[1].points);
+                   $('.task3 .tasks-star-point > p').text(result.tasks[2].points);
+               }
+           }, requestErrorCallBack);
            console.log('Screen loaded');
            $('#btn_taskRefresh').hide();
            $('#btn_selectTask').addClass('nomodified');
@@ -412,6 +448,21 @@ $body.on('click', '.smile-one', function() {
     //    Mood is negative
         request_logged('POST', 'site', action, request_data, request_result);
         $('#container').load('resources2.html #window_moodNegative', function() {
+            request_logged('POST','site', 'get-tasks', data, function(result) {
+                console.log(result);
+                if (!result.tasks || result.tasks.length <=2) {
+                    return false
+                }
+                else {
+                    get_task_options.offset++;
+                    $('.task1 > p').text(result.tasks[0].name);
+                    $('.task2 > p').text(result.tasks[1].name);
+                    $('.task3 > p').text(result.tasks[2].name);
+                    $('.task1 .tasks-star-point > p').text(result.tasks[0].points);
+                    $('.task2 .tasks-star-point > p').text(result.tasks[1].points);
+                    $('.task3 .tasks-star-point > p').text(result.tasks[2].points);
+                }
+            }, requestErrorCallBack);
             $(".tasks").hide();
             $(".block3").click(function () {
                 $("br").css({"display":"none"});
@@ -434,6 +485,7 @@ $body.on('click', '#btn_selectTask', function() {
 });
 $body.on('click', '#btn_activityRec', function() {
     console.log('activity rec button');
+    get_task_options.offset = 1;
     $(WINDOW_SWITCH_MAIN_12_13).toggleClass('hide');
 });
 
@@ -457,8 +509,9 @@ $body.on('click', '#btn_activityRecDone', function() {
         'photo': photo,
         'contact': contacts
     };
-    $(WINDOW_SWITCH_MAIN_13_14).toggleClass('hide');
+    //$(WINDOW_SWITCH_MAIN_13_14).toggleClass('hide');
     console.log(data);
+    startAjaxAnimation();
     request_logged('POST', 'site', action, data, activityRecorded, requestErrorCallBack);
     photo = '';
     contacts = {};
@@ -470,6 +523,7 @@ $body.on('click', '.btn_addPhoto', function() {
     var element = $(this).find('div');
     //addImage(element);
     photo = '';
+    reloadPauseListener();
     addImage2(element);
 });
 $body.on('click', '.btn_addContact', function() {
@@ -488,20 +542,35 @@ $body.on('click', '.btn_addLocation', function() {
 //-----------------------------  SCREEN 14 / 17 ----------------------------------------------------------
 $body.on('click', '#btn_activityComplete, #btn_taskComplete', function() {
     $('#container').load('resources2.html #window_moodScreen', function() {
-        show_moodscreen('Bohdan');
+        show_moodscreen(user_name);
     });
 });
 //-----------------------------  SCREEN 15 / 19 ----------------------------------------------------------
 $body.on('click', '.task-block', function() {
     var item = $(this);
     var item_value = item.find('p').text();
+    get_task_options.offset = 1;
     $('#container').load('resources2.html #window_taskRecorder', function() {
         $('#input_taskRecTitle').val(item_value);
     })
 });
-$body.on('click', '#btn_taskRefresh', function() {
-    var action = 'task-refresh';
-    request_logged('GET','site', action, null, getTasks);
+$body.on('click', '#btn_taskRefresh', function(e) {
+    var action = 'get-tasks';
+    var data = get_task_options;
+    console.log(data);
+    ajaxAnimationTasks($(this));
+    $('.task1 > p').animate({"left":"-=100%"},300);
+    $('.task1 .tasks-star-point > p').fadeOut(300);
+    setTimeout(function() {
+        $('.task2 > p').animate({"left":"-=100%"},300);
+        $('.task2 .tasks-star-point > p').fadeOut(300);
+    },150);
+    setTimeout(function() {
+        $('.task3 > p').animate({"left":"-=100%"},300);
+        $('.task3 .tasks-star-point > p').fadeOut(300);
+    },300);
+    request_logged('POST','site', action, data, getTasks, requestErrorCallBack);
+    e.stopPropagation();
 });
 
 //-----------------------------  SCREEN 16 ----------------------------------------------------------
@@ -529,6 +598,8 @@ $body.on('click', '#btn_taskRecDone', function() {
     contacts = {};
     geo_location = {};
     mood = null;
+    startAjaxAnimation();
+    //TODO var action;
     request_logged('POST', 'site', 'action', data, taskRecorded);
 });
 
@@ -583,7 +654,9 @@ $body.on('click', '#btn_lowMoodRecDone', function() {
     contacts = {};
     geo_location = {};
     mood = null;
-    //request_logged('POST', 'site', 'action', data, taskRecorded);
+    startAjaxAnimation();
+    // TODO var action;
+    request_logged('POST', 'site', 'action', data, taskRecorded);
 });
 //---------------------------------- SCREEN 22 -------------------------------------------
 $body.on('click', '.info_link',function (event) {
@@ -673,7 +746,7 @@ $body.on('click', '.white-block', function() {
 //---------------------------------- SCREEN 30 -------------------------------------------
 $body.on('click', '#btn_emergency_IAmOk, #btn_URNotAlone_IAmOk, #btn_CallAFriend_IAmOk, #btn_CallYes', function() {
     $('#container').load('resources2.html #window_moodScreen', function() {
-        show_moodscreen('Bohdan');
+        show_moodscreen(user_name);
     });
 });
 
@@ -687,6 +760,7 @@ $body.on('click', '.call_emergency', function() {
         dial(phone);
     }
 });
+
 //---------------------------------- SCREEN 31 -------------------------------------------
 $('#input_lockScreen').click(function () {
     lockPinDialog();
@@ -711,9 +785,3 @@ $body.on('click', '._no2', function () {
     (this).removeClass('not-help-for-me');
 });
 //---------------------------- MODAL SMILES ----------------------------------------------
-$body.on('click', '.modal_mood', function(event) {
-
-});
-$body.on('click', '.modal_mood', function(event) {
-
-});

@@ -767,15 +767,15 @@ h1 {
     background-color: #d2b8c9;
     color: #fff;
     display: inline-block;
-    width: 6em;
-    height: 6em;
+    width: 4em;
+    height: 4em;
     vertical-align: middle;
-    line-height: 7.5em;
+    line-height: 5.5em;
     text-align: center
 }
 
 .name-pages .medium-circle-pink .fa {
-    font-size: 3.5em
+    font-size: 3.0em
 }
 
 .name-pages .need-margin {
@@ -826,16 +826,23 @@ h1 {
     width: 19.8em
 }
 
-.star-point {
+.tasks-star-point {
+    display: table;
     float: right;
-    margin: 2% 3%
+    width: 7em;
+    height: 7em;
+    text-align: center;
+    background-image: url('../img/star.png');
+    background-size: cover;
+    margin-right: 22%;
 }
 
-.star-point img {
-    width: 6em;
-    height: auto
+.tasks-star-point p {
+    display: table-cell !important;
+    text-align: center !important;
+    color: orange !important;
+    padding: 0 !important;
 }
-
 .feeling-pages {
     background-color: #e5e8ed;
     height: 100%
@@ -1100,6 +1107,7 @@ h1 {
 .task-pages .need-margin {
     font-size: 1.3em;
     line-height: 1.3;
+    background: transparent;
 }
 
 .task-pages p {
@@ -1121,6 +1129,7 @@ h1 {
 }
 
 .task-pages .task-block {
+    position: relative;
     height: 34%;
     background-color: #7c6b95;
     width: 100%;
@@ -2675,15 +2684,33 @@ h1 {
 .green {
     color: green;
 }
-.spinner {
-    display: inline-block;
+#window_loader {
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+.spinner-box .spinner {
+    display: block;
     position: relative;
-    height: 1.8em;
-    width: 1.8em;
+    width: 3em;
+    height: 3em;
     background: url('../img/spinner3.gif');
     background-size: cover;
-    line-height: 1.8em;
-    vertical-align: middle;
+}
+#window_loader div {
+    display: block;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    width: 5em;
+    height: 5em;
+    top: 45%;
+    background: url('../img/spinner3.gif');
+    background-size: cover;
 }
 .medium-circle-red {
     background-color: #ec5664;
@@ -2697,6 +2724,7 @@ h1 {
 }
 #window_pin {
     position: fixed;
+    display: none;
     top: 0;
     left: 0;
     z-index: 10;
@@ -2751,11 +2779,17 @@ h1 {
 }
 #window_registerScreen .pink-button {
     position: static;
-    margin-top: -0.5em;
+    margin-top: 0.5em;
 }
-/*.info_link:active {*/
-/*color: red;*/
-/*}*/
+.info_link:active {
+    color: red;
+}
+.task-pages .task-block p.upper {
+    position: relative;
+}
+#btn_regFinish {
+    margin-top: 20% !important;
+}
 /*********************ARSEN***********************************/
 
 .medium-circle-green {

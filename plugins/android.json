@@ -48,6 +48,9 @@
         },
         "cordova-plugin-screen-orientation": {
             "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.app.lelly"
         }
     },
     "dependent_plugins": {}

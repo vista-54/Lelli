@@ -79,6 +79,9 @@
 		AEA07A65D6AB49319D922D30 /* CDVCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B880E9D08B345A7B3A52906 /* CDVCamera.m */; };
 		D2B2C284771D4875869AC4AE /* CDVJpegHeaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE34AAFA82146ACA7BEC547 /* CDVJpegHeaderWriter.m */; };
 		D9F50EAB4A9D49608E78C7D8 /* YoikScreenOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A77FF7B8BAD44D6810D2ECE /* YoikScreenOrientation.m */; };
+		ED103D4B110449759315F519 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054C68FAD96496CA1046FD6 /* CDVNotification.m */; };
+		A13C666159F14542B7B5C144 /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C5BD1B6CC914EF7BFA55C6E /* CDVNotification.bundle */; };
+		F9FE2192AD494D11AD103565 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A349BCB49FA4CD782CC1AD3 /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +217,10 @@
 		BBFE4ABA396C4E66A91390AA /* CDVExif.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVExif.h"; path = "cordova-plugin-camera/CDVExif.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		4A77FF7B8BAD44D6810D2ECE /* YoikScreenOrientation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "YoikScreenOrientation.m"; path = "cordova-plugin-screen-orientation/YoikScreenOrientation.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		BDCA1B7351BD47B38B0BCA10 /* YoikScreenOrientation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "YoikScreenOrientation.h"; path = "cordova-plugin-screen-orientation/YoikScreenOrientation.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		2054C68FAD96496CA1046FD6 /* CDVNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVNotification.m"; path = "cordova-plugin-dialogs/CDVNotification.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		AD9F0EA79F4B4270B86B3F97 /* CDVNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVNotification.h"; path = "cordova-plugin-dialogs/CDVNotification.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		9C5BD1B6CC914EF7BFA55C6E /* CDVNotification.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "CDVNotification.bundle"; path = "CDVNotification.bundle"; sourceTree = "<group>"; };
+		6A349BCB49FA4CD782CC1AD3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +240,7 @@
 				EE38147BBC534FAD80A1ADE6 /* CoreBluetooth.framework in Frameworks */,
 				EE1FB8B2DBBA411AAD966CD4 /* AVFoundation.framework in Frameworks */,
 				3147488A53FD40B5AAE444EC /* Photos.framework in Frameworks */,
+				F9FE2192AD494D11AD103565 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +308,7 @@
 				1CBDBF6863034E6599B80D28 /* Overlay.png */,
 				0B1545F29BE4401282CA90DF /* Overlay@2x.png */,
 				D1F7BD553E2A4FAF97F4375F /* DatePicker.xib */,
+				9C5BD1B6CC914EF7BFA55C6E /* CDVNotification.bundle */,
 			);
 			name = Resources;
 			path = "Lelly/Resources";
@@ -319,6 +328,7 @@
 				C846C5EA1A294251AD3246DE /* CoreBluetooth.framework */,
 				7A3D3E267EEF4B2CB1303DD2 /* AVFoundation.framework */,
 				32AB5467C7EC4205BC8C8A8F /* Photos.framework */,
+				6A349BCB49FA4CD782CC1AD3 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -390,6 +400,8 @@
 				BBFE4ABA396C4E66A91390AA /* CDVExif.h */,
 				4A77FF7B8BAD44D6810D2ECE /* YoikScreenOrientation.m */,
 				BDCA1B7351BD47B38B0BCA10 /* YoikScreenOrientation.h */,
+				2054C68FAD96496CA1046FD6 /* CDVNotification.m */,
+				AD9F0EA79F4B4270B86B3F97 /* CDVNotification.h */,
 			);
 			name = Plugins;
 			path = "Lelly/Plugins";
@@ -549,6 +561,7 @@
 				D688B61E3B9846D283F579BF /* Overlay.png in Resources */,
 				164BCD90725D4C87B564D35E /* Overlay@2x.png in Resources */,
 				36E13424A0484BCC8D31A7AF /* DatePicker.xib in Resources */,
+				A13C666159F14542B7B5C144 /* CDVNotification.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +619,7 @@
 				AEA07A65D6AB49319D922D30 /* CDVCamera.m in Sources */,
 				D2B2C284771D4875869AC4AE /* CDVJpegHeaderWriter.m in Sources */,
 				D9F50EAB4A9D49608E78C7D8 /* YoikScreenOrientation.m in Sources */,
+				ED103D4B110449759315F519 /* CDVNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

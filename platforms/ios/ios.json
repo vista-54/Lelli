@@ -55,6 +55,10 @@
                         {
                             "xml": "<feature name=\"YoikScreenOrientation\"><param name=\"ios-package\" value=\"YoikScreenOrientation\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -116,6 +120,9 @@
             "PACKAGE_NAME": "com.app.lelly"
         },
         "cordova-plugin-screen-orientation": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.app.lelly"
         }
     },
@@ -401,6 +408,14 @@
             "pluginId": "cordova-plugin-screen-orientation",
             "merges": [
                 "cordova.plugins.screenorientation"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+            "id": "cordova-plugin-dialogs.notification",
+            "pluginId": "cordova-plugin-dialogs",
+            "merges": [
+                "navigator.notification"
             ]
         }
     ]
