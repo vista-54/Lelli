@@ -10,16 +10,10 @@
         "com.ionic.keyboard": {
             "PACKAGE_NAME": "com.app.lelly"
         },
-        "com.synconset.imagepicker": {
-            "PACKAGE_NAME": "com.app.lelly"
-        },
         "cordova-plugin-contacts": {
             "PACKAGE_NAME": "com.app.lelly"
         },
         "cordova-plugin-datepicker": {
-            "PACKAGE_NAME": "com.app.lelly"
-        },
-        "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.app.lelly"
         },
         "cordova-plugin-splashscreen": {
@@ -50,6 +44,15 @@
             "PACKAGE_NAME": "com.app.lelly"
         },
         "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.app.lelly"
         }
     },

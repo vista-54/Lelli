@@ -1,7 +1,7 @@
 {
     "AddressBook.framework": 1,
     "AddressBookUI.framework": 1,
-    "SystemConfiguration.framework": 1,
+    "SystemConfiguration.framework": 2,
     "ImageIO.framework": 3,
     "CoreLocation.framework": 2,
     "CoreBluetooth.framework": 1,

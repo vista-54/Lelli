@@ -19,25 +19,43 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, menu, nav, section {
     display: block;
 }
+
+html {
+    -webkit-user-select: none;
+}
+
+button {
+    -webkit-user-select: none;
+}
+
+input[type="button"], input[type="submit"] {
+    -webkit-user-select: none;
+}
+
 body {
     line-height: 1;
 }
+
 ol, ul {
     list-style: none;
 }
+
 blockquote, q {
     quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -61,22 +79,25 @@ table {
     z-index: 5;
     padding: 20px 0;
 }
+
 #overlay {
-    z-index:3;
-    position:fixed;
-    background-color:#000;
-    opacity:0.8;
-    filter:alpha(opacity=80);
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    display:none;
+    z-index: 3;
+    position: fixed;
+    background-color: #000;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
 }
+
 #modal-form .smiles-enter {
     height: 33%;
     width: 100%;
 }
+
 #modal-form .smile-one-enter {
     height: 76%;
     width: 32.6%;
@@ -85,16 +106,19 @@ table {
     margin-bottom: 3%;
     margin-top: 3%;
 }
+
 #modal-form .smile-type-enter img {
     width: 5em;
     height: 5em;
     display: block;
     margin: 0 auto 10%;
 }
+
 #modal-form .smile-one-enter p {
     text-align: center;
     font-size: 2em;
 }
+
 input, li {
     display: block
 }
@@ -115,6 +139,10 @@ body {
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
     height: 100%
+}
+
+button {
+    font-size: 14px;
 }
 
 .medium-square, h1 {
@@ -217,19 +245,19 @@ h1 {
 }
 
 ::-webkit-input-placeholder {
-    color: #000
+    color: #777
 }
 
 :-moz-placeholder {
-    color: #000
+    color: #777
 }
 
 ::-moz-placeholder {
-    color: #000
+    color: #777
 }
 
 :-ms-input-placeholder {
-    color: #000
+    color: #777
 }
 
 .red-button {
@@ -631,14 +659,16 @@ h1 {
 }
 
 .details-pages .button-block2 label {
-    line-height: 100%
+    line-height: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .details-pages .button-block2 .fa {
     color: #e5e8ed;
     vertical-align: middle;
     width: 100%;
-    text-align: center
+    text-align: center;
+    transition: 0.5s;
 }
 
 .details-pages .enter {
@@ -655,7 +685,9 @@ h1 {
 }
 
 .details-pages #div_registerLikes {
-    overflow-x: auto
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
 }
 
 .details-pages #div_registerLikes .pink-button {
@@ -663,12 +695,14 @@ h1 {
 }
 
 .details-pages .scroll {
-    height: 100%
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
 }
 
 .details-pages .likes-box {
-    overflow-x: auto;
-    height: 53%
+    overflow-y: auto;
+    height: 53%;
+    -webkit-overflow-scrolling: touch;
 }
 
 .details-pages .likes-box .scroll, .details-pages .likes-box .scroll form, .details-pages .likes-box .scroll form ul {
@@ -689,27 +723,33 @@ h1 {
     background-size: cover;
     display: inline-block
 }
+
 .details-pages .likes-box .button-block2 label span {
     width: 6em;
     height: 6em;
 }
+
 .details-pages .pink-button {
     position: absolute;
-    bottom: 3%;
-    left: 27%;
+    /*bottom: 3%;*/
+    /*left: 27%;*/
 }
+
 #div_registerLikes label span {
     width: 5.7em;
     height: 5em;
     background-size: cover;
     display: inline-block;
 }
+
 .details-pages input[type='checkbox'] + label i {
     color: #cdcdcd;
 }
+
 .details-pages input[type='checkbox']:checked + label i {
     color: #ec5664;
 }
+
 .details-pages input[type='checkbox']:checked + label .medium-circle-gray {
     border: 0.3em solid #ec5664;
     background-color: white;
@@ -722,22 +762,26 @@ h1 {
 .details-pages .dislike {
     background-image: url(../img/dislike-false.png);
     background-size: cover;
-    margin-right: 7%
+    margin-right: 7%;
+    transition: 0.5s;
 }
 
 .details-pages .like {
     background-size: cover;
-    background-image: url(../img/like-false.png)
+    background-image: url(../img/like-false.png);
+    transition: 0.5s;
 }
 
 .details-pages input[type=radio]:checked + label .dislike {
     background-image: url(../img/dislike.png);
     background-size: cover;
+    transition: 0.5s;
 }
 
 .details-pages input[type=radio]:checked + label .like {
     background-image: url(../img/like.png);
     background-size: cover;
+    transition: 0.5s;
 }
 
 .name-pages {
@@ -787,10 +831,6 @@ h1 {
     font-size: 1.95em
 }
 
-.name-pages .pink-button {
-    margin-top: 20%;
-}
-
 .register-complete {
     background-color: #bcd8ca;
     height: 100%;
@@ -818,16 +858,21 @@ h1 {
 
 .register-complete .medium-text {
     padding-top: 4%;
-    font-size: 2.3em
+    font-size: 2.445em
 }
 
 .register-complete .circles {
-    margin: 3% auto;
-    width: 19.8em
+    margin: 3% 0;
+    -webkit-transform: translate(-50%, 0);
+    position: relative;
+    left: 50%;
+    display: inline-block;
+
 }
 
 .tasks-star-point {
     display: table;
+    position: relative;
     float: right;
     width: 7em;
     height: 7em;
@@ -843,6 +888,7 @@ h1 {
     color: orange !important;
     padding: 0 !important;
 }
+
 .feeling-pages {
     background-color: #e5e8ed;
     height: 100%
@@ -858,7 +904,8 @@ h1 {
 .feeling-pages p {
     color: #fff;
     font-size: 2.55em;
-    padding-left: 9%
+    padding-left: 9%;
+    line-height: 1.5;
 }
 
 .feeling-pages .bold {
@@ -975,8 +1022,6 @@ h1 {
 .done-today .icons img {
     width: 4.5em;
     height: auto;
-    padding-left: .5em;
-    padding-top: 1em
 }
 
 .done-today .mini-borders {
@@ -996,7 +1041,7 @@ h1 {
 }
 
 .done-today .menu {
-    height: 37%
+    height: 40%;
 }
 
 .done-today .enter {
@@ -1018,16 +1063,16 @@ h1 {
     border-bottom: 1em solid #fff;
 }
 
-.done-today textarea::-webkit-input-placeholder {
-    color: #3f444a
+textarea::-webkit-input-placeholder {
+    color: #777 !important;
 }
 
 .done-today .icons {
     width: 83%;
-    padding-left: 10%;
-    margin-top: 1em;
+    margin: 1em auto 0;
     position: relative;
     z-index: 2;
+    text-align: center;
 }
 
 .done-today .icon {
@@ -1107,7 +1152,10 @@ h1 {
 .task-pages .need-margin {
     font-size: 1.3em;
     line-height: 1.3;
-    background: transparent;
+    background-color: transparent;
+    text-align: center;
+    margin-top: 1px;
+    display: inline-block;
 }
 
 .task-pages p {
@@ -1145,7 +1193,7 @@ h1 {
 .task-pages .task-block p {
     width: 75%;
     text-align: left;
-    font-size: 2.2em;
+    font-size: 2.5em;
     padding-left: 13%
 }
 
@@ -1179,7 +1227,7 @@ h1 {
 }
 
 .dont-worry .bold {
-    font-size: 2.8em;
+    font-size: 2.5em;
     color: #fff
 }
 
@@ -1210,6 +1258,7 @@ h1 {
     display: block;
     background-color: #d1c6cd
 }
+
 .dont-worry .tasks .task-block {
     height: 33.33333333%;
     background-color: #a48d9a;
@@ -1219,6 +1268,7 @@ h1 {
 
 .dont-worry .tasks .task-block p {
     width: 75%;
+    position: relative;
     text-align: left;
     padding-left: 13%;
     display: table-cell;
@@ -1414,18 +1464,15 @@ h1 {
 }
 
 .did-u-call .no-block, .did-u-call .yes-block {
-    display: table;
     width: 100%;
     height: 25%;
+    font-size: 3em;
+    text-transform: uppercase;
+    color: #fff;
     background-color: #39ba99
 }
 
-.did-u-call .no-block p, .did-u-call .yes-block p {
-    display: table-cell;
-    vertical-align: middle
-}
-
-.did-u-call .no-block :active, .did-u-call .yes-block :active {
+.did-u-call .yes-block:active {
     background-color: #216c59
 }
 
@@ -1433,7 +1480,7 @@ h1 {
     background-color: #db4554
 }
 
-.did-u-call .no-block :active {
+.did-u-call .no-block:active {
     background-color: #9c1e2b
 }
 
@@ -1645,7 +1692,8 @@ h1 {
     overflow-y: scroll;
     background-color: #e5e8ec;
     height: 55.4%;
-    width: 100%
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
 }
 
 .info .descriptions p {
@@ -1672,7 +1720,7 @@ h1 {
     height: 57%
 }
 
-.connections .gray-block P {
+.connections .gray-block p {
     font-size: 2.5em;
     text-align: center;
     color: #fff
@@ -1684,28 +1732,42 @@ h1 {
     height: 5em;
     right: 3.5%;
     top: 19%;
-    z-index:1;
+    z-index: 1;
 }
 
 .connections .descriptions {
     height: 77%;
     background-color: #e5e8ec;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 
-.connections .descriptions .disconnect-box {
+.connections.users .descriptions {
+    height: 65%;
+    background-color: #e5e8ec;
+    overflow-y: auto;
+}
+
+.connections.expansions .descriptions {
+    height: 59%;
+    padding-top: 3%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.connections .descriptions .disconnect-box, .connections .descriptions .connect-box {
     display: none;
     position: absolute;
     width: 85%;
-    height: 37%;
+    height: 32%;
     background-color: #666e78;
     -webkit-border-radius: 3%;
     border-radius: 3%;
     margin-left: 7.5%;
-    top: 29%
+    top: 29%;
+    text-align: center;
 }
 
-.connections .descriptions .disconnect-box h1 {
+.connections .descriptions .disconnect-box h1, .connections .descriptions .connect-box h1 {
     color: #fff;
     text-align: center;
     font-size: 2em;
@@ -1714,7 +1776,7 @@ h1 {
     padding-top: 5%
 }
 
-.connections .descriptions .disconnect-box p {
+.connections .descriptions .disconnect-box button, .connections .descriptions .connect-box button {
     width: 53%;
     height: 2em;
     color: #fff;
@@ -1724,15 +1786,17 @@ h1 {
     font-family: "Helvetica LT Std", sans-serif;
     font-weight: 700;
     vertical-align: middle;
-    line-height: 2em
+    line-height: 2em;
+    font-size: 2em;
+    background-color: transparent;
 }
 
-.connections .descriptions .disconnect-box p:active {
+.connections .descriptions .disconnect-box button:active, .connections .descriptions .connect-box button:active {
     background-color: #a4343f
 }
 
-.connections .descriptions .disconnect-box .need-margin {
-    margin-top: 14%
+.connections .descriptions .disconnect-box .need-margin, .connections .descriptions .connect-box .need-margin {
+    margin-top: 11%
 }
 
 .connections .descriptions p {
@@ -1742,29 +1806,27 @@ h1 {
     padding: 14% 0 9%
 }
 
-.connections .descriptions .white-block {
-    background-color: #fff;
+.connections .descriptions table {
+    width: 100%;
+    height: auto;
+}
+
+.connections .descriptions table tr {
+    width: 100%;
+    height: 2em;
     border-bottom: 2px solid #ccc;
-    height: 10.5%;
-    width: 100%
+    background-color: #eee;
 }
 
-.connections .descriptions .white-block .block {
-    width: 29%;
-    display: table;
-    float: left
-}
-
-.connections .descriptions .white-block .block p {
-    display: table-cell;
-    vertical-align: middle;
-    color: #666e78
+.connections .descriptions table tr:active {
+    background-color: #bbb;
 }
 
 .connections .descriptions .white-block .circle {
-    width: 3em;
+    width: 5%;
     height: 100%;
-    display: table
+    display: table-cell;
+    padding-left: 0;
 }
 
 .connections .descriptions .white-block .circle .align {
@@ -1780,7 +1842,7 @@ h1 {
     vertical-align: middle
 }
 
-.connections .descriptions .active .small-circle-red {
+.connections .descriptions .enable .small-circle-red {
     background-color: #a0ce69
 }
 
@@ -1794,9 +1856,11 @@ h1 {
     background-color: #1fa597;
     opacity: .7
 }
+
 .password-screen .green-button:active {
     background-color: #007264;
 }
+
 .password-screen .generate {
     width: 76%;
     margin: 7% auto 4%;
@@ -1832,9 +1896,11 @@ h1 {
     opacity: .7;
     margin-top: 4%;
 }
+
 .password-screen .pink-button:active {
     background-color: #a4002d;
 }
+
 .password-screen .spinner {
     display: block;
     height: 7em;
@@ -1849,7 +1915,8 @@ h1 {
 }
 
 .points .descriptions {
-    overflow-y: scroll
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .points .descriptions p {
@@ -1895,19 +1962,41 @@ h1 {
     font-weight: 400;
     line-height: 1.2em;
     font-family: "Open Sans", sans-serif;
-    padding-bottom: 1em;
+    padding-bottom: 2.5em;
 }
 
-.expansions .descriptions p {
-    width: 80%;
+.expansions-p {
+    width: 100%;
     margin: 0 auto;
     font-size: 2.1em;
-    padding: 8% 0;
     height: 16%;
+    background-color: #e5e8ec;
+    padding: 3%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.connections-p {
+    width: 100%;
+    margin: 0 auto;
+    height: 12%;
+    background-color: #e5e8ec;
+    padding: 3%;
+    text-align: center;
+    box-sizing: border-box;
+    display: table;
+}
+
+.connections-p p {
+    font-size: 2.1em;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .expansions .eat-block {
-    height: 38%
+    height: 38%;
+    margin-top: 5%;
 }
 
 .expansions .eat-block .eat {
@@ -1926,6 +2015,14 @@ h1 {
 .expansions .eat-block .eat p {
     font-size: 2.2em;
     padding: 5% 0 0
+}
+
+.expansions .descriptions p {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 2.1em;
+    padding: 8% 0;
+    height: 16%;
 }
 
 .overview {
@@ -2009,13 +2106,18 @@ h1 {
     font-size: 2.1em;
     color: #434a54;
     text-align: center;
-    width: 33.3%;
+    width: 33%;
     display: block;
     float: left;
     padding: .3em 0;
     font-weight: 400;
     height: 1.1em;
-    position: relative
+    position: relative;
+    border-left: 1px solid black;
+}
+
+.overview .descriptions .tabs-controls li:first-of-type a {
+    border-left: none;
 }
 
 .overview .descriptions a i {
@@ -2052,10 +2154,10 @@ h1 {
 }
 
 .overview .descriptions .graph {
-    background-image: url('../img/bg-graph.png');
-    background-size: 100%;
     position: relative;
+    border: 1px solid black;
 }
+
 .overview .descriptions .graph2 {
     background-color: #daa520
 }
@@ -2064,12 +2166,22 @@ h1 {
     background-color: #00bfff
 }
 
-.overview .graph-number {
+.overview .graph-number-two {
     position: absolute;
-    right: -1%;
+    right: -3%;
     top: 5.5%;
-    font-size: 2em
+    font-size: 2em;
+    background: #e5e8ec;
 }
+
+.overview .graph-number-one {
+    position: absolute;
+    left: -2%;
+    top: 5.5%;
+    font-size: 2em;
+    background: #e5e8ec;
+}
+
 .menu {
     height: 51%
 }
@@ -2107,8 +2219,16 @@ h1 {
         font-size: 8.5px
     }
 
+    button {
+        font-size: 11px
+    }
+
     #div_registerLikes, #window_registerScreen {
         font-size: 7.5px
+    }
+
+    .menu-open ul li {
+        font-size: 1.8em;
     }
 
     #window_registerScreen .article {
@@ -2134,12 +2254,15 @@ h1 {
     .feeling-pages .need-margin {
         margin-bottom: 0
     }
+
     .done-today .green-block {
         height: 30%;
     }
+
     .done-today .blue-button {
         margin-top: 5%;
     }
+
     .congratulations-pages .star-point img {
         margin: 10% auto
     }
@@ -2184,8 +2307,8 @@ h1 {
         font-size: 7px
     }
 
-    .connections .descriptions .disconnect-box {
-        height: 43%
+    .connections .descriptions .disconnect-box, .connections .descriptions .connect-box {
+        height: 35%
     }
 
     .overview .descriptions p {
@@ -2195,11 +2318,13 @@ h1 {
     .overview .descriptions .pink-button {
         margin-top: 10%
     }
+
     .password-screen .gray-block img {
         width: 5em;
         height: 5em;
         top: 19%;
     }
+
     .task-pages .need-margin {
         font-size: 1.1em;
     }
@@ -2207,6 +2332,7 @@ h1 {
     .menu {
         font-size: 9px
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 22px;
     }
@@ -2216,12 +2342,19 @@ h1 {
     body {
         font-size: 9px
     }
+
+    button {
+        font-size: 11px
+    }
+
     .done-today .blue-button {
         margin-top: 4%;
     }
+
     .password-screen .pink-button {
         margin-top: 10%;
     }
+
     #window_registerScreen {
         font-size: 8px
     }
@@ -2232,10 +2365,6 @@ h1 {
 
     #window_registerScreen .article {
         padding-top: 11.5%
-    }
-
-    .register-complete .circles {
-        width: 20.8em
     }
 
     .feeling-pages .smiles {
@@ -2261,6 +2390,7 @@ h1 {
     .menu {
         font-size: 11px
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 26px;
     }
@@ -2271,12 +2401,18 @@ h1 {
         font-size: 10.5px
     }
 
+    button {
+        font-size: 10.5px
+    }
+
     .done-today .blue-button {
         margin-top: 5%;
     }
+
     .password-screen .pink-button {
         margin-top: 10%;
     }
+
     #window_registerScreen {
         font-size: 9px
     }
@@ -2288,11 +2424,9 @@ h1 {
     #window_registerScreen .article {
         padding-top: 9%
     }
+
     .pin .pink-button {
         margin-top: 40%;
-    }
-    .register-complete .circles {
-        width: 20.8em
     }
 
     .feeling-pages .smiles {
@@ -2314,6 +2448,7 @@ h1 {
     .menu {
         font-size: 12px
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 30px;
     }
@@ -2323,9 +2458,15 @@ h1 {
     body {
         font-size: 12.5px
     }
+
+    button {
+        font-size: 12.5px
+    }
+
     .done-today .blue-button {
         margin-top: 4%;
     }
+
     #window_registerScreen {
         font-size: 11px
     }
@@ -2336,14 +2477,6 @@ h1 {
 
     #div_registerLikes, #div_registerStruggles {
         font-size: 10.5px
-    }
-
-    .name-pages .pink-button {
-        margin-top: 10%
-    }
-
-    .register-complete .circles {
-        width: 20.8em
     }
 
     .feeling-pages {
@@ -2373,12 +2506,14 @@ h1 {
     .menu {
         font-size: 13px
     }
+
     #modal-form {
         width: 400px;
         height: 400px;
         margin-top: -200px;
         margin-left: -200px;
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 30px;
     }
@@ -2388,6 +2523,11 @@ h1 {
     body {
         font-size: 15px
     }
+
+    button {
+        font-size: 15px
+    }
+
     .done-today .blue-button {
         margin-top: 4%;
     }
@@ -2403,6 +2543,7 @@ h1 {
     .details-pages .likes-box {
         font-size: 13px;
     }
+
     #div_registerStruggles {
         font-size: 10px
     }
@@ -2410,15 +2551,13 @@ h1 {
     .done-today {
         font-size: 13px;
     }
+
     .feeling-pages {
         font-size: 14px
     }
+
     .pin .pink-button {
         margin-top: 50%;
-    }
-
-    .register-complete .circles {
-        width: 20.8em
     }
 
     .feeling-pages .smiles {
@@ -2440,9 +2579,11 @@ h1 {
     .congratulations-pages .need-margin {
         margin: 0 auto 12.5%
     }
+
     .expansions {
         font-size: 13px;
     }
+
     .overview .descriptions a {
         font-size: 2em;
     }
@@ -2450,12 +2591,14 @@ h1 {
     .menu {
         font-size: 15px
     }
+
     #modal-form {
         width: 440px;
         height: 440px;
         margin-top: -220px;
         margin-left: -220px;
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 36px;
     }
@@ -2465,9 +2608,15 @@ h1 {
     body {
         font-size: 14px
     }
+
+    button {
+        font-size: 14px
+    }
+
     .done-today .blue-button {
         margin-top: 3%;
     }
+
     #window_registerScreen {
         font-size: 14.5px
     }
@@ -2482,10 +2631,6 @@ h1 {
 
     #div_registerLikes, #div_registerStruggles {
         font-size: 13px
-    }
-
-    .register-complete .circles {
-        width: 20.8em
     }
 
     .feeling-pages {
@@ -2523,12 +2668,14 @@ h1 {
     .menu {
         font-size: 17px
     }
+
     #modal-form {
         width: 500px;
         height: 500px;
         margin-top: -250px;
         margin-left: -250px;
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 40px;
     }
@@ -2538,86 +2685,121 @@ h1 {
     body {
         font-size: 20px;
     }
+
+    button {
+        font-size: 20px;
+    }
+
     #window_registerScreen {
         font-size: 18px;
     }
+
     #window_registerScreen .details-pages .article {
         padding: 6.5% 0 5% 8%;
     }
+
     .feeling-pages .smiles {
         margin: 5.5% auto 7%;
     }
+
     .feeling-pages .need-margin {
         margin-bottom: 0;
     }
+
     .call .blue-block, .call .help .red-block, .help .call .red-block {
         margin-bottom: 12%;
     }
+
     .pin .pink-button {
         margin-top: 45%;
     }
+
     .password-screen .descriptions p {
         padding: 9% 0 4%;
     }
+
     .done-today {
         font-size: 18px;
     }
+
     .done-today .blue-button {
         margin-top: 4%;
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 48px;
     }
 }
+
 @media screen and (min-width: 1536px) {
     body {
         font-size: 32px;
     }
+
+    button {
+        font-size: 32px;
+    }
+
     #window_registerScreen {
         font-size: 27px;
     }
+
     .details-pages .article {
         padding: 5.5% 0 5% 8%;
     }
+
     .details-pages .pink-button {
         bottom: 2%;
     }
+
     .name-pages .pink-button {
         margin-top: 12%;
     }
+
     .the-end-pages .medium-text {
         padding-top: 50%;
     }
+
     .feeling-pages .smiles {
         margin: 4.5% auto 4%;
     }
+
     .feeling-pages .need-margin {
         margin-bottom: 0;
     }
+
     .task-pages .green-block .align {
         padding-top: 27%;
     }
+
     .done-today .green-block {
         height: 30%;
     }
+
     .call .blue-block {
         margin-bottom: 7%;
     }
+
     .pin .pink-button {
         margin-top: 30%;
     }
+
     .info .gray-block .bold {
         margin-bottom: 8%;
     }
+
     .password-screen .descriptions p {
         padding: 3% 0 3%;
     }
+
     .expansions .descriptions p {
         padding: 6% 0;
     }
+
     .done-today .blue-button {
         margin-top: 4%;
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 56px;
     }
@@ -2627,45 +2809,59 @@ h1 {
     #window_registerScreen .article {
         padding-top: 3%;
     }
+
     #div_registerLikes, #div_registerStruggles {
         font-size: 15px;
     }
+
     .details-pages .description-block {
         width: 69%;
     }
+
     #div_registerContacts {
         font-size: 16.5px;
     }
+
     .feeling-pages .green-block, .feeling-pages .blue-block {
         font-size: 16px;
     }
+
     .done-today {
         font-size: 15px;
     }
+
     .congratulations-pages {
         font-size: 16px;
     }
+
     .call {
         font-size: 16px;
     }
+
     .call .blue-block {
         margin-bottom: 10%;
     }
+
     .did-u-call {
         font-size: 17px;
     }
+
     .pin .pink-button {
         margin-top: 42%;
     }
+
     .connections {
         font-size: 16px;
     }
+
     .password-screen .descriptions p {
         padding: 3% 0 2%;
     }
+
     .expansions .descriptions p {
         padding: 6% 0;
     }
+
     .name-pages .pink-button {
         margin-top: 10%;
     }
@@ -2675,24 +2871,30 @@ h1 {
 .container {
     height: 100%;
 }
+
 .hide {
     display: none;
 }
+
 .red {
     color: red;
 }
+
 .green {
     color: green;
 }
+
 #window_loader {
     overflow: hidden;
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     background-size: cover;
+    z-index: 100;
 }
+
 .spinner-box .spinner {
     display: block;
     position: relative;
@@ -2701,6 +2903,7 @@ h1 {
     background: url('../img/spinner3.gif');
     background-size: cover;
 }
+
 #window_loader div {
     display: block;
     margin: auto;
@@ -2711,17 +2914,26 @@ h1 {
     top: 45%;
     background: url('../img/spinner3.gif');
     background-size: cover;
+    z-index: 100;
 }
+
 .medium-circle-red {
     background-color: #ec5664;
 }
+
+.placeholder {
+    color: #ec5664 !important;
+}
+
 .placeholder::-webkit-input-placeholder {
     color: #ec5664 !important;
 }
+
 #btn_taskRefresh {
     width: 3.5em;
     margin-top: 1em;
 }
+
 #window_pin {
     position: fixed;
     display: none;
@@ -2730,6 +2942,7 @@ h1 {
     z-index: 10;
     width: 100%;
 }
+
 .taskRec .medium-circle-red, .lowMoodRec .medium-circle-red {
     background-color: #77cab8;
 }
@@ -2739,24 +2952,29 @@ h1 {
     position: fixed;
     width: 100%;
     height: 100%;
-    top:0;
+    top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: 25;
     background-color: black;
 }
+
 #block_tasks {
     height: 0;
     width: 100%;
     overflow: hidden;
 }
+
 #form_register div {
     margin-bottom: 9%;
 }
+
 #div_registerLikes label {
     width: 50%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 #window_menu {
     position: fixed;
     top: 0;
@@ -2766,30 +2984,54 @@ h1 {
     overflow: hidden;
     z-index: 25;
 }
+
 #menu_container {
     position: absolute;
     width: 100%;
     display: none;
-    top:0;
+    top: 0;
     right: 0;
     z-index: 5;
 }
+
 .modal_mood:active {
     background-color: rgba(255, 246, 0, 0.53);
 }
+
 #window_registerScreen .pink-button {
-    position: static;
-    margin-top: 0.5em;
+    position: relative;
 }
+
 .info_link:active {
     color: red;
 }
+
 .task-pages .task-block p.upper {
     position: relative;
 }
-#btn_regFinish {
-    margin-top: 20% !important;
+
+button.icon {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
 }
+
+.button-container {
+    margin-top: 1.5em;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.btn-container-regFinish {
+    margin-top: 30%;
+}
+
+.bottom-button {
+    display: inline-block;
+}
+
 /*********************ARSEN***********************************/
 
 .medium-circle-green {
@@ -2805,15 +3047,70 @@ h1 {
     width: 5.5em;
     height: 5.5em
 }
+
 .medium-circle-red {
+    -webkit-border-radius: 50%;
     border-radius: 50%;
+    width: 5.5em;
+    height: 5.5em;
     background-color: #ec5664
 }
+
 .congratulations-pages .pink-button {
     position: fixed;
     bottom: 5%;
     left: 27%;
 }
+
 .button-block input, .button-block2 input {
-    display: none!important;
+    display: none !important;
+}
+
+.connections.overview .descriptions {
+    overflow: hidden;
+}
+
+#lastActivitySendPopup {
+    display: none;
+    width: 50%;
+    height: 3em;
+    position: absolute;
+    right: 3%;
+    top: 10%;
+    background: rgba(64, 64, 65, .8);
+    border-radius: 1em 0 1em 1em;
+}
+
+#lastActivitySendPopup p {
+    color: white;
+    font-size: 1.5em;
+    line-height: 2.1em;
+}
+
+#lastActivitySendPopup img {
+    width: 10%;
+    margin: 0.4em;
+    float: left;
+}
+
+.back .fa {
+    width: 100%;
+    line-height: 1.5em;
+}
+
+input[type="text"]:disabled::-webkit-input-placeholder {
+    color: #3f444a !important
+}
+input[type="text"]:disabled {
+    background-color: transparent;
+    color: #3f444a;
+    border-color: #3f444a;
+    z-index: 0;
+}
+.menu {
+    float:left;
+    width: 100%;
+}
+.menu_item.active {
+    background-color: #a4343f;
 }

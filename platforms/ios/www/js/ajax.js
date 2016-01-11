@@ -1,36 +1,36 @@
-var URL = 'http://192.168.1.122/api';
+var URL = 'http://159.224.220.233/api';
 var versions = '/v1/';
-$(document).ajaxStop(function() {
+$(document).ajaxStop(function () {
     $('.spinner').hide();
 });
-$(document).ajaxComplete(function() {
+$(document).ajaxComplete(function () {
     $('.spinner').hide();
 });
 function startAjaxAnimation() {
     $('.spinner').show();
 }
 // ------------------------- UNITED AJAX REQUEST FUNCTIONS -------------------------------
-function request_logged(type, controller, action, data, successCallBack, requestErrorCallBack){
-    try{
+function request_logged(type, controller, action, data, successCallBack, requestErrorCallBack) {
+    try {
         $.ajax({
             type: type,
-            url: URL + versions + controller + '/'+ action,
+            url: URL + versions + controller + '/' + action,
             headers: {
-                "Authorization" : 'Bearer ' + localStorage['Lelly_auth_key']
+                "Authorization": 'Bearer ' + localStorage['Lelly_auth_key']
             },
             data: data,
-            success:successCallBack,
+            success: successCallBack,
             error: requestErrorCallBack
         })
     }
     catch (err) {
-        console.log(err.name + '/r/n' + err.stack +'/r/n'+ err.message);
+        console.log(err.name + '/r/n' + err.stack + '/r/n' + err.message);
     }
 }
-function request(type, controller, action, data, successCallBack, requestErrorCallBack){
+function request(type, controller, action, data, successCallBack, requestErrorCallBack) {
     $.ajax({
         type: type,
-        url: URL + versions + controller + '/'+ action,
+        url: URL + versions + controller + '/' + action,
         data: data,
         success: successCallBack,
         error: requestErrorCallBack
@@ -42,9 +42,10 @@ function request_result(result) {
     console.log(result);
 }
 function requestErrorCallBack(result) {
-    $(".spinner").bind("ajaxError", function() {
+    $(".spinner").bind("ajaxError", function () {
         $(this).hide();
     });
+    window.alert('Connection error', 'Server is unavailable');
     console.log(result);
     return false;
 }
@@ -57,22 +58,22 @@ function checkEmail(result) {
     $('#spinner_regEmail').hide();
     console.log(result);
     if (result.email_is_used == true) {
-        $('#input_regEmail').css('border-color','red');
+        $('#input_regEmail').css('border-color', 'red');
         $('#input_regEmail').addClass('placeholder');
-        }
+    }
     else {
-        $('#input_regEmail').css('border-color','green');
+        $('#input_regEmail').css('border-color', 'green');
     }
 }
 
 //Likes and Struggles
-function download_likesAndStruggles(result){
+function download_likesAndStruggles(result) {
     console.log(result);
-    $.each(result.likes, function(index,value) {
-        $('#likes').append('<li><div class="white-block"><div class="description-block"><span class="upper">'+value+'</span></div><div class="button-block"><input class="likes" id="like'+index+'_0" type="radio" name="'+index+'" value="0" checked><label for="like'+index+'_0"><span class="dislike"></span></label><input class="likes" id="like'+index+'_1" type="radio" name="'+index+'" value="1"><label for="like'+index+'_1"><span class="like"></span></label></div></div></li>');
+    $.each(result.likes, function (index, value) {
+        $('#likes').append('<li><div class="white-block"><div class="description-block"><span class="upper">' + value + '</span></div><div class="button-block"><input class="likes" id="like' + index + '_0" type="radio" name="' + index + '" value="0" checked><label for="like' + index + '_0"><span class="dislike"></span></label><input class="likes" id="like' + index + '_1" type="radio" name="' + index + '" value="1"><label for="like' + index + '_1"><span class="like"></span></label></div></div></li>');
     });
-    $.each(result.struggles, function(index,value) {
-        $('#struggles').append('<li><div class="white-block"><div class="button-block2"><input id="struggle'+index+'" name="'+ index +'" type="checkbox"><label for="struggle'+index+'"><span class="medium-circle-gray"><i class="fa fa-check fa-3x"></i></span></label></div><div class="description-block2">'+value+'</div></div></li>');
+    $.each(result.struggles, function (index, value) {
+        $('#struggles').append('<li><div class="white-block"><div class="button-block2"><input id="struggle' + index + '" name="' + index + '" type="checkbox"><label for="struggle' + index + '"><span class="medium-circle-gray"><i class="fa fa-check fa-3x"></i></span></label></div><div class="description-block2">' + value + '</div></div></li>');
     });
     $(WINDOW_SWITCH_REGISTER_1_2).toggleClass('hide');
 }
@@ -93,6 +94,13 @@ function register_finish(result) {
         star_points = localStorage['Lelly_points'];
         console.log(result);
         $(WINDOW_SWITCH_REGISTER_4_5).toggleClass('hide');
+
+        //-----------------------------  SCREEN 10 -----------------------------------------------------
+        $('#div_registerComplete').click(function () {
+            showMoodScreen(result.user_name);
+            document.addEventListener("pause", onPause, false);
+            document.addEventListener("resume", onResume, false);
+        });
         contacts = {};
     }
 }
@@ -107,7 +115,7 @@ function logOut(result) {
 //LOG IN
 function login(result) {
     console.log(result);
-    if(result.auth_key && !result.errors) {
+    if (result.auth_key && !result.errors) {
         localStorage.setItem('Lelly_login_email', _email);
         localStorage['Lelly_auth_key'] = result.auth_key;
         localStorage['Lelly_pin'] = _pin;
@@ -115,10 +123,15 @@ function login(result) {
         localStorage['Lelly_points'] = result.points;
         user_name = localStorage['Lelly_UserName'] || result.user_name;
         star_points = localStorage['Lelly_points'] || result.points;
-        console.log(result);
-        show_moodscreen(user_name);
+        showMoodScreen(result.user_name);
         document.addEventListener("pause", onPause, false);
         document.addEventListener("resume", onResume, false);
+        if (localStorage['Lelly_last_activity']) {
+            //TODO this block
+            $('#lastActivitySendPopup').fadeIn(400);
+            var data = JSON.parse(localStorage['Lelly_last_activity']);
+            request_logged('POST','site','save-activity',data, recordLastActivity, errRecordLastActivity)
+        }
     }
     else {
         if (result.errors.pin) {
@@ -129,7 +142,7 @@ function login(result) {
                 wrong_pinCounter == 0;
             }
         }
-        if (result.errors.email) {
+        else if (result.errors.email) {
             window.alert('Sorry', result.errors.email[0]);
         }
         else {
@@ -138,83 +151,143 @@ function login(result) {
     }
 }
 
-//MOOD SCREEN CHOOSER
-function show_moodscreen(name) {
-    var th = ['st','nd', 'th'];
-    var today = new Date();
-    if (today.getDate() >=3) th[today.getDate()] = 'th';
-    var day = WEEK_DAY[today.getDay()] + ' ';
-    var date = ''+ today.getDate() + th[today.getDate()]+' ';
-    var month_today = MONTH[today.getMonth()];
-    $('#container').load('resources2.html #window_moodScreen', function () {
-        $('#day_is').text(day);
-        $('#date_is').text(date);
-        $('#month_is').text(month_today);
-        $('#user_name_is').text(name);
-    });
-}
-
 // PIN RESTORE
 function forgotPin(result) {
     console.log(result);
-    if(result == true) {
+    if (result == true) {
         $(WINDOW_SWITCH_LOGIN_2_3).toggleClass('hide');
     }
-    else {console.log(result.errors);
-    return false
+    else {
+        console.log(result.errors);
+        return false
     }
 }
 
 // GET TASKS
 function getTasks(result) {
     console.log(result);
-    var element = $('.task_refresh');
-    element.fadeOut(150);
-    setTimeout(function() {
-        element.attr('src','img/refresh.png').fadeIn(150);
-    },150);
-    if (!result.tasks || result.tasks.length <=2) {
-        return false
-    }
-    else {
+    var refresher = $('.task_refresh');
+    refresher.fadeOut(150);
+    setTimeout(function () {
+        refresher.attr('src', 'img/refresh.png').fadeIn(150);
+    }, 150);
+    if (result.tasks.length > 2) {
         get_task_options.offset++;
-        $('.task1 > p').text(result.tasks[0].name).animate({"left":"+=100%"},300);
-        $('.task1 .tasks-star-point > p').text(result.tasks[0].points).fadeIn(300);
-        $('.task2 > p').text(result.tasks[1].name);
-        $('.task2 .tasks-star-point > p').text(result.tasks[1].points);
-        $('.task3 > p').text(result.tasks[2].name);
-        $('.task3 .tasks-star-point > p').text(result.tasks[2].points);
-        setTimeout(function() {
-            $('.task2 > p').animate({"left":"+=100%"},300);
-            $('.task2 .tasks-star-point > p').fadeIn(300);
-        },150);
-        setTimeout(function() {
-            $('.task3 > p').animate({"left":"+=100%"},300);
-            $('.task3 .tasks-star-point > p').fadeIn(300);
-        },300);
+        for (var i = 1; i < result.tasks.length + 1; i++) {
+            var element = '.task' + i;
+            var element_name = '.task' + i + ' > p';
+            var element_points = '.task' + i + ' .tasks-star-point > p';
+            $(element).attr('data-id', result.tasks[i - 1].id);
+            $(element_name).text(result.tasks[i - 1].name);
+            $(element_points).text(result.tasks[i - 1].points);
+        }
+        //$('.task1 > p').text(result.tasks[0].name);
+        //$('.task1 .tasks-star-point > p').text(result.tasks[0].points);
+        //$('.task2 > p').text(result.tasks[1].name);
+        //$('.task2 .tasks-star-point > p').text(result.tasks[1].points);
+        //$('.task3 > p').text(result.tasks[2].name);
+        //$('.task3 .tasks-star-point > p').text(result.tasks[2].points);
     }
+    $('.task1 > p').animate({"left": "+=100%"}, 300);
+    $('.task1 .tasks-star-point').animate({"right": "+=200%"}, 300);
+    setTimeout(function () {
+        $('.task2 > p').animate({"left": "+=100%"}, 300);
+        $('.task2 .tasks-star-point').animate({"right": "+=200%"}, 300);
+    }, 150);
+    setTimeout(function () {
+        $('.task3 > p').animate({"left": "+=100%"}, 300);
+        $('.task3 .tasks-star-point').animate({"right": "+=200%"}, 300);
+    }, 300);
 }
 
 //TASK RECORD
 function taskRecorded(result) {
-    $('#reward_for_task_complete').text(result.reward);
+    console.log(result);
+    $('#reward_for_task_complete').text(result.points);
     $(WINDOW_SWITCH_MAIN_16_17).toggleClass('hide');
+    star_points += result.points;
     photo = '';
     contacts = {};
+    geo_location = {};
+    mood = false;
+    task_id = null;
+}
+
+function lowMoodRecorded(result) {
+    console.log(result);
+    $('#container').load('resources2.html #window_moodPositive', function () {
+        $(WINDOW_SWITCH_MAIN_20_14).toggleClass('hide');
+        $('#reward_for_activity_complete').text(result.points);
+    });
+    photo = '';
+    contacts = {};
+    geo_location = {};
+    mood = false;
+    task_id = null;
 }
 
 //ACTIVITY RECORD
 function activityRecorded(result) {
-    $('#reward_for_task_complete').text(result.reward);
+    console.log(result);
+    $('#reward_for_activity_complete').text(result.points);
     $(WINDOW_SWITCH_MAIN_13_14).toggleClass('hide');
+    localStorage.removeItem('Lelly_last_activity');
     photo = '';
     contacts = {};
 }
 
 function getExpansionsPack(result) {
     console.log(result);
-    if(!result.expansion_packs) {
+    if (result.errors) {
         return false;
     }
+    //$('.expansion_pack').click(function () {
+    //    var data = {'exp_pack_id': $(this).attr('data-id')};
+    //    var action = 'unlock-expansion-pack';
+    //    console.log();
+    //    request_logged('POST', 'site', action, data, unlockExpansionsPack, requestErrorCallBack)
+    //});
+}
 
+function unlockExpansionsPack(result) {
+    console.log(result);
+    if (!result.errors) {
+        window.alert('Congratulations!', 'You have unlocked an expansion pack "' + result.name + '"');
+    }
+    else {
+        window.alert('Sory', result.errors);
+    }
+}
+function loadUsers(result) {
+    console.log(result);
+    if (result.errors) {
+        return false;
+    }
+    else {
+        $.each(result.likes, function (index, value) {
+            $('#tab_users').append();
+        });
+    }
+}
+function recordError(result) {
+    console.log(result);
+    navigator.notification.alert("Don't worry your activity will be recorded when you re-logged.\n\rApp will be closed.", function() {
+        navigator.app.exitApp();
+    }, 'No connection', 'Quit');
+}
+function recordLastActivity(result) {
+    console.log(result);
+    if (result.errors) return false;
+    else {
+        var type = result.type;
+        var title = result.title;
+        var points = result.points;
+        $('#lastActivitySendPopup').hide();
+        window.alert('Saved ' + type + ' recorded', 'Congratulations!\n\rTitle: "' + title +'"\n\rYou have got ' + points + '!');
+        localStorage.removeItem('Lelly_last_activity');
+    }
+}
+function errRecordLastActivity (result) {
+    console.log(resiult);
+    window.alert('Sory','Server error.\n\rIt was a problem to record your saved data.')
 }

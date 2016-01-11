@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Lelly</title>
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="Content-Security-Policy" content=""/>
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/chartist.min.css">
@@ -14,17 +14,19 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
     <script src="cordova.js"></script>
     <script src="js/jq/jquery-2.1.4.min.js"></script>
+    <script src="js/jq/jquery.touchSwipe.min.js"></script>
+    <!--<script src="js/jq/jquery.mobile-1.4.5.min.js"></script>-->
     <script src="js/const.js"></script>
 </head>
 <body>
 <!--Main windows container-->
-<div id="container" class="container"></div>
+<div id="container" class="container" data-enhance="false"></div>
 <!--Menu windows container-->
-<div id="menu_container" class="container">
+<div id="menu_container" class="container" data-enhance="false">
 
 </div>
 <!--21-->
-<div id="window_menu" class="a25">
+<div id="window_menu" class="a25" data-enhance="false">
     <div class="menu-open">
         <div class="top-menu">
             <div class="logo">
@@ -52,7 +54,7 @@
     </div>
 </div>
 <!--31-->
-<div id="window_pin" class="container register-complete pin">
+<div id="window_pin" data-enhance="false" class="container register-complete pin">
     <div class="logo">
         <div class="medium-square">lelly</div>
     </div>
@@ -68,78 +70,16 @@
     <input id="input_lockScreen" class="enter" type="password" maxlength="4" pattern="[0-9]*" placeholder="PIN" required>
     <input id="btn_lockScreen" type="button" class="pink-button" value="continue">
 </div>
-<div id="after_pause_block"></div>
+<div id="after_pause_block" data-enhance="false"></div>
 <script src="js/functions.js"></script>
 <script src="js/main.js"></script>
 <script src="js/ajax.js"></script>
 <script src="js/chartist.min.js"></script>
-<!--MODAL-->
-<div id="window_modal">
-    <div id="modal-form">
-        <div class="smiles-enter align">
-            <div class="modal_mood smile-one-enter" mood="unsure">
-                <div class="smile-type-enter">
-                    <img src="img/unsure.png" alt="smile">
-                </div>
-                <p>Unsure</p>
-            </div>
-            <div class="modal_mood smile-one-enter" mood="meh">
-                <div class="smile-type-enter">
-                    <img src="img/meh.png" alt="smile">
-                </div>
-                <p>Meh</p>
-            </div>
-            <div class="modal_mood smile-one-enter" mood="horror">
-                <div class="smile-type-enter">
-                    <img src="img/horror.png" alt="smile">
-                </div>
-                <p>Horror</p>
-            </div>
-        </div>
-        <div class="smiles-enter align">
-            <div class="modal_mood smile-one-enter" mood="happy">
-                <div class="smile-type-enter">
-                    <img src="img/happy.png" alt="smile">
-                </div>
-                <p>Happy</p>
-            </div>
-            <div class="modal_mood smile-one-enter" mood="awesome">
-                <div class="smile-type-enter">
-                    <img src="img/awesome.png" alt="smile">
-                </div>
-                <p>Awesome</p>
-            </div>
-            <div class="modal_mood smile-one-enter" mood="omg">
-                <div class="smile-type-enter">
-                    <img src="img/omg.png" alt="smile">
-                </div>
-                <p>OMG!</p>
-            </div>
-        </div>
-        <div class="smiles-enter">
-            <div class="modal_mood smile-one-enter" mood="sad">
-                <div class="smile-type-enter">
-                    <img src="img/sad.png" alt="smile">
-                </div>
-                <p>Sad</p>
-            </div>
-            <div class="modal_mood smile-one-enter" mood="angry">
-                <div class="smile-type-enter">
-                    <img src="img/angry.png" alt="smile">
-                </div>
-                <p>Angry</p>
-            </div>
-            <div class="modal_mood smile-one-enter" mood="crying">
-                <div class="smile-type-enter">
-                    <img src="img/crying.png" alt="smile">
-                </div>
-                <p>Crying</p>
-            </div>
-        </div>
-    </div>
-    <div id="overlay"></div>
+<!--ACTIVITY RECORD POPUP-->
+<div id="lastActivitySendPopup">
+    <p><img src="img/spinner2.gif" alt=" "><span>Recording saved data...</span></p>
 </div>
-<div id="window_loader" class="spinner">
+<div id="window_loader" class="spinner" data-enhance="false">
     <div></div>
 </div>
 <img src="img/01.png" height="0" width="0" style="display: none">

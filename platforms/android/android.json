@@ -13,19 +13,11 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"ImagePicker\"><param name=\"android-package\" value=\"com.synconset.ImagePicker\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Contacts\"><param name=\"android-package\" value=\"org.apache.cordova.contacts.ContactManager\" /></feature>",
                             "count": 1
                         },
                         {
                             "xml": "<feature name=\"DatePickerPlugin\"><param name=\"android-package\" value=\"com.plugin.datepicker.DatePickerPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
                             "count": 1
                         },
                         {
@@ -63,24 +55,26 @@
                         {
                             "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
             },
             "AndroidManifest.xml": {
                 "parents": {
-                    "/manifest/application": [
-                        {
-                            "xml": "<activity android:label=\"@string/multi_app_name\" android:name=\"com.synconset.MultiImageChooserActivity\" android:theme=\"@android:style/Theme.Holo.Light\"></activity>",
-                            "count": 1
-                        }
-                    ],
-                    "/manifest": [
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 1
-                        }
-                    ],
+                    "/manifest/application": [],
+                    "/manifest": [],
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.READ_CONTACTS\" />",
@@ -103,11 +97,11 @@
                             "count": 1
                         },
                         {
-                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
                             "count": 1
                         }
                     ]
@@ -124,9 +118,6 @@
         "com.ionic.keyboard": {
             "PACKAGE_NAME": "com.app.lelly"
         },
-        "com.synconset.imagepicker": {
-            "PACKAGE_NAME": "com.app.lelly"
-        },
         "cordova-plugin-contacts": {
             "PACKAGE_NAME": "com.app.lelly"
         },
@@ -134,9 +125,6 @@
             "PACKAGE_NAME": "com.app.lelly"
         },
         "cordova-plugin-geolocation": {
-            "PACKAGE_NAME": "com.app.lelly"
-        },
-        "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.app.lelly"
         },
         "cordova-plugin-splashscreen": {
@@ -165,6 +153,15 @@
         },
         "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.app.lelly"
         }
     },
     "dependent_plugins": {},
@@ -175,14 +172,6 @@
             "pluginId": "com.ionic.keyboard",
             "clobbers": [
                 "cordova.plugins.Keyboard"
-            ]
-        },
-        {
-            "file": "plugins/com.synconset.imagepicker/www/imagepicker.js",
-            "id": "com.synconset.imagepicker.ImagePicker",
-            "pluginId": "com.synconset.imagepicker",
-            "clobbers": [
-                "plugins.imagePicker"
             ]
         },
         {
@@ -263,23 +252,6 @@
             "pluginId": "cordova-plugin-datepicker",
             "clobbers": [
                 "datePicker"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-network-information/www/network.js",
-            "id": "cordova-plugin-network-information.network",
-            "pluginId": "cordova-plugin-network-information",
-            "clobbers": [
-                "navigator.connection",
-                "navigator.network.connection"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-network-information/www/Connection.js",
-            "id": "cordova-plugin-network-information.Connection",
-            "pluginId": "cordova-plugin-network-information",
-            "clobbers": [
-                "Connection"
             ]
         },
         {
@@ -391,6 +363,40 @@
             "pluginId": "cordova-plugin-dialogs",
             "merges": [
                 "navigator.notification"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+            "id": "cordova-plugin-inappbrowser.inappbrowser",
+            "pluginId": "cordova-plugin-inappbrowser",
+            "clobbers": [
+                "cordova.InAppBrowser.open",
+                "window.open"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+            "id": "cordova-plugin-statusbar.statusbar",
+            "pluginId": "cordova-plugin-statusbar",
+            "clobbers": [
+                "window.StatusBar"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/www/network.js",
+            "id": "cordova-plugin-network-information.network",
+            "pluginId": "cordova-plugin-network-information",
+            "clobbers": [
+                "navigator.connection",
+                "navigator.network.connection"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+            "id": "cordova-plugin-network-information.Connection",
+            "pluginId": "cordova-plugin-network-information",
+            "clobbers": [
+                "Connection"
             ]
         }
     ]
