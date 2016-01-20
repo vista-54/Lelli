@@ -19,34 +19,43 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, menu, nav, section {
     display: block;
 }
+
 html {
     -webkit-user-select: none;
 }
+
 button {
     -webkit-user-select: none;
 }
+
 input[type="button"], input[type="submit"] {
     -webkit-user-select: none;
 }
+
 body {
     line-height: 1;
 }
+
 ol, ul {
     list-style: none;
 }
+
 blockquote, q {
     quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -70,22 +79,25 @@ table {
     z-index: 5;
     padding: 20px 0;
 }
+
 #overlay {
-    z-index:3;
-    position:fixed;
-    background-color:#000;
-    opacity:0.8;
-    filter:alpha(opacity=80);
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    display:none;
+    z-index: 3;
+    position: fixed;
+    background-color: #000;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
 }
+
 #modal-form .smiles-enter {
     height: 33%;
     width: 100%;
 }
+
 #modal-form .smile-one-enter {
     height: 76%;
     width: 32.6%;
@@ -94,16 +106,19 @@ table {
     margin-bottom: 3%;
     margin-top: 3%;
 }
+
 #modal-form .smile-type-enter img {
     width: 5em;
     height: 5em;
     display: block;
     margin: 0 auto 10%;
 }
+
 #modal-form .smile-one-enter p {
     text-align: center;
     font-size: 2em;
 }
+
 input, li {
     display: block
 }
@@ -125,9 +140,11 @@ body {
     font-family: 'Open Sans', sans-serif;
     height: 100%
 }
+
 button {
     font-size: 14px;
 }
+
 .medium-square, h1 {
     font-family: Cabin, sans-serif
 }
@@ -142,6 +159,43 @@ button {
     font-family: HelveticaLTStd-Cond;
     src: local("☺"), url(../fonts/HelveticaLTStd-Cond.ttf) format("truetype"), url(../fonts/HelveticaLTStd-Cond.svg) format("svg");
     font-style: normal
+}
+@font-face {
+    font-family: 'Open Sans Condensed';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/OpenSans-CondBold.ttf) format('ttf');
+
+}
+
+@font-face {
+    font-family: 'Cabin';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/Cabin-Regular.otf) format('otf');
+    src: url(../fonts/Cabin-Regular.ttf) format('ttf');
+}
+
+@font-face {
+    font-family: 'Rokkitt';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/Rokkitt-Regular.ttf) format('ttf');
+    src: url(../fonts/Rokkitt.otf) format('otf');
+}
+
+@font-face {
+    font-family: 'Rokkitt';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/Rokkitt-Bold.ttf) format('ttf');
+}
+
+@font-face {
+    font-family: 'Chivo';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/Chivo-Regular.ttf);
 }
 
 a, a:active, a:visited {
@@ -504,15 +558,6 @@ h1 {
     right: 27%;
 }
 
-.spinner-box {
-    margin: 6% auto 0
-}
-
-.spinner-box .red-button {
-    display: inline-block;
-    margin: 0 2% 0 27%
-}
-
 .the-end-pages p {
     text-align: center;
     color: #3e4852
@@ -643,7 +688,7 @@ h1 {
 
 .details-pages .button-block2 label {
     line-height: 100%;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .details-pages .button-block2 .fa {
@@ -651,7 +696,7 @@ h1 {
     vertical-align: middle;
     width: 100%;
     text-align: center;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .details-pages .enter {
@@ -706,27 +751,33 @@ h1 {
     background-size: cover;
     display: inline-block
 }
+
 .details-pages .likes-box .button-block2 label span {
     width: 6em;
     height: 6em;
 }
+
 .details-pages .pink-button {
     position: absolute;
-    bottom: 3%;
-    left: 27%;
+    /*bottom: 3%;*/
+    /*left: 27%;*/
 }
+
 #div_registerLikes label span {
     width: 5.7em;
     height: 5em;
     background-size: cover;
     display: inline-block;
 }
+
 .details-pages input[type='checkbox'] + label i {
     color: #cdcdcd;
 }
+
 .details-pages input[type='checkbox']:checked + label i {
     color: #ec5664;
 }
+
 .details-pages input[type='checkbox']:checked + label .medium-circle-gray {
     border: 0.3em solid #ec5664;
     background-color: white;
@@ -740,25 +791,25 @@ h1 {
     background-image: url(../img/dislike-false.png);
     background-size: cover;
     margin-right: 7%;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .details-pages .like {
     background-size: cover;
     background-image: url(../img/like-false.png);
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .details-pages input[type=radio]:checked + label .dislike {
     background-image: url(../img/dislike.png);
     background-size: cover;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .details-pages input[type=radio]:checked + label .like {
     background-image: url(../img/like.png);
     background-size: cover;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .name-pages {
@@ -779,7 +830,7 @@ h1 {
     color: #434a54;
     width: 59%;
     background-color: #bcd8ca;
-    margin: 9.5% -1em 11% 20%;
+    margin: 9.5% -0.15em 11% 20%;
     font-weight: 300;
     display: inline-block
 }
@@ -792,7 +843,8 @@ h1 {
     height: 4em;
     vertical-align: middle;
     line-height: 5.5em;
-    text-align: center
+    text-align: center;
+    z-index: 2;
 }
 
 .name-pages .medium-circle-pink .fa {
@@ -805,11 +857,7 @@ h1 {
 
 .name-pages p {
     padding-left: 8%;
-    font-size: 1.95em
-}
-
-.name-pages .pink-button {
-    margin-top: 20%;
+    font-size: 2.5em
 }
 
 .register-complete {
@@ -839,12 +887,13 @@ h1 {
 
 .register-complete .medium-text {
     padding-top: 4%;
-    font-size: 2.445em
+    font-size: 2.445em;
+    letter-spacing: 0.2px;
 }
 
 .register-complete .circles {
     margin: 3% 0;
-    -webkit-transform: translate(-50%,0);
+    -webkit-transform: translate(-50%, 0);
     position: relative;
     left: 50%;
     display: inline-block;
@@ -869,6 +918,7 @@ h1 {
     color: orange !important;
     padding: 0 !important;
 }
+
 .feeling-pages {
     background-color: #e5e8ed;
     height: 100%
@@ -1021,7 +1071,7 @@ h1 {
 }
 
 .done-today .menu {
-    height: 37%
+    height: 40%;
 }
 
 .done-today .enter {
@@ -1043,8 +1093,8 @@ h1 {
     border-bottom: 1em solid #fff;
 }
 
-.done-today textarea::-webkit-input-placeholder {
-    color: #3f444a
+textarea::-webkit-input-placeholder {
+    color: #777 !important;
 }
 
 .done-today .icons {
@@ -1238,6 +1288,7 @@ h1 {
     display: block;
     background-color: #d1c6cd
 }
+
 .dont-worry .tasks .task-block {
     height: 33.33333333%;
     background-color: #a48d9a;
@@ -1360,7 +1411,7 @@ h1 {
 }
 
 .call .pink-button {
-    margin-bottom: 2%
+    margin-bottom: 3%
 }
 
 .call .need-margin {
@@ -1396,10 +1447,6 @@ h1 {
     margin-bottom: 3%
 }
 
-.alone .white-block {
-    height: 11.5%
-}
-
 .alone .white-block p {
     font-size: 1.6em
 }
@@ -1413,10 +1460,6 @@ h1 {
 .alone .need-margin {
     width: 28%;
     padding-left: 9%
-}
-
-.alone .pink-button {
-    margin: 14% auto 3%
 }
 
 .did-u-call {
@@ -1711,7 +1754,7 @@ h1 {
     height: 5em;
     right: 3.5%;
     top: 19%;
-    z-index:1;
+    z-index: 1;
 }
 
 .connections .descriptions {
@@ -1719,14 +1762,18 @@ h1 {
     background-color: #e5e8ec;
     overflow-y: hidden;
 }
+
 .connections.users .descriptions {
     height: 65%;
     background-color: #e5e8ec;
     overflow-y: auto;
 }
+
 .connections.expansions .descriptions {
     height: 59%;
     padding-top: 3%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .connections .descriptions .disconnect-box, .connections .descriptions .connect-box {
@@ -1778,18 +1825,20 @@ h1 {
     text-align: center;
     font-size: 2.2em;
     color: #434a54;
-    padding: 14% 0 9%
 }
+
 .connections .descriptions table {
     width: 100%;
     height: auto;
 }
+
 .connections .descriptions table tr {
     width: 100%;
     height: 2em;
     border-bottom: 2px solid #ccc;
     background-color: #eee;
 }
+
 .connections .descriptions table tr:active {
     background-color: #bbb;
 }
@@ -1821,16 +1870,18 @@ h1 {
 .password-screen .input {
     width: 88%;
     height: 2.1em;
-    margin: 0 auto 4%
+    margin: 0 auto 4%;
 }
 
 .password-screen .green-button {
     background-color: #1fa597;
     opacity: .7
 }
+
 .password-screen .green-button:active {
     background-color: #007264;
 }
+
 .password-screen .generate {
     width: 76%;
     margin: 7% auto 4%;
@@ -1866,17 +1917,11 @@ h1 {
     opacity: .7;
     margin-top: 4%;
 }
+
 .password-screen .pink-button:active {
     background-color: #a4002d;
 }
-.password-screen .spinner {
-    display: block;
-    height: 7em;
-    width: 7em;
-    background: url(../img/spinner3.gif);
-    background-size: cover;
-    margin: 0 auto
-}
+
 
 .points {
     height: 100%
@@ -1886,15 +1931,6 @@ h1 {
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 }
-
-.points .descriptions p {
-    font-size: 12em;
-    padding: 0;
-    font-weight: 700;
-    line-height: .8em;
-    font-family: "Helvetica LT Std", sans-serif
-}
-
 .points .descriptions .bold {
     font-size: 2em;
     padding: 16% 0 8%
@@ -1943,6 +1979,7 @@ h1 {
     text-align: center;
     box-sizing: border-box;
 }
+
 .connections-p {
     width: 100%;
     margin: 0 auto;
@@ -1953,6 +1990,7 @@ h1 {
     box-sizing: border-box;
     display: table;
 }
+
 .connections-p p {
     font-size: 2.1em;
     display: table-cell;
@@ -1992,7 +2030,8 @@ h1 {
 }
 
 .overview {
-    height: 100%
+    height: 100%;
+    color: #434a54;
 }
 
 .overview .descriptions .hr {
@@ -2021,12 +2060,11 @@ h1 {
 }
 
 .overview .descriptions .tabs {
-    height: 65%;
-    margin-bottom: 10%
+    height: 81%;
 }
 
 .overview .descriptions .tabs-list {
-    height: 100%
+    height: 89%
 }
 
 .overview .descriptions .tabs-list input {
@@ -2063,6 +2101,9 @@ h1 {
     list-style: none;
     display: none
 }
+.overview .descriptions .tabs-item.tabs-item-first {
+    height: 79%;
+}
 
 .overview .descriptions .tabs-item.active {
     display: block
@@ -2081,6 +2122,7 @@ h1 {
     position: relative;
     border-left: 1px solid black;
 }
+
 .overview .descriptions .tabs-controls li:first-of-type a {
     border-left: none;
 }
@@ -2107,24 +2149,48 @@ h1 {
 }
 
 .overview .descriptions p {
-    padding: 11% 0 1%;
-    color: #000;
+    padding: 10% 0 4%;
+    color: #434a54;
     font-size: 2.2em
 }
+.overview .descriptions .progress p {
+    padding: 3% 0 5%;
+}
 
-.overview .descriptions .graph, .overview .descriptions .graph2, .overview .descriptions .graph3 {
+.descriptions p.user_points {
+    font-size: 12em;
+    padding: 0;
+    font-weight: 700;
+    line-height: .8em;
+    font-family: "Helvetica LT Std", sans-serif
+}
+
+.overview .descriptions .graph, .overview .descriptions .graph3 {
     height: 64%;
     width: 90%;
     margin: 0 auto
 }
 
+.overview .progress {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.overview .progress .star-point {
+    text-align: center;
+}
+.progress img{
+    width: 12em;
+    margin: 0 auto;
+}
+.tabs-item-second {
+    height: 100%;
+}
 .overview .descriptions .graph {
     position: relative;
     border: 1px solid black;
-}
-
-.overview .descriptions .graph2 {
-    background-color: #daa520
 }
 
 .overview .descriptions .graph3 {
@@ -2138,6 +2204,7 @@ h1 {
     font-size: 2em;
     background: #e5e8ec;
 }
+
 .overview .graph-number-one {
     position: absolute;
     left: -2%;
@@ -2165,7 +2232,8 @@ h1 {
     font-size: 5em;
     font-family: 'Open Sans Condensed', sans-serif;
     padding: 0;
-    line-height: .9em
+    line-height: .85em;
+    margin-bottom: 4px;
 }
 
 .menu .fa {
@@ -2179,12 +2247,39 @@ h1 {
 }
 
 @media screen and (min-width: 320px) and (max-width: 359px) {
+
+    .btn-container-regFinish {
+        margin-top: 20%;
+    }
+
+    .name-pages .enter {
+        margin: 9.5% -.3em 11% 20%
+    }
+
+    .expansions .eat-block {
+        margin-top: 3%;
+    }
+
+    .expansions .eat-block .eat p {
+        font-size: 2.5em;
+        padding: 7% 0 0;
+    }
+    .details-pages .likes-box {
+        height: 56%;
+    }
+
+    .expansions-p {
+        font-size: 2.5em;
+    }
+
     body {
         font-size: 8.5px
     }
+
     button {
         font-size: 11px
     }
+
     #div_registerLikes, #window_registerScreen {
         font-size: 7.5px
     }
@@ -2192,6 +2287,7 @@ h1 {
     .menu-open ul li {
         font-size: 1.8em;
     }
+
     #window_registerScreen .article {
         padding: 7% 0 4% 8%
     }
@@ -2204,10 +2300,6 @@ h1 {
         padding-bottom: 2%
     }
 
-    #div_registerContacts .pink-button {
-        margin-top: 11%
-    }
-
     .feeling-pages .smiles {
         margin-bottom: 6%
     }
@@ -2215,12 +2307,15 @@ h1 {
     .feeling-pages .need-margin {
         margin-bottom: 0
     }
+
     .done-today .green-block {
         height: 30%;
     }
+
     .done-today .blue-button {
         margin-top: 5%;
     }
+
     .congratulations-pages .star-point img {
         margin: 10% auto
     }
@@ -2276,11 +2371,13 @@ h1 {
     .overview .descriptions .pink-button {
         margin-top: 10%
     }
+
     .password-screen .gray-block img {
         width: 5em;
         height: 5em;
         top: 19%;
     }
+
     .task-pages .need-margin {
         font-size: 1.1em;
     }
@@ -2288,6 +2385,7 @@ h1 {
     .menu {
         font-size: 9px
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 22px;
     }
@@ -2297,15 +2395,19 @@ h1 {
     body {
         font-size: 9px
     }
+
     button {
         font-size: 11px
     }
+
     .done-today .blue-button {
         margin-top: 4%;
     }
+
     .password-screen .pink-button {
-        margin-top: 10%;
+        margin-top: 8%;
     }
+
     #window_registerScreen {
         font-size: 8px
     }
@@ -2315,7 +2417,7 @@ h1 {
     }
 
     #window_registerScreen .article {
-        padding-top: 11.5%
+        padding-top: 7.5%
     }
 
     .feeling-pages .smiles {
@@ -2335,14 +2437,24 @@ h1 {
     }
 
     .pin .pink-button {
-        margin-top: 50%
+        margin-top: 42%
     }
-
+    .call .blue-block, .call .help .red-block, .help .call .red-block {
+        margin-bottom: 10%;
+    }
+    .alone .blue-block, .alone .help .red-block, .help .alone .red-block {
+        margin-bottom: 10%;
+    }
     .menu {
         font-size: 11px
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 26px;
+    }
+
+    .connections .descriptions .disconnect-box, .connections .descriptions .connect-box {
+        height: 35%;
     }
 }
 
@@ -2350,15 +2462,19 @@ h1 {
     body {
         font-size: 10.5px
     }
+
     button {
         font-size: 10.5px
     }
+
     .done-today .blue-button {
         margin-top: 5%;
     }
+
     .password-screen .pink-button {
         margin-top: 10%;
     }
+
     #window_registerScreen {
         font-size: 9px
     }
@@ -2370,9 +2486,11 @@ h1 {
     #window_registerScreen .article {
         padding-top: 9%
     }
+
     .pin .pink-button {
         margin-top: 40%;
     }
+
     .feeling-pages .smiles {
         margin-bottom: 7%
     }
@@ -2392,8 +2510,17 @@ h1 {
     .menu {
         font-size: 12px
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 30px;
+    }
+
+    .call .blue-block {
+        margin-bottom: 11%;
+    }
+
+    .connections .descriptions .disconnect-box, .connections .descriptions .connect-box {
+        height: 35%;
     }
 }
 
@@ -2401,12 +2528,15 @@ h1 {
     body {
         font-size: 12.5px
     }
+
     button {
         font-size: 12.5px
     }
+
     .done-today .blue-button {
         margin-top: 4%;
     }
+
     #window_registerScreen {
         font-size: 11px
     }
@@ -2417,10 +2547,6 @@ h1 {
 
     #div_registerLikes, #div_registerStruggles {
         font-size: 10.5px
-    }
-
-    .name-pages .pink-button {
-        margin-top: 10%
     }
 
     .feeling-pages {
@@ -2450,12 +2576,14 @@ h1 {
     .menu {
         font-size: 13px
     }
+
     #modal-form {
         width: 400px;
         height: 400px;
         margin-top: -200px;
         margin-left: -200px;
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 30px;
     }
@@ -2465,9 +2593,11 @@ h1 {
     body {
         font-size: 15px
     }
+
     button {
         font-size: 15px
     }
+
     .done-today .blue-button {
         margin-top: 4%;
     }
@@ -2481,8 +2611,10 @@ h1 {
     }
 
     .details-pages .likes-box {
+
         font-size: 13px;
     }
+
     #div_registerStruggles {
         font-size: 10px
     }
@@ -2490,9 +2622,11 @@ h1 {
     .done-today {
         font-size: 13px;
     }
+
     .feeling-pages {
         font-size: 14px
     }
+
     .pin .pink-button {
         margin-top: 50%;
     }
@@ -2516,9 +2650,11 @@ h1 {
     .congratulations-pages .need-margin {
         margin: 0 auto 12.5%
     }
+
     .expansions {
         font-size: 13px;
     }
+
     .overview .descriptions a {
         font-size: 2em;
     }
@@ -2526,12 +2662,14 @@ h1 {
     .menu {
         font-size: 15px
     }
+
     #modal-form {
         width: 440px;
         height: 440px;
         margin-top: -220px;
         margin-left: -220px;
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 36px;
     }
@@ -2541,12 +2679,15 @@ h1 {
     body {
         font-size: 14px
     }
+
     button {
         font-size: 14px
     }
+
     .done-today .blue-button {
         margin-top: 3%;
     }
+
     #window_registerScreen {
         font-size: 14.5px
     }
@@ -2598,14 +2739,24 @@ h1 {
     .menu {
         font-size: 17px
     }
+
     #modal-form {
         width: 500px;
         height: 500px;
         margin-top: -250px;
         margin-left: -250px;
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 40px;
+    }
+
+    .details-pages .article {
+        padding: 12.5% 0 7% 8%;
+    }
+
+    .alone .blue-block {
+        margin-bottom: 11%;
     }
 }
 
@@ -2613,92 +2764,121 @@ h1 {
     body {
         font-size: 20px;
     }
+
     button {
         font-size: 20px;
     }
+
     #window_registerScreen {
         font-size: 18px;
     }
+
     #window_registerScreen .details-pages .article {
         padding: 6.5% 0 5% 8%;
     }
+
     .feeling-pages .smiles {
         margin: 5.5% auto 7%;
     }
+
     .feeling-pages .need-margin {
         margin-bottom: 0;
     }
+
     .call .blue-block, .call .help .red-block, .help .call .red-block {
         margin-bottom: 12%;
     }
+
     .pin .pink-button {
         margin-top: 45%;
     }
+
     .password-screen .descriptions p {
         padding: 9% 0 4%;
     }
+
     .done-today {
         font-size: 18px;
     }
+
     .done-today .blue-button {
         margin-top: 4%;
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 48px;
     }
 }
+
 @media screen and (min-width: 1536px) {
     body {
         font-size: 32px;
     }
+
     button {
         font-size: 32px;
     }
+
     #window_registerScreen {
         font-size: 27px;
     }
+
     .details-pages .article {
         padding: 5.5% 0 5% 8%;
     }
+
     .details-pages .pink-button {
         bottom: 2%;
     }
+
     .name-pages .pink-button {
         margin-top: 12%;
     }
+
     .the-end-pages .medium-text {
         padding-top: 50%;
     }
+
     .feeling-pages .smiles {
         margin: 4.5% auto 4%;
     }
+
     .feeling-pages .need-margin {
         margin-bottom: 0;
     }
+
     .task-pages .green-block .align {
         padding-top: 27%;
     }
+
     .done-today .green-block {
         height: 30%;
     }
+
     .call .blue-block {
         margin-bottom: 7%;
     }
+
     .pin .pink-button {
         margin-top: 30%;
     }
+
     .info .gray-block .bold {
         margin-bottom: 8%;
     }
+
     .password-screen .descriptions p {
         padding: 3% 0 3%;
     }
+
     .expansions .descriptions p {
         padding: 6% 0;
     }
+
     .done-today .blue-button {
         margin-top: 4%;
     }
+
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 56px;
     }
@@ -2708,45 +2888,59 @@ h1 {
     #window_registerScreen .article {
         padding-top: 3%;
     }
+
     #div_registerLikes, #div_registerStruggles {
         font-size: 15px;
     }
+
     .details-pages .description-block {
         width: 69%;
     }
+
     #div_registerContacts {
         font-size: 16.5px;
     }
+
     .feeling-pages .green-block, .feeling-pages .blue-block {
         font-size: 16px;
     }
+
     .done-today {
         font-size: 15px;
     }
+
     .congratulations-pages {
         font-size: 16px;
     }
+
     .call {
         font-size: 16px;
     }
+
     .call .blue-block {
         margin-bottom: 10%;
     }
+
     .did-u-call {
         font-size: 17px;
     }
+
     .pin .pink-button {
         margin-top: 42%;
     }
+
     .connections {
         font-size: 16px;
     }
+
     .password-screen .descriptions p {
         padding: 3% 0 2%;
     }
+
     .expansions .descriptions p {
         padding: 6% 0;
     }
+
     .name-pages .pink-button {
         margin-top: 10%;
     }
@@ -2756,56 +2950,77 @@ h1 {
 .container {
     height: 100%;
 }
+
 .hide {
     display: none;
 }
+
 .red {
     color: red;
 }
+
 .green {
     color: green;
 }
+
 #window_loader {
     overflow: hidden;
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
+    background-color: rgba(100,100,100,0.6);
     background-size: cover;
+    z-index: 100;
 }
-.spinner-box .spinner {
-    display: block;
-    position: relative;
-    width: 3em;
-    height: 3em;
-    background: url('../img/spinner3.gif');
-    background-size: cover;
-}
-#window_loader div {
-    display: block;
+
+#window_loader .one {
+    display: none;
     margin: auto;
     text-align: center;
     position: relative;
-    width: 5em;
-    height: 5em;
+    width: 6em;
+    height: 6em;
     top: 45%;
-    background: url('../img/spinner3.gif');
-    background-size: cover;
+    background: rgba(0,0,0,0.5) url('../img/spinner2.gif') no-repeat center;
+    background-size: 90%;
+    border-radius: 3em;
+    z-index: 100;
 }
+#window_loader .two {
+    display: none;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    width: 7em;
+    height: 2.5em;
+    top: 45%;
+    color: white;
+    font-size: 2.5em;
+    line-height: 2.5em;
+    border-radius: 2em;
+    background-color: rgba(50,50,50,0.8);
+    z-index: 100;
+}
+
 .medium-circle-red {
     background-color: #ec5664;
 }
+
 .placeholder {
     color: #ec5664 !important;
 }
+
 .placeholder::-webkit-input-placeholder {
     color: #ec5664 !important;
 }
+
 #btn_taskRefresh {
     width: 3.5em;
     margin-top: 1em;
 }
+
 #window_pin {
     position: fixed;
     display: none;
@@ -2814,6 +3029,7 @@ h1 {
     z-index: 10;
     width: 100%;
 }
+
 .taskRec .medium-circle-red, .lowMoodRec .medium-circle-red {
     background-color: #77cab8;
 }
@@ -2823,24 +3039,29 @@ h1 {
     position: fixed;
     width: 100%;
     height: 100%;
-    top:0;
+    top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 25;
+    z-index: 9;
     background-color: black;
 }
+
 #block_tasks {
     height: 0;
     width: 100%;
     overflow: hidden;
 }
+
 #form_register div {
     margin-bottom: 9%;
 }
+
 #div_registerLikes label {
     width: 50%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 #window_menu {
     position: fixed;
     top: 0;
@@ -2850,34 +3071,55 @@ h1 {
     overflow: hidden;
     z-index: 25;
 }
+
 #menu_container {
     position: absolute;
     width: 100%;
     display: none;
-    top:0;
+    top: 0;
     right: 0;
     z-index: 5;
 }
+
 .modal_mood:active {
     background-color: rgba(255, 246, 0, 0.53);
 }
+
 #window_registerScreen .pink-button {
-    position: static;
-    margin-top: 0.5em;
+    position: relative;
 }
+
 .info_link:active {
     color: red;
 }
+
 .task-pages .task-block p.upper {
     position: relative;
 }
-#btn_regFinish {
-    margin-top: 20% !important;
-}
+
 button.icon {
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
+
+.button-container {
+    margin-top: 5.5em;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.btn-container-regFinish {
+    position: absolute;
+    bottom: 2%;
+}
+
+.bottom-button {
+    display: inline-block;
+}
+
 /*********************ARSEN***********************************/
 
 .medium-circle-green {
@@ -2893,6 +3135,7 @@ button.icon {
     width: 5.5em;
     height: 5.5em
 }
+
 .medium-circle-red {
     -webkit-border-radius: 50%;
     border-radius: 50%;
@@ -2900,17 +3143,21 @@ button.icon {
     height: 5.5em;
     background-color: #ec5664
 }
+
 .congratulations-pages .pink-button {
     position: fixed;
     bottom: 5%;
     left: 27%;
 }
+
 .button-block input, .button-block2 input {
-    display: none!important;
+    display: none !important;
 }
+
 .connections.overview .descriptions {
     overflow: hidden;
 }
+
 #lastActivitySendPopup {
     display: none;
     width: 50%;
@@ -2932,4 +3179,53 @@ button.icon {
     width: 10%;
     margin: 0.4em;
     float: left;
+}
+
+.back .fa {
+    width: 100%;
+    line-height: 1.5em;
+}
+
+input[type="text"]:disabled::-webkit-input-placeholder {
+    color: #3f444a !important
+}
+input[type="text"]:disabled {
+    background-color: transparent;
+    color: #222 !important;
+    border-color: #3f444a;
+    z-index: 0;
+    opacity: 1.0 !important;
+}
+.menu {
+    float:left;
+    width: 100%;
+}
+.menu_item.active {
+    background-color: #a4343f;
+}
+#btn_generate_password {
+    width: 70%;
+    margin: 10% auto 3%;
+}
+#btn_generate_password:disabled {
+    background-color: #666;
+    color: #444;
+}
+#generated_password {
+    font-size: 3em;
+    text-align: center;
+    line-height: 1;
+    height: 1.5em;
+    color: black;
+}
+#p_password {
+    padding: 5% 0 0;
+    visibility: hidden;
+}
+#input_monitor_connect {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.help .header-block .need-margin {
+    height: 23.5%;
 }

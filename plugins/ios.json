@@ -54,6 +54,12 @@
         },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "org.apache.cordova.media": {
+            "PACKAGE_NAME": "com.app.lelly"
         }
     },
     "dependent_plugins": {}

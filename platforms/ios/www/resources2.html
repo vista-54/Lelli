@@ -85,7 +85,10 @@
                                      maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="Confirm Pin"
                                      required></div>
         </form>
-        <input id="btn_regNextStep" type="button" class="pink-button" value="continue">
+        <div class="button-container">
+            <input id="btn_backToLogin" type="button" class="bottom-button green-button" value="back">
+            <input id="btn_regNextStep" type="button" class="bottom-button pink-button" value="continue">
+        </div>
     </div>
     <!--7-->
     <div id="div_registerLikes" class="details-pages hide">
@@ -107,7 +110,10 @@
                 </form>
             </div>
         </div>
-        <input id="btn_regNextStep3" type="button" class="pink-button" value="continue">
+        <div class="button-container btn-container-regFinish">
+            <input id="btn_backTo6" type="button" class="bottom-button green-button" value="back">
+            <input id="btn_regNextStep3" type="button" class="bottom-button pink-button" value="continue">
+        </div>
     </div>
     <!--8-->
     <div id="div_registerStruggles" class="details-pages hide">
@@ -130,7 +136,10 @@
                 </form>
             </div>
         </div>
-        <input id="btn_nextStep4" type="button" class="pink-button" value="continue">
+        <div class="button-container btn-container-regFinish">
+            <input id="btn_backTo7" type="button" class="bottom-button green-button" value="back">
+            <input id="btn_nextStep4" type="button" class="bottom-button pink-button" value="continue">
+        </div>
     </div>
     <!--9-->
     <div id="div_registerContacts" class="name-pages hide">
@@ -142,7 +151,7 @@
                 <p>First person you would call</p>
 
                 <p>if you won a lottery?</p>
-                <input id="input_friendName" class="enter" placeholder="Name">
+                <input id="input_friendName" class="enter" placeholder="Name" type="text" readonly>
                 <button id="btn_friend" class="medium-circle-pink">
                     <i class="fa fa-bars fa-3x"></i>
                 </button>
@@ -151,12 +160,15 @@
                 <p>Who would you call if you</p>
 
                 <p>needed support?</p>
-                <input id="input_supportName" class="enter need-margin" placeholder="Name">
+                <input id="input_supportName" class="enter need-margin" placeholder="Name" type="text" readonly>
                 <button id="btn_support" class="medium-circle-pink">
                     <i class="fa fa-bars"></i>
                 </button>
             </div>
-            <input id="btn_regFinish" type="button" class="pink-button" value="continue">
+            <div class="button-container btn-container-regFinish">
+                <input id="btn_backTo8" type="button" class="bottom-button green-button" value="back">
+                <input id="btn_regFinish" type="button" class="bottom-button pink-button" value="continue">
+            </div>
         </form>
     </div>
     <!--10-->
@@ -270,6 +282,9 @@
     <div id="div_taskActivityScreen" class="task-pages">
         <div id="btn_selectTask" class="purple-block">
             <div class="menu">
+                <button class="btn_backToMood square left back">
+                    <i class="fa fa-chevron-left fa-2x"></i>
+                </button>
                 <button class="btn_menu square left">
                     <i class="fa fa-bars fa-2x"></i>
                 </button>
@@ -323,6 +338,9 @@
     <div id="div_activityRecScreen" class="task-pages done-today star hide">
         <div class="green-block">
             <div class="menu">
+                <button class="btn_backToPositive square left back">
+                    <i class="fa fa-chevron-left fa-2x"></i>
+                </button>
                 <button class="btn_menu square left">
                     <i class="fa fa-bars fa-2x"></i>
                 </button>
@@ -402,6 +420,9 @@
     <div id="div_taskRecorderScreen" class="taskRec task-pages done-today star record">
         <div class="green-block">
             <div class="menu">
+                <button class="btn_backToPositive square left back">
+                    <i class="fa fa-chevron-left fa-2x"></i>
+                </button>
                 <button class="btn_menu square left">
                     <i class="fa fa-bars fa-2x"></i>
                 </button>
@@ -517,9 +538,17 @@
                         <input type="button" class="red-button" value="POSITIVE">
                     </li>
                     <li class="tabs-item tabs-item-second">
-                        <p>Second</p>
+                        <div class="progress">
+                            <p class="bold">You currently have:</p>
 
-                        <div class="graph2"></div>
+                            <p class="user_points"></p>
+
+                            <p class="upper">Star points</p>
+
+                            <div class="star-point">
+                                <img src="img/star.png" alt="star">
+                            </div>
+                        </div>
                     </li>
                     <li class="tabs-item tabs-item-third">
                         <p>Third</p>
@@ -529,7 +558,7 @@
 
                 </ul>
                 </span>
-                <input type="button" class="pink-button" value="continue">
+                <input id="btn_goToMoodScreen" type="button" class="pink-button" value="continue">
             </div>
         </div>
     </div>
@@ -540,6 +569,9 @@
     <div id="div_dontWorryScreen" class="dont-worry">
         <div class="block">
             <div class="menu">
+                <button class="btn_backToMood square left back">
+                    <i class="fa fa-chevron-left fa-2x"></i>
+                </button>
                 <button class="btn_menu square left">
                     <i class="fa fa-bars fa-2x"></i>
                 </button>
@@ -594,6 +626,9 @@
     <div id="div_lowMoodRecScreen" class="lowMoodRec task-pages done-today star recorder hide">
         <div class="green-block">
             <div class="menu">
+                <button class="btn_backToNegative square left back">
+                    <i class="fa fa-chevron-left fa-2x"></i>
+                </button>
                 <button class="btn_menu square left">
                     <i class="fa fa-bars fa-2x"></i>
                 </button>
@@ -712,48 +747,7 @@
             <button id="btn_connect_no" class="need-margin">No</button>
         </div>
         <table id="tab_users">
-            <tr class="white-block enable">
-                <td class="td-one">
-                    <p class="bold">Mom</p>
-                </td>
-                <td class="td-two circle">
-                    <div class="small-circle-red"></div>
-                </td>
-                <td class="td-three">
-                    <p>User ID</p>
-                </td>
-                <td class="td-three">
-                    <p>RITO 36</p>
-                </td>
-            </tr>
-            <tr class="white-block disable">
-                <td class="block">
-                    <p class="bold">Mom</p>
-                </td>
-                <td class="block circle">
-                    <div class="small-circle-red"></div>
-                </td>
-                <td class="block">
-                    <p>User ID</p>
-                </td>
-                <td class="block">
-                    <p>RITO 36</p>
-                </td>
-            </tr>
-            <tr class="white-block disable">
-                <td class="block">
-                    <p class="bold">Mom</p>
-                </td>
-                <td class="block circle">
-                    <div class="small-circle-red"></div>
-                </td>
-                <td class="block">
-                    <p>User ID</p>
-                </td>
-                <td class="block">
-                    <p>RITO 36</p>
-                </td>
-            </tr>
+
         </table>
     </div>
 </div>
@@ -775,16 +769,14 @@
         <p>Couple with web portal user</p>
 
         <form>
-            <input class="input" type="text" size="40">
-            <input type="button" class="green-button" value="search">
+            <input id="input_monitor_connect" class="input" type="text" size="40">
+            <input id="btn_check_monitor" type="button" class="green-button" value="search">
 
-            <div class="generate">
-                <span>generate password</span>
-                <img src="img/lock.png" alt="lock">
-            </div>
-            <input class="input" type="text" size="40">
+            <input id="btn_generate_password" type="button" class="green-button" disabled value="generate password">
+            <p id="p_password">Password:</p>
+            <input id="generated_password" class="input" type="text" size="40" disabled>
         </form>
-        <input type="button" class="pink-button" value="connected">
+        <input id="btn_add_connection" type="button" class="pink-button" value="connected">
     </div>
 </div>
 </div>
@@ -800,13 +792,12 @@
             </button>
         </div>
         <p class="upper bold">Points / Stars</p>
-        <img src="img/question.png">
     </div>
     <div class="descriptions">
         <div class="scroll">
             <p class="bold">You currently have:</p>
 
-            <p id="user_points">22</p>
+            <p class="user_points"></p>
 
             <p class="upper">Star points</p>
 
@@ -847,37 +838,12 @@
             </button>
         </div>
         <p class="upper bold">Expansions</p>
-        <img src="img/question.png">
     </div>
     <p class="expansions-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ornare dictum ligula.
         Maecenas
-        elementum suscipit</p>
-
-    <div class="descriptions">
-        <div class="eat-block">
-            <div data-id="1" class="expansion_pack eat">
-                <img src="img/eat1.png" alt="eat">
-
-                <p>Bi-Polar</p>
-            </div>
-            <div data-id="2" class="expansion_pack eat">
-                <img src="img/eat2.png" alt="eat">
-
-                <p>Eating Disorder</p>
-            </div>
-        </div>
-        <div class="eat-block">
-            <div data-id="3" class="expansion_pack eat">
-                <img src="img/eat3.png" alt="eat">
-
-                <p>Gardening</p>
-            </div>
-            <div data-id="4" class="expansion_pack eat">
-                <img src="img/eat4.png" alt="expansion_pack eat">
-
-                <p>Fishing</p>
-            </div>
-        </div>
+        elementum suscipit
+    </p>
+    <div id="expansion_container" class="descriptions">
 
     </div>
 </div>
@@ -955,6 +921,10 @@
             </div>
             <p class="upper">Other help</p>
         </div>
+        <div class="align" style="visibility: hidden">
+            <p>I bet they'd be glad to</p>
+            <p>hear from you!</p>
+        </div>
         <input id="btn_URNotAlone_No" type="button" class="pink-button" value="no">
         <input id="btn_URNotAlone_IAmOk" type="button" class="purple-button" value="I'm ok">
     </div>
@@ -966,8 +936,9 @@
                     <i class="fa fa-bars fa-2x"></i>
                 </button>
             </div>
+            <div class="need-margin"></div>
             <div class="red-square">
-                <p>!</p>
+            <p>!</p>
             </div>
             <p>For non-urgent help</p>
 

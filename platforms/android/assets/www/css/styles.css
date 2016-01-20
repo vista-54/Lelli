@@ -160,6 +160,43 @@ button {
     src: local("☺"), url(../fonts/HelveticaLTStd-Cond.ttf) format("truetype"), url(../fonts/HelveticaLTStd-Cond.svg) format("svg");
     font-style: normal
 }
+@font-face {
+    font-family: 'Open Sans Condensed';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/OpenSans-CondBold.ttf) format('ttf');
+
+}
+
+@font-face {
+    font-family: 'Cabin';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/Cabin-Regular.otf) format('otf');
+    src: url(../fonts/Cabin-Regular.ttf) format('ttf');
+}
+
+@font-face {
+    font-family: 'Rokkitt';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/Rokkitt-Regular.ttf) format('ttf');
+    src: url(../fonts/Rokkitt.otf) format('otf');
+}
+
+@font-face {
+    font-family: 'Rokkitt';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/Rokkitt-Bold.ttf) format('ttf');
+}
+
+@font-face {
+    font-family: 'Chivo';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/Chivo-Regular.ttf);
+}
 
 a, a:active, a:visited {
     color: #6a96d3;
@@ -521,15 +558,6 @@ h1 {
     right: 27%;
 }
 
-.spinner-box {
-    margin: 6% auto 0
-}
-
-.spinner-box .red-button {
-    display: inline-block;
-    margin: 0 2% 0 27%
-}
-
 .the-end-pages p {
     text-align: center;
     color: #3e4852
@@ -802,7 +830,7 @@ h1 {
     color: #434a54;
     width: 59%;
     background-color: #bcd8ca;
-    margin: 9.5% -1em 11% 20%;
+    margin: 9.5% -0.15em 11% 20%;
     font-weight: 300;
     display: inline-block
 }
@@ -815,7 +843,8 @@ h1 {
     height: 4em;
     vertical-align: middle;
     line-height: 5.5em;
-    text-align: center
+    text-align: center;
+    z-index: 2;
 }
 
 .name-pages .medium-circle-pink .fa {
@@ -828,7 +857,7 @@ h1 {
 
 .name-pages p {
     padding-left: 8%;
-    font-size: 1.95em
+    font-size: 2.5em
 }
 
 .register-complete {
@@ -858,7 +887,8 @@ h1 {
 
 .register-complete .medium-text {
     padding-top: 4%;
-    font-size: 2.445em
+    font-size: 2.445em;
+    letter-spacing: 0.2px;
 }
 
 .register-complete .circles {
@@ -1381,7 +1411,7 @@ textarea::-webkit-input-placeholder {
 }
 
 .call .pink-button {
-    margin-bottom: 2%
+    margin-bottom: 3%
 }
 
 .call .need-margin {
@@ -1417,10 +1447,6 @@ textarea::-webkit-input-placeholder {
     margin-bottom: 3%
 }
 
-.alone .white-block {
-    height: 11.5%
-}
-
 .alone .white-block p {
     font-size: 1.6em
 }
@@ -1434,10 +1460,6 @@ textarea::-webkit-input-placeholder {
 .alone .need-margin {
     width: 28%;
     padding-left: 9%
-}
-
-.alone .pink-button {
-    margin: 14% auto 3%
 }
 
 .did-u-call {
@@ -1743,6 +1765,7 @@ textarea::-webkit-input-placeholder {
 
 .connections.users .descriptions {
     height: 65%;
+    position: relative;
     background-color: #e5e8ec;
     overflow-y: auto;
 }
@@ -1754,7 +1777,7 @@ textarea::-webkit-input-placeholder {
     -webkit-overflow-scrolling: touch;
 }
 
-.connections .descriptions .disconnect-box, .connections .descriptions .connect-box {
+.connections .disconnect-box, .connections .connect-box {
     display: none;
     position: absolute;
     width: 85%;
@@ -1765,9 +1788,10 @@ textarea::-webkit-input-placeholder {
     margin-left: 7.5%;
     top: 29%;
     text-align: center;
+    z-index: 1;
 }
 
-.connections .descriptions .disconnect-box h1, .connections .descriptions .connect-box h1 {
+.connections .disconnect-box h1, .connections .connect-box h1 {
     color: #fff;
     text-align: center;
     font-size: 2em;
@@ -1776,7 +1800,7 @@ textarea::-webkit-input-placeholder {
     padding-top: 5%
 }
 
-.connections .descriptions .disconnect-box button, .connections .descriptions .connect-box button {
+.connections .disconnect-box button, .connections .connect-box button {
     width: 53%;
     height: 2em;
     color: #fff;
@@ -1791,11 +1815,11 @@ textarea::-webkit-input-placeholder {
     background-color: transparent;
 }
 
-.connections .descriptions .disconnect-box button:active, .connections .descriptions .connect-box button:active {
+.connections .disconnect-box button:active, .connections .connect-box button:active {
     background-color: #a4343f
 }
 
-.connections .descriptions .disconnect-box .need-margin, .connections .descriptions .connect-box .need-margin {
+.connections .disconnect-box .need-margin, .connections .connect-box .need-margin {
     margin-top: 11%
 }
 
@@ -1803,7 +1827,6 @@ textarea::-webkit-input-placeholder {
     text-align: center;
     font-size: 2.2em;
     color: #434a54;
-    padding: 14% 0 9%
 }
 
 .connections .descriptions table {
@@ -1826,6 +1849,8 @@ textarea::-webkit-input-placeholder {
     width: 5%;
     height: 100%;
     display: table-cell;
+    vertical-align: middle;
+    text-align: center;
     padding-left: 0;
 }
 
@@ -1849,7 +1874,7 @@ textarea::-webkit-input-placeholder {
 .password-screen .input {
     width: 88%;
     height: 2.1em;
-    margin: 0 auto 4%
+    margin: 0 auto 4%;
 }
 
 .password-screen .green-button {
@@ -1901,14 +1926,6 @@ textarea::-webkit-input-placeholder {
     background-color: #a4002d;
 }
 
-.password-screen .spinner {
-    display: block;
-    height: 7em;
-    width: 7em;
-    background: url(../img/spinner3.gif);
-    background-size: cover;
-    margin: 0 auto
-}
 
 .points {
     height: 100%
@@ -1918,18 +1935,9 @@ textarea::-webkit-input-placeholder {
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 }
-
-.points .descriptions p {
-    font-size: 12em;
-    padding: 0;
-    font-weight: 700;
-    line-height: .8em;
-    font-family: "Helvetica LT Std", sans-serif
-}
-
 .points .descriptions .bold {
     font-size: 2em;
-    padding: 16% 0 8%
+    padding: 7% 0 4%
 }
 
 .points .descriptions .upper {
@@ -2026,7 +2034,8 @@ textarea::-webkit-input-placeholder {
 }
 
 .overview {
-    height: 100%
+    height: 100%;
+    color: #434a54;
 }
 
 .overview .descriptions .hr {
@@ -2055,12 +2064,11 @@ textarea::-webkit-input-placeholder {
 }
 
 .overview .descriptions .tabs {
-    height: 65%;
-    margin-bottom: 10%
+    height: 81%;
 }
 
 .overview .descriptions .tabs-list {
-    height: 100%
+    height: 89%
 }
 
 .overview .descriptions .tabs-list input {
@@ -2096,6 +2104,9 @@ textarea::-webkit-input-placeholder {
     height: 100%;
     list-style: none;
     display: none
+}
+.overview .descriptions .tabs-item.tabs-item-first {
+    height: 79%;
 }
 
 .overview .descriptions .tabs-item.active {
@@ -2142,24 +2153,47 @@ textarea::-webkit-input-placeholder {
 }
 
 .overview .descriptions p {
-    padding: 11% 0 1%;
-    color: #000;
+    padding: 10% 0 4%;
+    color: #434a54;
     font-size: 2.2em
 }
+.overview .descriptions .progress p {
+    padding: 3% 0 5%;
+}
 
-.overview .descriptions .graph, .overview .descriptions .graph2, .overview .descriptions .graph3 {
+.descriptions p.user_points {
+    font-size: 12em;
+    padding: 0;
+    font-weight: 700;
+    line-height: .8em;
+    font-family: "Helvetica LT Std", sans-serif
+}
+
+.overview .descriptions .graph, .overview .descriptions .graph3 {
     height: 64%;
     width: 90%;
     margin: 0 auto
 }
 
+.overview .progress {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.overview .progress .star-point {
+    text-align: center;
+}
+.progress img{
+    width: 12em;
+    margin: 0 auto;
+}
+.tabs-item-second {
+    height: 100%;
+}
 .overview .descriptions .graph {
     position: relative;
     border: 1px solid black;
-}
-
-.overview .descriptions .graph2 {
-    background-color: #daa520
 }
 
 .overview .descriptions .graph3 {
@@ -2201,7 +2235,8 @@ textarea::-webkit-input-placeholder {
     font-size: 5em;
     font-family: 'Open Sans Condensed', sans-serif;
     padding: 0;
-    line-height: .9em
+    line-height: .85em;
+    margin-bottom: 4px;
 }
 
 .menu .fa {
@@ -2214,7 +2249,43 @@ textarea::-webkit-input-placeholder {
     font-size: 3.3em
 }
 
+.tab-users tr p{
+    line-height: 2.5;
+}
+.tab-users thead tr {
+    height: 1.5em;
+}
+div.fixed {
+    width: 100%;
+    position: fixed;
+    z-index: 0;
+}
 @media screen and (min-width: 320px) and (max-width: 359px) {
+
+    .btn-container-regFinish {
+        margin-top: 20%;
+    }
+
+    .name-pages .enter {
+        margin: 9.5% -.3em 11% 20%
+    }
+
+    .expansions .eat-block {
+        margin-top: 3%;
+    }
+
+    .expansions .eat-block .eat p {
+        font-size: 2.5em;
+        padding: 7% 0 0;
+    }
+    .details-pages .likes-box {
+        height: 56%;
+    }
+
+    .expansions-p {
+        font-size: 2.5em;
+    }
+
     body {
         font-size: 8.5px
     }
@@ -2241,10 +2312,6 @@ textarea::-webkit-input-placeholder {
 
     .details-pages .article {
         padding-bottom: 2%
-    }
-
-    #div_registerContacts .pink-button {
-        margin-top: 11%
     }
 
     .feeling-pages .smiles {
@@ -2307,7 +2374,7 @@ textarea::-webkit-input-placeholder {
         font-size: 7px
     }
 
-    .connections .descriptions .disconnect-box, .connections .descriptions .connect-box {
+    .connections .disconnect-box, .connections .connect-box {
         height: 35%
     }
 
@@ -2352,7 +2419,7 @@ textarea::-webkit-input-placeholder {
     }
 
     .password-screen .pink-button {
-        margin-top: 10%;
+        margin-top: 8%;
     }
 
     #window_registerScreen {
@@ -2364,7 +2431,7 @@ textarea::-webkit-input-placeholder {
     }
 
     #window_registerScreen .article {
-        padding-top: 11.5%
+        padding-top: 7.5%
     }
 
     .feeling-pages .smiles {
@@ -2384,15 +2451,24 @@ textarea::-webkit-input-placeholder {
     }
 
     .pin .pink-button {
-        margin-top: 50%
+        margin-top: 42%
     }
-
+    .call .blue-block, .call .help .red-block, .help .call .red-block {
+        margin-bottom: 10%;
+    }
+    .alone .blue-block, .alone .help .red-block, .help .alone .red-block {
+        margin-bottom: 10%;
+    }
     .menu {
         font-size: 11px
     }
 
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 26px;
+    }
+
+    .connections .descriptions .disconnect-box, .connections .descriptions .connect-box {
+        height: 35%;
     }
 }
 
@@ -2451,6 +2527,14 @@ textarea::-webkit-input-placeholder {
 
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 30px;
+    }
+
+    .call .blue-block {
+        margin-bottom: 11%;
+    }
+
+    .connections .descriptions .disconnect-box, .connections .descriptions .connect-box {
+        height: 35%;
     }
 }
 
@@ -2541,6 +2625,7 @@ textarea::-webkit-input-placeholder {
     }
 
     .details-pages .likes-box {
+
         font-size: 13px;
     }
 
@@ -2678,6 +2763,14 @@ textarea::-webkit-input-placeholder {
 
     .pink-button, .red-button, .blue-button, .green-button, .purple-button, .orange-button {
         font-size: 40px;
+    }
+
+    .details-pages .article {
+        padding: 12.5% 0 7% 8%;
+    }
+
+    .alone .blue-block {
+        margin-bottom: 11%;
     }
 }
 
@@ -2891,29 +2984,37 @@ textarea::-webkit-input-placeholder {
     left: 0;
     height: 100%;
     width: 100%;
+    background-color: rgba(100,100,100,0.6);
     background-size: cover;
     z-index: 100;
 }
 
-.spinner-box .spinner {
-    display: block;
-    position: relative;
-    width: 3em;
-    height: 3em;
-    background: url('../img/spinner3.gif');
-    background-size: cover;
-}
-
-#window_loader div {
-    display: block;
+#window_loader .one {
+    display: none;
     margin: auto;
     text-align: center;
     position: relative;
-    width: 5em;
-    height: 5em;
+    width: 6em;
+    height: 6em;
     top: 45%;
-    background: url('../img/spinner3.gif');
-    background-size: cover;
+    background: rgba(0,0,0,0.5) url('../img/spinner2.gif') no-repeat center;
+    background-size: 90%;
+    border-radius: 3em;
+    z-index: 100;
+}
+#window_loader .two {
+    display: none;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    width: 7em;
+    height: 2.5em;
+    top: 45%;
+    color: white;
+    font-size: 2.5em;
+    line-height: 2.5em;
+    border-radius: 2em;
+    background-color: rgba(50,50,50,0.8);
     z-index: 100;
 }
 
@@ -2956,7 +3057,7 @@ textarea::-webkit-input-placeholder {
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 25;
+    z-index: 9;
     background-color: black;
 }
 
@@ -3016,7 +3117,7 @@ button.icon {
 }
 
 .button-container {
-    margin-top: 1.5em;
+    margin-top: 5.5em;
     width: 100%;
     height: auto;
     text-align: center;
@@ -3025,7 +3126,8 @@ button.icon {
 }
 
 .btn-container-regFinish {
-    margin-top: 30%;
+    position: absolute;
+    bottom: 2%;
 }
 
 .bottom-button {
@@ -3103,9 +3205,10 @@ input[type="text"]:disabled::-webkit-input-placeholder {
 }
 input[type="text"]:disabled {
     background-color: transparent;
-    color: #3f444a;
+    color: #222 !important;
     border-color: #3f444a;
     z-index: 0;
+    opacity: 1.0 !important;
 }
 .menu {
     float:left;
@@ -3113,4 +3216,30 @@ input[type="text"]:disabled {
 }
 .menu_item.active {
     background-color: #a4343f;
+}
+#btn_generate_password {
+    width: 70%;
+    margin: 10% auto 3%;
+}
+#btn_generate_password:disabled {
+    background-color: #666;
+    color: #444;
+}
+#generated_password {
+    font-size: 3em;
+    text-align: center;
+    line-height: 1;
+    height: 1.5em;
+    color: black;
+}
+#p_password {
+    padding: 5% 0 0;
+    visibility: hidden;
+}
+#input_monitor_connect {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.help .header-block .need-margin {
+    height: 23.5%;
 }

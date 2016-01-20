@@ -43,12 +43,13 @@
         </div>
         <div class="bot-menu">
             <ul>
-                <li id="btn_menu_info">Info</li>
-                <li id="btn_menu_overview">Your Overview</li>
-                <li id="btn_menu_connections">Active Connections</li>
-                <li id="btn_menu_password">Password Screen</li>
-                <li id="btn_menu_points">Points / Stars</li>
-                <li id="btn_menu_expansions">Expansions</li>
+                <li id="btn_menu_main">Mood choice</li>
+                <li id="btn_menu_info" class="menu_item">Info</li>
+                <li id="btn_menu_overview" class="menu_item">Your Overview</li>
+                <li id="btn_menu_connections" class="menu_item">Active Connections</li>
+                <li id="btn_menu_password" class="menu_item">Password Screen</li>
+                <li id="btn_menu_points" class="menu_item">Points / Stars</li>
+                <li id="btn_menu_expansions" class="menu_item">Expansions</li>
             </ul>
         </div>
     </div>
@@ -76,11 +77,12 @@
 <script src="js/ajax.js"></script>
 <script src="js/chartist.min.js"></script>
 <!--ACTIVITY RECORD POPUP-->
-<div id="lastActivitySendPopup">
-    <p><img src="img/spinner2.gif" alt=" "><span>Recording saved data...</span></p>
-</div>
+<!--<div id="lastActivitySendPopup">-->
+    <!--<p><img src="img/spinner2.gif" alt=" "><span>Recording saved data...</span></p>-->
+<!--</div>-->
 <div id="window_loader" class="spinner" data-enhance="false">
-    <div></div>
+    <div class="one spinner"></div>
+    <div class="two">Loading...</div>
 </div>
 <img src="img/01.png" height="0" width="0" style="display: none">
 <img src="img/07.png" height="0" width="0" style="display: none">

@@ -1,14 +1,22 @@
 function onPause() {
-    if (screen_lock == false) return false;
-    $('#after_pause_block').show();
-    $('#window_pin').show();
-    $("#window_menu").css('width', '0%');
     console.log('app have been paused');
+    if (screen_lock == false) return false;
+    $('#container').css('visibility', 'hidden');
+    $('#menu_container').css('visibility', 'hidden');
+    $('#after_pause_block').show();
+    $("#window_menu").css('width', '0%');
 }
 function onResume() {
-    setTimeout(function() {
-        $('#after_pause_block').hide();
-    },200);
+    console.log('app was resumed');
+    if(screen_lock == false) {
+        $('#container').css('visibility', 'visible');
+        $('#menu_container').css('visibility', 'visible');
+        setTimeout(function() {
+            $('#after_pause_block').hide();
+        },200);
+    } else {
+        $('#window_pin').show();
+    }
 }
 function onBackKeyDown() {
     navigator.home.home(function() {console.log('Home success')} , function(err){console.log('Error:' + err)})
@@ -169,20 +177,24 @@ function addImage(element) {
     screen_lock = false;
     function foo(element) {
         var cameraOptions = {
-            'destinationType' : 0,
-            'sourceType' : 0
+            quality : 50,
+            destinationType : 2,
+            sourceType : 0
         };
-        function cameraSuccess(imageData) {
-            reloadPauseListener();
-            $('#after_pause_block').hide();
-            iconChangeColor([1], element);
-            photo = "data:image/jpeg;base64," + imageData;
-        }
 
-        function cameraError(message) {
+// camera fail
+        function onFail(message) {
             console.log('Failed because: ' + message);
         }
-        navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);
+        function cameraSuccess(imageURI) {
+            $('#after_pause_block').hide();
+            iconChangeColor([1], element);
+            console.log(imageURI);
+            //Hotfix (error404)
+            imageURI = imageURI.replace('%', encodeURIComponent('%'));
+            photo = imageURI;
+        }
+        navigator.camera.getPicture(cameraSuccess, onFail, cameraOptions);
     }
     if (cordova.plugins.Keyboard.isVisible) {
         cordova.plugins.Keyboard.close();
@@ -271,7 +283,9 @@ function menuContainerHide() {
     $('#menu_container').fadeOut(400);
 }
 function reloadPauseListener() {
-    screen_lock = (screen_lock == false);
+    setTimeout(function() {
+        screen_lock = (screen_lock == false);
+    },3000);
 }
 function buildgraph(graph){
     var options = {
@@ -374,6 +388,25 @@ function showMoodScreen(name) {
             choiseMood(this);
         });
     });
+    $(function() {
+        $('.top-menu, .bot-menu, .bot-menu ul li').swipe({
+            tap: clickOnMenuWindow
+        });
+    });
+    $(function () {
+        $('#window_menu').swipe({
+            swipeLeft: function () {
+                $("#window_menu").animate({width: '0'}, 250);
+            }
+        });
+    });
+    $(function () {
+        $('#container, #menu_container').swipe({
+            swipeRight: function () {
+                $("#window_menu").animate({width: '100%'}, 250);
+            }
+        });
+    });
 }
 function menuButtonInit() {
     $('.btn_menu').click(function (event) {
@@ -382,9 +415,7 @@ function menuButtonInit() {
         event.preventDefault();
     });
 }
-function checkConnection() {
 
-}
 function showPositiveScreen() {
     $('#container').load('resources2.html #window_moodPositive', function () {
         menuButtonInit();
@@ -529,4 +560,93 @@ function showNegativeScreen() {
             showNegativeScreen();
         });
     })
+}
+function showConnections() {
+    $('#menu_container').load('resources2.html #window_menu_connections', function () {
+        menuContainerShow();
+        //$('#tab_users tbody tr').remove();
+        var action = 'get-connections';
+        startAjaxAnimation();
+        request_logged('GET','site',action, null, loadUsers, requestErrorCallBack);
+    });
+}
+function recordUnsavedActivities(){
+    var query = 'Lelly_undone_' + local_email;
+    var local_items = [];
+    for (var i in localStorage) {
+        if (localStorage.hasOwnProperty(i)) {
+            if (i.match(query)) {
+                local_items.push(i);
+            }
+        }
+    }
+    var item_count = local_items.length;
+    checkConnection = false;
+    if (item_count === 0) {return}
+    navigator.notification.confirm('You have ' + item_count + ' unsaved activities or tasks.\n\rDo you want to save that?', function (button) {
+            if (button === 1) {
+                function sendData(item) {
+                    screen_lock = true;
+                    request_sync('POST','site', action, data, function(result) {
+                        console.log(result);
+                        var received_points = +result.points;
+                        var title = result.title;
+                        localStorage.removeItem(item);
+                        PlaySound('sound');
+                        window.alert(title, 'Your activity has already recorded.\n\rYou have earned '+ received_points +' star points for this!');
+                    }, function() {
+                        window.alert('Connection error', 'Your activities will be recorded after re-log in.');
+                    });
+                }
+                for (var k=0; k < local_items.length; k++) {
+                    var item = local_items[k];
+                    var data = JSON.parse(localStorage[item]);
+                    var action = 'save-activity';
+                    if (data.Activity.photo) {
+                        DataPhoto(data.Activity.photo, function(a){
+                            data.Activity.photo = a;
+                            screen_lock = true;
+                            sendData(item);
+                        })
+                    }
+                    else {
+                        startAjaxAnimation();
+                        sendData(item);
+                    }
+                }
+                received_points = 0;
+                screen_lock = true;
+            } else return;
+        }
+        ,
+        'Hi!', ['Confirm', 'Cancel']
+    );
+}
+// Convert image URI to dataURI Base64
+function DataPhoto(imageURI, callback) {
+    screen_lock = false;
+    $('#window_loader, .spinner .two').show();
+    setTimeout(function () {
+        var img = new Image();
+        img.src = imageURI;
+        img.onload = function() {
+            var canvas = document.createElement("canvas");
+            canvas.width = img.width;
+            canvas.height = img.height;
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+            var dataUri = canvas.toDataURL('image/jpg');
+            $('#window_loader, .spinner .two').hide();
+            callback(dataUri);
+    }},250);
+}
+//Play sound
+function PlaySound(sound) {
+    var source = '/android_asset/www/css/'+ sound +'.mp3';
+    if (isIos) {
+        source = 'css/'+ sound +'.mp3';
+    }
+    var my_media = new Media(source);
+    //my_media.volume = 0.2;
+    my_media.play();
 }

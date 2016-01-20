@@ -1,353 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ea9a58e-b159-4ec8-a1af-a02fe1aa098b" name="Default" comment="11.01.2016">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AndroidAssistHelper.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppBox.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/DebugModeConfig.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/1/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/1/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/10/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/10/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/11/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/11/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/12/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/12/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/13/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/13/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/14/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/14/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/15/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/15/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/16/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/16/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/2/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/2/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/3/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/3/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/4/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/4/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/5/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/5/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/6/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/6/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/7/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/7/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/8/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/8/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/9/images/1001_she.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/Skins/9/uir.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/1008_loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/Emoticon_tusiji_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/defaulthead.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/css/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/css/toolbar_wechat.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_101.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_102.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_103.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_104.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_105.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_17.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_18.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_19.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_20.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_21.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_22.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_23.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_25.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_26.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_27.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_28.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_29.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_30.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_31.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_33.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_34.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_35.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_36.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_37.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_38.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_39.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_40.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_41.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_42.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_43.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_44.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_45.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_46.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_47.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_48.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_49.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_51.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_52.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_53.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_54.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_55.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_56.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_57.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_58.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_59.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_60.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_61.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_62.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_63.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_64.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_65.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_66.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_67.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_68.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_69.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_70.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_71.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_72.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_73.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_74.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_75.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_76.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_77.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_78.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_79.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_80.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_81.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_82.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_83.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_84.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_85.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_86.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_87.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_88.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_89.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_90.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_91.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_92.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_93.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_94.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_95.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_96.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_97.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_98.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/expression/Expression_99.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/images/bg_body_tb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/images/bg_content3_tb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/images/bg_content_tb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/images/bg_offline_tb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/images/cloud_img_body_white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/images/default365x185.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/images/default45x45.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/images/icon_nolink.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/images/icon_ring.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/images/icons.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/images/icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/images/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/images/more.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/images/voice_me.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/images/voice_you.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/js/jquery.lazyload.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/js/jquery1.7.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/loading.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/loadtimeout.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/networkerr_cn.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/networkerr_tr.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/html/networkerr_tw.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/AppData/WeChat/news.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/BookBox.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/BugReport.exe" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/ChangeLog.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/CleanUp.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/Common.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/ConfigBox.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/DownloadBox.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/Extensions/iToolsBHO.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/Extensions/iToolsBHO64.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/Extensions/npiTools.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/FileExplorer.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/GiCloud.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/HomeBox.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/MainBox.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/MediaUtil.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/Migrator.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/MiscCore.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/MiscMods.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/ModelCore.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/MovieBox.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/MusicBox.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/Network.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/PInfoBox.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/PhotoBox.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/PhotoViewer.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/RestoreBackup.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/SkinSharp.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/Sqlite.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/TSLib.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/TSRes.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/TSUpgrade.exe" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/ToolBox.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/UICore.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/WeChat.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/Weibo.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/ZLib.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/aapt.exe" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/iANDevice.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/iAppInst.exe" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/iOSDevice.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/iTools.apk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/iTools.exe" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/iToolsDaemon.exe" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/iToolsGadget.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/iToolsMarket.apk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/iToolsOnekeyroot.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/msvcp100.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/msvcr100.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/res_ru.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/tsdiag.exe" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iTools 3.2.1.5 Rus/unins000.exe" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/plugins/com.synconset.imagepicker/www/imagepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/platform_www/plugins/com.synconset.imagepicker/www/imagepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/anim/image_pop_in.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-hdpi/image_bg.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-hdpi/loading_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-mdpi/ic_action_discard_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-mdpi/ic_action_discard_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-mdpi/ic_action_done_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-mdpi/ic_action_done_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-mdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-xhdpi/ic_action_discard_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-xhdpi/ic_action_discard_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-xhdpi/ic_action_done_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-xhdpi/ic_action_done_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-xhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/drawable/grid_background.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/layout/actionbar_custom_view_done_discard.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/layout/actionbar_discard_button.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/layout/actionbar_done_button.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/layout/multiselectorgrid.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/values-de/multiimagechooser_strings_de.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/values-es/multiimagechooser_strings_es.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/values-fr/multiimagechooser_strings_fr.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/values-hu/multiimagechooser_strings_hu.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/values-ja/multiimagechooser_strings_ja.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/values-ko/multiimagechooser_strings_ko.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/values/multiimagechooser_strings_en.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/res/values/themes.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/src/com/synconset/FakeR.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/src/com/synconset/ImageFetcher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/src/com/synconset/ImagePicker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/src/com/synconset/MultiImageChooserActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Plugins/com.synconset.imagepicker/ELCAlbumPickerController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Plugins/com.synconset.imagepicker/ELCAlbumPickerController.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Plugins/com.synconset.imagepicker/ELCAsset.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Plugins/com.synconset.imagepicker/ELCAsset.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Plugins/com.synconset.imagepicker/ELCAssetCell.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Plugins/com.synconset.imagepicker/ELCAssetCell.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Plugins/com.synconset.imagepicker/ELCAssetPickerFilterDelegate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Plugins/com.synconset.imagepicker/ELCAssetSelectionDelegate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Plugins/com.synconset.imagepicker/ELCAssetTablePicker.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Plugins/com.synconset.imagepicker/ELCAssetTablePicker.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Plugins/com.synconset.imagepicker/ELCImagePickerController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Plugins/com.synconset.imagepicker/ELCImagePickerController.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Plugins/com.synconset.imagepicker/SOSPicker.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Plugins/com.synconset.imagepicker/SOSPicker.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Resources/ELCAlbumPickerController.xib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Resources/ELCAssetPicker.xib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Resources/ELCAssetTablePicker.xib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Resources/Overlay.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/Lelly/Resources/Overlay@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/platform_www/plugins/com.synconset.imagepicker/www/imagepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/www/plugins/com.synconset.imagepicker/www/imagepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/APACHE_LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/BSD_LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/plugin.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/anim/image_pop_in.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable-hdpi/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable-hdpi/image_bg.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable-hdpi/loading_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable-ldpi/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable-mdpi/ic_action_discard_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable-mdpi/ic_action_discard_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable-mdpi/ic_action_done_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable-mdpi/ic_action_done_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable-mdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable-mdpi/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable-xhdpi/ic_action_discard_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable-xhdpi/ic_action_discard_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable-xhdpi/ic_action_done_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable-xhdpi/ic_action_done_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable-xhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/drawable/grid_background.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/layout/actionbar_custom_view_done_discard.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/layout/actionbar_discard_button.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/layout/actionbar_done_button.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/layout/multiselectorgrid.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/values-de/multiimagechooser_strings_de.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/values-es/multiimagechooser_strings_es.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/values-fr/multiimagechooser_strings_fr.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/values-hu/multiimagechooser_strings_hu.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/values-ja/multiimagechooser_strings_ja.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/values-ko/multiimagechooser_strings_ko.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/values/multiimagechooser_strings_en.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/res/values/themes.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/src/ImageFetcher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/Library/src/MultiImageChooserActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/com/synconset/ImagePicker/FakeR.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/android/com/synconset/ImagePicker/ImagePicker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/ELCAlbumPickerController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/ELCAlbumPickerController.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/ELCAsset.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/ELCAsset.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/ELCAssetCell.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/ELCAssetCell.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/ELCAssetPickerFilterDelegate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/ELCAssetSelectionDelegate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/ELCAssetTablePicker.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/ELCAssetTablePicker.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/ELCImagePickerController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/ELCImagePickerController.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/Resources/ELCAlbumPickerController.xib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/Resources/ELCAssetPicker.xib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/Resources/ELCAssetTablePicker.xib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/Resources/Overlay.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/ELCImagePicker/Resources/Overlay@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/SOSPicker.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/src/ios/SOSPicker.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.synconset.imagepicker/www/imagepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www.zip" afterPath="" />
+    <list default="true" id="0ea9a58e-b159-4ec8-a1af-a02fe1aa098b" name="Default" comment="20.01.2016">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/sound.mp3" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/config(1).xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/styles.min(3).css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/bg-graph.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/default_pack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/eat1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/eat2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/eat3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/eat4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/spinner3.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/res/screen/android/splash.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/res/screen/drawable-port-hdpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/res/screen/drawable-port-ldpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/res/screen/drawable-port-mdpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/res/screen/drawable-port-xhdpi/screen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/res/screen/ios/splash.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/resources.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/splash.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Lelly.iml" afterPath="$PROJECT_DIR$/.idea/Lelly.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/res/icon/ios/icon-1x.png" afterPath="$PROJECT_DIR$/platforms/android/assets/www/res/icon/ios/icon-1x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/res/icon/ios/icon-2_2x.png" afterPath="$PROJECT_DIR$/platforms/android/assets/www/res/icon/ios/icon-2_2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/res/icon/ios/icon-2x.png" afterPath="$PROJECT_DIR$/platforms/android/assets/www/res/icon/ios/icon-2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/res/icon/ios/icon-3@2x.png" afterPath="$PROJECT_DIR$/platforms/android/assets/www/res/icon/ios/icon-3@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/res/icon/ios/icon-3x.png" afterPath="$PROJECT_DIR$/platforms/android/assets/www/res/icon/ios/icon-3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-hdpi/icon.png" afterPath="$PROJECT_DIR$/platforms/android/res/drawable-hdpi/icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-ldpi/icon.png" afterPath="$PROJECT_DIR$/platforms/android/res/drawable-ldpi/icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/res/icon/ios/icon-1x.png" afterPath="$PROJECT_DIR$/platforms/ios/www/res/icon/ios/icon-1x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/res/icon/ios/icon-2_2x.png" afterPath="$PROJECT_DIR$/platforms/ios/www/res/icon/ios/icon-2_2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/res/icon/ios/icon-2x.png" afterPath="$PROJECT_DIR$/platforms/ios/www/res/icon/ios/icon-2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/res/icon/ios/icon-3@2x.png" afterPath="$PROJECT_DIR$/platforms/ios/www/res/icon/ios/icon-3@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/res/icon/ios/icon-3x.png" afterPath="$PROJECT_DIR$/platforms/ios/www/res/icon/ios/icon-3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/icon/ios/icon-1x.png" afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-1x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/icon/ios/icon-2_2x.png" afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-2_2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/icon/ios/icon-2x.png" afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/icon/ios/icon-3@2x.png" afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-3@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/icon/ios/icon-3x.png" afterPath="$PROJECT_DIR$/www/res/icon/ios/icon-3x.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hooks/README.md" afterPath="$PROJECT_DIR$/hooks/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gitignore" afterPath="$PROJECT_DIR$/platforms/android/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" afterPath="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/AndroidManifest.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/AndroidManifest.xml" />
@@ -403,7 +98,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/cordova-js-src/plugin/android/app.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/cordova-js-src/plugin/android/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/cordova.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/cordova.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/chartist.min.css" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/chartist.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/font-awesome.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/styles.css" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/fonts/HelveticaLTStd-Cond.svg" afterPath="$PROJECT_DIR$/platforms/android/assets/www/fonts/HelveticaLTStd-Cond.svg" />
@@ -860,7 +554,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/cordova-js-src/platform.js" afterPath="$PROJECT_DIR$/platforms/ios/www/cordova-js-src/platform.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/cordova.js" afterPath="$PROJECT_DIR$/platforms/ios/www/cordova.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/ios/www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/css/chartist.min.css" afterPath="$PROJECT_DIR$/platforms/ios/www/css/chartist.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/platforms/ios/www/css/font-awesome.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/css/styles.css" afterPath="$PROJECT_DIR$/platforms/ios/www/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/fonts/HelveticaLTStd-Cond.svg" afterPath="$PROJECT_DIR$/platforms/ios/www/fonts/HelveticaLTStd-Cond.svg" />
@@ -1377,17 +1070,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/ionic-plugin-keyboard/www/ios/keyboard.js" afterPath="$PROJECT_DIR$/plugins/ionic-plugin-keyboard/www/ios/keyboard.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/ios.json" afterPath="$PROJECT_DIR$/plugins/ios.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/org.apache.cordova.home/package.json" afterPath="$PROJECT_DIR$/plugins/org.apache.cordova.home/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/new2/25.html" afterPath="$PROJECT_DIR$/temp/new2/25.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/new2/26.html" afterPath="$PROJECT_DIR$/temp/new2/26.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/new2/27.html" afterPath="$PROJECT_DIR$/temp/new2/27.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/new2/28.html" afterPath="$PROJECT_DIR$/temp/new2/28.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/new2/29.html" afterPath="$PROJECT_DIR$/temp/new2/29.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/new2/30.html" afterPath="$PROJECT_DIR$/temp/new2/30.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/new2/31.html" afterPath="$PROJECT_DIR$/temp/new2/31.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/AndroidManifest.xml" afterPath="$PROJECT_DIR$/www/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/config(1).xml" afterPath="$PROJECT_DIR$/www/config(1).xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/config.xml" afterPath="$PROJECT_DIR$/www/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/chartist.min.css" afterPath="$PROJECT_DIR$/www/css/chartist.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/www/css/font-awesome.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/styles.css" afterPath="$PROJECT_DIR$/www/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/fonts/HelveticaLTStd-Cond.svg" afterPath="$PROJECT_DIR$/www/fonts/HelveticaLTStd-Cond.svg" />
@@ -1427,13 +1111,121 @@
     <favorites_list name="Lelly" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="plugin.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/plugins/cordova-plugin-contacts/plugin.xml">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="const.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/const.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.456621">
-              <caret line="228" column="13" selection-start-line="228" selection-start-column="13" selection-end-line="228" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="functions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/functions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.24138">
+              <caret line="128" column="41" selection-start-line="128" selection-start-column="41" selection-end-line="128" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajax.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/ajax.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.137931">
+              <caret line="307" column="25" selection-start-line="307" selection-start-column="16" selection-end-line="307" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.5384617">
+              <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="resources2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/resources2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.1923075">
+              <caret line="785" column="0" selection-start-line="785" selection-start-column="0" selection-end-line="785" selection-end-column="0" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#4;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#12;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#4;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#3;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.423077">
+              <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/css/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.7454543">
+              <caret line="2178" column="16" selection-start-line="2178" selection-start-column="16" selection-end-line="2178" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.30212015">
+              <caret line="618" column="0" selection-start-line="618" selection-start-column="0" selection-end-line="618" selection-end-column="0" />
+              <folding>
+                <element signature="e#6175#8072#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1500,12 +1292,12 @@
         <option value="$PROJECT_DIR$/www/css/chartist.min.css" />
         <option value="$PROJECT_DIR$/platforms/ios/Lelly/config.xml" />
         <option value="$PROJECT_DIR$/www/index.html" />
-        <option value="$PROJECT_DIR$/www/css/styles.css" />
-        <option value="$PROJECT_DIR$/www/resources2.html" />
         <option value="$PROJECT_DIR$/www/js/ajax.js" />
+        <option value="$PROJECT_DIR$/www/resources2.html" />
+        <option value="$PROJECT_DIR$/www/config.xml" />
+        <option value="$PROJECT_DIR$/www/css/styles.css" />
         <option value="$PROJECT_DIR$/www/js/functions.js" />
         <option value="$PROJECT_DIR$/www/js/main.js" />
-        <option value="$PROJECT_DIR$/www/config.xml" />
       </list>
     </option>
   </component>
@@ -1519,10 +1311,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-1928" />
+    <option name="y" value="-231" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1616,7 +1408,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Lelli" />
+              <option name="myItemId" value="Lelly" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lelly" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lelly" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lelly" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lelly" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1648,11 +1472,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Users\Bohdan\PhpstormProjects\Lelly\www" />
       <recent name="E:\Users\Bohdan\PhpstormProjects\Lelly\www\css" />
+      <recent name="E:\Users\Bohdan\PhpstormProjects\Lelly\platforms\android\res\drawable-hdpi" />
+      <recent name="E:\Users\Bohdan\PhpstormProjects\Lelly\platforms\android\res\drawable-ldpi" />
       <recent name="E:\Users\Bohdan\PhpstormProjects\Lelly\platforms\android\res" />
-      <recent name="E:\Users\Bohdan\PhpstormProjects\Lelly\www\js" />
-      <recent name="E:\Users\Bohdan\PhpstormProjects\Lelly\www\res\screens" />
+      <recent name="E:\Users\Bohdan\PhpstormProjects\Lelly\www" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Users\Bohdan\PhpstormProjects\Lelly\www\css" />
@@ -1770,7 +1594,7 @@
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -1780,27 +1604,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <frame x="-1928" y="-231" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17549168" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19738989" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1444563" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3264865" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28874388" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24756756" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.008169935" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11675676" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23491028" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.013050571" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19738989" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2822186" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24836601" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283082" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1839,22 +1663,497 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="24" />
     <MESSAGE value="11.01.2016" />
-    <option name="LAST_COMMIT_MESSAGE" value="11.01.2016" />
+    <MESSAGE value="20.01.2016" />
+    <option name="LAST_COMMIT_MESSAGE" value="20.01.2016" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/www/resources2.html</url>
-          <line>15</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/www/resources2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="144" column="2" selection-start-line="144" selection-start-column="2" selection-end-line="144" selection-end-column="2" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#4;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#12;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="616" column="21" selection-start-line="616" selection-start-column="21" selection-end-line="616" selection-end-column="21" />
+          <folding>
+            <element signature="e#6175#8072#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="220" column="27" selection-start-line="220" selection-start-column="27" selection-end-line="220" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="26" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/resources2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="908" column="14" selection-start-line="908" selection-start-column="14" selection-end-line="908" selection-end-column="14" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#4;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#12;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding>
+            <element signature="e#6175#8072#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/const.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="75" selection-start-line="26" selection-start-column="75" selection-end-line="26" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="362" column="28" selection-start-line="362" selection-start-column="28" selection-end-line="362" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="26" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/resources2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="926" column="24" selection-start-line="926" selection-start-column="24" selection-end-line="926" selection-end-column="35" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#4;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#12;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6175#8072#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/const.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="75" selection-start-line="26" selection-start-column="75" selection-end-line="26" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="411" column="1" selection-start-line="411" selection-start-column="1" selection-end-line="411" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="26" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/resources2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="926" column="24" selection-start-line="926" selection-start-column="24" selection-end-line="926" selection-end-column="35" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#4;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#12;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6175#8072#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="21" />
+          <folding>
+            <element signature="e#6175#8072#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="535" column="56" selection-start-line="535" selection-start-column="56" selection-end-line="535" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="28" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/resources2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="740" column="19" selection-start-line="740" selection-start-column="19" selection-end-line="740" selection-end-column="28" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#4;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#12;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="388" column="14" selection-start-line="388" selection-start-column="9" selection-end-line="388" selection-end-column="14" />
+          <folding>
+            <element signature="e#6175#8072#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="86" column="42" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="42" />
+          <folding>
+            <element signature="e#6175#8072#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="459" column="19" selection-start-line="459" selection-start-column="19" selection-end-line="459" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/resources2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#4;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#12;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugins/cordova-plugin-contacts/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/Desktop/hu.dpal.phonegap.plugins.PinDialog/www/pin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1899,9 +2198,117 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/plugins/cordova-plugin-contacts/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.456621">
+        <state vertical-scroll-proportion="0.6135957">
           <caret line="228" column="13" selection-start-line="228" selection-start-column="13" selection-end-line="228" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/jq/jquery-2.1.4.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.068966">
+          <caret line="1953" column="182" selection-start-line="1953" selection-start-column="175" selection-end-line="1953" selection-end-column="182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.137931">
+          <caret line="307" column="25" selection-start-line="307" selection-start-column="16" selection-end-line="307" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/const.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5384617">
+          <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/resources2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="785" column="0" selection-start-line="785" selection-start-column="0" selection-end-line="785" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#4;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#12;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#div#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.423077">
+          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.7454543">
+          <caret line="2178" column="16" selection-start-line="2178" selection-start-column="16" selection-end-line="2178" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.24138">
+          <caret line="128" column="41" selection-start-line="128" selection-start-column="41" selection-end-line="128" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30212015">
+          <caret line="618" column="0" selection-start-line="618" selection-start-column="0" selection-end-line="618" selection-end-column="0" />
+          <folding>
+            <element signature="e#6175#8072#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

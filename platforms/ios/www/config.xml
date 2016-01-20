@@ -42,7 +42,9 @@
 <gap:plugin name="cordova-plugin-dialogs" spec="1.1.1" source="pgb" />
 <!--<gap:plugin name="org.apache.cordova.splashscreen"/>-->
 <gap:plugin name="net.yoik.cordova.plugins.screenorientation" version="1.3.1"/>
-
+<plugin name="cordova-plugin-network-information" spec="1.0.1" source="pgb" />
+<!--<plugin name="cordova-plugin-file" spec="3.0.0" source="pgb" />-->
+<plugin name="org.apache.cordova.media" spec="0.2.16" source="pgb" />
 <gap:splash gap:platform="android" src="res/screen/android/splash.png"/>
 <gap:splash gap:platform="ios" src="res/screen/ios/splash.png"/>
 <icon src="res/icon/icon.png"/>
@@ -56,6 +58,7 @@
     <icon qualifier="hdpi" src="res/icon/android/hdpi.png"/>
     <icon qualifier="xhdpi" src="res/icon/android/xhdpi.png"/>
     <icon qualifier="xxhdpi" src="res/android/xxhdpi.png"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </platform>
 <platform name="ios">
     <allow-intent href="itms:*" />
@@ -63,6 +66,12 @@
 
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
+    <feature name="File">
+        <param name="ios-package" value="CDVFile" />
+    </feature>
+    <feature name="FileTransfer">
+        <param name="ios-package" value="CDVFileTransfer" />
     </feature>
     <gap:splash gap:platform="ios" height="1024" src="res/screen/splash.png" width="768"/>
     <gap:splash gap:platform="ios" height="2048" src="res/screen/splash.png" width="1536"/>

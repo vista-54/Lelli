@@ -1,4 +1,5 @@
 var URL = 'http://159.224.220.233/api';
+var URL_ip = 'http://159.224.220.233/';
 var versions = '/v1/';
 $(document).ajaxStop(function () {
     $('.spinner').hide();
@@ -14,6 +15,24 @@ function request_logged(type, controller, action, data, successCallBack, request
     try {
         $.ajax({
             type: type,
+            url: URL + versions + controller + '/' + action,
+            headers: {
+                "Authorization": 'Bearer ' + localStorage['Lelly_auth_key']
+            },
+            data: data,
+            success: successCallBack,
+            error: requestErrorCallBack
+        })
+    }
+    catch (err) {
+        console.log(err.name + '/r/n' + err.stack + '/r/n' + err.message);
+    }
+}
+function request_sync(type, controller, action, data, successCallBack, requestErrorCallBack) {
+    try {
+        $.ajax({
+            type: type,
+            async: false,
             url: URL + versions + controller + '/' + action,
             headers: {
                 "Authorization": 'Bearer ' + localStorage['Lelly_auth_key']
@@ -62,13 +81,15 @@ function checkEmail(result) {
         $('#input_regEmail').addClass('placeholder');
     }
     else {
-        $('#input_regEmail').css('border-color', 'green');
+        $('#input_regEmail').css({'border-color': 'green', 'color': 'green'});
     }
 }
 
 //Likes and Struggles
 function download_likesAndStruggles(result) {
     console.log(result);
+    $('#likes li').remove();
+    $('#struggles li').remove();
     $.each(result.likes, function (index, value) {
         $('#likes').append('<li><div class="white-block"><div class="description-block"><span class="upper">' + value + '</span></div><div class="button-block"><input class="likes" id="like' + index + '_0" type="radio" name="' + index + '" value="0" checked><label for="like' + index + '_0"><span class="dislike"></span></label><input class="likes" id="like' + index + '_1" type="radio" name="' + index + '" value="1"><label for="like' + index + '_1"><span class="like"></span></label></div></div></li>');
     });
@@ -89,49 +110,36 @@ function register_finish(result) {
         localStorage['Lelly_auth_key'] = result.auth_key;
         localStorage['Lelly_pin'] = _pin;
         localStorage['Lelly_contacts'] = JSON.stringify(result.contacts);
-        localStorage['Lelly_points'] = result.points;
         user_name = localStorage['Lelly_UserName'] || result.user_name;
-        star_points = localStorage['Lelly_points'];
+        star_points = result.points;
         console.log(result);
         $(WINDOW_SWITCH_REGISTER_4_5).toggleClass('hide');
-
-        //-----------------------------  SCREEN 10 -----------------------------------------------------
-        $('#div_registerComplete').click(function () {
+        setTimeout(function () {
             showMoodScreen(result.user_name);
-            document.addEventListener("pause", onPause, false);
-            document.addEventListener("resume", onResume, false);
-        });
+                document.addEventListener("pause", onPause, false);
+                document.addEventListener("resume", onResume, false);
+        },3000);
         contacts = {};
+        screen_lock = true;
     }
-}
-
-//LOG OUT
-function logOut(result) {
-    localStorage.removeItem('Lelly_auth_key');
-    localStorage.removeItem('Lelly_pin');
-    console.log(result);
 }
 
 //LOG IN
 function login(result) {
     console.log(result);
     if (result.auth_key && !result.errors) {
+        local_email = _email;
         localStorage.setItem('Lelly_login_email', _email);
         localStorage['Lelly_auth_key'] = result.auth_key;
         localStorage['Lelly_pin'] = _pin;
         localStorage['Lelly_contacts'] = JSON.stringify(result.contacts);
-        localStorage['Lelly_points'] = result.points;
         user_name = localStorage['Lelly_UserName'] || result.user_name;
-        star_points = localStorage['Lelly_points'] || result.points;
+        star_points = result.points;
         showMoodScreen(result.user_name);
         document.addEventListener("pause", onPause, false);
         document.addEventListener("resume", onResume, false);
-        if (localStorage['Lelly_last_activity']) {
-            //TODO this block
-            $('#lastActivitySendPopup').fadeIn(400);
-            var data = JSON.parse(localStorage['Lelly_last_activity']);
-            request_logged('POST','site','save-activity',data, recordLastActivity, errRecordLastActivity)
-        }
+        recordUnsavedActivities();
+        screen_lock = true;
     }
     else {
         if (result.errors.pin) {
@@ -181,12 +189,6 @@ function getTasks(result) {
             $(element_name).text(result.tasks[i - 1].name);
             $(element_points).text(result.tasks[i - 1].points);
         }
-        //$('.task1 > p').text(result.tasks[0].name);
-        //$('.task1 .tasks-star-point > p').text(result.tasks[0].points);
-        //$('.task2 > p').text(result.tasks[1].name);
-        //$('.task2 .tasks-star-point > p').text(result.tasks[1].points);
-        //$('.task3 > p').text(result.tasks[2].name);
-        //$('.task3 .tasks-star-point > p').text(result.tasks[2].points);
     }
     $('.task1 > p').animate({"left": "+=100%"}, 300);
     $('.task1 .tasks-star-point').animate({"right": "+=200%"}, 300);
@@ -205,7 +207,7 @@ function taskRecorded(result) {
     console.log(result);
     $('#reward_for_task_complete').text(result.points);
     $(WINDOW_SWITCH_MAIN_16_17).toggleClass('hide');
-    star_points += result.points;
+    PlaySound('sound');
     photo = '';
     contacts = {};
     geo_location = {};
@@ -232,6 +234,7 @@ function activityRecorded(result) {
     $('#reward_for_activity_complete').text(result.points);
     $(WINDOW_SWITCH_MAIN_13_14).toggleClass('hide');
     localStorage.removeItem('Lelly_last_activity');
+    PlaySound('sound');
     photo = '';
     contacts = {};
 }
@@ -240,13 +243,45 @@ function getExpansionsPack(result) {
     console.log(result);
     if (result.errors) {
         return false;
+    } else {
+        star_points = result.app_user_points;
+        var position = 'left';
+        for (var i = 0; i < result.expansion_packs.length; i++) {
+            if (position == 'left') {
+                position = 'right';
+                $('<div class="eat-block"></div>').appendTo("#expansion_container");
+                var container = $('.eat-block')[i / 2];
+                $('<div data-id="' + result.expansion_packs[i].id + '" data-points="' + result.expansion_packs[i].points + '" class="expansion_pack eat">' +
+                    '<img src="' + result.expansion_packs[i].photo + '" alt="">' +
+                    '<p>' + result.expansion_packs[i].name + '</p>' +
+                    '</div>').appendTo(container);
+            } else {
+                position = 'left';
+                var container = $('.eat-block')[i / 2 - 0.5];
+                $('<div data-id="' + result.expansion_packs[i].id + '" data-points="' + result.expansion_packs[i].points + '" class="expansion_pack eat">' +
+                    '<img src="' + result.expansion_packs[i].photo + '" alt="">' +
+                    '<p>' + result.expansion_packs[i].name + '</p>' +
+                    '</div>').appendTo(container);
+
+            }
+        }
+        $('.expansion_pack').click(function () {
+            var title = $(this).find('p').text();
+            var cost = $(this).attr('data-points');
+            var data = {'exp_pack_id': $(this).attr('data-id')};
+            var action = 'unlock-expansion-pack';
+            navigator.notification.confirm('Do you want to purchase this expansion pack?\r\nIt will cost ' + cost + ' star points.', function (button) {
+                if (button == 1) {
+                    startAjaxAnimation();
+                    request_logged('POST', 'site', action, data, unlockExpansionsPack, requestErrorCallBack)
+                }
+                else {
+                    return;
+                }
+            }, title, ['Purchase', 'Cancel']);
+
+        });
     }
-    //$('.expansion_pack').click(function () {
-    //    var data = {'exp_pack_id': $(this).attr('data-id')};
-    //    var action = 'unlock-expansion-pack';
-    //    console.log();
-    //    request_logged('POST', 'site', action, data, unlockExpansionsPack, requestErrorCallBack)
-    //});
 }
 
 function unlockExpansionsPack(result) {
@@ -264,30 +299,111 @@ function loadUsers(result) {
         return false;
     }
     else {
-        $.each(result.likes, function (index, value) {
-            $('#tab_users').append();
+        $.each(result.connections, function (index, value) {
+            var user_status = value.status === 'active' ? 'enable':'disable';
+            var monitor_id = value.monitor_id;
+            var connection = value.id;
+            var external_password = value.external_password;
+            var name = value.name;
+            $('#tab_users').append('<tr connection-id='+ connection + ' class="white-block '+ user_status +'">' +
+                                    '<td class="td-one">' +
+                                    '<p class="bold">'+ name +'</p>'+
+                                    '</td>'+
+                                    '<td class="td-two circle">'+
+                                    '<div class="small-circle-red"></div>'+
+                                    '</td>'+
+                                    '<td class="td-three">'+
+                                    '<p>'+ monitor_id+'</p>'+
+                                    '</td>'+
+                                    '<td class="td-three">'+
+                                    '<p>'+ external_password +'</p>'+
+                                    '</td>'+
+                                    '</tr>');
         });
+        connectionsOnclickInit();
+        $('#btn_disconnect_yes').click(function () {
+            var data = {connection_id: connection_id};
+            var action = 'cut-connection';
+            startAjaxAnimation();
+            request_logged('POST', 'site', action, data, disconnectUser, requestErrorCallBack);
+            $(".disconnect-box").css({"display": "none"});
+        });
+        $('#btn_connect_yes').click(function () {
+            var data = {connection_id: connection_id};
+            var action = 'recover-connection';
+            startAjaxAnimation();
+            request_logged('POST', 'site', action, data, connectUser, requestErrorCallBack);
+            $(".connect-box").css({"display": "none"});
+        });
+        $('#btn_disconnect_no').click(function () {
+            $(".disconnect-box").css({"display": "none"});
+        });
+        $('#btn_connect_no').click(function () {
+            $(".connect-box").css({"display": "none"});
+        })
     }
 }
 function recordError(result) {
     console.log(result);
-    navigator.notification.alert("Don't worry your activity will be recorded when you re-logged.\n\rApp will be closed.", function() {
-        navigator.app.exitApp();
-    }, 'No connection', 'Quit');
+    navigator.notification.alert("Don't worry your activity will be recorded when the connection is restored.", function () {
+            var date = new Date();
+            var timestamp = '' + date.getFullYear() + date.getMonth() + date.getHours() + date.getMinutes() + date.getSeconds();
+            var data = localStorage['Lelly_last_activity'];
+            localStorage.setItem('Lelly_undone_' + local_email + '_' + timestamp, data);
+            localStorage.removeItem('Lelly_last_activity');
+            showMoodScreen(user_name);
+            if (checkConnection) {
+                return;
+            }
+            checkConnection = setInterval(function () {
+                    if (navigator.connection.type === 'none') {
+                        return;
+                    } else {
+                        screen_lock = false;
+                        window.clearInterval(checkConnection);
+                        recordUnsavedActivities();
+                    }
+                }
+                ,
+                1000
+                )
+                ;
+        },
+        'No connection', "OK"
+    )
+    ;
 }
-function recordLastActivity(result) {
+function addConnection(result) {
     console.log(result);
-    if (result.errors) return false;
-    else {
-        var type = result.type;
-        var title = result.title;
-        var points = result.points;
-        $('#lastActivitySendPopup').hide();
-        window.alert('Saved ' + type + ' recorded', 'Congratulations!\n\rTitle: "' + title +'"\n\rYou have got ' + points + '!');
-        localStorage.removeItem('Lelly_last_activity');
+    showConnections();
+    connection_id = '';
+    $('.bot-menu ul li:eq(4)').removeClass('active');
+    $('.bot-menu ul li:eq(3)').addClass('active');
+}
+function disconnectUser(result) {
+    console.log(result);
+    if (result === true) {
+        $('#tab_users tr[connection-id="' + connection_id + '"]').removeClass('enable').addClass('disable');
+        connectionsOnclickInit();
+        connection_id = '';
     }
 }
-function errRecordLastActivity (result) {
-    console.log(resiult);
-    window.alert('Sory','Server error.\n\rIt was a problem to record your saved data.')
+function connectUser(result) {
+    console.log(result);
+    if (result === true) {
+        $('#tab_users tr[connection-id="' + connection_id + '"]').removeClass('disable').addClass('enable');
+        connectionsOnclickInit();
+        connection_id = '';
+    }
+}
+function connectionsOnclickInit() {
+    $('#tab_users tr').click(function () {
+        if ($(this).hasClass('enable')) {
+            $(".disconnect-box").css({"display": "block"});
+        } else {
+            $(".connect-box").css({"display": "block"});
+        }
+        connection_id = $(this).attr('connection-id');
+
+    });
 }
