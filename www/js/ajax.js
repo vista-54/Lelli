@@ -1,5 +1,4 @@
-var URL = 'http://159.224.220.233/api';
-var URL_ip = 'http://159.224.220.233/';
+var URL = 'http://159.224.220.233/lelly/api';
 var versions = '/v1/';
 $(document).ajaxStop(function () {
     $('.spinner').hide();
@@ -270,6 +269,17 @@ function getExpansionsPack(result) {
             var cost = $(this).attr('data-points');
             var data = {'exp_pack_id': $(this).attr('data-id')};
             var action = 'unlock-expansion-pack';
+            if (cost > star_points) {
+                navigator.notification.confirm('Your star-points is enough to purchase this expansion pack?\r\nIt costs ' + cost + ' star points but you have only '+ star_points +'.\r\nWould you like to buy this pack?', function (button) {
+                    if (button == 1) {
+                        //TODO Buy function
+                    }
+                    else {
+                        return;
+                    }
+                }, title, ['Buy', 'Cancel']);
+                return;
+            }
             navigator.notification.confirm('Do you want to purchase this expansion pack?\r\nIt will cost ' + cost + ' star points.', function (button) {
                 if (button == 1) {
                     startAjaxAnimation();
@@ -279,7 +289,6 @@ function getExpansionsPack(result) {
                     return;
                 }
             }, title, ['Purchase', 'Cancel']);
-
         });
     }
 }
@@ -396,14 +405,63 @@ function connectUser(result) {
         connection_id = '';
     }
 }
-function connectionsOnclickInit() {
-    $('#tab_users tr').click(function () {
-        if ($(this).hasClass('enable')) {
-            $(".disconnect-box").css({"display": "block"});
-        } else {
-            $(".connect-box").css({"display": "block"});
-        }
-        connection_id = $(this).attr('connection-id');
 
+function historyWrite(result) {
+    console.log(result);
+    if (!result.errors && result.connections.length > 0) {
+        for (var i = 0; i <result.connections.length; i++) {
+            var item = result.connections[i];
+            operator:
+            {
+                if (item.status !== 'active') break operator;
+                var action = 'get-mood-history';
+                //historyShow();
+                request_logged('POST','site', action, null,historyShow, requestErrorCallBack);
+                break;
+            }
+        }
+    }
+    else {
+        return false;
+    }
+}
+//Show history after request
+function historyShow(result) {
+    console.log(result);
+    var result_data = result;
+    $('ul.tabs-controls li[data-class="third"] a img').remove();
+    $('ul.tabs-list li.tabs-item-third').html($('<div/>').addClass('history'));
+        //.append('<ul id="lightSlider"></ul>'));
+    $.each(result_data, function(i, value) {
+        //$('.history ul#lightSlider').append('<li class="slider-item"><p>'+ value.month +' '+ value.year +'</p><div class="graph"><div id="ct-chart'+ i +'" class="ct-chart ct-perfect-fifth"></div></div></li>');
+        $('.history').append('<div class="graph"><div id="ct-chart'+ i +'" class="ct-chart ct-perfect-fifth"></div></div>');
+        var data = {
+            'label': new Array(result_data[i].data.length),
+            'data': result_data[i].data
+        };
+        $.each(value.data, function(index,val) {
+            if (val == null){
+                delete result_data[i].data[index];
+            }
+        });
+        buildgraph('#ct-chart'+i, data);
     });
+    //initSlider();
+}
+
+function getGraphData(result) {
+    var result_data = result;
+    $('.tabs-list li.tabs-item-first .month').text(result_data.month);
+    $('.tabs-list li.tabs-item-first .graph-number-two').text(result_data.data.length);
+    $.each(result_data.data, function(i,value) {
+        if (value == null){
+            delete result_data.data[i];
+        }
+    });
+    var data = {
+        'label': new Array(result_data.data.length),
+        'data': result_data.data
+    };
+    console.log(data);
+    buildgraph('#ct-chart', data);
 }

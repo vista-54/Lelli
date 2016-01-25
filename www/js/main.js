@@ -30,14 +30,53 @@ var get_task_options = {
 //User monitor id
 var connection_id;
 // build graph variable
-var graph = {
-    'label': GRAPH_LABEL[1],
-    'data': [[2, 4, 3, 6, 7, 8, 3, 5, 7, 8, 4, 3, 5], [7, 5, 6, 6, 7, 3, 2, 4, 1, 8, 6, 3, 1]]
-};
 //Call info
 var call_info = {};
 var checkConnection;
+//Graph Slider Options
+var sliderOptions = {
+    autoWidth: true,
+    height: '100%',
+    slideMove: 1, // slidemove will be 1 if loop is true
+    slideMargin: 10,
 
+    addClass: '',
+    mode: "slide",
+    useCSS: false,
+    cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+    easing: 'linear', //'for jquery animation',////
+
+    speed: 400, //ms'
+    auto: false,
+    pauseOnHover: false,
+    loop: true,
+    slideEndAnimation: true,
+    pause: 2000,
+
+    keyPress: false,
+    controls: false,
+    prevHtml: '',
+    nextHtml: '',
+
+    rtl:false,
+    adaptiveHeight:false,
+
+    vertical:false,
+    verticalHeight:500,
+    vThumbWidth:100,
+
+    thumbItem:10,
+    pager: true,
+    gallery: false,
+    galleryMargin: 5,
+    thumbMargin: 5,
+    currentPagerPosition: 'right',
+
+    enableTouch:true,
+    enableDrag:false,
+    freeMove:false,
+    swipeThreshold: 40
+};
 document.addEventListener("deviceready", onDeviceReady, false);
 
 //\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ DOCUMENT READY /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
@@ -91,7 +130,7 @@ $body.on('submit', 'form', function (e) {
     e.preventDefault();
 });
 //CHECK EMAIL INPUT
-$body.on('blur', 'input[type="email"]', function () {
+$body.on('change', 'input[type="email"]', function () {
     if (validateEmail($(this))) {
         $(this).css('border-color', '')
             .removeClass('placeholder');
@@ -153,13 +192,17 @@ function clickOnMenuWindow(event) {
                             .removeClass("active");
                     });
                     menuContainerShow();
-                    var action = 'get-app-user-points';
+                    var action1 = 'get-connections';
+                    var action2 = 'get-mood-graph';
+                    var action3 = 'get-app-user-points';
                     startAjaxAnimation();
-                    request_logged('GET', 'site', action, null, function (result) {
+                    request_sync('GET', 'site', action2, null, getGraphData, requestErrorCallBack);
+                    request_sync('GET', 'site', action3, null, function (result) {
                         console.log(result);
                         $('.user_points').text(result.points);
                     }, requestErrorCallBack);
-                    buildgraph(graph);
+                    request_sync('GET', 'site', action1, null, historyWrite, requestErrorCallBack);
+                    //buildgraph(graph);
                 });
                 break;
             case 'btn_menu_connections':
@@ -559,7 +602,7 @@ $body.on('click', '#input_birthdate', function (event) {
 });
 $body.on("click", '#input_newPin', regPinDialog);
 $body.on("click", '#input_newPinConfirm', regPinConfirmDialog);
-$body.on("blur", '#input_regEmail', function () {
+$body.on("change", '#input_regEmail', function () {
     var _input_email = $('#input_regEmail').val();
     if (!validateEmail($('#input_regEmail'))) {
         animateInvalidInput($('#input_regEmail'));

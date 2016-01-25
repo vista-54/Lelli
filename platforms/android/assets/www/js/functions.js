@@ -125,9 +125,10 @@ function choiseMood(element) {
     var action = 'save-mood';
     var request_data = {'mood' : data};
     console.log(request_data);
-    if (data === 'happy' || data === 'awesome' || data === 'omg' || data === 'unsure' || data === 'meh' || data === 'horror') {
+    if (data === 'happy' || data === 'awesome' || data === 'omg' || data === 'unsure' || data === 'meh') {
         //    Mood is positive or neutral
         user_mood_now = 'positive';
+        console.log(request_data);
         request_logged('POST', 'site', action, request_data, request_result);
         // ----------------- SCREEN 12 ----------------------------------
         showPositiveScreen();
@@ -287,20 +288,20 @@ function reloadPauseListener() {
         screen_lock = (screen_lock == false);
     },3000);
 }
-function buildgraph(graph){
+function buildgraph(item, graph){
     var options = {
         fullWidth: true,
         fullHeight: true,
         high: 10,
         showArea: true,
         showLine: false,
-        showLabel: false,
+        showLabel: true,
         showPoint: false,
         chartPadding: 0,
         low: 0,
         axisX: {
             showLabel: false,
-            showGrid: false,
+            showGrid: true,
             offset: 0,
             labelOffset: {
                 x: 0,
@@ -318,19 +319,13 @@ function buildgraph(graph){
         }
     };
     var data = {
-        // A labels array that can contain any sort of values
         labels: graph.label,
-        // Our series array that contains series objects or in this case series data arrays
         series: [
-            graph.data[0],
-            graph.data[1]
+            graph.data
         ]
     };
 
-    // Create a new line chart object where as first parameter we pass in a selector
-    // that is resolving to our chart container element. The Second parameter
-    // is the actual data object.
-    new Chartist.Line('.ct-chart', data, options);
+    new Chartist.Line(item, data, options);
 }
 function ajaxAnimationTasks(refresher) {
     refresher.fadeOut(150);
@@ -411,8 +406,7 @@ function showMoodScreen(name) {
 function menuButtonInit() {
     $('.btn_menu').click(function (event) {
         $("#window_menu").stop(true, true).animate({width: "100%"}, 250);
-        event.stopPropagation();
-        event.preventDefault();
+        return false;
     });
 }
 
@@ -649,4 +643,33 @@ function PlaySound(sound) {
     var my_media = new Media(source);
     //my_media.volume = 0.2;
     my_media.play();
+}
+//Hack for iOS when the non-button elements doesn't clicked on
+function connectionsOnclickInit() {
+    $('#tab_users tr').click(function () {
+        if ($(this).hasClass('enable')) {
+            $(".disconnect-box").css({"display": "block"});
+        } else {
+            $(".connect-box").css({"display": "block"});
+        }
+        connection_id = $(this).attr('connection-id');
+
+    });
+}
+function initSlider() {
+    var slider = $("#lightSlider").lightSlider(sliderOptions);
+    $(function () {
+        $('#lightSlider').swipe({
+            swipeLeft: function () {
+                slider.goToPrevSlide();
+            }
+        });
+    });
+    $(function () {
+        $('#lightSlider').swipe({
+            swipeLeft: function () {
+                slider.goToNextSlide();
+            }
+        });
+    });
 }
