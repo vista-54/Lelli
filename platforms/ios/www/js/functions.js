@@ -49,58 +49,23 @@ function logPinDialog() {
 }
 
 //PinDialog on Screen 31 (LockScreen)
-function lockPinDialog() {
+function PinDialog(input) {
     if (isAndroid) {
+        var title = 'Enter PIN';
+        if (input === '#input_newPinConfirm') {
+            title = 'Confirm PIN';
+        }
         window.plugins.pinDialog.prompt(" ", function (results) {
             if (results.buttonIndex == 1) {
-                // OK clicked, show input value
-                $('#input_lockScreen').val(results.input1).blur();
-            }
-            if (results.buttonIndex == 2) {
-                // Cancel clicked
-                $('#input_lockScreen').blur();
-                return false;
-            }
-        }, "Enter PIN", ["OK", "Cancel"]);
-    }
-    else return;
-}
-//PinDialog on Screen 6 (Register)
-function regPinDialog() {
-    if (isAndroid) {
-        window.plugins.pinDialog.prompt(" ", function (results) {
-            if (results.buttonIndex == 1) {
-                // OK clicked, show input value
-                $('#input_newPin').val(results.input1).blur();
-            }
-            if (results.buttonIndex == 2) {
-                // Cancel clicked
-                return false;
-            }
-        }, "Enter PIN", ["OK", "Cancel"]);
-    }
-    else return;
-}
-// DIALER
-function dial(phone) {
-    window.open('tel:' + phone, '_system');
-}
-
-//PinDialog on Screen 6 (Register)
-function regPinConfirmDialog() {
-    if (isAndroid) {
-        window.plugins.pinDialog.prompt(" ", function (results) {
-            if (results.buttonIndex == 1) {
-                $('#input_newPinConfirm').val(results.input1).blur();
+                $(input).val(results.input1).blur();
             }
             if (results.buttonIndex == 2) {
                 return false;
             }
-        }, "Confirm PIN", ["OK", "Cancel"]);
+        }, title, ["OK", "Cancel"]);
     }
     else return;
 }
-
 //SERIALIZE OBJECT
 $.fn.serializeObject = function()
 {
@@ -125,9 +90,10 @@ function choiseMood(element) {
     var action = 'save-mood';
     var request_data = {'mood' : data};
     console.log(request_data);
-    if (data === 'happy' || data === 'awesome' || data === 'omg' || data === 'unsure' || data === 'meh' || data === 'horror') {
+    if (data === 'happy' || data === 'awesome' || data === 'omg' || data === 'unsure' || data === 'meh') {
         //    Mood is positive or neutral
         user_mood_now = 'positive';
+        console.log(request_data);
         request_logged('POST', 'site', action, request_data, request_result);
         // ----------------- SCREEN 12 ----------------------------------
         showPositiveScreen();
@@ -190,8 +156,12 @@ function addImage(element) {
             $('#after_pause_block').hide();
             iconChangeColor([1], element);
             console.log(imageURI);
-            //Hotfix (error404)
-            imageURI = imageURI.replace('%', encodeURIComponent('%'));
+
+            if (OSversion === '4.4.2' || OSversion === '4.4.4' || OSversion === '4.4.0') {
+                //Hotfix (error404)
+                imageURI = imageURI.replace('%', encodeURIComponent('%'));
+            }
+
             photo = imageURI;
         }
         navigator.camera.getPicture(cameraSuccess, onFail, cameraOptions);
@@ -287,20 +257,20 @@ function reloadPauseListener() {
         screen_lock = (screen_lock == false);
     },3000);
 }
-function buildgraph(graph){
+function buildgraph(item, graph){
     var options = {
         fullWidth: true,
         fullHeight: true,
         high: 10,
         showArea: true,
         showLine: false,
-        showLabel: false,
+        showLabel: true,
         showPoint: false,
         chartPadding: 0,
         low: 0,
         axisX: {
             showLabel: false,
-            showGrid: false,
+            showGrid: true,
             offset: 0,
             labelOffset: {
                 x: 0,
@@ -318,19 +288,13 @@ function buildgraph(graph){
         }
     };
     var data = {
-        // A labels array that can contain any sort of values
         labels: graph.label,
-        // Our series array that contains series objects or in this case series data arrays
         series: [
-            graph.data[0],
-            graph.data[1]
+            graph.data
         ]
     };
 
-    // Create a new line chart object where as first parameter we pass in a selector
-    // that is resolving to our chart container element. The Second parameter
-    // is the actual data object.
-    new Chartist.Line('.ct-chart', data, options);
+    new Chartist.Line(item, data, options);
 }
 function ajaxAnimationTasks(refresher) {
     refresher.fadeOut(150);
@@ -401,7 +365,7 @@ function showMoodScreen(name) {
         });
     });
     $(function () {
-        $('#container, #menu_container').swipe({
+        $('#container').swipe({
             swipeRight: function () {
                 $("#window_menu").animate({width: '100%'}, 250);
             }
@@ -411,8 +375,7 @@ function showMoodScreen(name) {
 function menuButtonInit() {
     $('.btn_menu').click(function (event) {
         $("#window_menu").stop(true, true).animate({width: "100%"}, 250);
-        event.stopPropagation();
-        event.preventDefault();
+        return false;
     });
 }
 
@@ -563,8 +526,8 @@ function showNegativeScreen() {
 }
 function showConnections() {
     $('#menu_container').load('resources2.html #window_menu_connections', function () {
+        swipeInit('#window_menu_connections');
         menuContainerShow();
-        $('#tab_users tr').remove();
         var action = 'get-connections';
         startAjaxAnimation();
         request_logged('GET','site',action, null, loadUsers, requestErrorCallBack);
@@ -638,16 +601,56 @@ function DataPhoto(imageURI, callback) {
             var dataUri = canvas.toDataURL('image/jpg');
             $('#window_loader, .spinner .two').hide();
             callback(dataUri);
-    }},250);
+        }},250);
 }
-//TODO Add Pludin <cordova-plugin-media> in project
+//Play sound
 function PlaySound(sound) {
-    var my_media = new Media('/android_asset/www/css/'+ sound +'.mp3',
-        function () {
-            console.log("playAudio():Audio Success"); },
-        function (err) {
-            console.log("playAudio():Audio Error: " + err); }
-    );
+    var source = '/android_asset/www/css/'+ sound +'.mp3';
+    if (isIos) {
+        source = 'css/'+ sound +'.mp3';
+    }
+    var my_media = new Media(source);
     //my_media.volume = 0.2;
     my_media.play();
+}
+//Hack for iOS when the non-button elements doesn't clicked on
+function connectionsOnclickInit() {
+    $('#tab_users tr').click(function () {
+        if ($(this).hasClass('enable')) {
+            $(".disconnect-box").css({"display": "block"});
+        } else {
+            $(".connect-box").css({"display": "block"});
+        }
+        connection_id = $(this).attr('connection-id');
+    });
+}
+function swipeInit(item) {
+    $(item).swipe({
+        swipeRight: function () {
+            $("#window_menu").animate({width: '100%'}, 250);
+        }
+    });
+}
+function PickContact(input) {
+    $(input).css('border-color', '').removeClass('placeholder');
+    navigator.contacts.pickContact(function (contact) {
+        $('#window_pin').hide();
+        $('#after_pause_block').hide();
+        $('#container').css('visibility', 'visible');
+        $('#menu_container').css('visibility', 'visible');
+        var name = contact.name.formatted;
+        var phone = contact.phoneNumbers[0].value;
+        phone = phone.replace(/\-|\x20/g, "");
+        if (input === '#input_supportName') {
+            contacts.person_support_name = name;
+            contacts.person_support_phone = phone;
+        } else {
+            contacts.person_win_name = name;
+            contacts.person_win_phone = phone;
+        }
+        $(input).val(name);
+    })
+}
+function dial(phone) {
+    document.location.href = 'tel:' + phone;
 }

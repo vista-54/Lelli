@@ -41,10 +41,6 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
                             "count": 1
                         },
@@ -74,6 +70,10 @@
                         },
                         {
                             "xml": "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -167,9 +167,6 @@
         "z1key.phonegap.plugins.PinDialog": {
             "PACKAGE_NAME": "com.app.lelly"
         },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.app.lelly"
-        },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.app.lelly"
         },
@@ -192,6 +189,9 @@
             "PACKAGE_NAME": "com.app.lelly"
         },
         "org.apache.cordova.media": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "com.app.lelly"
         }
     },
@@ -322,14 +322,6 @@
             "pluginId": "z1key.phonegap.plugins.PinDialog",
             "merges": [
                 "window.plugins.pinDialog"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-device/www/device.js",
-            "id": "cordova-plugin-device.device",
-            "pluginId": "cordova-plugin-device",
-            "clobbers": [
-                "device"
             ]
         },
         {
@@ -611,6 +603,14 @@
             "pluginId": "org.apache.cordova.media",
             "clobbers": [
                 "window.Media"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "id": "cordova-plugin-device.device",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
             ]
         }
     ]

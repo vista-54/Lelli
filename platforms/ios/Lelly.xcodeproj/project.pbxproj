@@ -61,7 +61,6 @@
 		3147488A53FD40B5AAE444EC /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32AB5467C7EC4205BC8C8A8F /* Photos.framework */; };
 		AD06B8D33F23473E9DC7CC22 /* CDVCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7BEE3966FF42C5922AFC30 /* CDVCamera.m */; };
 		46F35565C0504075B0C233E9 /* CDVJpegHeaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1BFDB69FB4404FB4155D7C /* CDVJpegHeaderWriter.m */; };
-		78DA7C2331054AADB96C9025 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FDE3A4C61946EDBA4051D9 /* CDVDevice.m */; };
 		5109297EAC39429CB8C12F6F /* UIImage+CropScaleOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = D52EA40BC7AD40B5BFA45687 /* UIImage+CropScaleOrientation.m */; };
 		AEA07A65D6AB49319D922D30 /* CDVCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B880E9D08B345A7B3A52906 /* CDVCamera.m */; };
 		D2B2C284771D4875869AC4AE /* CDVJpegHeaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE34AAFA82146ACA7BEC547 /* CDVJpegHeaderWriter.m */; };
@@ -77,6 +76,18 @@
 		B68CB256B6A24F369300C4BE /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4EE11F8E5B40EFA10A4E97 /* CDVLocalFilesystem.m */; };
 		52CA967CC1B04C998F29B0F9 /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = E0312761025649C1B5C4987E /* CDVAssetLibraryFilesystem.m */; };
 		444525105C514459BA11F68B /* CDVSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA484F2D4D64BA2887A5361 /* CDVSound.m */; };
+		1F4A8B33B0A2487F8D69227F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A275B20249F04D34BFA6916A /* Accelerate.framework */; };
+		F902D6D8255549999BA1298C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7B9F12549DF4F6FB5E16318 /* CFNetwork.framework */; };
+		0C38F280E5FD4A8DAEA01409 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EAEC6D8A33434B9649E4DE /* CoreMedia.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		56AEAC740D974A049C33A394 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A73350D38548E5A6306195 /* CoreVideo.framework */; };
+		C8ED4101EFB747B3A0B0AF1F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E186B47F34C842EB98FAD3D9 /* MessageUI.framework */; };
+		FB1B15185FEE4AE1ADFC0AAA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125998C7100C45F7935A744F /* OpenGLES.framework */; };
+		93C874AB0C574E0B949F7C00 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB51634F40A409D99369F1F /* Security.framework */; };
+		014075F4FF1E498899CD8C85 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65DD50DA46947D086AFF768 /* SafariServices.framework */; };
+		E50A320EF2F14DF99AB6A998 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949A6BC393CA4A858989D017 /* QuartzCore.framework */; };
+		E32A96AC0E6047B1BD411516 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FFEE2DE0104622A882627C /* UIKit.framework */; };
+		F9D643CDF541466AA87098D0 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CA264B85B14161ACF78B84 /* libc++.dylib */; };
+		CB5C2FB9657F4AA5BB3B1AEF /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC3C46B6464021B2B863E4 /* CDVDevice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,8 +189,6 @@
 		8380172C1C3F43A6B4E31AAB /* CDVCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVCamera.h"; path = "org.apache.cordova.camera/CDVCamera.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		11F3643EE064486B875FB227 /* CDVJpegHeaderWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVJpegHeaderWriter.h"; path = "org.apache.cordova.camera/CDVJpegHeaderWriter.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		A060F6729B324E96BB9F1188 /* CDVExif.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVExif.h"; path = "org.apache.cordova.camera/CDVExif.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		67FDE3A4C61946EDBA4051D9 /* CDVDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVDevice.m"; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		0CC020B94BA64B5AB3B3DE74 /* CDVDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVDevice.h"; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		D52EA40BC7AD40B5BFA45687 /* UIImage+CropScaleOrientation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIImage+CropScaleOrientation.m"; path = "cordova-plugin-camera/UIImage+CropScaleOrientation.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		8B880E9D08B345A7B3A52906 /* CDVCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVCamera.m"; path = "cordova-plugin-camera/CDVCamera.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		1EE34AAFA82146ACA7BEC547 /* CDVJpegHeaderWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVJpegHeaderWriter.m"; path = "cordova-plugin-camera/CDVJpegHeaderWriter.m"; sourceTree = "<group>"; fileEncoding = 4; };
@@ -209,6 +218,23 @@
 		DF12860B52C64C419390F5A4 /* CDVAssetLibraryFilesystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVAssetLibraryFilesystem.h"; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		9DA484F2D4D64BA2887A5361 /* CDVSound.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVSound.m"; path = "org.apache.cordova.media/CDVSound.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		311938DC388746BC9BDF8955 /* CDVSound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSound.h"; path = "org.apache.cordova.media/CDVSound.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		A275B20249F04D34BFA6916A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Accelerate.framework"; path = "System/Library/Frameworks/Accelerate.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		F7B9F12549DF4F6FB5E16318 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CFNetwork.framework"; path = "System/Library/Frameworks/CFNetwork.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		E0EAEC6D8A33434B9649E4DE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreMedia.framework"; path = "System/Library/Frameworks/CoreMedia.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		A3A73350D38548E5A6306195 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreVideo.framework"; path = "System/Library/Frameworks/CoreVideo.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		E186B47F34C842EB98FAD3D9 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		125998C7100C45F7935A744F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "OpenGLES.framework"; path = "System/Library/Frameworks/OpenGLES.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		1FB51634F40A409D99369F1F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		F65DD50DA46947D086AFF768 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "SafariServices.framework"; path = "System/Library/Frameworks/SafariServices.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		949A6BC393CA4A858989D017 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		94FFEE2DE0104622A882627C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		A3CA264B85B14161ACF78B84 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; fileEncoding = 4; };
+		9A1257A55D9743659504553B /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPayPalMobile.a"; path = "libPayPalMobile.a"; sourceTree = "<group>"; fileEncoding = 4; };
+		72F2A969D97E497E95281123 /* libCardIO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCardIO.a"; path = "libCardIO.a"; sourceTree = "<group>"; fileEncoding = 4; };
+		53FF6329C26C411098EF7823 /* libopencv_core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libopencv_core.a"; path = "libopencv_core.a"; sourceTree = "<group>"; fileEncoding = 4; };
+		C73E2243DFEE4616982C7545 /* libopencv_imgproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libopencv_imgproc.a"; path = "libopencv_imgproc.a"; sourceTree = "<group>"; fileEncoding = 4; };
+		F5DC3C46B6464021B2B863E4 /* CDVDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVDevice.m"; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		F2DEDDA0CAF24EBAA949137B /* CDVDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVDevice.h"; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +255,21 @@
 				EE1FB8B2DBBA411AAD966CD4 /* AVFoundation.framework in Frameworks */,
 				3147488A53FD40B5AAE444EC /* Photos.framework in Frameworks */,
 				F9FE2192AD494D11AD103565 /* AudioToolbox.framework in Frameworks */,
+				1F4A8B33B0A2487F8D69227F /* Accelerate.framework in Frameworks */,
+				F902D6D8255549999BA1298C /* CFNetwork.framework in Frameworks */,
+				0C38F280E5FD4A8DAEA01409 /* CoreMedia.framework in Frameworks */,
+				56AEAC740D974A049C33A394 /* CoreVideo.framework in Frameworks */,
+				C8ED4101EFB747B3A0B0AF1F /* MessageUI.framework in Frameworks */,
+				FB1B15185FEE4AE1ADFC0AAA /* OpenGLES.framework in Frameworks */,
+				93C874AB0C574E0B949F7C00 /* Security.framework in Frameworks */,
+				014075F4FF1E498899CD8C85 /* SafariServices.framework in Frameworks */,
+				E50A320EF2F14DF99AB6A998 /* QuartzCore.framework in Frameworks */,
+				E32A96AC0E6047B1BD411516 /* UIKit.framework in Frameworks */,
+				F9D643CDF541466AA87098D0 /* libc++.dylib in Frameworks */,
+				494C2F684B37483D8082BAF8 /* libPayPalMobile.a in Frameworks */,
+				435D88BA4C0542E9BFFC7CCD /* libCardIO.a in Frameworks */,
+				93C187E0ED3F41FE84EC06A6 /* libopencv_core.a in Frameworks */,
+				A7991E592DA64C57A9546945 /* libopencv_imgproc.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +353,21 @@
 				7A3D3E267EEF4B2CB1303DD2 /* AVFoundation.framework */,
 				32AB5467C7EC4205BC8C8A8F /* Photos.framework */,
 				6A349BCB49FA4CD782CC1AD3 /* AudioToolbox.framework */,
+				A275B20249F04D34BFA6916A /* Accelerate.framework */,
+				F7B9F12549DF4F6FB5E16318 /* CFNetwork.framework */,
+				E0EAEC6D8A33434B9649E4DE /* CoreMedia.framework */,
+				A3A73350D38548E5A6306195 /* CoreVideo.framework */,
+				E186B47F34C842EB98FAD3D9 /* MessageUI.framework */,
+				125998C7100C45F7935A744F /* OpenGLES.framework */,
+				1FB51634F40A409D99369F1F /* Security.framework */,
+				F65DD50DA46947D086AFF768 /* SafariServices.framework */,
+				949A6BC393CA4A858989D017 /* QuartzCore.framework */,
+				94FFEE2DE0104622A882627C /* UIKit.framework */,
+				A3CA264B85B14161ACF78B84 /* libc++.dylib */,
+				9A1257A55D9743659504553B /* libPayPalMobile.a */,
+				72F2A969D97E497E95281123 /* libCardIO.a */,
+				53FF6329C26C411098EF7823 /* libopencv_core.a */,
+				C73E2243DFEE4616982C7545 /* libopencv_imgproc.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -354,8 +410,6 @@
 				8380172C1C3F43A6B4E31AAB /* CDVCamera.h */,
 				11F3643EE064486B875FB227 /* CDVJpegHeaderWriter.h */,
 				A060F6729B324E96BB9F1188 /* CDVExif.h */,
-				67FDE3A4C61946EDBA4051D9 /* CDVDevice.m */,
-				0CC020B94BA64B5AB3B3DE74 /* CDVDevice.h */,
 				D52EA40BC7AD40B5BFA45687 /* UIImage+CropScaleOrientation.m */,
 				8B880E9D08B345A7B3A52906 /* CDVCamera.m */,
 				1EE34AAFA82146ACA7BEC547 /* CDVJpegHeaderWriter.m */,
@@ -383,6 +437,8 @@
 				DF12860B52C64C419390F5A4 /* CDVAssetLibraryFilesystem.h */,
 				9DA484F2D4D64BA2887A5361 /* CDVSound.m */,
 				311938DC388746BC9BDF8955 /* CDVSound.h */,
+				F5DC3C46B6464021B2B863E4 /* CDVDevice.m */,
+				F2DEDDA0CAF24EBAA949137B /* CDVDevice.h */,
 			);
 			name = Plugins;
 			path = "Lelly/Plugins";
@@ -582,7 +638,6 @@
 				0D5D7FC7F69A48079B2C8149 /* CDVLocation.m in Sources */,
 				AD06B8D33F23473E9DC7CC22 /* CDVCamera.m in Sources */,
 				46F35565C0504075B0C233E9 /* CDVJpegHeaderWriter.m in Sources */,
-				78DA7C2331054AADB96C9025 /* CDVDevice.m in Sources */,
 				5109297EAC39429CB8C12F6F /* UIImage+CropScaleOrientation.m in Sources */,
 				AEA07A65D6AB49319D922D30 /* CDVCamera.m in Sources */,
 				D2B2C284771D4875869AC4AE /* CDVJpegHeaderWriter.m in Sources */,
@@ -596,6 +651,7 @@
 				B68CB256B6A24F369300C4BE /* CDVLocalFilesystem.m in Sources */,
 				52CA967CC1B04C998F29B0F9 /* CDVAssetLibraryFilesystem.m in Sources */,
 				444525105C514459BA11F68B /* CDVSound.m in Sources */,
+				CB5C2FB9657F4AA5BB3B1AEF /* CDVDevice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +694,9 @@
 				);
 				PRODUCT_NAME = "Lelly";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -667,6 +726,9 @@
 				);
 				PRODUCT_NAME = "Lelly";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};

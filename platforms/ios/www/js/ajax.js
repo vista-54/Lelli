@@ -1,5 +1,4 @@
-var URL = 'http://159.224.220.233/api';
-var URL_ip = 'http://159.224.220.233/';
+var URL = 'http://159.224.220.233/lelly/api';
 var versions = '/v1/';
 $(document).ajaxStop(function () {
     $('.spinner').hide();
@@ -35,7 +34,7 @@ function request_sync(type, controller, action, data, successCallBack, requestEr
             async: false,
             url: URL + versions + controller + '/' + action,
             headers: {
-                "Authorization": 'Bearer ' + localStorage['Lelly_auth_key']
+                "Accept": 'application/json'
             },
             data: data,
             success: successCallBack,
@@ -55,7 +54,15 @@ function request(type, controller, action, data, successCallBack, requestErrorCa
         error: requestErrorCallBack
     })
 }
-
+function requestPayment(action, data, successCallBack, requestErrorCallBack) {
+    $.ajax({
+        type: 'POST',
+        url: action,
+        data: data,
+        success: successCallBack,
+        error: requestErrorCallBack
+    })
+}
 //--------------------------------DEFAULT CALLBACK FUNCTIONS-------------------------------
 function request_result(result) {
     console.log(result);
@@ -106,7 +113,6 @@ function register_finish(result) {
         return false;
     }
     else {
-        localStorage.setItem('Lelly_login_email', _email);
         localStorage['Lelly_auth_key'] = result.auth_key;
         localStorage['Lelly_pin'] = _pin;
         localStorage['Lelly_contacts'] = JSON.stringify(result.contacts);
@@ -116,9 +122,9 @@ function register_finish(result) {
         $(WINDOW_SWITCH_REGISTER_4_5).toggleClass('hide');
         setTimeout(function () {
             showMoodScreen(result.user_name);
-                document.addEventListener("pause", onPause, false);
-                document.addEventListener("resume", onResume, false);
-        },3000);
+            document.addEventListener("pause", onPause, false);
+            document.addEventListener("resume", onResume, false);
+        }, 3000);
         contacts = {};
         screen_lock = true;
     }
@@ -129,7 +135,6 @@ function login(result) {
     console.log(result);
     if (result.auth_key && !result.errors) {
         local_email = _email;
-        localStorage.setItem('Lelly_login_email', _email);
         localStorage['Lelly_auth_key'] = result.auth_key;
         localStorage['Lelly_pin'] = _pin;
         localStorage['Lelly_contacts'] = JSON.stringify(result.contacts);
@@ -270,6 +275,23 @@ function getExpansionsPack(result) {
             var cost = $(this).attr('data-points');
             var data = {'exp_pack_id': $(this).attr('data-id')};
             var action = 'unlock-expansion-pack';
+            if (cost > star_points) {
+                navigator.notification.confirm('Your star-points is enough to purchase this expansion pack?\r\nIt costs ' + cost + ' star points but you have only ' + star_points + '.\r\nWould you like to buy this pack?', function (button) {
+                    if (button == 1) {
+                        //TODO Buy function
+                        //var clientID = 'AV2UW69wdcyBDfNUhLC3uEhuzXBGWOS3VDIlAheiyG_9Zsf22Wn8E_-LUKjqxwi4S5IyjJ4VtmPQ_Mu1';
+                        //var password = 'EC6_d2KccyDDyzJ8QtgF1lKuWAOwcF6fAODBDgdhMw8dlSGsjYC7NW58ij9dJ6HZVEm_j6EH9tbDFMlk';
+                        //var action = 'https://' + clientID + ':' + password + '@api.sandbox.paypal.com/v1/oauth2/token';
+                        //var data = "grant_type=client_credentials";
+                        //requestPayment(action,data,request_result,requestErrorCallBack);
+                        //window.open();
+                    }
+                    else {
+                        return;
+                    }
+                }, title, ['Buy Now!', 'Cancel']);
+                return;
+            }
             navigator.notification.confirm('Do you want to purchase this expansion pack?\r\nIt will cost ' + cost + ' star points.', function (button) {
                 if (button == 1) {
                     startAjaxAnimation();
@@ -279,7 +301,6 @@ function getExpansionsPack(result) {
                     return;
                 }
             }, title, ['Purchase', 'Cancel']);
-
         });
     }
 }
@@ -300,25 +321,25 @@ function loadUsers(result) {
     }
     else {
         $.each(result.connections, function (index, value) {
-            var user_status = value.status === 'active' ? 'enable':'disable';
+            var user_status = value.status === 'active' ? 'enable' : 'disable';
             var monitor_id = value.monitor_id;
             var connection = value.id;
             var external_password = value.external_password;
             var name = value.name;
-            $('#tab_users').append('<tr connection-id='+ connection + ' class="white-block '+ user_status +'">' +
-                                    '<td class="td-one">' +
-                                    '<p class="bold">'+ name +'</p>'+
-                                    '</td>'+
-                                    '<td class="td-two circle">'+
-                                    '<div class="small-circle-red"></div>'+
-                                    '</td>'+
-                                    '<td class="td-three">'+
-                                    '<p>'+ monitor_id+'</p>'+
-                                    '</td>'+
-                                    '<td class="td-three">'+
-                                    '<p>'+ external_password +'</p>'+
-                                    '</td>'+
-                                    '</tr>');
+            $('#tab_users').append('<tr connection-id=' + connection + ' class="white-block ' + user_status + '">' +
+                '<td class="td-one">' +
+                '<p class="bold">' + name + '</p>' +
+                '</td>' +
+                '<td class="td-two circle">' +
+                '<div class="small-circle-red"></div>' +
+                '</td>' +
+                '<td class="td-three">' +
+                '<p>' + monitor_id + '</p>' +
+                '</td>' +
+                '<td class="td-three">' +
+                '<p>' + external_password + '</p>' +
+                '</td>' +
+                '</tr>');
         });
         connectionsOnclickInit();
         $('#btn_disconnect_yes').click(function () {
@@ -366,8 +387,8 @@ function recordError(result) {
                 }
                 ,
                 1000
-                )
-                ;
+            )
+            ;
         },
         'No connection', "OK"
     )
@@ -396,14 +417,62 @@ function connectUser(result) {
         connection_id = '';
     }
 }
-function connectionsOnclickInit() {
-    $('#tab_users tr').click(function () {
-        if ($(this).hasClass('enable')) {
-            $(".disconnect-box").css({"display": "block"});
-        } else {
-            $(".connect-box").css({"display": "block"});
-        }
-        connection_id = $(this).attr('connection-id');
 
+function historyWrite(result) {
+    console.log(result);
+    if (!result.errors && result.connections.length > 0) {
+        for (var i = 0; i < result.connections.length; i++) {
+            var item = result.connections[i];
+            operator:
+            {
+                if (item.status !== 'active') break operator;
+                var action = 'get-mood-history';
+                //historyShow();
+                request_logged('POST', 'site', action, null, historyShow, requestErrorCallBack);
+                break;
+            }
+        }
+    }
+    else {
+        return false;
+    }
+}
+//Show history after request
+function historyShow(result) {
+    console.log(result);
+    var result_data = result;
+    $('ul.tabs-controls li[data-class="third"] a img').remove();
+    $('ul.tabs-list li.tabs-item-third').html($('<div/>').addClass('history')
+        .append('<div class="swiper-container"><div class="swiper-wrapper"></div></div>'));
+    $.each(result_data, function (i, value) {
+        $('.swiper-wrapper').append('<div class="swiper-slide"><p>' + value.month + ' ' + value.year + '</p><div class="graph"><span class="graph-number-one">1</span><span class="graph-number-two">' + result_data[i].data.length + '</span><div id="ct-chart' + i + '" class="ct-chart ct-perfect-fifth"></div></div></div>');
+        //$('.history').append('<div class="graph"><div id="ct-chart'+ i +'" class="ct-chart ct-perfect-fifth"></div></div>');
+        var data = {
+            'label': new Array(result_data[i].data.length),
+            'data': result_data[i].data
+        };
+        $.each(value.data, function (index, val) {
+            if (val == null) {
+                delete result_data[i].data[index];
+            }
+        });
+        buildgraph('#ct-chart' + i, data);
     });
+}
+
+function getGraphData(result) {
+    var result_data = result;
+    $('.tabs-list li.tabs-item-first .month').text(result_data.month);
+    $('.tabs-list li.tabs-item-first .graph-number-two').text(result_data.data.length);
+    $.each(result_data.data, function (i, value) {
+        if (value == null) {
+            delete result_data.data[i];
+        }
+    });
+    var data = {
+        'label': new Array(result_data.data.length),
+        'data': result_data.data
+    };
+    console.log(data);
+    buildgraph('#ct-chart', data);
 }

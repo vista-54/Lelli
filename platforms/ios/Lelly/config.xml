@@ -36,9 +36,6 @@
     <feature name="Camera">
         <param name="ios-package" value="CDVCamera" />
     </feature>
-    <feature name="Device">
-        <param name="ios-package" value="CDVDevice" />
-    </feature>
     <preference name="CameraUsesGeolocation" value="false" />
     <feature name="YoikScreenOrientation">
         <param name="ios-package" value="YoikScreenOrientation" />
@@ -58,9 +55,6 @@
     <feature name="NetworkStatus">
         <param name="ios-package" value="CDVConnection" />
     </feature>
-    <description>
-        [Description]
-    </description>
     <preference name="AndroidPersistentFileLocation" value="Internal" />
     <feature name="File">
         <param name="ios-package" value="CDVFile" />
@@ -68,6 +62,9 @@
     </feature>
     <feature name="Media">
         <param name="ios-package" value="CDVSound" />
+    </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
     </feature>
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />

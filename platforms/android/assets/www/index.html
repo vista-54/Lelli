@@ -8,26 +8,20 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/chartist.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
     <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Chivo' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/lightslider.css" />
     <script src="cordova.js"></script>
     <script src="js/jq/jquery-2.1.4.min.js"></script>
     <script src="js/jq/jquery.touchSwipe.min.js"></script>
-    <script src="js/lightslider.js"></script>
+    <script src="js/swiper/swiper.jquery.js"></script>
     <script src="js/const.js"></script>
-</head>
+    <!--<script src="js/jq/jquery.mobile.custom.js"></script>-->
 <body>
-<!--Main windows container-->
-<div id="container" class="container" data-enhance="false"></div>
-<!--Menu windows container-->
-<div id="menu_container" class="container" data-enhance="false">
-
-</div>
 <!--21-->
-<div id="window_menu" class="a25" data-enhance="false">
+<div id="window_menu" class="a25">
     <div class="menu-open">
         <div class="top-menu">
             <div class="logo">
@@ -55,8 +49,15 @@
         </div>
     </div>
 </div>
+<!--Main windows container-->
+<div id="container" class="container"></div>
+<!--Menu windows container-->
+<div id="menu_container" class="container">
+
+</div>
+<div class="menu-background"></div>
 <!--31-->
-<div id="window_pin" data-enhance="false" class="container register-complete pin">
+<div id="window_pin" class="container register-complete pin">
     <div class="logo">
         <div class="medium-square">lelly</div>
     </div>
@@ -72,7 +73,7 @@
     <input id="input_lockScreen" class="enter" type="password" maxlength="4" pattern="[0-9]*" placeholder="PIN" required>
     <input id="btn_lockScreen" type="button" class="pink-button" value="continue">
 </div>
-<div id="after_pause_block" data-enhance="false"></div>
+<div id="after_pause_block"></div>
 <script src="js/functions.js"></script>
 <script src="js/main.js"></script>
 <script src="js/ajax.js"></script>
@@ -81,7 +82,7 @@
 <!--<div id="lastActivitySendPopup">-->
     <!--<p><img src="img/spinner2.gif" alt=" "><span>Recording saved data...</span></p>-->
 <!--</div>-->
-<div id="window_loader" class="spinner" data-enhance="false">
+<div id="window_loader" class="spinner">
     <div class="one spinner"></div>
     <div class="two">Loading...</div>
 </div>

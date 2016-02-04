@@ -45,6 +45,7 @@
 <plugin name="cordova-plugin-network-information" spec="1.0.1" source="pgb" />
 <plugin name="cordova-plugin-file" spec="3.0.0" source="pgb" />
 <plugin name="org.apache.cordova.media" spec="0.2.16" source="pgb" />
+<!--<plugin name="com.paypal.cordova.mobilesdk" spec="3.1.2" source="pgb" />-->
 <icon src="res/icon/icon.png"/>
 <splash src="res/screen/splash.png"/>
 <platform name="android">

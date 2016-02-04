@@ -37,10 +37,6 @@
                             "count": 2
                         },
                         {
-                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<preference name=\"CameraUsesGeolocation\" value=\"false\" />",
                             "count": 1
                         },
@@ -82,6 +78,10 @@
                         },
                         {
                             "xml": "<feature name=\"Media\"><param name=\"ios-package\" value=\"CDVSound\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -131,9 +131,6 @@
         "org.apache.cordova.camera": {
             "PACKAGE_NAME": "com.app.lelly"
         },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.app.lelly"
-        },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.app.lelly"
         },
@@ -156,6 +153,9 @@
             "PACKAGE_NAME": "com.app.lelly"
         },
         "org.apache.cordova.media": {
+            "PACKAGE_NAME": "com.app.lelly"
+        },
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "com.app.lelly"
         }
     },
@@ -360,14 +360,6 @@
             "pluginId": "org.apache.cordova.camera",
             "clobbers": [
                 "CameraPopoverHandle"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-device/www/device.js",
-            "id": "cordova-plugin-device.device",
-            "pluginId": "cordova-plugin-device",
-            "clobbers": [
-                "device"
             ]
         },
         {
@@ -641,6 +633,14 @@
             "pluginId": "org.apache.cordova.media",
             "clobbers": [
                 "window.Media"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "id": "cordova-plugin-device.device",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
             ]
         }
     ]

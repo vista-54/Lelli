@@ -1,5 +1,6 @@
 var isIos = (/iPhone|iPad|iPod/i.test(navigator.userAgent)) ? true : false;
 var isAndroid = (/Android/i.test(navigator.userAgent)) ? true : false;
+var OSversion = device.version;
 //Main selector for click:
 var $body = $(document);
 //Lock app screen
@@ -8,7 +9,6 @@ var wrong_pinCounter = 0;
 var screen_lock = false;
 //Received username
 var user_name;
-var local_email = localStorage['Lelly_login_email'];
 //Login form
 var _pin;
 var _email;
@@ -29,27 +29,23 @@ var get_task_options = {
 };
 //User monitor id
 var connection_id;
-// build graph variable
-var graph = {
-    'label': GRAPH_LABEL[1],
-    'data': [[2, 4, 3, 6, 7, 8, 3, 5, 7, 8, 4, 3, 5], [7, 5, 6, 6, 7, 3, 2, 4, 1, 8, 6, 3, 1]]
-};
 //Call info
 var call_info = {};
 var checkConnection;
+var mySwiper = {};
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
-//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ DOCUMENT READY /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+//--------------------------------------DOCUMENT READY ------------------------------------------
 $(document).ready(function () {
     $('#container').load('resources2.html #window_loginScreen', function () {
         //if (local_email) {
         //    $($('#input_email')).attr('placeholder', local_email);
         //}
     });
-    //---------------------------------- SCREEN 31 ---------------------------
+    //---------------------------------- SCREEN 31 ---------------------------------------------
     $('#input_lockScreen').click(function () {
-        lockPinDialog();
+        PinDialog('#input_lockScreen');
     });
     $('#input_lockScreen').focus(function () {
         $(this).val('');
@@ -70,6 +66,7 @@ $(document).ready(function () {
 });
 //\/\/\/\/\/\/\/\/\/\/\\//\\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\/
 
+//----------------------------------- ON DEVICE READY --------------------------------------------
 function onDeviceReady() {
     StatusBar.overlaysWebView(false);
     screen.lockOrientation('portrait');
@@ -86,12 +83,13 @@ function onDeviceReady() {
         navigator.notification.alert(txt, null, title, "OK");
     };
 }
+// Form validations and events
 $body.on('submit', 'form', function (e) {
     //cordova.plugins.Keyboard.close();
     e.preventDefault();
 });
 //CHECK EMAIL INPUT
-$body.on('blur', 'input[type="email"]', function () {
+$body.on('change', 'input[type="email"]', function () {
     if (validateEmail($(this))) {
         $(this).css('border-color', '')
             .removeClass('placeholder');
@@ -134,6 +132,7 @@ function clickOnMenuWindow(event) {
                 });
                 hideMenu();
                 $('#menu_container').load('resources2.html #window_menu_info', function () {
+                    swipeInit('#window_menu_info');
                     menuContainerShow();
                 });
                 break;
@@ -151,15 +150,26 @@ function clickOnMenuWindow(event) {
                             .addClass("active")
                             .siblings()
                             .removeClass("active");
+                        $('.ct-chart').each(function (i, evt) {
+                            evt.__chartist__.update();
+                        });
+                        if ($(this).parent().attr('data-class', 'third') && $.isEmptyObject(mySwiper)) {
+                            mySwiper = new Swiper('.swiper-container');
+                            var last_item_index = $('.swiper-slide').length - 1;
+                            mySwiper.slideTo(last_item_index, 100);
+                        }
                     });
                     menuContainerShow();
-                    var action = 'get-app-user-points';
+                    var action1 = 'get-connections';
+                    var action2 = 'get-mood-graph';
+                    var action3 = 'get-app-user-points';
                     startAjaxAnimation();
-                    request_logged('GET', 'site', action, null, function (result) {
+                    request_logged('GET', 'site', action2, null, getGraphData, requestErrorCallBack);
+                    request_logged('GET', 'site', action3, null, function (result) {
                         console.log(result);
                         $('.user_points').text(result.points);
                     }, requestErrorCallBack);
-                    buildgraph(graph);
+                    request_logged('GET', 'site', action1, null, historyWrite, requestErrorCallBack);
                 });
                 break;
             case 'btn_menu_connections':
@@ -169,12 +179,13 @@ function clickOnMenuWindow(event) {
             case 'btn_menu_password':
                 hideMenu();
                 $('#menu_container').load('resources2.html #window_menu_password', function () {
+                    swipeInit('#window_menu_password');
                     menuContainerShow();
                     $('#btn_check_monitor').click(function () {
                         var input = $('#input_monitor_connect').val();
-                        var data = {monitor_username : input};
+                        var data = {monitor_username: input};
                         var action = 'check-monitor';
-                        request_logged('POST','site',action, data, function(result) {
+                        request_logged('POST', 'site', action, data, function (result) {
                             console.log(result);
                             if (result === true) {
                                 connection_id = input;
@@ -195,12 +206,12 @@ function clickOnMenuWindow(event) {
                     $('#btn_add_connection').click(function () {
                         var action = 'save-connection';
                         var password = $('#generated_password').val();
-                        var data= {
-                            monitor_username : connection_id,
-                            external_password : password
+                        var data = {
+                            monitor_username: connection_id,
+                            external_password: password
                         };
                         startAjaxAnimation();
-                        request_logged('POST','site',action, data, addConnection, requestErrorCallBack);
+                        request_logged('POST', 'site', action, data, addConnection, requestErrorCallBack);
                     })
 
                 });
@@ -208,6 +219,7 @@ function clickOnMenuWindow(event) {
             case 'btn_menu_points':
                 hideMenu();
                 $('#menu_container').load('resources2.html #window_menu_points', function () {
+                    swipeInit('#window_menu_points');
                     menuContainerShow();
                     var action = 'get-app-user-points';
                     startAjaxAnimation();
@@ -217,9 +229,10 @@ function clickOnMenuWindow(event) {
                     }, requestErrorCallBack);
                 });
                 break;
-            case 'btn_menu_expansions' :
+            case 'btn_menu_expansions':
                 hideMenu();
                 $('#menu_container').load('resources2.html #window_menu_expansions', function () {
+                    swipeInit('#window_menu_expansions');
                     menuContainerShow();
                     var action = 'get-expansion-packs';
                     startAjaxAnimation();
@@ -268,28 +281,34 @@ $body.on('click', '.btn_emergency', function () {
             if (this.id === 'btn_callNonUrgent') {
                 var phone = $('#btn_callNonUrgent span').text();
                 var action = 'save-used-help';
-                var data = {UsedHelp: {
-                    help_type : 'non_urgent_help'
-                }};
-                request_logged('POST','site', action, data, request_result);
+                var data = {
+                    UsedHelp: {
+                        help_type: 'non_urgent_help'
+                    }
+                };
+                request_logged('POST', 'site', action, data, request_result);
                 dial(phone);
             }
             if (this.id === 'btn_callEmergency') {
                 var phone = $('#btn_callEmergency span').text();
                 var action = 'save-used-help';
-                var data = {UsedHelp: {
-                    help_type : 'emergency'
-                }};
-                request_logged('POST','site', action, data, request_result);
+                var data = {
+                    UsedHelp: {
+                        help_type: 'emergency'
+                    }
+                };
+                request_logged('POST', 'site', action, data, request_result);
                 dial(phone);
             }
         });
         $('.white-block').click(function () {
             if (this.id === 'contact_friend') {
                 var phone = JSON.parse(localStorage['Lelly_contacts']).friend.phone;
-                call_info = {UsedHelp: {
-                    help_type : 'person_win'
-                }};
+                call_info = {
+                    UsedHelp: {
+                        help_type: 'person_win'
+                    }
+                };
                 setTimeout(function () {
                     $(WINDOW_SWITCH_EMERGENCY_28_32).toggleClass('hide');
                 }, 400);
@@ -298,9 +317,11 @@ $body.on('click', '.btn_emergency', function () {
             }
             if (this.id === 'contact_support') {
                 var phone = JSON.parse(localStorage['Lelly_contacts']).support.phone;
-                call_info = {UsedHelp : {
-                    help_type : 'person_support'
-                }};
+                call_info = {
+                    UsedHelp: {
+                        help_type: 'person_support'
+                    }
+                };
                 setTimeout(function () {
                     $(WINDOW_SWITCH_EMERGENCY_28_32).toggleClass('hide');
                 }, 400);
@@ -318,11 +339,13 @@ $body.on('click', '.btn_emergency', function () {
                         screen_lock = true;
                         dial(phone);
                     }
-                    call_info = {UsedHelp : {
-                        contact_name : phone,
-                        contact_phone : name,
-                        help_type : 'other_contact'
-                    }};
+                    call_info = {
+                        UsedHelp: {
+                            contact_name: phone,
+                            contact_phone: name,
+                            help_type: 'other_contact'
+                        }
+                    };
                 }, function (err) {
                     screen_lock = true;
                     console.log(err);
@@ -336,10 +359,12 @@ $body.on('click', '.btn_emergency', function () {
                     $('#btn_CallNo').removeClass('_no').addClass('_no2');
                     $('#p_didUCall').text('Did it help?');
                 }, 400);
-                call_info = {UsedHelp : {
-                    help_type : 'local_counselling_services',
-                    it_help : 1
-                }};
+                call_info = {
+                    UsedHelp: {
+                        help_type: 'local_counselling_services',
+                        it_help: 1
+                    }
+                };
                 var link = JSON.parse(localStorage['Lelly_contacts']).local_services.link;
                 window.open(link, '_blank', 'location=yes');
                 screen_lock = true;
@@ -349,9 +374,11 @@ $body.on('click', '.btn_emergency', function () {
                     $(WINDOW_SWITCH_EMERGENCY_32_29).toggleClass('hide');
                     $('#btn_CallNo').removeClass('_no');
                 }, 400);
-                call_info = {UsedHelp:{
-                    help_type : 'samaritans'
-                }};
+                call_info = {
+                    UsedHelp: {
+                        help_type: 'samaritans'
+                    }
+                };
                 var phone = JSON.parse(localStorage['Lelly_contacts']).samaritans.phone;
                 dial(phone);
             }
@@ -362,10 +389,12 @@ $body.on('click', '.btn_emergency', function () {
                     $('#p_didUCall').text('Did it help?');
                     $(WINDOW_SWITCH_EMERGENCY_32_29).toggleClass('hide');
                 }, 400);
-                call_info = {UsedHelp: {
-                    help_type : 'other_help',
-                    it_help : 1
-                }};
+                call_info = {
+                    UsedHelp: {
+                        help_type: 'other_help',
+                        it_help: 1
+                    }
+                };
                 var link = JSON.parse(localStorage['Lelly_contacts']).other;
                 window.open(link, '_blank', 'location=yes');
                 screen_lock = true;
@@ -375,20 +404,19 @@ $body.on('click', '.btn_emergency', function () {
             if ($(this).hasClass('_no')) {
                 $(WINDOW_SWITCH_EMERGENCY_32_29).toggleClass('hide');
                 $(this).toggleClass('_no');
-            } else
-            if ($(this).hasClass('_no2')) {
+            } else if ($(this).hasClass('_no2')) {
                 $(WINDOW_SWITCH_EMERGENCY_32_30).toggleClass('hide');
                 $(this).toggleClass('_no2');
                 var action = 'save-used-help';
                 call_info.UsedHelp.it_help = 0;
-                request_logged("POST", 'site', action, call_info,request_result);
+                request_logged("POST", 'site', action, call_info, request_result);
             }
             else {
                 $(WINDOW_SWITCH_EMERGENCY_32_30).toggleClass('hide');
                 $(this).toggleClass('_no');
             }
         });
-        $('#btn_CallYes').click(function() {
+        $('#btn_CallYes').click(function () {
             var action = 'save-used-help';
             console.log(call_info);
             request_logged('POST', 'site', action, call_info, request_result);
@@ -399,11 +427,7 @@ $body.on('click', '.btn_emergency', function () {
 
 //BACK BUTTONS
 $body.on("click", "#btn_backToLogin", function () {
-    $('#container').load('resources2.html #window_loginScreen', function () {
-        if (local_email) {
-            $($('#input_email')).attr('placeholder', local_email);
-        }
-    });
+    $('#container').load('resources2.html #window_loginScreen');
 });
 $body.on("click", "#btn_goToMoodScreen", function () {
     showMoodScreen(user_name);
@@ -415,7 +439,7 @@ $body.on("focus", '#input_lockScreen, #input_personalPin, #input_newPin, #input_
     e.preventDefault();
 });
 $body.on("focus", 'input', function () {
-    $(this).css({'border-color':'','color':''})
+    $(this).css({'border-color': '', 'color': ''})
         .removeClass('placeholder');
     if (isIos) {
         window.scrollTo(0, 0);
@@ -425,7 +449,7 @@ $body.on("focus", 'textarea', function () {
     $(this).removeClass('placeholder');
 });
 $body.on("click", '#input_personalPin', function () {
-    logPinDialog();
+    PinDialog('#input_personalPin');
 });
 $body.on('submit', 'form[name="login"]', function () {
     var $input_email = $('#input_email');
@@ -467,41 +491,12 @@ $body.on("click", "#link_forgotPin", function () {
     $(WINDOW_SWITCH_LOGIN_1_2).toggleClass('hide');
 });
 $body.on("click", "#btn_goToRegister", function () {
-    $('#container').load('resources2.html #window_registerScreen',function() {
-        $('#input_friendName, #input_supportName').setCli
+    $('#container').load('resources2.html #window_registerScreen', function () {
         $('#btn_friend, #input_friendName').click(function () {
-            $('#input_friendName').css('border-color', '')
-                .removeClass('placeholder');
-            navigator.contacts.pickContact(function (contact) {
-                $('#window_pin').hide();
-                $('#after_pause_block').hide();
-                $('#container').css('visibility', 'visible');
-                $('#menu_container').css('visibility', 'visible');
-                var name = contact.name.formatted;
-                var phone = contact.phoneNumbers[0].value;
-                phone = phone.replace(/\-|\x20/g, "");
-                contacts.person_win_name = name;
-                contacts.person_win_phone = phone;
-                $('#input_friendName').val(name);
-            }, function (err) {
-                console.log(err);
-            });
+            PickContact('#input_friendName');
         });
         $('#btn_support, #input_supportName').click(function () {
-            $('#input_supportName').css('border-color', '')
-                .removeClass('placeholder');
-            navigator.contacts.pickContact(function (contact) {
-                $('#window_pin').hide();
-                $('#after_pause_block').hide();
-                $('#container').css('visibility', 'visible');
-                $('#menu_container').css('visibility', 'visible');
-                var name = contact.name.formatted;
-                var phone = contact.phoneNumbers[0].value;
-                phone = phone.replace(/\-|\x20/g, "");
-                contacts.person_support_name = name;
-                contacts.person_support_phone = phone;
-                $('#input_supportName').val(name);
-            });
+            PickContact('#input_supportName');
         });
     });
 });
@@ -557,9 +552,13 @@ $body.on('click', '#input_birthdate', function (event) {
         $('#input_birthdate').val(d).blur();
     });
 });
-$body.on("click", '#input_newPin', regPinDialog);
-$body.on("click", '#input_newPinConfirm', regPinConfirmDialog);
-$body.on("blur", '#input_regEmail', function () {
+$body.on("click", '#input_newPin', function () {
+    PinDialog('#input_newPin');
+});
+$body.on("click", '#input_newPinConfirm', function () {
+    PinDialog('#input_newPinConfirm');
+});
+$body.on("change", '#input_regEmail', function () {
     var _input_email = $('#input_regEmail').val();
     if (!validateEmail($('#input_regEmail'))) {
         animateInvalidInput($('#input_regEmail'));
@@ -616,12 +615,8 @@ $body.on("click", "#btn_backTo6", function () {
     $(WINDOW_SWITCH_REGISTER_1_2).toggleClass('hide');
 });
 $body.on("click", "#btn_regNextStep3", function () {
-    //var like_count = 0;
-    ////TODO Function
-    //$('input[value="1"].likes:checked').each(function() {
-    //    like_count++;
-    //});
-    if ( $('input[value="1"].likes:checked').length === 0) {
+
+    if ($('input[value="1"].likes:checked').length === 0) {
         window.alert('Lelly', 'Please choise more then one like.');
         return false;
     }
@@ -702,7 +697,7 @@ $body.on('click', '#btn_activityRecDone', function () {
         }
         localStorage['Lelly_last_activity'] = JSON.stringify(data);
         if (photo.length > 1) {
-            DataPhoto(data.Activity.photo, function(a){
+            DataPhoto(data.Activity.photo, function (a) {
                 data.Activity.photo = a;
                 screen_lock = true;
                 startAjaxAnimation();
@@ -797,7 +792,7 @@ $body.on('click', '#btn_taskRecDone', function () {
         }
         localStorage['Lelly_last_activity'] = JSON.stringify(data);
         if (photo.length > 1) {
-            DataPhoto(data.Activity.photo, function(a){
+            DataPhoto(data.Activity.photo, function (a) {
                 data.Activity.photo = a;
                 screen_lock = true;
                 startAjaxAnimation();
@@ -860,7 +855,7 @@ $body.on('click', '#btn_lowMoodRecDone', function () {
             }
         }
         if (photo.length > 1) {
-            DataPhoto(data.Activity.photo, function(a){
+            DataPhoto(data.Activity.photo, function (a) {
                 data.Activity.photo = a;
                 screen_lock = true;
                 startAjaxAnimation();
